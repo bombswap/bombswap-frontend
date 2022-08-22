@@ -127,7 +127,7 @@ export default function RemoveLiquidity({
             return approveCallback()
         }
 
-        if (chainId !== ChainId.HARMONY) {
+        if (chainId == ChainId.HARMONY) {
             // try to gather a signature for permission
             const nonce = await pairContract.nonces(account)
 
@@ -138,7 +138,7 @@ export default function RemoveLiquidity({
                 { name: 'verifyingContract', type: 'address' }
             ]
             const domain = {
-                name: 'SushiSwap LP Token',
+                name: 'PancakeSwap LPs',
                 version: '1',
                 chainId: chainId,
                 verifyingContract: pair.liquidityToken.address
