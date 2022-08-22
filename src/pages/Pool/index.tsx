@@ -226,14 +226,14 @@ export default function Pool() {
                             </EmptyProposals>
                         )}
 
-                        {chainId && [ChainId.MAINNET, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
+                        {/* {chainId && [ChainId.MAINNET, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
                             <Text textAlign="center" fontSize={14} style={{ padding: '.5rem 0 .5rem 0' }}>
                                 {i18n._(t`Have Liquidity on ${(chainId && migrateFrom[chainId]) ?? ''}?`)}{' '}
                                 <StyledInternalLink id="migrate-pool-link" to={'/migrate'}>
                                     {i18n._(t`Migrate Now`)}
                                 </StyledInternalLink>
                             </Text>
-                        )}
+                        )} */}
                         <div className="grid grid-cols-2 gap-4">
                             <Button id="join-pool-button" color="gradient" onClick={() => history.push('/add/ETH')}>
                                 {i18n._(t`Add Liquidity`)}
