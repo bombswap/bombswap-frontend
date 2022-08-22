@@ -2716,10 +2716,10 @@
   resolved "https://registry.yarnpkg.com/@peghub/core/-/core-1.0.0.tgz#4e4282d264be40b5c24ed4cfc809c3acacfe66f9"
   integrity sha512-iHuOJg1CBWokpsEYg6HYWyDvTb2xyLSkv9kS1qGnXHzo45lehssXetfrZDy8vt16fiTZDheQ33hgyTJO2aCEQw==
 
-"@peghub/sdk@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@peghub/sdk/-/sdk-1.0.0.tgz#3f02908a7a6230d486d9c30868883f5b9f5c9677"
-  integrity sha512-slfMGdKqMIOjl9KVONJ8qz8fMMW5gBTl4ep8OhP149Qds5HC0IJn4+YI1ARS7/lUr80gCxfYHmW47d7MRCjmXA==
+"@peghub/sdk@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@peghub/sdk/-/sdk-1.0.2.tgz#80b16d04b03275ef2ae822156eac4b9cbea16568"
+  integrity sha512-mvyPkC1wgHysJi4E6BaOcvHBZ9bEMKLakV8WxrJ1KjXiuZV6BL0aDne4lcym1rC/RiKsWVZBCsS+0KyOfHSVHw==
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"

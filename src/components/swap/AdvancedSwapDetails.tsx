@@ -114,7 +114,7 @@ export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
                         </>
                     )}
 
-                    {!showRoute &&
+                    {/* {!showRoute &&
                         chainId &&
                         [ChainId.MAINNET, ChainId.BSC, ChainId.FANTOM, ChainId.XDAI, ChainId.MATIC].includes(
                             chainId
@@ -130,7 +130,7 @@ export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
                                     {i18n._(t`View pair analytics`)}
                                 </ExternalLink>
                             </div>
-                        )}
+                        )} */}
                 </>
             )}
         </AutoColumn>
