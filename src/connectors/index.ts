@@ -83,8 +83,8 @@ export const walletconnect = new WalletConnectConnector({
 
 // mainnet only
 export const lattice = new LatticeConnector({
-    chainId: 56,
-    url: RPC[ChainId.BSC],
+    chainId: 1,
+    url: RPC[ChainId.MAINNET],
     appName: 'PegHub'
 })
 
@@ -103,13 +103,13 @@ export const portis = new PortisConnector({
 // mainnet only
 export const walletlink = new WalletLinkConnector({
     url: RPC[ChainId.MAINNET],
-    appName: 'SushiSwap',
+    appName: 'PegHub',
     appLogoUrl: 'https://raw.githubusercontent.com/sushiswap/art/master/sushi/logo-256x256.png'
 })
 
 // mainnet only
 export const torus = new TorusConnector({
-    chainId: 56
+    chainId: 1
 })
 
 // export const bsc = new BscConnector({ supportedChainIds: [56] })

@@ -15,7 +15,7 @@ const getTokenLogoURL = (address: string, chainId: any) => {
             address
         )}/logo.png`
     } else if (chainId === ChainId.BSC) {
-        imageURL = `https://v1exchange.pancakeswap.finance/images/coins/${isAddress(address)}.png`
+        imageURL = `https://swap.peghub.com/images/coins/${isAddress(address)}.png`
     } else if (chainId === ChainId.MATIC) {
         imageURL = getMaticTokenLogoURL(address)
     } else {
