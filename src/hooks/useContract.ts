@@ -51,7 +51,6 @@ import MASTERCHEF_ABI from '../constants/abis/masterchef.json'
 import MINICHEFV2_ABI from '../constants/abis/miniChefV2.json'
 import PENDING_ABI from '../constants/abis/pending.json'
 import ROUTER_ABI from '../constants/abis/router.json'
-import ROUTER_AVAX_ABI from '../constants/abis/router_avax.json'
 import SAAVE_ABI from '../constants/abis/saave.json'
 import SUSHI_ABI from '../constants/abis/sushi.json'
 import BASE_SWAPPER_ABI from '../constants/abis/swapper.json'
@@ -194,7 +193,7 @@ export function useFactoryContract(): Contract | null {
 
 export function useRouterContract(): Contract | null {
     const { chainId } = useActiveWeb3React()
-    return useContract(chainId && ROUTER_ADDRESS[chainId], chainId && chainId === ChainId.AVALANCHE ? ROUTER_AVAX_ABI : ROUTER_ABI, false)
+    return useContract(chainId && ROUTER_ADDRESS[chainId], ROUTER_ABI, false)
 }
 
 export function useSushiBarContract(withSignerIfPossible?: boolean): Contract | null {
