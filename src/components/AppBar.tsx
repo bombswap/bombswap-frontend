@@ -24,16 +24,16 @@ function AppBar(): JSX.Element {
     const { pathname } = useLocation()
 
     const [navClassList, setNavClassList] = useState(
-        'w-screen bg-transparent gradiant-border-bottom z-10 backdrop-filter backdrop-blur'
+        'w-screen bg-black z-10'
     )
 
     const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
 
     useEffect(() => {
         if (pathname === '/trade') {
-            setNavClassList('w-screen bg-transparent z-10 backdrop-filter backdrop-blur')
+            setNavClassList('w-screen bg-black z-10')
         } else {
-            setNavClassList('w-screen bg-transparent gradiant-border-bottom z-10 backdrop-filter backdrop-blur')
+            setNavClassList('w-screen bg-black z-10')
         }
     }, [pathname])
 
