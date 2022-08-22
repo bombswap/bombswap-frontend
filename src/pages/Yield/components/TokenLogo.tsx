@@ -4,7 +4,7 @@ import KashiLogo from 'assets/kashi/kashi-neon.png'
 import { getAddress } from '@ethersproject/address'
 import styled from 'styled-components'
 //import EthereumLogo from "../../assets/img/eth.png";
-import { ChainId } from '@bombmoney/sdk'
+import { ChainId } from '@peghub/sdk'
 import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
 import { getMaticTokenLogoURL } from '../../../constants/maticTokenMapping'
 

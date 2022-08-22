@@ -4,7 +4,7 @@ import { useActiveWeb3React } from './useActiveWeb3React'
 import { useIsTransactionPending, useTransactionAdder } from '../state/transactions/hooks'
 import useLPTokensState, { LPTokensState } from './useLPTokensState'
 import useSushiRoll from './useSushiRoll'
-import { ChainId } from '@bombmoney/sdk'
+import { ChainId } from '@peghub/sdk'
 
 export type MigrateMode = 'permit' | 'approve'
 

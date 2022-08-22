@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, Fraction, Percent } from '@bombmoney/sdk'
+import { Currency, CurrencyAmount, Fraction, Percent } from '@peghub/sdk'
 import React from 'react'
 import { Text } from 'rebass'
 import { ButtonPrimary } from '../../components/ButtonLegacy'

@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@bombmoney/sdk'
+import { Currency, ETHER, Token } from '@peghub/sdk'
 
 export function currencyId(currency: Currency): string {
     if (currency === ETHER) return 'ETH'

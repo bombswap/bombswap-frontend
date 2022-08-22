@@ -1,7 +1,7 @@
 import { ArrowUpRight, CheckCircle } from 'react-feather'
 import React, { useContext } from 'react'
 
-import { Currency } from '@bombmoney/sdk'
+import { Currency } from '@peghub/sdk'
 import { Dots } from '../../components'
 import DoubleCurrencyLogo from 'components/DoubleLogo'
 import { LinkStyledButton } from '../../theme'

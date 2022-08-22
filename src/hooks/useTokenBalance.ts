@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { WETH } from '@bombmoney/sdk'
+import { WETH } from '@peghub/sdk'
 import ERC20_ABI from 'constants/abis/erc20.json'
 import { Contract } from 'ethers'
 import { useActiveWeb3React } from './useActiveWeb3React'

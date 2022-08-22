@@ -1,4 +1,4 @@
-import { ChainId } from '@bombmoney/sdk'
+import { ChainId } from '@peghub/sdk'
 
 const TOKEN_ICONS: { [chainId in ChainId]?: any } = {
     [ChainId.MAINNET]: {

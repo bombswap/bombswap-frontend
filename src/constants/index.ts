@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent, Token, WETH } from '@bombmoney/sdk'
+import { ChainId, JSBI, Percent, Token, WETH } from '@peghub/sdk'
 import { fortmatic, injected, lattice, portis, torus, walletconnect, walletlink } from '../connectors'
 
 import { AbstractConnector } from '@web3-react/abstract-connector'

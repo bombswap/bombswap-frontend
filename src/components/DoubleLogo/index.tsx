@@ -1,4 +1,4 @@
-import { Currency } from '@bombmoney/sdk'
+import { Currency } from '@peghub/sdk'
 import React from 'react'
 import styled from 'styled-components'
 import CurrencyLogo from '../CurrencyLogo'

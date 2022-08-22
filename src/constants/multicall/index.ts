@@ -1,4 +1,4 @@
-import { ChainId } from '@bombmoney/sdk'
+import { ChainId } from '@peghub/sdk'
 import MULTICALL_ABI from './abi.json'
 
 const MULTICALL_NETWORKS: { [chainId in ChainId]: string } = {

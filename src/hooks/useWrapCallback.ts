@@ -1,4 +1,4 @@
-import { Currency, ETHER, WETH, currencyEquals } from '@bombmoney/sdk'
+import { Currency, ETHER, WETH, currencyEquals } from '@peghub/sdk'
 
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../state/swap/hooks'

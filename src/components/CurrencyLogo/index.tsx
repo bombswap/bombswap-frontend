@@ -1,4 +1,4 @@
-import { ChainId, Currency, ETHER, Token } from '@bombmoney/sdk'
+import { ChainId, Currency, ETHER, Token } from '@peghub/sdk'
 import React, { useMemo } from 'react'
 
 import AvalancheLogo from '../../assets/images/avalanche-logo.png'

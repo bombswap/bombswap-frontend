@@ -1,4 +1,4 @@
-import { Trade, TradeType, ChainId } from '@bombmoney/sdk'
+import { Trade, TradeType, ChainId } from '@peghub/sdk'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import React, { useContext } from 'react'
 import { ThemeContext } from 'styled-components'

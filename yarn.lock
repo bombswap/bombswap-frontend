@@ -1365,24 +1365,6 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bombmoney/core@2.0.0-canary.0":
-  version "2.0.0-canary.0"
-  resolved "https://registry.yarnpkg.com/@bombmoney/core/-/core-2.0.0-canary.0.tgz#56584ffd9c350c00b7e2a6a22a312ac25fc9db3d"
-  integrity sha512-eTthcAFDCAcem5/8t4OF0OPltTY2P2Vakjwdk8QJK65peJaTN/Xv1K8n+JkXDlK9n+RXCqYgSr0JImRaheEfqQ==
-
-"@bombmoney/sdk@5.0.0-canary.7":
-  version "5.0.0-canary.7"
-  resolved "https://registry.yarnpkg.com/@bombmoney/sdk/-/sdk-5.0.0-canary.7.tgz#d5cfbcafdd8e56d948617463d7fd8094aaa6580f"
-  integrity sha512-VnDi8xv/xHDbeuqm9gjYbzxUT7ZOv4locv2RG/G4snQGmmAYpDE+MUZz02D9fwTuPK1+7ECtoTCgyfllV8BR3w==
-  dependencies:
-    "@uniswap/v2-core" "^1.0.0"
-    big.js "^5.2.2"
-    decimal.js-light "^2.5.0"
-    jsbi "^3.1.1"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
-    toformat "^2.0.0"
-
 "@chaitanyapotti/random-id@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@chaitanyapotti/random-id/-/random-id-1.0.3.tgz#f52f647cfe9f79fc7723ea2b01b0ad3889204002"
@@ -2728,6 +2710,24 @@
   dependencies:
     enc-utils "^3.0.0"
     randombytes "^2.1.0"
+
+"@peghub/core@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@peghub/core/-/core-1.0.0.tgz#4e4282d264be40b5c24ed4cfc809c3acacfe66f9"
+  integrity sha512-iHuOJg1CBWokpsEYg6HYWyDvTb2xyLSkv9kS1qGnXHzo45lehssXetfrZDy8vt16fiTZDheQ33hgyTJO2aCEQw==
+
+"@peghub/sdk@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@peghub/sdk/-/sdk-1.0.0.tgz#3f02908a7a6230d486d9c30868883f5b9f5c9677"
+  integrity sha512-slfMGdKqMIOjl9KVONJ8qz8fMMW5gBTl4ep8OhP149Qds5HC0IJn4+YI1ARS7/lUr80gCxfYHmW47d7MRCjmXA==
+  dependencies:
+    "@uniswap/v2-core" "^1.0.0"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.1"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
 
 "@pmmmwh/react-refresh-webpack-plugin@0.4.3":
   version "0.4.3"

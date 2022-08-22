@@ -1,4 +1,4 @@
-import { Token } from '@bombmoney/sdk'
+import { Token } from '@peghub/sdk'
 import { TokenList } from '@uniswap/token-lists'
 import { RowBetween } from 'components/Row'
 import React, { useState } from 'react'

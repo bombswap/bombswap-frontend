@@ -1,4 +1,4 @@
-import { ChainId, Pair, Token } from '@bombmoney/sdk'
+import { ChainId, Pair, Token } from '@peghub/sdk'
 import flatMap from 'lodash.flatmap'
 import { useCallback, useMemo } from 'react'
 import ReactGA from 'react-ga'

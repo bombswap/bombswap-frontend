@@ -1,4 +1,4 @@
-import { Currency, Pair, ChainId } from '@bombmoney/sdk'
+import { Currency, Pair, ChainId } from '@peghub/sdk'
 import { darken } from 'polished'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'

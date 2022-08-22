@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Token, TokenAmount } from '@bombmoney/sdk'
+import { ChainId, JSBI, Token, TokenAmount } from '@peghub/sdk'
 import { BigNumber, ethers } from 'ethers'
 import { computeUniCirculation } from './computeUniCirculation'
 

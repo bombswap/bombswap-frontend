@@ -1,5 +1,5 @@
 import React from 'react'
-// import { PancakeV1Pair, PancakeV2Pair } from '@bombmoney/sdk'
+// import { PancakeV1Pair, PancakeV2Pair } from '@peghub/sdk'
 
 export default function Test() {
     return <div></div>

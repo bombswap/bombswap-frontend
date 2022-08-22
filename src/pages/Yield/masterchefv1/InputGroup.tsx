@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { MASTERCHEF_ADDRESS, Token } from '@bombmoney/sdk'
+import { MASTERCHEF_ADDRESS, Token } from '@peghub/sdk'
 import { Input as NumericalInput } from '../../../components/NumericalInput'
 import { Fraction } from '../../../entities'
 import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'

@@ -1,5 +1,5 @@
 import { createAction } from '@reduxjs/toolkit'
-import { ChainId } from '@bombmoney/sdk'
+import { ChainId } from '@peghub/sdk'
 
 export interface SerializableTransactionReceipt {
     to: string

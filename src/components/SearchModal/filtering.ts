@@ -1,4 +1,4 @@
-import { Token } from '@bombmoney/sdk'
+import { Token } from '@peghub/sdk'
 import { useMemo } from 'react'
 import { isAddress } from '../../utils'
 

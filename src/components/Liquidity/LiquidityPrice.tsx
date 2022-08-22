@@ -1,5 +1,5 @@
 import React from 'react'
-import { Currency, Price } from '@bombmoney/sdk'
+import { Currency, Price } from '@peghub/sdk'
 import { AutoRow } from '../../components/Row'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 

@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@bombmoney/sdk'
+import { Token, TokenAmount } from '@peghub/sdk'
 import { ethers } from 'ethers'
 
 export default interface LPToken {

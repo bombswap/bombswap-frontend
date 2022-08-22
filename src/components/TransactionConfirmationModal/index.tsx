@@ -1,4 +1,4 @@
-import { ChainId } from '@bombmoney/sdk'
+import { ChainId } from '@peghub/sdk'
 import React, { useContext } from 'react'
 import { AlertTriangle, ArrowUpCircle } from 'react-feather'
 import { Text } from 'rebass'

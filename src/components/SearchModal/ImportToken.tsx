@@ -1,4 +1,4 @@
-import { Currency, Token } from '@bombmoney/sdk'
+import { Currency, Token } from '@peghub/sdk'
 import { ButtonPrimary } from 'components/ButtonLegacy'
 import Card from 'components/Card'
 import { AutoColumn } from 'components/Column'
