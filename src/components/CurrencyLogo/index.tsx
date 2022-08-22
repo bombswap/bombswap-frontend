@@ -23,7 +23,7 @@ const getTokenLogoURL = (address: string, chainId: any) => {
     if (chainId === ChainId.MAINNET) {
         imageURL = `https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/${address}/logo.png`
     } else if (chainId === ChainId.BSC) {
-        imageURL = `https://v1exchange.pancakeswap.finance/images/coins/${address}.png`
+        imageURL = `https://swap.peghub.com/images/tokens/${address}.png`
     } else if (chainId === ChainId.MATIC) {
         imageURL = getMaticTokenLogoURL(address)
     } else {
