@@ -36,7 +36,7 @@ const RPC = {
 }
 
 export const network = new NetworkConnector({
-    defaultChainId: 1,
+    defaultChainId: 56,
     urls: RPC
 })
 
@@ -74,7 +74,7 @@ export const injected = new InjectedConnector({
 // mainnet only
 export const walletconnect = new WalletConnectConnector({
     rpc: {
-        [ChainId.MAINNET]: RPC[ChainId.MAINNET]
+        [ChainId.BSC]: RPC[ChainId.BSC]
     },
     bridge: 'https://bridge.walletconnect.org',
     qrcode: true,
@@ -83,9 +83,9 @@ export const walletconnect = new WalletConnectConnector({
 
 // mainnet only
 export const lattice = new LatticeConnector({
-    chainId: 1,
-    url: RPC[ChainId.MAINNET],
-    appName: 'SushiSwap'
+    chainId: 56,
+    url: RPC[ChainId.BSC],
+    appName: 'PegHub'
 })
 
 // mainnet only
@@ -109,7 +109,7 @@ export const walletlink = new WalletLinkConnector({
 
 // mainnet only
 export const torus = new TorusConnector({
-    chainId: 1
+    chainId: 56
 })
 
 // export const bsc = new BscConnector({ supportedChainIds: [56] })
