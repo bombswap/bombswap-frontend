@@ -23,7 +23,7 @@ export default function BalanceCard({
     const { i18n } = useLingui()
     const { account } = useActiveWeb3React()
     return (
-        <div className="flex flex-col w-full bg-dark-900 rounded px-4 md:px-8 pt-6 pb-5 md:pt-7 md:pb-9">
+        <div className="flex flex-col w-full bg-dark-1000 rounded px-4 md:px-8 pt-6 pb-5 md:pt-7 md:pb-9">
             <div className="flex flex-wrap">
                 <div className="flex flex-col flex-grow md:mb-14">
                     <p className="mb-3 text-lg font-bold md:text-h5 md:font-medium text-high-emphesis">

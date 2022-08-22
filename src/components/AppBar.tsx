@@ -291,7 +291,7 @@ function AppBar(): JSX.Element {
                                             )
                                         }
                                         
-                                        <MoreMenu />
+                                        {/*<MoreMenu />*/}
                                     </div>
                                 </div>
                                 <div className="-mr-2 flex sm:hidden">
@@ -336,65 +336,84 @@ function AppBar(): JSX.Element {
                                 Dashboard
                             </a> */}
 
+                                <NavLink id={`swap-nav-link`} to={'/'}>
+                                    {i18n._(t`Home`)}
+                                </NavLink>
+                                <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://app.bitbomb.io/'} target="_blank" rel="noreferrer">
+                                    {i18n._(t`bitBOMB`)}
+                                </a>
+                                <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.czpegs.com/'} target="_blank" rel="noreferrer">
+                                    {i18n._(t`czPegs`)}
+                                </a>
                                 <NavLink id={`swap-nav-link`} to={'/swap'}>
                                     {i18n._(t`Swap`)}
                                 </NavLink>
-                                <NavLink
-                                    id={`pool-nav-link`}
-                                    to={'/pool'}
-                                    isActive={(match, { pathname }) =>
-                                        Boolean(match) ||
-                                        pathname.startsWith('/add') ||
-                                        pathname.startsWith('/remove') ||
-                                        pathname.startsWith('/create') ||
-                                        pathname.startsWith('/find')
-                                    }
-                                >
-                                    {i18n._(t`Pool`)}
-                                </NavLink>
+                                <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://vaults.peghub.com/'} target="_blank" rel="noreferrer">
+                                    {i18n._(t`Vaults`)}
+                                </a>
+                                <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://docs.peghub.com/'} target="_blank" rel="noreferrer">
+                                    {i18n._(t`Docs`)}
+                                </a>
 
-                                {chainId && [ChainId.MAINNET, ChainId.MATIC].includes(chainId) && (
-                                    <NavLink id={`yield-nav-link`} to={'/yield'}>
-                                        {i18n._(t`Yield`)}
-                                    </NavLink>
-                                )}
-                                {chainId &&
-                                    [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
-                                        <NavLink id={`kashi-nav-link`} to={'/bento/kashi/lend'}>
-                                            {i18n._(t`Kashi Lending`)}
-                                        </NavLink>
-                                    )}
-                                {chainId &&
-                                    [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (
-                                        <NavLink id={`bento-nav-link`} to={'/bento'}>
-                                            {i18n._(t`BentoBox`)}
-                                        </NavLink>
-                                    )}
-                                {chainId === ChainId.MAINNET && (
-                                    <NavLink id={`stake-nav-link`} to={'/sushibar'}>
-                                        {i18n._(t`SushiBar`)}
-                                    </NavLink>
-                                )}
-                                {chainId === ChainId.MAINNET && (
-                                    <NavLink id={`vesting-nav-link`} to={'/vesting'}>
-                                        {i18n._(t`Vesting`)}
-                                    </NavLink>
-                                )}
-                                {chainId &&
-                                    [
-                                        ChainId.MAINNET,
-                                        ChainId.BSC,
-                                        ChainId.XDAI,
-                                        ChainId.FANTOM,
-                                        ChainId.MATIC
-                                    ].includes(chainId) && (
-                                        <ExternalLink
-                                            id={`analytics-nav-link`}
-                                            href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}
-                                        >
-                                            {i18n._(t`Analytics`)}
-                                        </ExternalLink>
-                                    )}
+                                {/*<NavLink id={`swap-nav-link`} to={'/swap'}>*/}
+                                {/*    {i18n._(t`Swap`)}*/}
+                                {/*</NavLink>*/}
+                                {/*<NavLink*/}
+                                {/*    id={`pool-nav-link`}*/}
+                                {/*    to={'/pool'}*/}
+                                {/*    isActive={(match, { pathname }) =>*/}
+                                {/*        Boolean(match) ||*/}
+                                {/*        pathname.startsWith('/add') ||*/}
+                                {/*        pathname.startsWith('/remove') ||*/}
+                                {/*        pathname.startsWith('/create') ||*/}
+                                {/*        pathname.startsWith('/find')*/}
+                                {/*    }*/}
+                                {/*>*/}
+                                {/*    {i18n._(t`Pool`)}*/}
+                                {/*</NavLink>*/}
+
+                                {/*{chainId && [ChainId.MAINNET, ChainId.MATIC].includes(chainId) && (*/}
+                                {/*    <NavLink id={`yield-nav-link`} to={'/yield'}>*/}
+                                {/*        {i18n._(t`Yield`)}*/}
+                                {/*    </NavLink>*/}
+                                {/*)}*/}
+                                {/*{chainId &&*/}
+                                {/*    [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (*/}
+                                {/*        <NavLink id={`kashi-nav-link`} to={'/bento/kashi/lend'}>*/}
+                                {/*            {i18n._(t`Kashi Lending`)}*/}
+                                {/*        </NavLink>*/}
+                                {/*    )}*/}
+                                {/*{chainId &&*/}
+                                {/*    [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId) && (*/}
+                                {/*        <NavLink id={`bento-nav-link`} to={'/bento'}>*/}
+                                {/*            {i18n._(t`BentoBox`)}*/}
+                                {/*        </NavLink>*/}
+                                {/*    )}*/}
+                                {/*{chainId === ChainId.MAINNET && (*/}
+                                {/*    <NavLink id={`stake-nav-link`} to={'/sushibar'}>*/}
+                                {/*        {i18n._(t`SushiBar`)}*/}
+                                {/*    </NavLink>*/}
+                                {/*)}*/}
+                                {/*{chainId === ChainId.MAINNET && (*/}
+                                {/*    <NavLink id={`vesting-nav-link`} to={'/vesting'}>*/}
+                                {/*        {i18n._(t`Vesting`)}*/}
+                                {/*    </NavLink>*/}
+                                {/*)}*/}
+                                {/*{chainId &&*/}
+                                {/*    [*/}
+                                {/*        ChainId.MAINNET,*/}
+                                {/*        ChainId.BSC,*/}
+                                {/*        ChainId.XDAI,*/}
+                                {/*        ChainId.FANTOM,*/}
+                                {/*        ChainId.MATIC*/}
+                                {/*    ].includes(chainId) && (*/}
+                                {/*        <ExternalLink*/}
+                                {/*            id={`analytics-nav-link`}*/}
+                                {/*            href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}*/}
+                                {/*        >*/}
+                                {/*            {i18n._(t`Analytics`)}*/}
+                                {/*        </ExternalLink>*/}
+                                {/*    )}*/}
                             </div>
                         </Disclosure.Panel>
                     </>

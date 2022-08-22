@@ -43,7 +43,7 @@ const inactiveTabStyle = `${tabStyle} text-secondary`
 
 const buttonStyle =
     'flex justify-center items-center w-full h-14 rounded font-bold md:font-medium md:text-lg mt-5 text-sm focus:outline-none focus:ring'
-const buttonStyleEnabled = `${buttonStyle} text-high-emphesis bg-gradient-to-r from-pink-red to-light-brown hover:opacity-90`
+const buttonStyleEnabled = `${buttonStyle} text-high-emphesis bg-dark-1000 hover:opacity-90`
 const buttonStyleInsufficientFunds = `${buttonStyleEnabled} opacity-60`
 const buttonStyleDisabled = `${buttonStyle} text-secondary bg-dark-700`
 const buttonStyleConnectWallet = `${buttonStyle} text-high-emphesis bg-cyan-blue hover:bg-opacity-90`
