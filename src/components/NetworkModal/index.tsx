@@ -21,17 +21,17 @@ const PARAMS: {
         blockExplorerUrls: string[]
     }
 } = {
-    [ChainId.MAINNET]: {
-        chainId: '0x1',
-        chainName: 'Ethereum',
-        nativeCurrency: {
-            name: 'Ethereum',
-            symbol: 'ETH',
-            decimals: 18
-        },
-        rpcUrls: ['https://mainnet.infura.io/v3'],
-        blockExplorerUrls: ['https://etherscan.com']
-    },
+    // [ChainId.MAINNET]: {
+    //     chainId: '0x1',
+    //     chainName: 'Ethereum',
+    //     nativeCurrency: {
+    //         name: 'Ethereum',
+    //         symbol: 'ETH',
+    //         decimals: 18
+    //     },
+    //     rpcUrls: ['https://mainnet.infura.io/v3'],
+    //     blockExplorerUrls: ['https://etherscan.com']
+    // },
     [ChainId.FANTOM]: {
         chainId: '0xfa',
         chainName: 'Fantom',
@@ -136,21 +136,21 @@ export default function NetworkModal(): JSX.Element | null {
         <Modal isOpen={networkModalOpen} onDismiss={toggleNetworkModal}>
             <ModalHeader onClose={toggleNetworkModal} title="Select a Network" />
             <div className="text-lg text-primary mb-6">
-                You are currently browsing <span className="font-bold text-pink">SUSHI</span>
+                You are currently browsing <span className="font-bold text-pink">PegHub</span>
                 <br /> on the <span className="font-bold text-blue">{NETWORK_LABEL[chainId]}</span> network
             </div>
 
             <div className="flex flex-col space-y-5 overflow-y-auto">
                 {[
-                    ChainId.MAINNET,
-                    ChainId.FANTOM,
+                    // ChainId.MAINNET,
+                    // ChainId.FANTOM,
                     ChainId.BSC,
-                    ChainId.MATIC,
-                    ChainId.HECO,
-                    ChainId.XDAI,
-                    ChainId.HARMONY,
+                    // ChainId.MATIC,
+                    // ChainId.HECO,
+                    // ChainId.XDAI,
+                    // ChainId.HARMONY,
                     ChainId.AVALANCHE,
-                    ChainId.OKEX
+                    // ChainId.OKEX
                 ].map((key: ChainId, i: number) => {
                     if (chainId === key) {
                         return (

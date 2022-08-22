@@ -74,20 +74,20 @@ function Routes(): JSX.Element {
             {chainId === ChainId.MAINNET && <Route exact strict path="/vesting" component={Vesting} />}
 
             {/* Migrate */}
-            {(chainId === ChainId.MAINNET || chainId === ChainId.BSC || chainId === ChainId.MATIC) && (
+            {/* {(chainId === ChainId.MAINNET || chainId === ChainId.BSC || chainId === ChainId.MATIC) && (
                 <Route exact strict path="/migrate" component={Migrate} />
-            )}
+            )} */}
 
             {/* SushiBar Staking */}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar" component={SushiBar} />}
+            {/* {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar" component={SushiBar} />}
             {chainId === ChainId.MAINNET && (
                 <Route exact strict path="/sushibar/transactions" component={SushiBarTransactions} />
-            )}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar/tips" component={SushiBarTips} />}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/stake" component={SushiBar} />}
+            )} */}
+            {/* {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar/tips" component={SushiBarTips} />}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/stake" component={SushiBar} />} */}
             {/* Tools */}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/tools" component={Tools} />}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/saave" component={Saave} />}
+            {/* {chainId === ChainId.MAINNET && <Route exact strict path="/tools" component={Tools} />}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/saave" component={Saave} />} */}
 
             {/* Pages */}
             <Route exact strict path="/tradingview" component={Trade} />
