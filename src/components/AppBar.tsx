@@ -24,16 +24,16 @@ function AppBar(): JSX.Element {
     const { pathname } = useLocation()
 
     const [navClassList, setNavClassList] = useState(
-        'w-screen bg-black z-10'
+        'w-screen bg-transparent z-10'
     )
 
     const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
 
     useEffect(() => {
         if (pathname === '/trade') {
-            setNavClassList('w-screen bg-black z-10')
+            setNavClassList('w-screen bg-transparent z-10')
         } else {
-            setNavClassList('w-screen bg-black z-10')
+            setNavClassList('w-screen bg-transparent z-10')
         }
     }, [pathname])
 
@@ -42,7 +42,7 @@ function AppBar(): JSX.Element {
             <Disclosure as="nav" className={navClassList}>
                 {({ open }) => (
                     <>
-                        <div className="px-4 py-1.5">
+                        <div className="mainnav px-4 py-1.5 bg-black">
                             <div className="flex items-center justify-between h-16">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
@@ -50,22 +50,24 @@ function AppBar(): JSX.Element {
                                     </div>
                                     <div className="hidden sm:block sm:ml-4">
                                         <div className="flex space-x-2">
+                                            <NavLink id={`swap-nav-link`} to={'/'}>
+                                                {i18n._(t`Home`)}
+                                            </NavLink>
+                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://app.bitbomb.io/'} target="_blank" rel="noreferrer">
+                                                {i18n._(t`bitBOMB`)}
+                                            </a>
+                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.czpegs.com/'} target="_blank" rel="noreferrer">
+                                                {i18n._(t`czPegs`)}
+                                            </a>
                                             <NavLink id={`swap-nav-link`} to={'/swap'}>
                                                 {i18n._(t`Swap`)}
                                             </NavLink>
-                                            <NavLink
-                                                id={`pool-nav-link`}
-                                                to={'/pool'}
-                                                isActive={(match, { pathname }) =>
-                                                    Boolean(match) ||
-                                                    pathname.startsWith('/add') ||
-                                                    pathname.startsWith('/remove') ||
-                                                    pathname.startsWith('/create') ||
-                                                    pathname.startsWith('/find')
-                                                }
-                                            >
-                                                {i18n._(t`Pool`)}
-                                            </NavLink>
+                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://vaults.peghub.com/'} target="_blank" rel="noreferrer">
+                                                {i18n._(t`Vaults`)}
+                                            </a>
+                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://docs.peghub.com/'} target="_blank" rel="noreferrer">
+                                                {i18n._(t`Docs`)}
+                                            </a>
                                             {/* {chainId && [ChainId.MAINNET, ChainId.MATIC].includes(chainId) && (
                                                 <NavLink id={`yield-nav-link`} to={'/yield'}>
                                                     {i18n._(t`Yield`)}
@@ -304,6 +306,24 @@ function AppBar(): JSX.Element {
                                     </Disclosure.Button>
                                 </div>
                             </div>
+                        </div>
+                        <div className="subnav">
+                            <NavLink id={`swap-nav-link`} to={'/swap'}>
+                                {i18n._(t`Swap`)}
+                            </NavLink>
+                            <NavLink
+                                id={`pool-nav-link`}
+                                to={'/pool'}
+                                isActive={(match, { pathname }) =>
+                                    Boolean(match) ||
+                                    pathname.startsWith('/add') ||
+                                    pathname.startsWith('/remove') ||
+                                    pathname.startsWith('/create') ||
+                                    pathname.startsWith('/find')
+                                }
+                            >
+                                {i18n._(t`Pool`)}
+                            </NavLink>
                         </div>
 
                         <Disclosure.Panel className="sm:hidden">

@@ -46,3 +46,17 @@ input:focus {
   background: #FA52A0;
   cursor: pointer;
 }
+
+.mainnav a, .subnav a {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+.subnav {
+  background: radial-gradient(circle at center, #f51747 0, rgba(0, 0, 0, 0.25) 20%);
+  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);
+  overflow-x: hidden;
+  text-align: center;
+  height: 42px;
+  padding-top: 8px;
+}

@@ -171,7 +171,7 @@ export const TYPE = {
 
 export const ThemedGlobalStyle = createGlobalStyle`
 html {
-  color: #BFBFBF;
+  color: #FFF;
   background: url('/images/background.png');
 }
 
