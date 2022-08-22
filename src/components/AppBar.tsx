@@ -181,37 +181,29 @@ function AppBar(): JSX.Element {
                                             )}
 
                                         {chainId &&
-                                            [ChainId.MAINNET, ChainId.BSC, ChainId.MATIC].includes(chainId) &&
+                                            [ChainId.BSC].includes(chainId) &&
                                             library &&
                                             library.provider.isMetaMask && (
                                                 <>
-                                                    <QuestionHelper text={i18n._(t`Add Sushi to your Metamask wallet`)}>
+                                                    <QuestionHelper text={i18n._(t`Add PegHub to your Metamask wallet`)}>
                                                         <div
                                                             className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
                                                             onClick={() => {
                                                                 let address: string | undefined
                                                                 switch (chainId) {
-                                                                    case ChainId.MAINNET:
-                                                                        address =
-                                                                            '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2'
-                                                                        break
                                                                     case ChainId.BSC:
                                                                         address =
-                                                                            '0x947950BcC74888a40Ffa2593C5798F11Fc9124C4'
-                                                                        break
-                                                                    case ChainId.MATIC:
-                                                                        address =
-                                                                            '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a'
+                                                                            '0x95A6772a2272b9822D4b3DfeEaedF732F1D28DB8'
                                                                         break
                                                                 }
                                                                 const params: any = {
                                                                     type: 'ERC20',
                                                                     options: {
                                                                         address: address,
-                                                                        symbol: 'SUSHI',
+                                                                        symbol: 'PHUB',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x6B3595068778DD592e39A122f4f5a5cF09C90fE2/logo.png'
+                                                                            'https://swap.peghub.com/images/tokens/0x95A6772a2272b9822D4b3DfeEaedF732F1D28DB8.png'
                                                                     }
                                                                 }
 
@@ -228,7 +220,7 @@ function AppBar(): JSX.Element {
                                                                         .then(success => {
                                                                             if (success) {
                                                                                 console.log(
-                                                                                    'Successfully added SUSHI to MetaMask'
+                                                                                    'Successfully added PHUB to MetaMask'
                                                                                 )
                                                                             } else {
                                                                                 throw new Error('Something went wrong.')
@@ -239,7 +231,7 @@ function AppBar(): JSX.Element {
                                                             }}
                                                         >
                                                             <img
-                                                                src={`${process.env.PUBLIC_URL}/images/tokens/sushi-square.jpg`}
+                                                                src={`${process.env.PUBLIC_URL}/images/square-logo.png`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
