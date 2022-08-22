@@ -1,4 +1,4 @@
-import { Currency, Token, WETH } from '@sushiswap/sdk'
+import { Currency, Token, WETH } from '@bombmoney/sdk'
 import { ZERO, e10, easyAmount, toAmount } from 'kashi/functions'
 import { useBentoBoxContract, useBoringHelperContract, useContract } from '../../hooks/useContract'
 import { useCallback, useContext, useEffect, useMemo, useState } from 'react'
@@ -95,8 +95,8 @@ export function useBentoBalance(tokenAddress: string): { value: BigNumber; decim
         const amount = BigNumber.from(balances[0].bentoShare).isZero()
             ? BigNumber.from(0)
             : BigNumber.from(balances[0].bentoBalance)
-                  .mul(BigNumber.from(balances[0].bentoAmount))
-                  .div(BigNumber.from(balances[0].bentoShare))
+                .mul(BigNumber.from(balances[0].bentoAmount))
+                .div(BigNumber.from(balances[0].bentoShare))
 
         setBalance({
             value: amount,

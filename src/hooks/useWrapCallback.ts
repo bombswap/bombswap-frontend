@@ -1,4 +1,4 @@
-import { Currency, ETHER, WETH, currencyEquals } from '@sushiswap/sdk'
+import { Currency, ETHER, WETH, currencyEquals } from '@bombmoney/sdk'
 
 import { t } from '@lingui/macro'
 import { tryParseAmount } from '../state/swap/hooks'
@@ -46,19 +46,19 @@ export default function useWrapCallback(
                 execute:
                     sufficientBalance && inputAmount
                         ? async () => {
-                              try {
-                                  const txReceipt = await wethContract.deposit({
-                                      value: `0x${inputAmount.raw.toString(16)}`
-                                  })
-                                  addTransaction(txReceipt, {
-                                      summary: `Wrap ${inputAmount.toSignificant(6)} ${Currency.getNativeCurrencySymbol(
-                                          chainId
-                                      )} to W${Currency.getNativeCurrencySymbol(chainId)}`
-                                  })
-                              } catch (error) {
-                                  console.error('Could not deposit', error)
-                              }
-                          }
+                            try {
+                                const txReceipt = await wethContract.deposit({
+                                    value: `0x${inputAmount.raw.toString(16)}`
+                                })
+                                addTransaction(txReceipt, {
+                                    summary: `Wrap ${inputAmount.toSignificant(6)} ${Currency.getNativeCurrencySymbol(
+                                        chainId
+                                    )} to W${Currency.getNativeCurrencySymbol(chainId)}`
+                                })
+                            } catch (error) {
+                                console.error('Could not deposit', error)
+                            }
+                        }
                         : undefined,
                 inputError: sufficientBalance
                     ? undefined
@@ -70,19 +70,19 @@ export default function useWrapCallback(
                 execute:
                     sufficientBalance && inputAmount
                         ? async () => {
-                              try {
-                                  const txReceipt = await wethContract.withdraw(`0x${inputAmount.raw.toString(16)}`)
-                                  addTransaction(txReceipt, {
-                                      summary: t`Unwrap ${inputAmount.toSignificant(
-                                          6
-                                      )} W${Currency.getNativeCurrencySymbol(
-                                          chainId
-                                      )} to ${Currency.getNativeCurrencySymbol(chainId)}`
-                                  })
-                              } catch (error) {
-                                  console.error('Could not withdraw', error)
-                              }
-                          }
+                            try {
+                                const txReceipt = await wethContract.withdraw(`0x${inputAmount.raw.toString(16)}`)
+                                addTransaction(txReceipt, {
+                                    summary: t`Unwrap ${inputAmount.toSignificant(
+                                        6
+                                    )} W${Currency.getNativeCurrencySymbol(
+                                        chainId
+                                    )} to ${Currency.getNativeCurrencySymbol(chainId)}`
+                                })
+                            } catch (error) {
+                                console.error('Could not withdraw', error)
+                            }
+                        }
                         : undefined,
                 inputError: sufficientBalance ? undefined : i18n._(t`Insufficient WETH balance`)
             }

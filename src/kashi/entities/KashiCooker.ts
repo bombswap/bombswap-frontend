@@ -1,5 +1,5 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
-import { ChainId, WETH } from '@sushiswap/sdk'
+import { ChainId, WETH } from '@bombmoney/sdk'
 import { Contract, ethers } from 'ethers'
 import { ZERO, e10, maximum, minimum, toElastic } from 'kashi/functions'
 import { getProviderOrSigner, getSigner } from 'utils'
@@ -332,8 +332,8 @@ export class KashiCooker {
                 // TODO: Put some warning in the UI or not allow repaying ETH directly from wallet, because this can't be pre-calculated
                 useNative
                     ? toShare(this.pair.asset, toElastic(this.pair.totalBorrow, part, true))
-                          .mul(1001)
-                          .div(1000)
+                        .mul(1001)
+                        .div(1000)
                     : ZERO
             )
         }

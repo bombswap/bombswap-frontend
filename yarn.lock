@@ -1365,6 +1365,24 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bombmoney/core@2.0.0-canary.0":
+  version "2.0.0-canary.0"
+  resolved "https://registry.yarnpkg.com/@bombmoney/core/-/core-2.0.0-canary.0.tgz#56584ffd9c350c00b7e2a6a22a312ac25fc9db3d"
+  integrity sha512-eTthcAFDCAcem5/8t4OF0OPltTY2P2Vakjwdk8QJK65peJaTN/Xv1K8n+JkXDlK9n+RXCqYgSr0JImRaheEfqQ==
+
+"@bombmoney/sdk@5.0.0-canary.7":
+  version "5.0.0-canary.7"
+  resolved "https://registry.yarnpkg.com/@bombmoney/sdk/-/sdk-5.0.0-canary.7.tgz#d5cfbcafdd8e56d948617463d7fd8094aaa6580f"
+  integrity sha512-VnDi8xv/xHDbeuqm9gjYbzxUT7ZOv4locv2RG/G4snQGmmAYpDE+MUZz02D9fwTuPK1+7ECtoTCgyfllV8BR3w==
+  dependencies:
+    "@uniswap/v2-core" "^1.0.0"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.1"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
+
 "@chaitanyapotti/random-id@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@chaitanyapotti/random-id/-/random-id-1.0.3.tgz#f52f647cfe9f79fc7723ea2b01b0ad3889204002"
@@ -2983,28 +3001,10 @@
     ejs "^2.6.1"
     magic-string "^0.25.0"
 
-"@sushiswap/core@2.0.0-canary.0":
-  version "2.0.0-canary.0"
-  resolved "https://registry.yarnpkg.com/@sushiswap/core/-/core-2.0.0-canary.0.tgz#582605e6968f634684da7cc3308c3353595e326b"
-  integrity sha512-dr+GL+KmAOpQva/NlcIij061LZFUMUv2S5o8HZvGK4vOKvWX9apzlBn9ZRS73Kj5ASKu8x4hc+ExD8XGLIxvjw==
-
 "@sushiswap/default-token-list@6.28.0":
   version "6.28.0"
   resolved "https://registry.yarnpkg.com/@sushiswap/default-token-list/-/default-token-list-6.28.0.tgz#a6e75c1d73da82bf334e084cb659884ccfb6fd8f"
   integrity sha512-O2mFnwamdSCnhVyrg49lxSphvunmN87mBvBhtGKI/wyofl9w7sGCN89a8cNE4GT4FKH/Knni7VD3nLdNvYLnjA==
-
-"@sushiswap/sdk@5.0.0-canary.7":
-  version "5.0.0-canary.7"
-  resolved "https://registry.yarnpkg.com/@sushiswap/sdk/-/sdk-5.0.0-canary.7.tgz#a7179314300dc98644a1b30446f0f7fe9c0e693f"
-  integrity sha512-21IsU1yB+RETZZs2ORoMLNTRNYNln10bDTVwX7wpntCCdjeACnOyYb/I8yli2cNaajJWPZt62gGoCP5ntndSyg==
-  dependencies:
-    "@uniswap/v2-core" "^1.0.0"
-    big.js "^5.2.2"
-    decimal.js-light "^2.5.0"
-    jsbi "^3.1.1"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
-    toformat "^2.0.0"
 
 "@sushiswap/sushi-data@1.0.26":
   version "1.0.26"

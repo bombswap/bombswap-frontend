@@ -1,5 +1,5 @@
 import { parseBytes32String } from '@ethersproject/strings'
-import { Currency, ETHER, Token, currencyEquals } from '@sushiswap/sdk'
+import { Currency, ETHER, Token, currencyEquals } from '@bombmoney/sdk'
 import { arrayify } from 'ethers/lib/utils'
 import { useMemo } from 'react'
 import { filterTokens } from '../components/SearchModal/filtering'
@@ -67,11 +67,11 @@ export function useAllInactiveTokens(): { [address: string]: Token } {
     const activeTokensAddresses = Object.keys(useAllTokens())
     const filteredInactive = activeTokensAddresses
         ? Object.keys(inactiveTokens).reduce<{ [address: string]: Token }>((newMap, address) => {
-              if (!activeTokensAddresses.includes(address)) {
-                  newMap[address] = inactiveTokens[address]
-              }
-              return newMap
-          }, {})
+            if (!activeTokensAddresses.includes(address)) {
+                newMap[address] = inactiveTokens[address]
+            }
+            return newMap
+        }, {})
         : inactiveTokens
 
     return filteredInactive
@@ -126,8 +126,8 @@ function parseStringOrBytes32(str: string | undefined, bytes32: string | undefin
         ? str
         : // need to check for proper bytes string and valid terminator
         bytes32 && BYTES32_REGEX.test(bytes32) && arrayify(bytes32)[31] === 0
-        ? parseBytes32String(bytes32)
-        : defaultValue
+            ? parseBytes32String(bytes32)
+            : defaultValue
 }
 
 // undefined if invalid or does not exist

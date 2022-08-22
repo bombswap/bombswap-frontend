@@ -1,6 +1,6 @@
 import { BigNumber, BigNumberish } from '@ethersproject/bignumber'
 import { One, Zero } from '@ethersproject/constants'
-import { Fraction as SDKFraction } from '@sushiswap/sdk'
+import { Fraction as SDKFraction } from '@bombmoney/sdk'
 import { formatBalance, isEmptyValue, parseBalance } from '../utils'
 
 class Fraction {
@@ -22,8 +22,8 @@ class Fraction {
         return value === ''
             ? Fraction.NAN
             : isEmptyValue(value)
-            ? Fraction.ZERO
-            : new Fraction(parseBalance(value, 18), Fraction.BASE)
+                ? Fraction.ZERO
+                : new Fraction(parseBalance(value, 18), Fraction.BASE)
     }
 
     numerator: BigNumber

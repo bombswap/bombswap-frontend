@@ -1,5 +1,5 @@
 import { Contract } from '@ethersproject/contracts'
-import SUSHIROLL_ABI from '@sushiswap/core/abi/SushiRoll.json'
+import SUSHIROLL_ABI from '@bombmoney/core/abi/SushiRoll.json'
 import {
     BAR_ADDRESS,
     ChainId,
@@ -10,7 +10,7 @@ import {
     SUSHI_ADDRESS,
     TIMELOCK_ADDRESS,
     WETH
-} from '@sushiswap/sdk'
+} from '@bombmoney/sdk'
 import { abi as UNI_ABI } from '@uniswap/governance/build/Uni.json'
 import { abi as STAKING_REWARDS_ABI } from '@uniswap/liquidity-staker/build/StakingRewards.json'
 import { abi as MERKLE_DISTRIBUTOR_ABI } from '@uniswap/merkle-distributor/build/MerkleDistributor.json'
