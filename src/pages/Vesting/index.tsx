@@ -155,7 +155,7 @@ export default function ClaimModal() {
         <>
             {' '}
             <Helmet>
-                <title>{i18n._(t`Vesting`)} | Sushi</title>
+                <title>{i18n._(t`Vesting`)} | PegHub</title>
             </Helmet>
             <PageWrapper>
                 <>
