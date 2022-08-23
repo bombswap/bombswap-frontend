@@ -2716,10 +2716,15 @@
   resolved "https://registry.yarnpkg.com/@peghub/core/-/core-1.0.0.tgz#4e4282d264be40b5c24ed4cfc809c3acacfe66f9"
   integrity sha512-iHuOJg1CBWokpsEYg6HYWyDvTb2xyLSkv9kS1qGnXHzo45lehssXetfrZDy8vt16fiTZDheQ33hgyTJO2aCEQw==
 
-"@peghub/sdk@1.0.3":
+"@peghub/default-token-list@^1.0.3":
   version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@peghub/sdk/-/sdk-1.0.3.tgz#590e07af248e24f4c33f4c5176d73d9784088d34"
-  integrity sha512-KgXdJz5/5CVTdnTQogkVp01476kPjEOgRtESoJuHDeyPVVG3b43OtbJxxk0aas6oy1IEUh/Sgwf11EFCjlkAdw==
+  resolved "https://registry.yarnpkg.com/@peghub/default-token-list/-/default-token-list-1.0.3.tgz#4a5b721e9a03264e9e79797a22b1ca1c6084535b"
+  integrity sha512-h8+3L1l+uM5eFJWdjRcMGM+xPk4IubiawKN860kDeujWNPLaVjTIE0o8f7RFok7DX8HqYqVmgNcbdR3T83iNdA==
+
+"@peghub/sdk@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@peghub/sdk/-/sdk-1.0.4.tgz#92bcb21d44c63996a51b75c0b7adba0b95e0e462"
+  integrity sha512-59c88e4SBIHnNiA///O5aVuC3jjHwkKRFYB9RsJkThGVcmJcDa5zNEzi6mlB3c9x7hAGv4jCMNkwleWd04yk7Q==
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"
@@ -3000,11 +3005,6 @@
   dependencies:
     ejs "^2.6.1"
     magic-string "^0.25.0"
-
-"@sushiswap/default-token-list@6.28.0":
-  version "6.28.0"
-  resolved "https://registry.yarnpkg.com/@sushiswap/default-token-list/-/default-token-list-6.28.0.tgz#a6e75c1d73da82bf334e084cb659884ccfb6fd8f"
-  integrity sha512-O2mFnwamdSCnhVyrg49lxSphvunmN87mBvBhtGKI/wyofl9w7sGCN89a8cNE4GT4FKH/Knni7VD3nLdNvYLnjA==
 
 "@sushiswap/sushi-data@1.0.26":
   version "1.0.26"
