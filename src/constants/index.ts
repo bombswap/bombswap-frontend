@@ -155,6 +155,8 @@ export const AVALANCHE: { [key: string]: Token } = {
     SNOWLINK: new Token(ChainId.AVALANCHE, '0x522348779DCb2911539e76A1042aA922F9C47Ee3', 18, 'snowLINK', 'snowLINK'),
     SNOWSOL: new Token(ChainId.AVALANCHE, '0x531780FAcE85306877D7e1F05d713D1B50a37F7A', 18, 'snowSOL', 'snowSOL'),
     WETH: new Token(ChainId.AVALANCHE, '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7', 18, 'WAVAX', 'Wrapped AVAX'),
+    USDCE: new Token(ChainId.AVALANCHE, '0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664', 6, 'USDC.e', 'USD Coin'),
+    USDC: new Token(ChainId.AVALANCHE, '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', 6, 'USDC', 'USD Coin'),
 }
 
 // used to construct intermediary pairs for trading
@@ -163,7 +165,8 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC, RUNE, NFTX, STETH],
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
-    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.USDC, BSC.USDT, BSC.BTCB, BSC.ETH]
+    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.USDC, BSC.USDT, BSC.BTCB, BSC.ETH],
+    [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDC, AVALANCHE.USDCE],
 }
 
 export const CREAM = new Token(ChainId.MAINNET, '0x2ba592F78dB6436527729929AAf6c908497cB200', 18, 'CREAM', 'Cream')
@@ -203,39 +206,7 @@ export const PWING = new Token(
     'Poly Ontology Wing Token'
 )
 
-export const UMA = new Token(ChainId.MAINNET, '0x04Fa0d235C4abf4BcF4787aF4CF447DE572eF828', 18, 'UMA', 'UMA')
 
-export const UMA_CALL = new Token(
-    ChainId.MAINNET,
-    '0x1062aD0E59fa67fa0b27369113098cC941Dd0D5F',
-    18,
-    'UMA',
-    'UMA 35 Call [30 Apr 2021]'
-)
-
-export const DOUGH = new Token(
-    ChainId.MAINNET,
-    '0xad32A8e6220741182940c5aBF610bDE99E737b2D',
-    18,
-    'DOUGH',
-    'PieDAO Dough v2'
-)
-
-export const PLAY = new Token(
-    ChainId.MAINNET,
-    '0x33e18a092a93ff21aD04746c7Da12e35D34DC7C4',
-    18,
-    'PLAY',
-    'Metaverse NFT Index'
-)
-
-export const XSUSHI_CALL = new Token(
-    ChainId.MAINNET,
-    '0xada279f9301C01A4eF914127a6C2a493Ad733924',
-    18,
-    'XSUc25-0531',
-    'XSUSHI 25 Call [31 May 2021]'
-)
 
 export const XSUSHI = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xSUSHI', 'SushiBar')
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
@@ -252,25 +223,8 @@ export const LFBTC = new Token(
  * tokens.
  */
 export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: Token[] } } = {
-    [ChainId.MAINNET]: {
-        [AMPL.address]: [DAI, WETH[ChainId.MAINNET]],
-        [DUCK.address]: [USDP, WETH[ChainId.MAINNET]],
-        [BAB.address]: [BAC, WETH[ChainId.MAINNET]],
-        [HBTC.address]: [CREAM, WETH[ChainId.MAINNET]],
-        [FRAX.address]: [FXS, WETH[ChainId.MAINNET]],
-        [IBETH.address]: [ALPHA, WETH[ChainId.MAINNET]],
-        [PONT.address]: [PWING, WETH[ChainId.MAINNET]],
-        [UMA_CALL.address]: [UMA, WETH[ChainId.MAINNET]],
-        [PLAY.address]: [DOUGH, WETH[ChainId.MAINNET]],
-        [XSUSHI_CALL.address]: [XSUSHI, WETH[ChainId.MAINNET]],
-        [LIFT.address]: [LFBTC, WETH[ChainId.MAINNET]]
-    },
-    [ChainId.MATIC]: {
-        [MATIC.TEL.address]: [MATIC.SUSHI, MATIC.AAVE],
-        [MATIC.FXS.address]: [MATIC.FRAX]
-    },
     [ChainId.AVALANCHE]: {
-        [AVALANCHE.SNOWSOL.address]: [AVALANCHE.SOL, AVALANCHE.WETH],
+        [AVALANCHE.SNOWSOL.address]: [AVALANCHE.SOL, AVALANCHE.USDCE, AVALANCHE.USDC, AVALANCHE.WETH],
         [AVALANCHE.SNOWLINK.address]: [AVALANCHE.LINK, AVALANCHE.WETH]
     },
     [ChainId.BSC]: {
@@ -297,7 +251,8 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
-    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.USD, BSC.USDC, BSC.USDT, BSC.BTCB]
+    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.USD, BSC.USDC, BSC.USDT, BSC.BTCB],
+    [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDC, AVALANCHE.USDCE],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
