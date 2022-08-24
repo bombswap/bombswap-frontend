@@ -120,7 +120,7 @@ function AppBar(): JSX.Element {
 
                                 <div className="flex flex-row items-center justify-center w-full lg:w-auto p-4 fixed left-0 bottom-0 bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                                     <div className="flex items-center justify-between sm:justify-end space-x-2 w-full">
-                                        {chainId &&
+                                        {/* {chainId &&
                                             [ChainId.MAINNET].includes(chainId) &&
                                             library &&
                                             library.provider.isMetaMask && (
@@ -180,7 +180,7 @@ function AppBar(): JSX.Element {
                                                         </div>
                                                     </QuestionHelper>
                                                 </>
-                                            )}
+                                            )} */}
 
                                         {chainId &&
                                             [ChainId.BSC].includes(chainId) &&
@@ -247,16 +247,16 @@ function AppBar(): JSX.Element {
                                                     </QuestionHelper>
                                                 </>
                                             )}
-                                        {chainId && chainId === ChainId.MATIC && (
+                                        {account && chainId &&  (
                                             <div className="hidden sm:inline-block">
                                                 <a
                                                     className="flex items-center rounded bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto"
-                                                    href="https://wallet.matic.network/bridge/"
+                                                    href="https://app.multichain.org/"
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
                                                     <div className="grid grid-flow-col auto-cols-max items-center rounded-lg bg-dark-1000 text-sm text-secondary py-2 px-3 pointer-events-auto">
-                                                        <div className="text-primary">{i18n._(t`Bridge Assets`)}</div>
+                                                        <div className="text-primary">{i18n._(t`Bridge`)}</div>
                                                     </div>
                                                 </a>
                                             </div>

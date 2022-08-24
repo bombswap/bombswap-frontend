@@ -112,7 +112,20 @@ export const BSC: { [key: string]: Token } = {
     USD: new Token(ChainId.BSC, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD'),
     USDC: new Token(ChainId.BSC, '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d', 18, 'USDC', 'USD Coin'),
     USDT: new Token(ChainId.BSC, '0x55d398326f99059fF775485246999027B3197955', 18, 'USDT', 'Tether USD'),
-    BTCB: new Token(ChainId.BSC, '0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', 18, 'BTCB', 'Bitcoin')
+    BTCB: new Token(ChainId.BSC, '0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', 18, 'BTCB', 'Bitcoin'),
+    CZBOMB: new Token(ChainId.BSC, '0x737BC70D07aA6B7f4Ba6d12B45E8CDDBa2446B77', 18, 'CZBOMB', 'CZBOMB'),
+    ETH: new Token(ChainId.BSC, '0x2170Ed0880ac9A755fd29B2688956BD959F933F8', 18, 'ETH', 'Ethereum'),
+    EMP: new Token(ChainId.BSC, '0x3b248CEfA87F836a4e6f6d6c9b42991b88Dc1d58', 18, 'EMP', 'EMP'),
+    CZEMP: new Token(ChainId.BSC, '0xa700Ec63f9D3D9A03981CF7F8Eb805c444EDBC21', 18, 'CZEMP', 'CZEMP'),
+    BITBTC: new Token(ChainId.BSC, '0x39739A969ff667C91a81252b3DDDFAe31aaE4Aeb', 18, 'BITBTC', 'BITBTC'),
+    BOMB: new Token(ChainId.BSC, '0x522348779DCb2911539e76A1042aA922F9C47Ee3', 18, 'BOMB', 'BOMB'),
+    WETH: new Token(ChainId.BSC, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB'),
+    BITATOM: new Token(ChainId.BSC, '0x3CdC14690B4930f8b61A2195062f5AB8A6beC48d', 18, 'BITBTC', 'BITBTC'),
+    ATOM: new Token(ChainId.BSC, '0x0Eb3a705fc54725037CC9e008bDede697f62F335', 18, 'ATOM', 'ATOM'),
+    BITDOT: new Token(ChainId.BSC, '0x123c62f04c9D70bD6F04E6282434c728F04eBD50', 18, 'BITDOT', 'BITDOT'),
+    DOT: new Token(ChainId.BSC, '0x7083609fCE4d1d8Dc0C979AAb8c869Ea2C873402', 18, 'DOT', 'DOT'),
+    BITADA: new Token(ChainId.BSC, '0x9F45C43c5Ed3c1a7FD7fb9f3b611860AE4dF2453', 18, 'BITADA', 'BITADA'),
+    ADA: new Token(ChainId.BSC, '0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47', 18, 'ADA', 'ADA'),
 }
 
 export const FANTOM: { [key: string]: Token } = {
@@ -135,13 +148,22 @@ export const MATIC: { [key: string]: Token } = {
     FXS: new Token(ChainId.MATIC, '0x3e121107F6F22DA4911079845a470757aF4e1A1b', 18, 'FXS', 'Frax Share')
 }
 
+
+export const AVALANCHE: { [key: string]: Token } = {
+    LINK: new Token(ChainId.AVALANCHE, '0x5947BB275c521040051D82396192181b413227A3', 18, 'LINK.e', 'Chainlink Token'),
+    SOL: new Token(ChainId.AVALANCHE, '0xFE6B19286885a4F7F55AdAD09C3Cd1f906D2478F', 9, 'SOL', 'Wrapped Solana'),
+    SNOWLINK: new Token(ChainId.AVALANCHE, '0x522348779DCb2911539e76A1042aA922F9C47Ee3', 18, 'snowLINK', 'snowLINK'),
+    SNOWSOL: new Token(ChainId.AVALANCHE, '0x531780FAcE85306877D7e1F05d713D1B50a37F7A', 18, 'snowSOL', 'snowSOL'),
+    WETH: new Token(ChainId.AVALANCHE, '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7', 18, 'WAVAX', 'Wrapped AVAX'),
+}
+
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     ...WRAPPED_NATIVE_ONLY,
     [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC, RUNE, NFTX, STETH],
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
-    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.DAI, BSC.USD, BSC.USDC, BSC.USDT, BSC.BTCB]
+    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.USDC, BSC.USDT, BSC.BTCB, BSC.ETH]
 }
 
 export const CREAM = new Token(ChainId.MAINNET, '0x2ba592F78dB6436527729929AAf6c908497cB200', 18, 'CREAM', 'Cream')
@@ -246,6 +268,17 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
     [ChainId.MATIC]: {
         [MATIC.TEL.address]: [MATIC.SUSHI, MATIC.AAVE],
         [MATIC.FXS.address]: [MATIC.FRAX]
+    },
+    [ChainId.AVALANCHE]: {
+        [AVALANCHE.SNOWSOL.address]: [AVALANCHE.SOL, AVALANCHE.WETH],
+        [AVALANCHE.SNOWLINK.address]: [AVALANCHE.LINK, AVALANCHE.WETH]
+    },
+    [ChainId.BSC]: {
+        [BSC.CZBOMB.address]: [BSC.BOMB, BSC.BTCB, BSC.BITBTC, BSC.WETH],
+        [BSC.CZEMP.address]: [BSC.EMP, BSC.ETH, BSC.WETH],
+        [BSC.BITATOM.address]: [BSC.ATOM, BSC.WETH],
+        [BSC.BITDOT.address]: [BSC.DOT, BSC.WETH],
+        [BSC.BITADA.address]: [BSC.ADA, BSC.WETH]
     }
 }
 
@@ -255,7 +288,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
     [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
-    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.DAI, BSC.USD, BSC.USDC, BSC.USDT, BSC.BTCB]
+    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BTCB, BSC.USD, BSC.USDC, BSC.USDT]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -264,7 +297,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
-    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.DAI, BSC.USD, BSC.USDC, BSC.USDT, BSC.BTCB]
+    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.USD, BSC.USDC, BSC.USDT, BSC.BTCB]
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -276,7 +309,11 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
         ],
         [USDC, USDT],
         [DAI, USDT]
+    ],
+    [ChainId.AVALANCHE]: [
+        [AVALANCHE.SNOWAVAX, WETH[ChainId.AVALANCHE]]
     ]
+
 }
 
 export interface WalletInfo {
