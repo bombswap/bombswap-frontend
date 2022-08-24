@@ -242,7 +242,8 @@ export const SUGGESTED_BASES: ChainTokenList = {
     [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
-    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BTCB, BSC.USD, BSC.USDC, BSC.USDT]
+    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BTCB, BSC.USD, BSC.USDC, BSC.USDT],
+    [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDCE, AVALANCHE.USDC]
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -252,7 +253,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
     [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.USD, BSC.USDC, BSC.USDT, BSC.BTCB],
-    [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDC, AVALANCHE.USDCE],
+    [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDC, AVALANCHE.USDCE, AVALANCHE.SOL, AVALANCHE.LINK],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -264,9 +265,6 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
         ],
         [USDC, USDT],
         [DAI, USDT]
-    ],
-    [ChainId.AVALANCHE]: [
-        [AVALANCHE.SNOWAVAX, WETH[ChainId.AVALANCHE]]
     ]
 
 }
