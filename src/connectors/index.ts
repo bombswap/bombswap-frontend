@@ -22,10 +22,10 @@ const RPC = {
     //'https://matic-mainnet.chainstacklabs.com/',
     [ChainId.MATIC_TESTNET]: 'https://rpc-mumbai.matic.today',
     [ChainId.XDAI]: 'https://rpc.xdaichain.com',
-    [ChainId.BSC]: 'https://bsc-dataseed.binance.org/',
+    [ChainId.BSC]: 'https://rpc.ankr.com/bsc',
     [ChainId.BSC_TESTNET]: 'https://data-seed-prebsc-2-s3.binance.org:8545',
     [ChainId.MOONBASE]: 'https://rpc.testnet.moonbeam.network',
-    [ChainId.AVALANCHE]: 'https://api.avax.network/ext/bc/C/rpc',
+    [ChainId.AVALANCHE]: 'https://rpc.ankr.com/avalanche',
     [ChainId.FUJI]: 'https://api.avax-test.network/ext/bc/C/rpc',
     [ChainId.HECO]: 'https://http-mainnet.hecochain.com',
     [ChainId.HECO_TESTNET]: 'https://http-testnet.hecochain.com',
@@ -104,7 +104,7 @@ export const portis = new PortisConnector({
 export const walletlink = new WalletLinkConnector({
     url: RPC[ChainId.MAINNET],
     appName: 'PegHub',
-    appLogoUrl: 'https://raw.githubusercontent.com/sushiswap/art/master/sushi/logo-256x256.png'
+    appLogoUrl: 'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/PHUB.png'
 })
 
 // mainnet only
