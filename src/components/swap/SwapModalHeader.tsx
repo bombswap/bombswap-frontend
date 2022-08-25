@@ -1,5 +1,5 @@
-import { Trade, TradeType } from '@peghub/sdk'
-import React, { useContext, useMemo } from 'react'
+import { TokenAmount, Trade, TradeType } from '@peghub/sdk'
+import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { AlertTriangle, ArrowDown } from 'react-feather'
 import { Text } from 'rebass'
 import { ThemeContext } from 'styled-components'
@@ -15,6 +15,8 @@ import { RowBetween, RowFixed } from '../Row'
 import { SwapShowAcceptChanges, TruncatedText } from './styleds'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { usePeghubTokenContract } from "../../hooks/useContract";
+import { Contract } from "@ethersproject/contracts";
 
 export default function SwapModalHeader({
     trade,
@@ -39,6 +41,48 @@ export default function SwapModalHeader({
     const priceImpactSeverity = warningSeverity(priceImpactWithoutFee)
 
     const theme = useContext(ThemeContext)
+
+
+    const [tax, setTax] = useState<number>(0)
+    const inputTokenERC20 = usePeghubTokenContract(
+        trade && trade.inputAmount instanceof TokenAmount ? trade.inputAmount.token.address : '',
+        false,
+    )
+    useEffect(() => {
+        fetchTax(trade, inputTokenERC20)
+    }, [trade, inputTokenERC20])
+
+    const fetchTax = async (ptrade: Trade, pinputTokenERC20: Contract | null) => {
+        if (
+            pinputTokenERC20 &&
+            ptrade &&
+            ptrade.inputAmount instanceof TokenAmount &&
+            (ptrade.inputAmount.token.symbol === 'CZBNB' ||
+                ptrade.inputAmount.token.symbol === 'CZBOMB' ||
+                ptrade.inputAmount.token.symbol === 'CZEMP' ||
+                ptrade.inputAmount.token.symbol === 'CZBUSD' ||
+                ptrade.inputAmount.token.symbol === 'SNOWAVAX' ||
+                ptrade.inputAmount.token.symbol === 'SNOWSOL' ||
+                ptrade.inputAmount.token.symbol === 'SNOWLINK' ||
+                ptrade.inputAmount.token.symbol === 'bitBTC' ||
+                ptrade.inputAmount.token.symbol === 'bitADA' ||
+                ptrade.inputAmount.token.symbol === 'bitATOM' ||
+                ptrade.inputAmount.token.symbol === 'bitDOT')
+        ) {
+            const tokenUpdatedPrice = Number((await pinputTokenERC20.callStatic.getTokenUpdatedPrice()).toString())
+            let taxRate = null
+            let burnRate = null
+            if (tokenUpdatedPrice < 1e18) {
+                taxRate = Number((await pinputTokenERC20.callStatic.taxRate()).toString())
+                burnRate = Number((await pinputTokenERC20.callStatic.burnRate()).toString())
+                setTax(taxRate + burnRate)
+            } else if (tax !== 0) {
+                setTax(0)
+            }
+        } else if (tax !== 0) {
+            setTax(0)
+        }
+    }
 
     return (
         <AutoColumn gap={'md'} style={{ marginTop: '20px' }}>
@@ -133,6 +177,15 @@ export default function SwapModalHeader({
                             or the transaction will revert.
                         </Trans>
                     </TYPE.italic>
+                )}
+                {tax > 0 && (
+                    <RowBetween align="center">
+                        <div className="text-secondary text-sm">
+                              <span style={{ color: 'red' }}>
+                                This transaction will incur a {tax / 100}% tax. Please set your slippage accordingly.
+                              </span>
+                        </div>
+                    </RowBetween>
                 )}
             </AutoColumn>
             {recipient !== null ? (

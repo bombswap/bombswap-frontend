@@ -36,6 +36,7 @@ import ENS_PUBLIC_RESOLVER_ABI from '../constants/abis/ens-public-resolver.json'
 import ENS_ABI from '../constants/abis/ens-registrar.json'
 import { ERC20_BYTES32_ABI } from '../constants/abis/erc20'
 import ERC20_ABI from '../constants/abis/erc20.json'
+import PEGHUB_TOKEN_ABI from '../constants/abis/peghub_token.json'
 import { MIGRATOR_ABI, MIGRATOR_ADDRESS } from '../constants/abis/migrator'
 import WETH_ABI from '../constants/abis/weth.json'
 import { MULTICALL_ABI, MULTICALL_NETWORKS } from '../constants/multicall'
@@ -184,6 +185,10 @@ export function useMiniChefV2Contract(withSignerIfPossible?: boolean): Contract 
         }
     }
     return useContract(address, MINICHEFV2_ABI, withSignerIfPossible)
+}
+
+export function usePeghubTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
+    return useContract(tokenAddress, PEGHUB_TOKEN_ABI, withSignerIfPossible)
 }
 
 export function useFactoryContract(): Contract | null {

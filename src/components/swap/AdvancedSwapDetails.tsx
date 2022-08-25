@@ -1,6 +1,6 @@
-import { Trade, TradeType, ChainId } from '@peghub/sdk'
+import { Trade, TradeType, TokenAmount, ChainId } from '@peghub/sdk'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
 import { Field } from '../../state/swap/actions'
 import { useUserSlippageTolerance } from '../../state/user/hooks'
@@ -14,6 +14,8 @@ import { ExternalLink } from '../Link'
 import { ANALYTICS_URL } from '../../constants'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
+import { usePeghubTokenContract } from "../../hooks/useContract";
+import { Contract } from "@ethersproject/contracts";
 
 function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippage: number }) {
     const { i18n } = useLingui()
@@ -23,9 +25,59 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
     const isExactIn = trade.tradeType === TradeType.EXACT_INPUT
     const slippageAdjustedAmounts = computeSlippageAdjustedAmounts(trade, allowedSlippage)
 
+    const [tax, setTax] = useState<number>(0)
+    const inputTokenERC20 = usePeghubTokenContract(
+        trade && trade.inputAmount instanceof TokenAmount ? trade.inputAmount.token.address : '',
+        false,
+    )
+    useEffect(() => {
+        fetchTax(trade, inputTokenERC20)
+    }, [trade, inputTokenERC20])
+
+    const fetchTax = async (ptrade: Trade, pinputTokenERC20: Contract | null) => {
+        if (
+            pinputTokenERC20 &&
+            ptrade &&
+            ptrade.inputAmount instanceof TokenAmount &&
+            (ptrade.inputAmount.token.symbol === 'CZBNB' ||
+                ptrade.inputAmount.token.symbol === 'CZBOMB' ||
+                ptrade.inputAmount.token.symbol === 'CZEMP' ||
+                ptrade.inputAmount.token.symbol === 'CZBUSD' ||
+                ptrade.inputAmount.token.symbol === 'SNOWAVAX' ||
+                ptrade.inputAmount.token.symbol === 'SNOWSOL' ||
+                ptrade.inputAmount.token.symbol === 'SNOWLINK' ||
+                ptrade.inputAmount.token.symbol === 'bitBTC' ||
+                ptrade.inputAmount.token.symbol === 'bitADA' ||
+                ptrade.inputAmount.token.symbol === 'bitATOM' ||
+                ptrade.inputAmount.token.symbol === 'bitDOT')
+        ) {
+            const tokenUpdatedPrice = Number((await pinputTokenERC20.callStatic.getTokenUpdatedPrice()).toString())
+            let taxRate = null
+            let burnRate = null
+            if (tokenUpdatedPrice < 1e18) {
+                taxRate = Number((await pinputTokenERC20.callStatic.taxRate()).toString())
+                burnRate = Number((await pinputTokenERC20.callStatic.burnRate()).toString())
+                setTax(taxRate + burnRate)
+            } else if (tax !== 0) {
+                setTax(0)
+            }
+        } else if (tax !== 0) {
+            setTax(0)
+        }
+    }
+
     return (
         <>
             <AutoColumn style={{ padding: '0 16px' }}>
+                {tax > 0 && (
+                    <RowBetween align="center">
+                        <div className="text-secondary text-sm">
+                              <span style={{ color: 'red' }}>
+                                This transaction will incur a {tax / 100}% tax. Please set your slippage accordingly.
+                              </span>
+                        </div>
+                    </RowBetween>
+                )}
                 <RowBetween>
                     <RowFixed>
                         <div className="text-secondary text-sm">
