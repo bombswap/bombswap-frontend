@@ -14,7 +14,7 @@ import { ExternalLink } from '../Link'
 import { ANALYTICS_URL } from '../../constants'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { usePeghubTokenContract } from "../../hooks/useContract";
+import { useCzTokenContract } from "../../hooks/useContract";
 import { Contract } from "@ethersproject/contracts";
 
 function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippage: number }) {
@@ -26,7 +26,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
     const slippageAdjustedAmounts = computeSlippageAdjustedAmounts(trade, allowedSlippage)
 
     const [tax, setTax] = useState<number>(0)
-    const inputTokenERC20 = usePeghubTokenContract(
+    const inputTokenERC20 = useCzTokenContract(
         trade && trade.inputAmount instanceof TokenAmount ? trade.inputAmount.token.address : '',
         false,
     )

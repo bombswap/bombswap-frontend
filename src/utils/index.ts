@@ -532,6 +532,24 @@ export function getRouterContract(chainId: number, library: Web3Provider, accoun
     return getContract(getRouterAddress(chainId), IUniswapV2Router02ABI, library, account)
 }
 
+export function getCzRouterContract(chainId: number, library: Web3Provider, account?: string): Contract {
+    let czRouterAddress;
+    if (chainId === 56) {
+        czRouterAddress = '0x1D594c2c711c2b4e1a581C466f83e32B210079c5'
+    } else if (chainId === 43114) {
+        czRouterAddress = 'XXX'
+    } else {
+        throw "(2) czRouterContract is not available for chain " + chainId
+    }
+
+    return getContract(
+        czRouterAddress,
+        IUniswapV2Router02ABI,
+        library,
+        account
+    )
+}
+
 export function escapeRegExp(string: string): string {
     return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') // $& means the whole matched string
 }

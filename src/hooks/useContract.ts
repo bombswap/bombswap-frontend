@@ -187,7 +187,7 @@ export function useMiniChefV2Contract(withSignerIfPossible?: boolean): Contract 
     return useContract(address, MINICHEFV2_ABI, withSignerIfPossible)
 }
 
-export function usePeghubTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
+export function useCzTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
     return useContract(tokenAddress, PEGHUB_TOKEN_ABI, withSignerIfPossible)
 }
 

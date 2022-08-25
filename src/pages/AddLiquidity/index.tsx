@@ -6,7 +6,13 @@ import React, { useCallback, useContext, useState } from 'react'
 import Row, { AutoRow, RowBetween, RowFlat } from '../../components/Row'
 import { Trans, t } from '@lingui/macro'
 import TransactionConfirmationModal, { ConfirmationModalContent } from '../../components/TransactionConfirmationModal'
-import { calculateGasMargin, calculateSlippageAmount, getRouterAddress, getRouterContract } from '../../utils'
+import {
+    calculateGasMargin,
+    calculateSlippageAmount,
+    getCzRouterContract,
+    getRouterAddress,
+    getRouterContract
+} from '../../utils'
 import { useDerivedMintInfo, useMintActionHandlers, useMintState } from '../../state/mint/hooks'
 import { useIsExpertMode, useUserSlippageTolerance } from '../../state/user/hooks'
 
@@ -127,14 +133,82 @@ export default function AddLiquidity({
     )
 
     // check whether the user has approved the router on the tokens
-    const [approvalA, approveACallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_A], getRouterAddress(chainId))
-    const [approvalB, approveBCallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_B], getRouterAddress(chainId))
+    let czRouterAddress = getRouterAddress(chainId)
+    if (
+        currencyA &&
+        currencyB &&
+        (currencyA.symbol === 'CZBNB' ||
+            currencyA.symbol === 'CZBOMB' ||
+            currencyA.symbol === 'CZEMP' ||
+            currencyA.symbol === 'CZBUSD' ||
+            currencyB.symbol === 'CZBNB' ||
+            currencyB.symbol === 'CZBOMB' ||
+            currencyB.symbol === 'CZEMP' ||
+            currencyB.symbol === 'CZBUSD' ||
+            currencyA.symbol === 'SNOWAVAX' ||
+            currencyA.symbol === 'SNOWSOL' ||
+            currencyA.symbol === 'SNOWLINK' ||
+            currencyB.symbol === 'SNOWAVAX' ||
+            currencyB.symbol === 'SNOWSOL' ||
+            currencyB.symbol === 'SNOWLINK' ||
+            currencyA.symbol === 'bitBTC' ||
+            currencyA.symbol === 'bitDOT' ||
+            currencyA.symbol === 'bitADA' ||
+            currencyA.symbol === 'bitATOM' ||
+            currencyB.symbol === 'bitBTC' ||
+            currencyB.symbol === 'bitDOT' ||
+            currencyB.symbol === 'bitADA' ||
+            currencyB.symbol === 'bitATOM')
+    ) {
+        console.log('use cz contract approval')
+        if (chainId === 56) {
+            czRouterAddress = '0x1D594c2c711c2b4e1a581C466f83e32B210079c5'
+        } else if (chainId === 43114) {
+            czRouterAddress = 'XXX'
+        } else {
+            throw "(1) czRouterContract is not available for chain " + chainId
+        }
+    }
+    const [approvalA, approveACallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_A], czRouterAddress)
+    const [approvalB, approveBCallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_B], czRouterAddress)
 
     const addTransaction = useTransactionAdder()
 
     async function onAdd() {
         if (!chainId || !library || !account) return
-        const router = getRouterContract(chainId, library, account)
+        const pcsRouterContract = getRouterContract(chainId, library, account)
+        const czRouterContract = getCzRouterContract(chainId, library, account)
+
+        let router = pcsRouterContract
+        if (
+            currencyA &&
+            currencyB &&
+            (currencyA.symbol === 'CZBNB' ||
+                currencyA.symbol === 'CZBOMB' ||
+                currencyA.symbol === 'CZEMP' ||
+                currencyA.symbol === 'CZBUSD' ||
+                currencyB.symbol === 'CZBNB' ||
+                currencyB.symbol === 'CZBOMB' ||
+                currencyB.symbol === 'CZEMP' ||
+                currencyB.symbol === 'CZBUSD' ||
+                currencyA.symbol === 'SNOWAVAX' ||
+                currencyA.symbol === 'SNOWSOL' ||
+                currencyA.symbol === 'SNOWLINK' ||
+                currencyB.symbol === 'SNOWAVAX' ||
+                currencyB.symbol === 'SNOWSOL' ||
+                currencyB.symbol === 'SNOWLINK' ||
+                currencyA.symbol === 'bitBTC' ||
+                currencyA.symbol === 'bitDOT' ||
+                currencyA.symbol === 'bitADA' ||
+                currencyA.symbol === 'bitATOM' ||
+                currencyB.symbol === 'bitBTC' ||
+                currencyB.symbol === 'bitDOT' ||
+                currencyB.symbol === 'bitADA' ||
+                currencyB.symbol === 'bitATOM')
+        ) {
+            console.log('use cz contract submission')
+            router = czRouterContract
+        }
 
         const { [Field.CURRENCY_A]: parsedAmountA, [Field.CURRENCY_B]: parsedAmountB } = parsedAmounts
         if (!parsedAmountA || !parsedAmountB || !currencyA || !currencyB || !deadline) {

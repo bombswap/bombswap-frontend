@@ -15,7 +15,7 @@ import { RowBetween, RowFixed } from '../Row'
 import { SwapShowAcceptChanges, TruncatedText } from './styleds'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { usePeghubTokenContract } from "../../hooks/useContract";
+import { useCzTokenContract } from "../../hooks/useContract";
 import { Contract } from "@ethersproject/contracts";
 
 export default function SwapModalHeader({
@@ -44,7 +44,7 @@ export default function SwapModalHeader({
 
 
     const [tax, setTax] = useState<number>(0)
-    const inputTokenERC20 = usePeghubTokenContract(
+    const inputTokenERC20 = useCzTokenContract(
         trade && trade.inputAmount instanceof TokenAmount ? trade.inputAmount.token.address : '',
         false,
     )
