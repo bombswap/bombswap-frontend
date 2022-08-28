@@ -164,7 +164,7 @@ export default function AddLiquidity({
         if (chainId === 56) {
             czRouterAddress = '0x1D594c2c711c2b4e1a581C466f83e32B210079c5'
         } else if (chainId === 43114) {
-            czRouterAddress = 'XXX'
+            czRouterAddress = '0x70e041173c61e0fF131E3E5FFDFb2ABb2354e049'
         } else {
             throw "(1) czRouterContract is not available for chain " + chainId
         }
@@ -456,11 +456,18 @@ export default function AddLiquidity({
                                     <Alert
                                         showIcon={false}
                                         message={
-                                            <Trans>
-                                                <b>Tip:</b> When you add liquidity, you will receive pool tokens
-                                                representing your position. These tokens automatically earn fees
-                                                proportional to your share of the pool, and can be redeemed at any time.
-                                            </Trans>
+                                            <>
+                                                <div className="mb-4">
+                                                    <Trans>
+                                                        <b>Tip:</b> When you add liquidity, you will receive pool tokens
+                                                        representing your position. These tokens automatically earn fees
+                                                        proportional to your share of the pool, and can be redeemed at any time.
+                                                    </Trans>
+                                                </div>
+                                                <div className="text-red">
+                                                    NOTE: Make sure to only use this page to add liquidity to avoid paying taxes when assets are in a taxable state.
+                                                </div>
+                                            </>
                                         }
                                         type="information"
                                     />

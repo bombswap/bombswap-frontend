@@ -537,7 +537,7 @@ export function getCzRouterContract(chainId: number, library: Web3Provider, acco
     if (chainId === 56) {
         czRouterAddress = '0x1D594c2c711c2b4e1a581C466f83e32B210079c5'
     } else if (chainId === 43114) {
-        czRouterAddress = 'XXX'
+        czRouterAddress = '0x70e041173c61e0fF131E3E5FFDFb2ABb2354e049'
     } else {
         throw "(2) czRouterContract is not available for chain " + chainId
     }
