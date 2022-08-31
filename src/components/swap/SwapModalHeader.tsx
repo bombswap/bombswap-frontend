@@ -57,17 +57,18 @@ export default function SwapModalHeader({
             pinputTokenERC20 &&
             ptrade &&
             ptrade.inputAmount instanceof TokenAmount &&
-            (ptrade.inputAmount.token.symbol === 'CZBNB' ||
-                ptrade.inputAmount.token.symbol === 'CZBOMB' ||
-                ptrade.inputAmount.token.symbol === 'CZEMP' ||
-                ptrade.inputAmount.token.symbol === 'CZBUSD' ||
-                ptrade.inputAmount.token.symbol === 'SNOWAVAX' ||
-                ptrade.inputAmount.token.symbol === 'SNOWSOL' ||
-                ptrade.inputAmount.token.symbol === 'SNOWLINK' ||
-                ptrade.inputAmount.token.symbol === 'bitBTC' ||
-                ptrade.inputAmount.token.symbol === 'bitADA' ||
-                ptrade.inputAmount.token.symbol === 'bitATOM' ||
-                ptrade.inputAmount.token.symbol === 'bitDOT')
+            ptrade.inputAmount.token.symbol &&
+            (ptrade.inputAmount.token.symbol.toUpperCase() === 'CZBNB' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'CZBOMB' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'CZEMP' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'CZBUSD' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'SNOWAVAX' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'SNOWSOL' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'SNOWLINK' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'bitBTC' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'bitADA' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'bitATOM' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'bitDOT')
         ) {
             const tokenUpdatedPrice = Number((await pinputTokenERC20.callStatic.getTokenUpdatedPrice()).toString())
             let taxRate = null

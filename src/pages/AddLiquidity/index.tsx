@@ -137,28 +137,30 @@ export default function AddLiquidity({
     if (
         currencyA &&
         currencyB &&
-        (currencyA.symbol === 'CZBNB' ||
-            currencyA.symbol === 'CZBOMB' ||
-            currencyA.symbol === 'CZEMP' ||
-            currencyA.symbol === 'CZBUSD' ||
-            currencyB.symbol === 'CZBNB' ||
-            currencyB.symbol === 'CZBOMB' ||
-            currencyB.symbol === 'CZEMP' ||
-            currencyB.symbol === 'CZBUSD' ||
-            currencyA.symbol === 'SNOWAVAX' ||
-            currencyA.symbol === 'SNOWSOL' ||
-            currencyA.symbol === 'SNOWLINK' ||
-            currencyB.symbol === 'SNOWAVAX' ||
-            currencyB.symbol === 'SNOWSOL' ||
-            currencyB.symbol === 'SNOWLINK' ||
-            currencyA.symbol === 'bitBTC' ||
-            currencyA.symbol === 'bitDOT' ||
-            currencyA.symbol === 'bitADA' ||
-            currencyA.symbol === 'bitATOM' ||
-            currencyB.symbol === 'bitBTC' ||
-            currencyB.symbol === 'bitDOT' ||
-            currencyB.symbol === 'bitADA' ||
-            currencyB.symbol === 'bitATOM')
+        currencyA.symbol &&
+        currencyB.symbol &&
+        (currencyA.symbol.toUpperCase() === 'CZBNB' ||
+            currencyA.symbol.toUpperCase() === 'CZBOMB' ||
+            currencyA.symbol.toUpperCase() === 'CZEMP' ||
+            currencyA.symbol.toUpperCase() === 'CZBUSD' ||
+            currencyB.symbol.toUpperCase() === 'CZBNB' ||
+            currencyB.symbol.toUpperCase() === 'CZBOMB' ||
+            currencyB.symbol.toUpperCase() === 'CZEMP' ||
+            currencyB.symbol.toUpperCase() === 'CZBUSD' ||
+            currencyA.symbol.toUpperCase() === 'SNOWAVAX' ||
+            currencyA.symbol.toUpperCase() === 'SNOWSOL' ||
+            currencyA.symbol.toUpperCase() === 'SNOWLINK' ||
+            currencyB.symbol.toUpperCase() === 'SNOWAVAX' ||
+            currencyB.symbol.toUpperCase() === 'SNOWSOL' ||
+            currencyB.symbol.toUpperCase() === 'SNOWLINK' ||
+            currencyA.symbol.toUpperCase() === 'bitBTC' ||
+            currencyA.symbol.toUpperCase() === 'bitDOT' ||
+            currencyA.symbol.toUpperCase() === 'bitADA' ||
+            currencyA.symbol.toUpperCase() === 'bitATOM' ||
+            currencyB.symbol.toUpperCase() === 'bitBTC' ||
+            currencyB.symbol.toUpperCase() === 'bitDOT' ||
+            currencyB.symbol.toUpperCase() === 'bitADA' ||
+            currencyB.symbol.toUpperCase() === 'bitATOM')
     ) {
         console.log('use cz contract approval')
         if (chainId === 56) {
