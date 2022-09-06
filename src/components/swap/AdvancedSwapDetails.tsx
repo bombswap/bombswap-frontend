@@ -47,10 +47,10 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
                 ptrade.inputAmount.token.symbol.toUpperCase() === 'SNOWAVAX' ||
                 ptrade.inputAmount.token.symbol.toUpperCase() === 'SNOWSOL' ||
                 ptrade.inputAmount.token.symbol.toUpperCase() === 'SNOWLINK' ||
-                ptrade.inputAmount.token.symbol.toUpperCase() === 'bitBTC' ||
-                ptrade.inputAmount.token.symbol.toUpperCase() === 'bitADA' ||
-                ptrade.inputAmount.token.symbol.toUpperCase() === 'bitATOM' ||
-                ptrade.inputAmount.token.symbol.toUpperCase() === 'bitDOT')
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'BITBTC' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'BITADA' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'BITATOM' ||
+                ptrade.inputAmount.token.symbol.toUpperCase() === 'BITDOT')
         ) {
             const tokenUpdatedPrice = Number((await pinputTokenERC20.callStatic.getTokenUpdatedPrice()).toString())
             let taxRate = null

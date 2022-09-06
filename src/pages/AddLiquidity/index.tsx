@@ -153,14 +153,14 @@ export default function AddLiquidity({
             currencyB.symbol.toUpperCase() === 'SNOWAVAX' ||
             currencyB.symbol.toUpperCase() === 'SNOWSOL' ||
             currencyB.symbol.toUpperCase() === 'SNOWLINK' ||
-            currencyA.symbol.toUpperCase() === 'bitBTC' ||
-            currencyA.symbol.toUpperCase() === 'bitDOT' ||
-            currencyA.symbol.toUpperCase() === 'bitADA' ||
-            currencyA.symbol.toUpperCase() === 'bitATOM' ||
-            currencyB.symbol.toUpperCase() === 'bitBTC' ||
-            currencyB.symbol.toUpperCase() === 'bitDOT' ||
-            currencyB.symbol.toUpperCase() === 'bitADA' ||
-            currencyB.symbol.toUpperCase() === 'bitATOM')
+            currencyA.symbol.toUpperCase() === 'BITBTC' ||
+            currencyA.symbol.toUpperCase() === 'BITDOT' ||
+            currencyA.symbol.toUpperCase() === 'BITADA' ||
+            currencyA.symbol.toUpperCase() === 'BITATOM' ||
+            currencyB.symbol.toUpperCase() === 'BITBTC' ||
+            currencyB.symbol.toUpperCase() === 'BITDOT' ||
+            currencyB.symbol.toUpperCase() === 'BITADA' ||
+            currencyB.symbol.toUpperCase() === 'BITATOM')
     ) {
         console.log('use cz contract approval')
         if (chainId === 56) {
@@ -201,14 +201,14 @@ export default function AddLiquidity({
                 currencyB.symbol.toUpperCase() === 'SNOWAVAX' ||
                 currencyB.symbol.toUpperCase() === 'SNOWSOL' ||
                 currencyB.symbol.toUpperCase() === 'SNOWLINK' ||
-                currencyA.symbol.toUpperCase() === 'bitBTC' ||
-                currencyA.symbol.toUpperCase() === 'bitDOT' ||
-                currencyA.symbol.toUpperCase() === 'bitADA' ||
-                currencyA.symbol.toUpperCase() === 'bitATOM' ||
-                currencyB.symbol.toUpperCase() === 'bitBTC' ||
-                currencyB.symbol.toUpperCase() === 'bitDOT' ||
-                currencyB.symbol.toUpperCase() === 'bitADA' ||
-                currencyB.symbol.toUpperCase() === 'bitATOM')
+                currencyA.symbol.toUpperCase() === 'BITBTC' ||
+                currencyA.symbol.toUpperCase() === 'BITDOT' ||
+                currencyA.symbol.toUpperCase() === 'BITADA' ||
+                currencyA.symbol.toUpperCase() === 'BITATOM' ||
+                currencyB.symbol.toUpperCase() === 'BITBTC' ||
+                currencyB.symbol.toUpperCase() === 'BITDOT' ||
+                currencyB.symbol.toUpperCase() === 'BITADA' ||
+                currencyB.symbol.toUpperCase() === 'BITATOM')
         ) {
             console.log('use cz contract submission')
             router = czRouterContract
