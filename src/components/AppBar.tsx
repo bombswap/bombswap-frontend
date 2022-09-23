@@ -59,6 +59,9 @@ function AppBar(): JSX.Element {
                                             <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.czpegs.com/'} target="_blank" rel="noreferrer">
                                                 {i18n._(t`czPegs`)}
                                             </a>
+                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.snowpegs.com/'} target="_blank" rel="noreferrer">
+                                                {i18n._(t`SnowPegs`)}
+                                            </a>
                                             <NavLink id={`swap-nav-link`} to={'/swap'}>
                                                 {i18n._(t`Swap`)}
                                             </NavLink>
