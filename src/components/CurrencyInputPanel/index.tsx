@@ -306,7 +306,7 @@ export default function CurrencyInputPanel({
                                             : ' -'}
                                     </div>
                                     {chainId === ChainId.BSC && (
-                                        <div className="font-medium text-xs text-secondary">≈ {valueUSDC} BUSD</div>
+                                        <div className="font-medium text-xs text-secondary align-right">≈ {valueUSDC} BUSD</div>
                                     )}
                                 </div>
                             )}

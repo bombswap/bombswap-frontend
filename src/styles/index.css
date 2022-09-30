@@ -60,3 +60,7 @@ input:focus {
   height: 42px;
   padding-top: 8px;
 }
+
+.align-right {
+  text-align: right;
+}
