@@ -64,7 +64,7 @@ const Aligner = styled.span`
     justify-content: space-between;
 `
 
-const StyledDropDown = styled(DropDown)<{ selected: boolean }>`
+const StyledDropDown = styled(DropDown) <{ selected: boolean }>`
     margin: 0 0.25rem 0 0.5rem;
     height: 35%;
 
@@ -163,10 +163,10 @@ export default function CurrencyInputPanel({
         <div id={id} className="rounded bg-dark-800 p-5">
             <div
                 className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row justify-between"
-                // hideInput={hideInput}
-                // cornerRadiusBottomNone={cornerRadiusBottomNone}
-                // cornerRadiusTopNone={cornerRadiusTopNone}
-                // containerBackground={containerBackground}
+            // hideInput={hideInput}
+            // cornerRadiusBottomNone={cornerRadiusBottomNone}
+            // cornerRadiusTopNone={cornerRadiusTopNone}
+            // containerBackground={containerBackground}
             >
                 {/* {!hideInput && (
                     <LabelRow>
@@ -192,8 +192,8 @@ export default function CurrencyInputPanel({
                 )} */}
                 <div
                     className="w-full sm:w-2/5"
-                    // style={hideInput ? { padding: '0', borderRadius: '8px' } : {}}
-                    // selected={disableCurrencySelect}
+                // style={hideInput ? { padding: '0', borderRadius: '8px' } : {}}
+                // selected={disableCurrencySelect}
                 >
                     <CurrencySelect
                         selected={!!currency}
@@ -242,16 +242,16 @@ export default function CurrencyInputPanel({
                                         <div className="text-lg md:text-2xl font-bold whitespace-nowrap">
                                             {(currency && currency.symbol && currency.symbol.length > 20
                                                 ? currency.symbol.slice(0, 4) +
-                                                  '...' +
-                                                  currency.symbol.slice(
-                                                      currency.symbol.length - 5,
-                                                      currency.symbol.length
-                                                  )
+                                                '...' +
+                                                currency.symbol.slice(
+                                                    currency.symbol.length - 5,
+                                                    currency.symbol.length
+                                                )
                                                 : currency?.getSymbol(chainId)) || (
-                                                <div className="bg-transparent hover:bg-primary border border-low-emphesis rounded-full px-2 py-1 text-secondary text-xs font-medium mt-1 whitespace-nowrap ">
-                                                    {i18n._(t`Select a token`)}
-                                                </div>
-                                            )}
+                                                    <div className="bg-transparent hover:bg-primary border border-low-emphesis rounded-full px-2 py-1 text-secondary text-xs font-medium mt-1 whitespace-nowrap ">
+                                                        {i18n._(t`Select a token`)}
+                                                    </div>
+                                                )}
                                         </div>
                                         {/* </StyledTokenName> */}
                                         {!disableCurrencySelect && currency && <StyledDropDown selected={!!currency} />}
@@ -302,11 +302,11 @@ export default function CurrencyInputPanel({
                                     >
                                         {!hideBalance && !!currency && selectedCurrencyBalance
                                             ? (customBalanceText ?? 'Balance: ') +
-                                              selectedCurrencyBalance?.toSignificant(6)
+                                            selectedCurrencyBalance?.toSignificant(6)
                                             : ' -'}
                                     </div>
-                                    {chainId === ChainId.MAINNET && (
-                                        <div className="font-medium text-xs text-secondary">≈ {valueUSDC} USDC</div>
+                                    {chainId === ChainId.BSC && (
+                                        <div className="font-medium text-xs text-secondary">≈ {valueUSDC} BUSD</div>
                                     )}
                                 </div>
                             )}

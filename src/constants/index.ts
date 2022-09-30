@@ -130,6 +130,7 @@ export const BSC: { [key: string]: Token } = {
     BBOND: new Token(ChainId.BSC, '0xDA1d9C79240003195d0a67f202efcCCC3F78b994', 18, 'BBOND', 'BOMB Bond')
 }
 
+
 export const FANTOM: { [key: string]: Token } = {
     USDC: new Token(ChainId.FANTOM, '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75', 6, 'USDC', 'USD Coin'),
     WBTC: new Token(ChainId.FANTOM, '0x321162Cd933E2Be498Cd2267a90534A804051b11', 8, 'WBTC', 'Wrapped Bitcoin'),
@@ -232,6 +233,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
     [ChainId.BSC]: {
         [BSC.CZBOMB.address]: [BSC.BOMB, BSC.BTCB, BSC.BITBTC, BSC.WETH, BSC.BUSD],
         [BSC.CZEMP.address]: [BSC.EMP, BSC.ETH, BSC.WETH],
+        [BSC.BBOND.address]: [BSC.BOMB, BSC.BTCB, BSC.WETH, BSC.BUSD],
         [BSC.BITATOM.address]: [BSC.ATOM, BSC.WETH],
         [BSC.BITDOT.address]: [BSC.DOT, BSC.WETH],
         [BSC.BITADA.address]: [BSC.ADA, BSC.WETH]
