@@ -243,7 +243,15 @@ const builders = {
                 return `${prefix}/${type}/${data}`
         }
     },
-
+    bomb: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
+        const prefix = 'https://bombscan.com'
+        switch (type) {
+            case 'transaction':
+                return `${prefix}/tx/${data}`
+            default:
+                return `${prefix}/${type}/${data}`
+        }
+    },
     xdai: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
         const prefix = `https://blockscout.com/poa/xdai`
         switch (type) {
@@ -267,12 +275,10 @@ const builders = {
     },
 
     matic: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
-        const prefix = `https://explorer-${chainName}.maticvigil.com`
+        const prefix = `https://polygonscan.com`
         switch (type) {
             case 'transaction':
                 return `${prefix}/tx/${data}`
-            case 'token':
-                return `${prefix}/tokens/${data}`
             default:
                 return `${prefix}/${type}/${data}`
         }
@@ -460,6 +466,10 @@ const chains: ChainObject = {
     [ChainId.OKEX_TESTNET]: {
         chainName: '',
         builder: builders.okexTestnet
+    },
+    [ChainId.BOMB]: {
+        chainName: '',
+        builder: builders.bomb
     }
 }
 
@@ -539,7 +549,8 @@ export function getCzRouterContract(chainId: number, library: Web3Provider, acco
     } else if (chainId === 43114) {
         czRouterAddress = '0x70e041173c61e0fF131E3E5FFDFb2ABb2354e049'
     } else {
-        throw "(2) czRouterContract is not available for chain " + chainId
+        czRouterAddress = getRouterAddress(chainId);
+        // throw "(2) czRouterContract is not available for chain " + chainId
     }
 
     return getContract(

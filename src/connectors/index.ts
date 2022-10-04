@@ -18,7 +18,7 @@ const RPC = {
     [ChainId.KOVAN]: 'https://eth-kovan.alchemyapi.io/v2/6OVAa_B_rypWWl9HqtiYK26IRxXiYqER',
     [ChainId.FANTOM]: 'https://rpcapi.fantom.network',
     [ChainId.FANTOM_TESTNET]: 'https://rpc.testnet.fantom.network',
-    [ChainId.MATIC]: 'https://rpc-mainnet.maticvigil.com',
+    [ChainId.MATIC]: 'https://rpc.ankr.com/matic',
     //'https://matic-mainnet.chainstacklabs.com/',
     [ChainId.MATIC_TESTNET]: 'https://rpc-mumbai.matic.today',
     [ChainId.XDAI]: 'https://rpc.xdaichain.com',
@@ -32,7 +32,8 @@ const RPC = {
     [ChainId.HARMONY]: 'https://explorer.harmony.one',
     [ChainId.HARMONY_TESTNET]: 'https://explorer.pops.one',
     [ChainId.OKEX]: 'https://exchainrpc.okex.org',
-    [ChainId.OKEX_TESTNET]: 'https://exchaintestrpc.okex.org'
+    [ChainId.OKEX_TESTNET]: 'https://exchaintestrpc.okex.org',
+    [ChainId.BOMB]: 'https://rpc.bomb.app'
 }
 
 export const network = new NetworkConnector({
@@ -67,7 +68,8 @@ export const injected = new InjectedConnector({
         1666600000, // harmony
         1666700000, // harmony testnet
         66, // okex testnet
-        65 // okex testnet
+        65, // okex testnet
+        23254
     ]
 })
 

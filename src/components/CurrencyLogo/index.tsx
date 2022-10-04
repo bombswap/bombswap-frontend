@@ -17,6 +17,7 @@ import styled from 'styled-components'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import useHttpLocations from '../../hooks/useHttpLocations'
 import xDaiLogo from '../../assets/images/xdai-logo.png'
+import BombLogo from '../../assets/images/bomb.png'
 
 const getTokenLogoURL = (address: string, chainId: any) => {
     let imageURL
@@ -65,7 +66,8 @@ const logo: { readonly [chainId in ChainId]?: string } = {
     [ChainId.HARMONY]: HarmonyLogo,
     [ChainId.HARMONY_TESTNET]: HarmonyLogo,
     [ChainId.OKEX]: OKExLogo,
-    [ChainId.OKEX_TESTNET]: OKExLogo
+    [ChainId.OKEX_TESTNET]: OKExLogo,
+    [ChainId.BOMB]: BombLogo
 }
 
 export default function CurrencyLogo({

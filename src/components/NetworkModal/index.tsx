@@ -64,7 +64,7 @@ const PARAMS: {
         },
         rpcUrls: [
             //'https://matic-mainnet.chainstacklabs.com/'
-            'https://rpc-mainnet.maticvigil.com'
+            'https://polygon-rpc.com',
         ],
         blockExplorerUrls: ['https://polygonscan.com']
     },
@@ -122,7 +122,18 @@ const PARAMS: {
         },
         rpcUrls: ['https://exchainrpc.okex.org'],
         blockExplorerUrls: ['https://www.oklink.com/okexchain']
-    }
+    },
+    [ChainId.BOMB]: {
+        chainId: '0x5AD6',
+        chainName: 'BOMB',
+        nativeCurrency: {
+            name: 'BOMB Token',
+            symbol: 'BOMB',
+            decimals: 18
+        },
+        rpcUrls: ['https://rpc.bomb.app'],
+        blockExplorerUrls: ['https://www.bombscan.com']
+    },
 }
 
 export default function NetworkModal(): JSX.Element | null {
