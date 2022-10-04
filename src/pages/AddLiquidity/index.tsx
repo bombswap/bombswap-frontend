@@ -1,6 +1,6 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
 import { ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
-import { Currency, ETHER, TokenAmount, WETH, currencyEquals } from '@peghub/sdk'
+import { Currency, ETHER, TokenAmount, WETH, currencyEquals } from '@pegswap/sdk'
 import { Dots, Wrapper } from '../Pool/styleds'
 import React, { useCallback, useContext, useState } from 'react'
 import Row, { AutoRow, RowBetween, RowFlat } from '../../components/Row'
@@ -68,8 +68,8 @@ export default function AddLiquidity({
 
     const oneCurrencyIsWETH = Boolean(
         chainId &&
-            ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
-                (currencyB && currencyEquals(currencyB, WETH[chainId])))
+        ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
+            (currencyB && currencyEquals(currencyB, WETH[chainId])))
     )
 
     const toggleWalletModal = useWalletModalToggle() // toggle wallet when disconnected

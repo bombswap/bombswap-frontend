@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@peghub/sdk'
+import { ChainId, Token } from '@pegswap/sdk'
 import { Tags, TokenInfo, TokenList } from '@uniswap/token-lists'
 
 import { AppState } from '../index'
@@ -59,7 +59,9 @@ const EMPTY_LIST: TokenAddressMap = {
     [ChainId.HARMONY]: {},
     [ChainId.HARMONY_TESTNET]: {},
     [ChainId.OKEX]: {},
-    [ChainId.OKEX_TESTNET]: {}
+    [ChainId.OKEX_TESTNET]: {},
+    [ChainId.BOMB]: {},
+
 }
 
 const listCache: WeakMap<TokenList, TokenAddressMap> | null =
@@ -131,7 +133,8 @@ function combineMaps(map1: TokenAddressMap, map2: TokenAddressMap): TokenAddress
         1666600000: { ...map1[1666600000], ...map2[1666600000] }, // harmony
         1666700000: { ...map1[1666700000], ...map2[1666700000] }, // harmony testnet
         66: { ...map1[66], ...map2[66] }, // okex
-        65: { ...map1[65], ...map2[65] } // okex testnet
+        65: { ...map1[65], ...map2[65] }, // okex testnet
+        23254: { ...map1[23254], ...map2[23254] },
     }
 }
 

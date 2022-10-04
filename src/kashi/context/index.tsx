@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { ChainId, Currency, WETH } from '@peghub/sdk'
+import { ChainId, Currency, WETH } from '@pegswap/sdk'
 import { bentobox } from '@sushiswap/sushi-data'
 import { ethers } from 'ethers'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
@@ -28,22 +28,22 @@ interface Reducer {
 
 interface State {
     info:
-        | {
-              ethBalance: BigNumber
-              sushiBalance: BigNumber
-              sushiBarBalance: BigNumber
-              xsushiBalance: BigNumber
-              xsushiSupply: BigNumber
-              sushiBarAllowance: BigNumber
-              factories: {}[]
-              ethRate: BigNumber
-              sushiRate: BigNumber
-              btcRate: BigNumber
-              pendingSushi: BigNumber
-              blockTimeStamp: BigNumber
-              masterContractApproved: boolean[]
-          }
-        | undefined
+    | {
+        ethBalance: BigNumber
+        sushiBalance: BigNumber
+        sushiBarBalance: BigNumber
+        xsushiBalance: BigNumber
+        xsushiSupply: BigNumber
+        sushiBarAllowance: BigNumber
+        factories: {}[]
+        ethRate: BigNumber
+        sushiRate: BigNumber
+        btcRate: BigNumber
+        pendingSushi: BigNumber
+        blockTimeStamp: BigNumber
+        masterContractApproved: boolean[]
+    }
+    | undefined
     pairs: any[]
 }
 
@@ -166,7 +166,7 @@ export function KashiProvider({ children }: { children: JSX.Element }) {
     const tokens = useAllTokens()
 
     const updatePairs = useCallback(
-        async function() {
+        async function () {
             if (
                 !account ||
                 !chainId ||

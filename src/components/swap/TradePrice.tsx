@@ -1,4 +1,4 @@
-import { Price } from '@peghub/sdk'
+import { Price } from '@pegswap/sdk'
 import React, { useContext } from 'react'
 import { Repeat } from 'react-feather'
 import { Text } from 'rebass'

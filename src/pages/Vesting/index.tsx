@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { TokenAmount } from '@peghub/sdk'
+import { TokenAmount } from '@pegswap/sdk'
 import { ButtonPrimary } from 'components/ButtonLegacy'
 import { LightCard } from 'components/CardLegacy'
 import { AutoColumn } from 'components/Column'
@@ -51,13 +51,13 @@ const PageWrapper = styled(AutoColumn)`
     margin: 0 auto;
 `
 
-export const CardSection = styled(AutoColumn)<{ disabled?: boolean }>`
+export const CardSection = styled(AutoColumn) <{ disabled?: boolean }>`
     padding: 1rem;
     z-index: 1;
     opacity: ${({ disabled }) => disabled && '0.4'};
 `
 
-export const DataCard = styled(AutoColumn)<{ disabled?: boolean }>`
+export const DataCard = styled(AutoColumn) <{ disabled?: boolean }>`
     background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ff007a 0%, #0094ec 100%);
     border-radius: ${({ theme }) => theme.borderRadius};
     width: 100%;

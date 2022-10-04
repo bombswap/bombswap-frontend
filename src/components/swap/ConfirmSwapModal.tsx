@@ -1,4 +1,4 @@
-import { currencyEquals, Trade } from '@peghub/sdk'
+import { currencyEquals, Trade } from '@pegswap/sdk'
 import React, { useCallback, useMemo } from 'react'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import TransactionConfirmationModal, {

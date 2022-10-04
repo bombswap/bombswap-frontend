@@ -1,5 +1,5 @@
 import React from 'react'
-import { Currency, currencyEquals, ETHER, WETH } from '@peghub/sdk'
+import { Currency, currencyEquals, ETHER, WETH } from '@pegswap/sdk'
 import { AutoColumn } from '../../components/Column'
 import CurrencyLogo from '../../components/CurrencyLogo'
 import { AutoRow, RowBetween } from '../../components/Row'
@@ -37,23 +37,20 @@ export default function RemoveLiquidityReceiveDetails({
                         <RowBetween className="text-sm">
                             {hasWETH ? (
                                 <StyledInternalLink
-                                    to={`/remove/${
-                                        currencyA === ETHER ? WETH[chainId].address : currencyId(currencyA)
-                                    }/${currencyB === ETHER ? WETH[chainId].address : currencyId(currencyB)}`}
+                                    to={`/remove/${currencyA === ETHER ? WETH[chainId].address : currencyId(currencyA)
+                                        }/${currencyB === ETHER ? WETH[chainId].address : currencyId(currencyB)}`}
                                 >
                                     Receive W{Currency.getNativeCurrencySymbol(chainId)}
                                 </StyledInternalLink>
                             ) : hasETH ? (
                                 <StyledInternalLink
-                                    to={`/remove/${
-                                        currencyA && currencyEquals(currencyA, WETH[chainId])
+                                    to={`/remove/${currencyA && currencyEquals(currencyA, WETH[chainId])
                                             ? 'ETH'
                                             : currencyId(currencyA)
-                                    }/${
-                                        currencyB && currencyEquals(currencyB, WETH[chainId])
+                                        }/${currencyB && currencyEquals(currencyB, WETH[chainId])
                                             ? 'ETH'
                                             : currencyId(currencyB)
-                                    }`}
+                                        }`}
                                 >
                                     Receive {Currency.getNativeCurrencySymbol(chainId)}
                                 </StyledInternalLink>

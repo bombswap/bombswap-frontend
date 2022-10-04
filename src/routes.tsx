@@ -1,4 +1,4 @@
-import { ChainId } from '@peghub/sdk'
+import { ChainId } from '@pegswap/sdk'
 import React from 'react'
 import { Redirect, Route, RouteComponentProps, useLocation, Switch } from 'react-router-dom'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
@@ -62,7 +62,7 @@ function Routes(): JSX.Element {
             <WalletRoute exact strict path="/bento/kashi/create" component={CreateMarkets} />
             <WalletRoute exact strict path="/bento/kashi/lend/:pairAddress" component={LendPair} />
             <WalletRoute exact strict path="/bento/kashi/borrow/:pairAddress" component={BorrowPair} /> */}
-{/* 
+            {/* 
             {chainId === ChainId.MAINNET && (
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
             )} */}

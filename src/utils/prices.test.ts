@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '@peghub/sdk'
+import { ChainId, JSBI, Pair, Route, Token, TokenAmount, Trade, TradeType } from '@pegswap/sdk'
 import { computeTradePriceBreakdown } from './prices'
 
 describe('prices', () => {

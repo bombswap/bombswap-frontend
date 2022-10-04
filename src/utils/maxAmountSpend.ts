@@ -1,4 +1,4 @@
-import { CurrencyAmount, ETHER, JSBI } from '@peghub/sdk'
+import { CurrencyAmount, ETHER, JSBI } from '@pegswap/sdk'
 import { MIN_ETH } from '../constants'
 
 /**

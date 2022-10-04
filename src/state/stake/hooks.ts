@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount, WETH } from '@peghub/sdk'
+import { ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount, WETH } from '@pegswap/sdk'
 import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
 import { useMemo } from 'react'
 import { DAI, SUSHI, USDC, USDT, WBTC } from '../../constants'

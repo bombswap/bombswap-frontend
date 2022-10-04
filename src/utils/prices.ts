@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, Fraction, JSBI, Percent, TokenAmount, Trade } from '@peghub/sdk'
+import { ChainId, CurrencyAmount, Fraction, JSBI, Percent, TokenAmount, Trade } from '@pegswap/sdk'
 import {
     ALLOWED_PRICE_IMPACT_HIGH,
     ALLOWED_PRICE_IMPACT_LOW,

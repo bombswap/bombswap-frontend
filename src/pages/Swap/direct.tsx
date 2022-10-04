@@ -1,4 +1,4 @@
-import { CurrencyAmount, JSBI, Token, Trade } from '@peghub/sdk'
+import { CurrencyAmount, JSBI, Token, Trade } from '@pegswap/sdk'
 import UnsupportedCurrencyFooter from 'components/swap/UnsupportedCurrencyFooter'
 import { useIsTransactionUnsupported } from 'hooks/Trades'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
@@ -97,13 +97,13 @@ export default function Swap() {
 
     const parsedAmounts = showWrap
         ? {
-              [Field.INPUT]: parsedAmount,
-              [Field.OUTPUT]: parsedAmount
-          }
+            [Field.INPUT]: parsedAmount,
+            [Field.OUTPUT]: parsedAmount
+        }
         : {
-              [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
-              [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount
-          }
+            [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
+            [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount
+        }
 
     const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
     const isValid = !swapInputError
@@ -147,8 +147,8 @@ export default function Swap() {
     const route = trade?.route
     const userHasSpecifiedInputOutput = Boolean(
         currencies[Field.INPUT] &&
-            currencies[Field.OUTPUT] &&
-            parsedAmounts[independentField]?.greaterThan(JSBI.BigInt(0))
+        currencies[Field.OUTPUT] &&
+        parsedAmounts[independentField]?.greaterThan(JSBI.BigInt(0))
     )
     const noRoute = !route
 
@@ -205,8 +205,8 @@ export default function Swap() {
                         recipient === null
                             ? 'Swap w/o Send'
                             : (recipientAddress ?? recipient) === account
-                            ? 'Swap w/o Send + recipient'
-                            : 'Swap w/ Send',
+                                ? 'Swap w/o Send + recipient'
+                                : 'Swap w/ Send',
                     label: [trade?.inputAmount?.currency?.symbol, trade?.outputAmount?.currency?.symbol].join('/')
                 })
 
@@ -316,7 +316,7 @@ export default function Swap() {
                             otherCurrency={currencies[Field.OUTPUT]}
                             id="swap-currency-input"
                             cornerRadiusBottomNone={isExpertMode ? false : true}
-                            //containerBackground={'#101b31'}
+                        //containerBackground={'#101b31'}
                         />
                         {isExpertMode && !showWrap && (
                             <AutoColumn justify="space-between">
@@ -394,7 +394,7 @@ export default function Swap() {
                             otherCurrency={currencies[Field.INPUT]}
                             id="swap-currency-output"
                             cornerRadiusTopNone={isExpertMode ? false : true}
-                            //containerBackground={'#16182b'}
+                        //containerBackground={'#16182b'}
                         />
 
                         {recipient !== null && !showWrap ? (
@@ -427,8 +427,8 @@ export default function Swap() {
                                     (wrapType === WrapType.WRAP
                                         ? i18n._(t`Wrap`)
                                         : wrapType === WrapType.UNWRAP
-                                        ? i18n._(t`Unwrap`)
-                                        : null)}
+                                            ? i18n._(t`Unwrap`)
+                                            : null)}
                             </ButtonPrimary>
                         ) : noRoute && userHasSpecifiedInputOutput ? (
                             <GreyCard style={{ textAlign: 'center' }}>
@@ -483,8 +483,8 @@ export default function Swap() {
                                         {priceImpactSeverity > 3 && !isExpertMode
                                             ? i18n._(t`Price Impact High`)
                                             : priceImpactSeverity > 2
-                                            ? i18n._(t`Swap Anyway`)
-                                            : i18n._(t`Swap`)}
+                                                ? i18n._(t`Swap Anyway`)
+                                                : i18n._(t`Swap`)}
                                     </Text>
                                 </ButtonError>
                             </RowBetween>
@@ -511,10 +511,10 @@ export default function Swap() {
                                     {swapInputError
                                         ? swapInputError
                                         : priceImpactSeverity > 3 && !isExpertMode
-                                        ? i18n._(t`Price Impact Too High`)
-                                        : priceImpactSeverity > 2
-                                        ? i18n._(t`Swap Anyway`)
-                                        : i18n._(t`Swap`)}
+                                            ? i18n._(t`Price Impact Too High`)
+                                            : priceImpactSeverity > 2
+                                                ? i18n._(t`Swap Anyway`)
+                                                : i18n._(t`Swap`)}
                                 </Text>
                             </ButtonError>
                         )}

@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { WETH } from '@peghub/sdk'
+import { WETH } from '@pegswap/sdk'
 import { ethers } from 'ethers'
 import { useCallback } from 'react'
 import { useActiveWeb3React } from './useActiveWeb3React'

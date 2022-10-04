@@ -1,4 +1,4 @@
-import { ChainId } from '@peghub/sdk'
+import { ChainId } from '@pegswap/sdk'
 
 const TOKEN_ICONS: { [chainId in ChainId]?: any } = {
     [ChainId.MAINNET]: {

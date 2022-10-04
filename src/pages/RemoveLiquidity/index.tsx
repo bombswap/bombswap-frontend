@@ -1,7 +1,7 @@
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
 import { ArrowDown, Plus } from 'react-feather'
 import { ButtonConfirmed, ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
-import { ChainId, Currency, ETHER, Percent, WETH, currencyEquals } from '@peghub/sdk'
+import { ChainId, Currency, ETHER, Percent, WETH, currencyEquals } from '@pegswap/sdk'
 import React, { useCallback, useContext, useMemo, useState } from 'react'
 import Row, { AutoRow, RowBetween, RowFixed } from '../../components/Row'
 import { Trans, t } from '@lingui/macro'
@@ -89,12 +89,12 @@ export default function RemoveLiquidity({
         [Field.LIQUIDITY_PERCENT]: parsedAmounts[Field.LIQUIDITY_PERCENT].equalTo('')
             ? ''
             : parsedAmounts[Field.LIQUIDITY_PERCENT].greaterThan('100')
-            ? '100'
-            : parsedAmounts[Field.LIQUIDITY_PERCENT].equalTo('0')
-            ? '0'
-            : parsedAmounts[Field.LIQUIDITY_PERCENT].lessThan(new Percent('1', '100'))
-            ? '<1'
-            : parsedAmounts[Field.LIQUIDITY_PERCENT].toFixed(0),
+                ? '100'
+                : parsedAmounts[Field.LIQUIDITY_PERCENT].equalTo('0')
+                    ? '0'
+                    : parsedAmounts[Field.LIQUIDITY_PERCENT].lessThan(new Percent('1', '100'))
+                        ? '<1'
+                        : parsedAmounts[Field.LIQUIDITY_PERCENT].toFixed(0),
         [Field.LIQUIDITY]:
             independentField === Field.LIQUIDITY ? typedValue : parsedAmounts[Field.LIQUIDITY]?.toSignificant(6) ?? '',
         [Field.CURRENCY_A]:
@@ -461,8 +461,8 @@ export default function RemoveLiquidity({
     const oneCurrencyIsETH = currencyA === ETHER || currencyB === ETHER
     const oneCurrencyIsWETH = Boolean(
         chainId &&
-            ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
-                (currencyB && currencyEquals(WETH[chainId], currencyB)))
+        ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
+            (currencyB && currencyEquals(WETH[chainId], currencyB)))
     )
 
     const handleSelectCurrencyA = useCallback(

@@ -1,4 +1,4 @@
-import { ChainId } from '@peghub/sdk'
+import { ChainId } from '@pegswap/sdk'
 import { FortmaticConnector } from './Fortmatic'
 import { InjectedConnector } from '@web3-react/injected-connector'
 import { LatticeConnector } from '@web3-react/lattice-connector'

@@ -2,7 +2,7 @@ import { NETWORK_ICON, NETWORK_LABEL } from '../../constants/networks'
 import { useModalOpen, useNetworkModalToggle } from '../../state/application/hooks'
 
 import { ApplicationModal } from '../../state/application/actions'
-import { ChainId } from '@peghub/sdk'
+import { ChainId } from '@pegswap/sdk'
 import Modal from '../Modal'
 import ModalHeader from '../ModalHeader'
 import React from 'react'
@@ -66,7 +66,7 @@ const PARAMS: {
             //'https://matic-mainnet.chainstacklabs.com/'
             'https://rpc-mainnet.maticvigil.com'
         ],
-        blockExplorerUrls: ['https://explorer-mainnet.maticvigil.com']
+        blockExplorerUrls: ['https://polygonscan.com']
     },
     [ChainId.HECO]: {
         chainId: '0x80',
@@ -145,11 +145,12 @@ export default function NetworkModal(): JSX.Element | null {
                     // ChainId.MAINNET,
                     // ChainId.FANTOM,
                     ChainId.BSC,
-                    // ChainId.MATIC,
+
                     // ChainId.HECO,
                     // ChainId.XDAI,
                     // ChainId.HARMONY,
                     ChainId.AVALANCHE,
+                    ChainId.MATIC,
                     // ChainId.OKEX
                 ].map((key: ChainId, i: number) => {
                     if (chainId === key) {

@@ -1,4 +1,4 @@
-import { ChainId, Token, TokenAmount } from '@peghub/sdk'
+import { ChainId, Token, TokenAmount } from '@pegswap/sdk'
 import { useBoringHelperContract, useDashboardContract, useQuickSwapFactoryContract } from 'hooks/useContract'
 import { useCallback, useEffect, useRef, useState } from 'react'
 

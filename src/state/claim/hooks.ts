@@ -1,5 +1,5 @@
 import { TransactionResponse } from '@ethersproject/providers'
-import { ChainId, JSBI, TokenAmount } from '@peghub/sdk'
+import { ChainId, JSBI, TokenAmount } from '@pegswap/sdk'
 import { useEffect, useState } from 'react'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useMerkleDistributorContract } from '../../hooks/useContract'

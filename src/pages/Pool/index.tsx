@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair } from '@peghub/sdk'
+import { ChainId, JSBI, Pair } from '@pegswap/sdk'
 import { transparentize } from 'polished'
 import React, { useContext, useMemo } from 'react'
 import { Link, useHistory } from 'react-router-dom'
@@ -25,7 +25,7 @@ import Button from '../../components/Button'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 
-const DataCard = styled(AutoColumn)<{ disabled?: boolean }>`
+const DataCard = styled(AutoColumn) <{ disabled?: boolean }>`
     background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ff007a 0%, #0094ec 100%);
     border-radius: ${({ theme }) => theme.borderRadius};
     width: 100%;
@@ -33,7 +33,7 @@ const DataCard = styled(AutoColumn)<{ disabled?: boolean }>`
     overflow: hidden;
 `
 
-const CardSection = styled(AutoColumn)<{ disabled?: boolean }>`
+const CardSection = styled(AutoColumn) <{ disabled?: boolean }>`
     padding: 1rem;
     z-index: 1;
     opacity: ${({ disabled }) => disabled && '0.4'};

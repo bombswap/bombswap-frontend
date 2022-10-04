@@ -6,6 +6,7 @@ export const UNSUPPORTED_LIST_URLS: string[] = []
 
 //const SUSHI_LIST = 'https://token-list.sushi.com'
 const PANCAKE_LIST = 'https://tokens.pancakeswap.finance/pancakeswap-extended.json'
+const QUICKSWAP_LIST = 'https://unpkg.com/quickswap-default-token-list@1.2.52/build/quickswap-default.tokenlist.json'
 // const COMPOUND_LIST = 'https://raw.githubusercontent.com/compound-finance/token-list/master/compound.tokenlist.json'
 // const UMA_LIST = 'https://umaproject.org/uma.tokenlist.json'
 // const NFTX_LIST = 'https://nftx.ethereumdb.com/v1/tokenlist/'
@@ -25,6 +26,7 @@ const PANCAKE_LIST = 'https://tokens.pancakeswap.finance/pancakeswap-extended.js
 // lower index == higher priority for token import
 export const DEFAULT_LIST_OF_LISTS: string[] = [
     PANCAKE_LIST,
+    QUICKSWAP_LIST,
     ...UNSUPPORTED_LIST_URLS // need to load unsupported tokens as well
 ]
 

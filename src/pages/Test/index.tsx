@@ -1,5 +1,5 @@
 import React from 'react'
-// import { PancakeV1Pair, PancakeV2Pair } from '@peghub/sdk'
+// import { PancakeV1Pair, PancakeV2Pair } from '@pegswap/sdk'
 
 export default function Test() {
     return <div></div>

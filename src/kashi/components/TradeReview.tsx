@@ -1,5 +1,5 @@
 import React from 'react'
-import { Trade } from '@peghub/sdk'
+import { Trade } from '@pegswap/sdk'
 import { computeSlippageAdjustedAmounts, computeTradePriceBreakdown } from 'utils/prices'
 import QuestionHelper from 'components/QuestionHelper'
 import FormattedPriceImpact from 'components/swap/FormattedPriceImpact'

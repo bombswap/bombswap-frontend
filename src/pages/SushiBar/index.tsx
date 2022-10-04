@@ -6,7 +6,7 @@ import InfoCard from './InfoCard'
 import APRCard from './APRCard'
 import StakeCard from './StakeCard'
 import BalanceCard from './BalanceCard'
-import { ChainId } from '@peghub/sdk'
+import { ChainId } from '@pegswap/sdk'
 import { SUSHI, XSUSHI } from '../../constants'
 import useTokenBalance from '../../hooks/useTokenBalance'
 

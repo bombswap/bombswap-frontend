@@ -1,4 +1,4 @@
-import { ChainId, Currency, JSBI, Price, WETH, currencyEquals } from '@peghub/sdk'
+import { ChainId, Currency, JSBI, Price, WETH, currencyEquals } from '@pegswap/sdk'
 import { useMemo } from 'react'
 import { USDC, BSC } from '../constants'
 import { PairState, usePairs } from '../data/Reserves'

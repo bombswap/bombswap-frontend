@@ -1,4 +1,4 @@
-import { Trade, TradeType, TokenAmount, ChainId } from '@peghub/sdk'
+import { Trade, TradeType, TokenAmount, ChainId } from '@pegswap/sdk'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import React, { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
@@ -73,9 +73,9 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
                 {tax > 0 && (
                     <RowBetween align="center">
                         <div className="text-secondary text-sm">
-                              <span style={{ color: 'red' }}>
+                            <span style={{ color: 'red' }}>
                                 This transaction will incur a {tax / 100}% tax. Please set your slippage accordingly.
-                              </span>
+                            </span>
                         </div>
                     </RowBetween>
                 )}
@@ -94,11 +94,11 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
                         <div className="text-sm font-bold text-high-emphesis">
                             {isExactIn
                                 ? `${slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(
-                                      4
-                                  )} ${trade.outputAmount.currency.getSymbol(chainId)}` ?? '-'
+                                    4
+                                )} ${trade.outputAmount.currency.getSymbol(chainId)}` ?? '-'
                                 : `${slippageAdjustedAmounts[Field.INPUT]?.toSignificant(
-                                      4
-                                  )} ${trade.inputAmount.currency.getSymbol(chainId)}` ?? '-'}
+                                    4
+                                )} ${trade.inputAmount.currency.getSymbol(chainId)}` ?? '-'}
                         </div>
                     </RowFixed>
                 </RowBetween>

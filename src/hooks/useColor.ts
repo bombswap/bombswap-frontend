@@ -1,4 +1,4 @@
-import { ChainId, Token } from '@peghub/sdk'
+import { ChainId, Token } from '@pegswap/sdk'
 import Vibrant from 'node-vibrant'
 import { shade } from 'polished'
 import { useLayoutEffect, useState } from 'react'

@@ -1,4 +1,4 @@
-import { Percent } from '@peghub/sdk'
+import { Percent } from '@pegswap/sdk'
 import React from 'react'
 import { ONE_BIPS } from '../../constants'
 import { warningSeverity } from '../../utils/prices'

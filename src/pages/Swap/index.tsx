@@ -3,7 +3,7 @@ import { ArrowWrapper, BottomGrouping, SwapCallbackError, Wrapper } from '../../
 import { AutoRow, RowBetween } from '../../components/Row'
 import { ButtonConfirmed, ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
 import Card, { DarkCard, GreyCard } from '../../components/CardLegacy'
-import { ChainId, CurrencyAmount, JSBI, Token, Trade } from '@peghub/sdk'
+import { ChainId, CurrencyAmount, JSBI, Token, Trade } from '@pegswap/sdk'
 import Column, { AutoColumn } from '../../components/Column'
 import { LinkStyledButton, TYPE } from '../../theme'
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react'
@@ -334,7 +334,7 @@ export default function Swap() {
                         swapErrorMessage={swapErrorMessage}
                         onDismiss={handleConfirmDismiss}
                     />
-                    {chainId && chainId === ChainId.MATIC && (
+                    {chainId && chainId === ChainId.MATIC_TESTNET && (
                         <div className="hidden md:block pb-4 space-y-2">
                             <DarkCard>
                                 <div className="flex justify-between items-center">
@@ -349,14 +349,14 @@ export default function Swap() {
                                     >
                                         Visit Yield
                                     </Link>
-                                    {/* <a
+                                    <a
                                         href="https://ayokiroll.medium.com/cf7e932f3a8"
                                         target="_blank"
                                         rel="noreferrer noopener"
                                         className="inline-flex items-center rounded-sm px-3 py-2 border-2 border-purple text-purple"
                                     >
                                         Read Tutorial
-                                    </a> */}
+                                    </a>
                                 </div>
                             </DarkCard>
                         </div>

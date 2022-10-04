@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Percent, Token, WETH } from '@peghub/sdk'
+import { ChainId, JSBI, Percent, Token, WETH } from '@pegswap/sdk'
 import { fortmatic, injected, lattice, portis, torus, walletconnect, walletlink } from '../connectors'
 
 import { AbstractConnector } from '@web3-react/abstract-connector'
@@ -94,7 +94,8 @@ const WRAPPED_NATIVE_ONLY: ChainTokenList = {
     [ChainId.HARMONY]: [WETH[ChainId.HARMONY]],
     [ChainId.HARMONY_TESTNET]: [WETH[ChainId.HARMONY_TESTNET]],
     [ChainId.OKEX]: [WETH[ChainId.OKEX]],
-    [ChainId.OKEX_TESTNET]: [WETH[ChainId.OKEX_TESTNET]]
+    [ChainId.OKEX_TESTNET]: [WETH[ChainId.OKEX_TESTNET]],
+    [ChainId.BOMB]: [WETH[ChainId.BOMB]],
 }
 
 // Default Ethereum chain tokens
@@ -148,7 +149,9 @@ export const MATIC: { [key: string]: Token } = {
     SUSHI: new Token(ChainId.MATIC, '0x0b3F868E0BE5597D5DB7fEB59E1CADBb0fdDa50a', 18, 'SUSHI', 'SushiToken'),
     AAVE: new Token(ChainId.MATIC, '0xD6DF932A45C0f255f85145f286eA0b292B21C90B', 18, 'AAVE', 'Aave'),
     FRAX: new Token(ChainId.MATIC, '0x104592a158490a9228070E0A8e5343B499e125D0', 18, 'FRAX', 'Frax'),
-    FXS: new Token(ChainId.MATIC, '0x3e121107F6F22DA4911079845a470757aF4e1A1b', 18, 'FXS', 'Frax Share')
+    FXS: new Token(ChainId.MATIC, '0x3e121107F6F22DA4911079845a470757aF4e1A1b', 18, 'FXS', 'Frax Share'),
+    PMATIC: new Token(ChainId.MATIC, '0xB7e1E341b2CBCc7d1EdF4DC6E5e962aE5C621ca5', 18, 'PMATIC', 'PolyPegs Matic'),
+    PSHARE: new Token(ChainId.MATIC, '0x04b79c851ed1A36549C6151189c79EC0eaBca745', 18, 'PSHARE', 'PolyPegs Share')
 }
 
 

@@ -1,4 +1,4 @@
-import { ChainId, Currency, ETHER, Token } from '@peghub/sdk'
+import { ChainId, Currency, ETHER, Token } from '@pegswap/sdk'
 import React, { useMemo } from 'react'
 
 import AvalancheLogo from '../../assets/images/avalanche-logo.png'
@@ -39,7 +39,7 @@ const StyledNativeCurrencyLogo = styled.img<{ size: string }>`
     border-radius: 10px;
 `
 
-const StyledLogo = styled(Logo)<{ size: string }>`
+const StyledLogo = styled(Logo) <{ size: string }>`
     width: ${({ size }) => size};
     height: ${({ size }) => size};
     // border-radius: ${({ size }) => size};

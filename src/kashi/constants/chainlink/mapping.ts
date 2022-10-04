@@ -1,4 +1,4 @@
-import { ChainId } from '@peghub/sdk'
+import { ChainId } from '@pegswap/sdk'
 
 export type ChainlinkMappingList = {
     readonly [address: string]: {

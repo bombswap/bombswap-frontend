@@ -2716,10 +2716,15 @@
   resolved "https://registry.yarnpkg.com/@peghub/core/-/core-1.0.0.tgz#4e4282d264be40b5c24ed4cfc809c3acacfe66f9"
   integrity sha512-iHuOJg1CBWokpsEYg6HYWyDvTb2xyLSkv9kS1qGnXHzo45lehssXetfrZDy8vt16fiTZDheQ33hgyTJO2aCEQw==
 
-"@peghub/sdk@1.0.4":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@peghub/sdk/-/sdk-1.0.4.tgz#92bcb21d44c63996a51b75c0b7adba0b95e0e462"
-  integrity sha512-59c88e4SBIHnNiA///O5aVuC3jjHwkKRFYB9RsJkThGVcmJcDa5zNEzi6mlB3c9x7hAGv4jCMNkwleWd04yk7Q==
+"@pegswap/default-token-list@^1.0.7":
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/@pegswap/default-token-list/-/default-token-list-1.0.7.tgz#4765d2618e218d9c663f60df0b332bef506ea8e8"
+  integrity sha512-G0gCHFlnAD6aMSpd86Q19Swotip+rmy4A32SiIJ9/uwkeARvld3otKwUoJy13MLz9bVY8I+BooQKRyhOWSoZgg==
+
+"@pegswap/sdk@2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@pegswap/sdk/-/sdk-2.0.4.tgz#c92ad03b8d8f93e48f00e54c85a28d47d5f89f58"
+  integrity sha512-Ag+qz8oqb2FsNElcTmoQ+AvGVhhj2PRXsSO/a6OK3Twmjibqv9lmRaHiV9PDF1+HZkura50ufdqUcHsDRZPNsw==
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"
@@ -2728,11 +2733,6 @@
     tiny-invariant "^1.1.0"
     tiny-warning "^1.0.3"
     toformat "^2.0.0"
-
-"@pegswap/default-token-list@^1.0.5":
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/@pegswap/default-token-list/-/default-token-list-1.0.5.tgz#631bd9b4210fc68eeffddcdb445465fdb53e2bed"
-  integrity sha512-c4FqGj0nHYcXeyrfs+J56Cd3B6jG5EGV/YWuscNCDyLA5ngdw/U/ZgofA3/UhbJFTjVGWAbGe8E38nh6hVswjA==
 
 "@pmmmwh/react-refresh-webpack-plugin@0.4.3":
   version "0.4.3"

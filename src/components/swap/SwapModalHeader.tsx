@@ -1,4 +1,4 @@
-import { TokenAmount, Trade, TradeType } from '@peghub/sdk'
+import { TokenAmount, Trade, TradeType } from '@pegswap/sdk'
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { AlertTriangle, ArrowDown } from 'react-feather'
 import { Text } from 'rebass'
@@ -121,8 +121,8 @@ export default function SwapModalHeader({
                             priceImpactSeverity > 2
                                 ? theme.red1
                                 : showAcceptChanges && trade.tradeType === TradeType.EXACT_INPUT
-                                ? theme.primary1
-                                : ''
+                                    ? theme.primary1
+                                    : ''
                         }
                     >
                         {trade.outputAmount.toSignificant(6)}
@@ -182,9 +182,9 @@ export default function SwapModalHeader({
                 {tax > 0 && (
                     <RowBetween align="center">
                         <div className="text-secondary text-sm">
-                              <span style={{ color: 'red' }}>
+                            <span style={{ color: 'red' }}>
                                 This transaction will incur a {tax / 100}% tax. Please set your slippage accordingly.
-                              </span>
+                            </span>
                         </div>
                     </RowBetween>
                 )}

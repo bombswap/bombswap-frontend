@@ -1,4 +1,4 @@
-import { ChainId, Currency } from '@peghub/sdk'
+import { ChainId, Currency } from '@pegswap/sdk'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Logo from '../assets/images/logo.png'
@@ -250,7 +250,7 @@ function AppBar(): JSX.Element {
                                                     </QuestionHelper>
                                                 </>
                                             )}
-                                        {account && chainId &&  (
+                                        {account && chainId && (
                                             <div className="hidden sm:inline-block">
                                                 <a
                                                     className="flex items-center rounded bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto"
@@ -293,7 +293,7 @@ function AppBar(): JSX.Element {
                                                 <Web3Faucet />
                                             )
                                         }
-                                        
+
                                         {/*<MoreMenu />*/}
                                     </div>
                                 </div>

@@ -1,4 +1,4 @@
-import { Token } from '@peghub/sdk'
+import { Token } from '@pegswap/sdk'
 import { ImportToken } from 'components/SearchModal/ImportToken'
 import React, { useCallback } from 'react'
 import Modal from '../Modal'

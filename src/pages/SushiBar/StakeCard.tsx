@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { Input as NumericalInput } from '../../components/NumericalInput'
 import ErrorTriangle from '../../assets/images/error-triangle.svg'
 import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallback'
-import { BAR_ADDRESS, Token, TokenAmount } from '@peghub/sdk'
+import { BAR_ADDRESS, Token, TokenAmount } from '@pegswap/sdk'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useWalletModalToggle } from '../../state/application/hooks'
 import { BalanceProps } from '../../hooks/useTokenBalance'
@@ -188,24 +188,21 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                 <StyledNumericalInput
                     value={input}
                     onUserInput={handleInput}
-                    className={`w-full h-14 px-3 md:px-5 mt-5 rounded bg-dark-800 text-caption2 md:text-lg font-bold text-dark-800${
-                        inputError ? ' pl-9 md:pl-12' : ''
-                    }`}
+                    className={`w-full h-14 px-3 md:px-5 mt-5 rounded bg-dark-800 text-caption2 md:text-lg font-bold text-dark-800${inputError ? ' pl-9 md:pl-12' : ''
+                        }`}
                     placeholder=" "
                 />
                 {/* input overlay: */}
                 <div className="relative h-0 bottom-14 w-full pointer-events-none">
                     <div
-                        className={`flex justify-between items-center h-14 rounded px-3 md:px-5 ${
-                            inputError ? ' border border-red' : ''
-                        }`}
+                        className={`flex justify-between items-center h-14 rounded px-3 md:px-5 ${inputError ? ' border border-red' : ''
+                            }`}
                     >
                         <div className="flex">
                             {inputError && <img className="w-4 md:w-5 mr-2" src={ErrorTriangle} alt="error" />}
                             <p
-                                className={`text-caption2 md:text-lg font-bold ${
-                                    input ? 'text-high-emphesis' : 'text-secondary'
-                                }`}
+                                className={`text-caption2 md:text-lg font-bold ${input ? 'text-high-emphesis' : 'text-secondary'
+                                    }`}
                             >
                                 {`${input ? input : '0'} ${activeTab === 0 ? '' : 'x'}SUSHI`}
                             </p>
@@ -232,7 +229,7 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                     </div>
                 </div>
                 {(approvalState === ApprovalState.NOT_APPROVED || approvalState === ApprovalState.PENDING) &&
-                activeTab === 0 ? (
+                    activeTab === 0 ? (
                     <Button
                         className={`${buttonStyle} text-high-emphesis bg-cyan-blue hover:bg-opacity-90`}
                         disabled={approvalState === ApprovalState.PENDING}
@@ -250,22 +247,22 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                             buttonDisabled
                                 ? buttonStyleDisabled
                                 : !walletConnected
-                                ? buttonStyleConnectWallet
-                                : insufficientFunds
-                                ? buttonStyleInsufficientFunds
-                                : buttonStyleEnabled
+                                    ? buttonStyleConnectWallet
+                                    : insufficientFunds
+                                        ? buttonStyleInsufficientFunds
+                                        : buttonStyleEnabled
                         }
                         onClick={handleClickButton}
                     >
                         {!walletConnected
                             ? i18n._(t`Connect Wallet`)
                             : !input
-                            ? i18n._(t`Enter Amount`)
-                            : insufficientFunds
-                            ? i18n._(t`Insufficient Balance`)
-                            : activeTab === 0
-                            ? i18n._(t`Confirm Staking`)
-                            : i18n._(t`Confirm Withdrawal`)}
+                                ? i18n._(t`Enter Amount`)
+                                : insufficientFunds
+                                    ? i18n._(t`Insufficient Balance`)
+                                    : activeTab === 0
+                                        ? i18n._(t`Confirm Staking`)
+                                        : i18n._(t`Confirm Withdrawal`)}
                     </button>
                 )}
             </div>

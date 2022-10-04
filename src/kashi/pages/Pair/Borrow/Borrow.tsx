@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { WETH } from '@peghub/sdk'
+import { WETH } from '@pegswap/sdk'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
 import { Alert, Button, Checkbox, Dots } from 'components'
@@ -53,8 +53,8 @@ export default function Borrow({ pair }: BorrowProps) {
     const collateralBalance = useBentoCollateral
         ? pair.collateral.bentoBalance
         : assetNative
-        ? info?.ethBalance
-        : pair.collateral.balance
+            ? info?.ethBalance
+            : pair.collateral.balance
 
     const displayUpdateOracle = pair.currentExchangeRate.gt(0) ? updateOracle : true
 
@@ -64,8 +64,8 @@ export default function Borrow({ pair }: BorrowProps) {
     const foundTrade = useTradeExactIn(parsedAmount, collateralToken) || undefined
     const extraCollateral = swap
         ? computeSlippageAdjustedAmounts(foundTrade, allowedSlippage)
-              [Field.OUTPUT]?.toFixed(pair.collateral.decimals)
-              .toBigNumber(pair.collateral.decimals) || ZERO
+        [Field.OUTPUT]?.toFixed(pair.collateral.decimals)
+            .toBigNumber(pair.collateral.decimals) || ZERO
         : ZERO
 
     const swapCollateral = collateralValue.toBigNumber(pair.collateral.decimals)
@@ -105,8 +105,7 @@ export default function Borrow({ pair }: BorrowProps) {
 
     const collateralWarnings = new Warnings().add(
         collateralBalance?.lt(collateralValue.toBigNumber(pair.collateral.decimals)),
-        `Please make sure your ${
-            useBentoCollateral ? 'BentoBox' : 'wallet'
+        `Please make sure your ${useBentoCollateral ? 'BentoBox' : 'wallet'
         } balance is sufficient to deposit and then try again.`,
         true
     )
@@ -122,7 +121,7 @@ export default function Borrow({ pair }: BorrowProps) {
                 true,
                 new Warning(
                     borrowValue.length > 0 &&
-                        borrowAmount.gt(nextMaxBorrowMinimum.sub(pair.currentUserBorrowAmount.value)),
+                    borrowAmount.gt(nextMaxBorrowMinimum.sub(pair.currentUserBorrowAmount.value)),
                     "You don't have enough collateral to borrow this amount.",
                     true,
                     new Warning(
@@ -228,8 +227,8 @@ export default function Borrow({ pair }: BorrowProps) {
                 console.log(
                     displayUpdateOracle,
                     pair.currentExchangeRate.toFixed(pair.asset.decimals) /
-                        pair.oracleExchangeRate.toFixed(pair.asset.decimals) >
-                        1.05
+                    pair.oracleExchangeRate.toFixed(pair.asset.decimals) >
+                    1.05
                 )
                 cooker.updateExchangeRate(true, ZERO, ZERO)
             }
@@ -431,8 +430,8 @@ export default function Borrow({ pair }: BorrowProps) {
             {(collateralValueSet ||
                 (borrowValueSet && !pair.userCollateralAmount.value.isZero()) ||
                 (swap && (priceImpactSeverity < 3 || isExpertMode))) && (
-                <TransactionReviewView transactionReview={transactionReview} />
-            )}
+                    <TransactionReviewView transactionReview={transactionReview} />
+                )}
 
             <KashiApproveButton
                 color="pink"

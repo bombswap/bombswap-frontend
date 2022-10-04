@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@peghub/sdk'
+import { Token, TokenAmount } from '@pegswap/sdk'
 import { ethers } from 'ethers'
 
 export default interface LPToken {
