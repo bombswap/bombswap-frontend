@@ -468,9 +468,6 @@ export default function AddLiquidity({
                                                         proportional to your share of the pool, and can be redeemed at any time.
                                                     </Trans>
                                                 </div>
-                                                <div className="text-red">
-                                                    NOTE: Make sure to only use this page to add liquidity to avoid paying taxes when assets are in a taxable state.
-                                                </div>
                                             </>
                                         }
                                         type="information"

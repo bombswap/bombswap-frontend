@@ -170,9 +170,6 @@ export default function Pool() {
                                     the pool. Fees are added to the pool, accrue in real time and can be claimed by
                                     withdrawing your liquidity`}
                                 </div>
-                                <div className="text-red">
-                                    NOTE: Make sure to only use this page to add liquidity to avoid paying taxes when assets are in a taxable state.
-                                </div>
                             </>
                         )}
                         type="information"
