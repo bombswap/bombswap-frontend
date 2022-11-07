@@ -115,6 +115,7 @@ const WALLET_VIEWS = {
     PENDING: 'pending'
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function WalletModal({
     pendingTransactions,
     confirmedTransactions,

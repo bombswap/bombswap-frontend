@@ -227,6 +227,7 @@ function Web3StatusInner() {
     }
 }
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function Web3Status() {
     const { active, account } = useWeb3React()
     const contextNetwork = useWeb3React(NetworkContextName)

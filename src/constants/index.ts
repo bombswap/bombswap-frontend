@@ -15,7 +15,7 @@ type ChainTokenMap = {
 }
 
 // Block time here is slightly higher (~1s) than average in order to avoid ongoing proposals past the displayed time
-export const AVERAGE_BLOCK_TIME_IN_SECS = 13
+export const AVERAGE_BLOCK_TIME_IN_SECS = 3
 export const PROPOSAL_LENGTH_IN_BLOCKS = 40_320
 export const PROPOSAL_LENGTH_IN_SECS = AVERAGE_BLOCK_TIME_IN_SECS * PROPOSAL_LENGTH_IN_BLOCKS
 
@@ -95,7 +95,7 @@ const WRAPPED_NATIVE_ONLY: ChainTokenList = {
     [ChainId.HARMONY_TESTNET]: [WETH[ChainId.HARMONY_TESTNET]],
     [ChainId.OKEX]: [WETH[ChainId.OKEX]],
     [ChainId.OKEX_TESTNET]: [WETH[ChainId.OKEX_TESTNET]],
-    [ChainId.BOMB]: [WETH[ChainId.BOMB]],
+    [ChainId.BOMB]: [WETH[ChainId.BOMB]]
 }
 
 // Default Ethereum chain tokens
@@ -131,7 +131,6 @@ export const BSC: { [key: string]: Token } = {
     BBOND: new Token(ChainId.BSC, '0xDA1d9C79240003195d0a67f202efcCCC3F78b994', 18, 'BBOND', 'BOMB Bond')
 }
 
-
 export const FANTOM: { [key: string]: Token } = {
     USDC: new Token(ChainId.FANTOM, '0x04068DA6C83AFCFA0e13ba15A6696662335D5B75', 6, 'USDC', 'USD Coin'),
     WBTC: new Token(ChainId.FANTOM, '0x321162Cd933E2Be498Cd2267a90534A804051b11', 8, 'WBTC', 'Wrapped Bitcoin'),
@@ -154,7 +153,6 @@ export const MATIC: { [key: string]: Token } = {
     PSHARE: new Token(ChainId.MATIC, '0x04b79c851ed1A36549C6151189c79EC0eaBca745', 18, 'PSHARE', 'PolyPegs Share')
 }
 
-
 export const AVALANCHE: { [key: string]: Token } = {
     LINK: new Token(ChainId.AVALANCHE, '0x5947BB275c521040051D82396192181b413227A3', 18, 'LINK.e', 'Chainlink Token'),
     SOL: new Token(ChainId.AVALANCHE, '0xFE6B19286885a4F7F55AdAD09C3Cd1f906D2478F', 9, 'SOL', 'Wrapped Solana'),
@@ -162,7 +160,7 @@ export const AVALANCHE: { [key: string]: Token } = {
     SNOWSOL: new Token(ChainId.AVALANCHE, '0x531780FAcE85306877D7e1F05d713D1B50a37F7A', 18, 'snowSOL', 'snowSOL'),
     WETH: new Token(ChainId.AVALANCHE, '0xB31f66AA3C1e785363F0875A1B74E27b85FD66c7', 18, 'WAVAX', 'Wrapped AVAX'),
     USDCE: new Token(ChainId.AVALANCHE, '0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664', 6, 'USDC.e', 'USD Coin'),
-    USDC: new Token(ChainId.AVALANCHE, '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', 6, 'USDC', 'USD Coin'),
+    USDC: new Token(ChainId.AVALANCHE, '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', 6, 'USDC', 'USD Coin')
 }
 
 // used to construct intermediary pairs for trading
@@ -171,8 +169,8 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC, RUNE, NFTX, STETH],
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
-    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BUSD, BSC.BOMB, BSC.USDC, BSC.USDT, BSC.BTCB, BSC.ETH],
-    [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDC, AVALANCHE.USDCE],
+    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BUSD, BSC.BOMB, BSC.USDC, BSC.BTCB],
+    [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDC, AVALANCHE.USDCE]
 }
 
 export const CREAM = new Token(ChainId.MAINNET, '0x2ba592F78dB6436527729929AAf6c908497cB200', 18, 'CREAM', 'Cream')
@@ -212,8 +210,6 @@ export const PWING = new Token(
     'Poly Ontology Wing Token'
 )
 
-
-
 export const XSUSHI = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xSUSHI', 'SushiBar')
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
 export const LFBTC = new Token(
@@ -235,7 +231,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
     },
     [ChainId.BSC]: {
         [BSC.CZBOMB.address]: [BSC.BOMB, BSC.BTCB, BSC.BITBTC, BSC.WETH, BSC.BUSD],
-        [BSC.CZEMP.address]: [BSC.EMP, BSC.ETH, BSC.WETH],
+        [BSC.CZEMP.address]: [BSC.EMP, BSC.ETH, BSC.WETH, BSC.BUSD],
         [BSC.BBOND.address]: [BSC.BOMB, BSC.BTCB, BSC.WETH, BSC.BUSD],
         [BSC.BITATOM.address]: [BSC.ATOM, BSC.WETH],
         [BSC.BITDOT.address]: [BSC.DOT, BSC.WETH],
@@ -249,7 +245,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
     [ChainId.MAINNET]: [...WRAPPED_NATIVE_ONLY[ChainId.MAINNET], DAI, USDC, USDT, WBTC],
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
-    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BOMB, BSC.BTCB, BSC.USD, BSC.USDC, BSC.USDT],
+    [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BOMB, BSC.BTCB, BSC.USD],
     [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDCE, AVALANCHE.USDC]
 }
 
@@ -260,7 +256,13 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
     [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.USD, BSC.USDC, BSC.USDT, BSC.BTCB, BSC.BOMB, BSC.ETH],
-    [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDC, AVALANCHE.USDCE, AVALANCHE.SOL, AVALANCHE.LINK],
+    [ChainId.AVALANCHE]: [
+        ...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE],
+        AVALANCHE.USDC,
+        AVALANCHE.USDCE,
+        AVALANCHE.SOL,
+        AVALANCHE.LINK
+    ]
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -273,7 +275,6 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
         [USDC, USDT],
         [DAI, USDT]
     ]
-
 }
 
 export interface WalletInfo {
@@ -314,7 +315,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
         href: null,
         color: '#4196FC',
         mobile: true
-    },
+    }
     // LATTICE: {
     //     connector: lattice,
     //     name: 'Lattice',
@@ -390,9 +391,9 @@ export const ALLOWED_PRICE_IMPACT_LOW: Percent = new Percent(JSBI.BigInt(100), B
 export const ALLOWED_PRICE_IMPACT_MEDIUM: Percent = new Percent(JSBI.BigInt(300), BIPS_BASE) // 3%
 export const ALLOWED_PRICE_IMPACT_HIGH: Percent = new Percent(JSBI.BigInt(500), BIPS_BASE) // 5%
 // if the price slippage exceeds this number, force the user to type 'confirm' to execute
-export const PRICE_IMPACT_WITHOUT_FEE_CONFIRM_MIN: Percent = new Percent(JSBI.BigInt(1000), BIPS_BASE) // 10%
+export const PRICE_IMPACT_WITHOUT_FEE_CONFIRM_MIN: Percent = new Percent(JSBI.BigInt(2500), BIPS_BASE) // 10%
 // for non expert mode disable swaps above this
-export const BLOCKED_PRICE_IMPACT_NON_EXPERT: Percent = new Percent(JSBI.BigInt(1500), BIPS_BASE) // 15%
+export const BLOCKED_PRICE_IMPACT_NON_EXPERT: Percent = new Percent(JSBI.BigInt(3500), BIPS_BASE) // 15%
 
 // used to ensure the user doesn't send so much ETH so they end up with <.01
 export const MIN_ETH: JSBI = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(16)) // .01 ETH
