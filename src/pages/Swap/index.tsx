@@ -113,13 +113,13 @@ export default function Swap() {
 
     const parsedAmounts = showWrap
         ? {
-            [Field.INPUT]: parsedAmount,
-            [Field.OUTPUT]: parsedAmount
-        }
+              [Field.INPUT]: parsedAmount,
+              [Field.OUTPUT]: parsedAmount
+          }
         : {
-            [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
-            [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount
-        }
+              [Field.INPUT]: independentField === Field.INPUT ? parsedAmount : trade?.inputAmount,
+              [Field.OUTPUT]: independentField === Field.OUTPUT ? parsedAmount : trade?.outputAmount
+          }
 
     const { onSwitchTokens, onCurrencySelection, onUserInput, onChangeRecipient } = useSwapActionHandlers()
     const isValid = !swapInputError
@@ -163,8 +163,8 @@ export default function Swap() {
     const route = trade?.route
     const userHasSpecifiedInputOutput = Boolean(
         currencies[Field.INPUT] &&
-        currencies[Field.OUTPUT] &&
-        parsedAmounts[independentField]?.greaterThan(JSBI.BigInt(0))
+            currencies[Field.OUTPUT] &&
+            parsedAmounts[independentField]?.greaterThan(JSBI.BigInt(0))
     )
     const noRoute = !route
 
@@ -221,8 +221,8 @@ export default function Swap() {
                         recipient === null
                             ? 'Swap w/o Send'
                             : (recipientAddress ?? recipient) === account
-                                ? 'Swap w/o Send + recipient'
-                                : 'Swap w/ Send',
+                            ? 'Swap w/o Send + recipient'
+                            : 'Swap w/ Send',
                     label: [
                         trade?.inputAmount?.currency?.getSymbol(chainId),
                         trade?.outputAmount?.currency?.getSymbol(chainId)
@@ -306,7 +306,7 @@ export default function Swap() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Swap`)} | PegHub</title>
+                <title>{i18n._(t`Swap`)} | BOMB</title>
                 <meta
                     name="description"
                     content="PegSwap allows for swapping of ERC20 compatible tokens across multiple networks"
@@ -400,7 +400,7 @@ export default function Swap() {
                                             loop={false}
                                             style={{ width: 32, height: 32 }}
 
-                                        // className="text-secondary fill-current"
+                                            // className="text-secondary fill-current"
                                         />
                                     </div>
                                 </button>
@@ -510,8 +510,8 @@ export default function Swap() {
                                     (wrapType === WrapType.WRAP
                                         ? i18n._(t`Wrap`)
                                         : wrapType === WrapType.UNWRAP
-                                            ? i18n._(t`Unwrap`)
-                                            : null)}
+                                        ? i18n._(t`Unwrap`)
+                                        : null)}
                             </ButtonPrimary>
                         ) : noRoute && userHasSpecifiedInputOutput ? (
                             <GreyCard style={{ textAlign: 'center' }}>
@@ -566,8 +566,8 @@ export default function Swap() {
                                         {priceImpactSeverity > 3 && !isExpertMode
                                             ? i18n._(t`Price Impact High`)
                                             : priceImpactSeverity > 2
-                                                ? i18n._(t`Swap Anyway`)
-                                                : i18n._(t`Swap`)}
+                                            ? i18n._(t`Swap Anyway`)
+                                            : i18n._(t`Swap`)}
                                     </Text>
                                 </ButtonError>
                             </RowBetween>
@@ -594,10 +594,10 @@ export default function Swap() {
                                     {swapInputError
                                         ? swapInputError
                                         : priceImpactSeverity > 3 && !isExpertMode
-                                            ? i18n._(t`Price Impact Too High`)
-                                            : priceImpactSeverity > 2
-                                                ? i18n._(t`Swap Anyway`)
-                                                : i18n._(t`Swap`)}
+                                        ? i18n._(t`Price Impact Too High`)
+                                        : priceImpactSeverity > 2
+                                        ? i18n._(t`Swap Anyway`)
+                                        : i18n._(t`Swap`)}
                                 </Text>
                             </ButtonError>
                         )}

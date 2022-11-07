@@ -25,7 +25,7 @@ import Button from '../../components/Button'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 
-const DataCard = styled(AutoColumn) <{ disabled?: boolean }>`
+const DataCard = styled(AutoColumn)<{ disabled?: boolean }>`
     background: radial-gradient(76.02% 75.41% at 1.84% 0%, #ff007a 0%, #0094ec 100%);
     border-radius: ${({ theme }) => theme.borderRadius};
     width: 100%;
@@ -33,7 +33,7 @@ const DataCard = styled(AutoColumn) <{ disabled?: boolean }>`
     overflow: hidden;
 `
 
-const CardSection = styled(AutoColumn) <{ disabled?: boolean }>`
+const CardSection = styled(AutoColumn)<{ disabled?: boolean }>`
     padding: 1rem;
     z-index: 1;
     opacity: ${({ disabled }) => disabled && '0.4'};
@@ -155,7 +155,7 @@ export default function Pool() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Pool`)} | PegHub</title>
+                <title>{i18n._(t`Pool`)} | BOMB</title>
             </Helmet>
             <div className="bg-dark-900 w-full max-w-2xl rounded shadow-liquidity-purple-glow">
                 <ExchangeHeader />
@@ -163,7 +163,7 @@ export default function Pool() {
                     <SwapPoolTabs active={'pool'} />
                     <Alert
                         title={i18n._(t`Liquidity Provider Rewards`)}
-                        message={(
+                        message={
                             <>
                                 <div className="mb-4">
                                     {t`Liquidity providers earn a 0.25% fee on all trades proportional to their share of
@@ -171,7 +171,7 @@ export default function Pool() {
                                     withdrawing your liquidity`}
                                 </div>
                             </>
-                        )}
+                        }
                         type="information"
                     />
                     <div className="flex justify-between items-center my-4">

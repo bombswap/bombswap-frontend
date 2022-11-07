@@ -37,7 +37,7 @@ export default function Yield(): JSX.Element {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Yield Debugger`)} | PegHub</title>
+                <title>{i18n._(t`Yield Debugger`)} | BOMB</title>
                 <meta name="description" content="Farm SUSHI by staking LP (Liquidity Provider) tokens" />
             </Helmet>
             <div className="container max-w-2xl mx-auto">

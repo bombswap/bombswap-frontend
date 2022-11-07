@@ -46,7 +46,7 @@ export default function Saave() {
     return (
         <>
             <Helmet>
-                <title>Saave | PegHub</title>
+                <title>Saave | BOMB</title>
                 <meta name="description" content="Migrate SUSHI -> xSUSHI -> axSUSHI" />
             </Helmet>
             <PageWrapper>

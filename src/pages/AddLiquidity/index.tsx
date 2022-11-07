@@ -68,8 +68,8 @@ export default function AddLiquidity({
 
     const oneCurrencyIsWETH = Boolean(
         chainId &&
-        ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
-            (currencyB && currencyEquals(currencyB, WETH[chainId])))
+            ((currencyA && currencyEquals(currencyA, WETH[chainId])) ||
+                (currencyB && currencyEquals(currencyB, WETH[chainId])))
     )
 
     const toggleWalletModal = useWalletModalToggle() // toggle wallet when disconnected
@@ -168,7 +168,7 @@ export default function AddLiquidity({
         } else if (chainId === 43114) {
             czRouterAddress = '0x70e041173c61e0fF131E3E5FFDFb2ABb2354e049'
         } else {
-            throw "(1) czRouterContract is not available for chain " + chainId
+            throw '(1) czRouterContract is not available for chain ' + chainId
         }
     }
     const [approvalA, approveACallback] = useApproveCallback(parsedAmounts[Field.CURRENCY_A], czRouterAddress)
@@ -406,7 +406,7 @@ export default function AddLiquidity({
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Add Liquidity`)} | PegHub</title>
+                <title>{i18n._(t`Add Liquidity`)} | BOMB</title>
             </Helmet>
             <div className="w-full max-w-2xl mb-5 px-4">
                 <NavLink
@@ -465,7 +465,8 @@ export default function AddLiquidity({
                                                     <Trans>
                                                         <b>Tip:</b> When you add liquidity, you will receive pool tokens
                                                         representing your position. These tokens automatically earn fees
-                                                        proportional to your share of the pool, and can be redeemed at any time.
+                                                        proportional to your share of the pool, and can be redeemed at
+                                                        any time.
                                                     </Trans>
                                                 </div>
                                             </>

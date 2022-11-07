@@ -86,7 +86,7 @@ export default function Pool() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Tools`)} | PegHub</title>
+                <title>{i18n._(t`Tools`)} | BOMB</title>
             </Helmet>
             <PageWrapper>
                 <SwapPoolTabs active={'pool'} />

@@ -89,12 +89,12 @@ export default function RemoveLiquidity({
         [Field.LIQUIDITY_PERCENT]: parsedAmounts[Field.LIQUIDITY_PERCENT].equalTo('')
             ? ''
             : parsedAmounts[Field.LIQUIDITY_PERCENT].greaterThan('100')
-                ? '100'
-                : parsedAmounts[Field.LIQUIDITY_PERCENT].equalTo('0')
-                    ? '0'
-                    : parsedAmounts[Field.LIQUIDITY_PERCENT].lessThan(new Percent('1', '100'))
-                        ? '<1'
-                        : parsedAmounts[Field.LIQUIDITY_PERCENT].toFixed(0),
+            ? '100'
+            : parsedAmounts[Field.LIQUIDITY_PERCENT].equalTo('0')
+            ? '0'
+            : parsedAmounts[Field.LIQUIDITY_PERCENT].lessThan(new Percent('1', '100'))
+            ? '<1'
+            : parsedAmounts[Field.LIQUIDITY_PERCENT].toFixed(0),
         [Field.LIQUIDITY]:
             independentField === Field.LIQUIDITY ? typedValue : parsedAmounts[Field.LIQUIDITY]?.toSignificant(6) ?? '',
         [Field.CURRENCY_A]:
@@ -461,8 +461,8 @@ export default function RemoveLiquidity({
     const oneCurrencyIsETH = currencyA === ETHER || currencyB === ETHER
     const oneCurrencyIsWETH = Boolean(
         chainId &&
-        ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
-            (currencyB && currencyEquals(WETH[chainId], currencyB)))
+            ((currencyA && currencyEquals(WETH[chainId], currencyA)) ||
+                (currencyB && currencyEquals(WETH[chainId], currencyB)))
     )
 
     const handleSelectCurrencyA = useCallback(
@@ -504,7 +504,7 @@ export default function RemoveLiquidity({
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Remove Liquidity`)} | PegHub</title>
+                <title>{i18n._(t`Remove Liquidity`)} | BOMB</title>
             </Helmet>
 
             <div className="w-full max-w-2xl mb-5 px-4">

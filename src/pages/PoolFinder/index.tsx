@@ -48,9 +48,9 @@ export default function PoolFinder() {
         pairState === PairState.NOT_EXISTS ||
         Boolean(
             pairState === PairState.EXISTS &&
-            pair &&
-            JSBI.equal(pair.reserve0.raw, JSBI.BigInt(0)) &&
-            JSBI.equal(pair.reserve1.raw, JSBI.BigInt(0))
+                pair &&
+                JSBI.equal(pair.reserve0.raw, JSBI.BigInt(0)) &&
+                JSBI.equal(pair.reserve1.raw, JSBI.BigInt(0))
         )
 
     const position: TokenAmount | undefined = useTokenBalance(account ?? undefined, pair?.liquidityToken)
@@ -84,7 +84,7 @@ export default function PoolFinder() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Find Pool`)} | PegHub</title>
+                <title>{i18n._(t`Find Pool`)} | BOMB</title>
             </Helmet>
             <div className="relative w-full max-w-lg rounded bg-dark-900 shadow-liquidity-purple-glow">
                 <FindPoolTabs />
