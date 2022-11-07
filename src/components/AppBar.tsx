@@ -124,9 +124,9 @@ function AppBar(): JSX.Element {
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <NavLink id={`swap-nav-link`} to={'/swap'}>
+                                            {/* <NavLink id={`swap-nav-link`} to={'/swap'}>
                                                 {i18n._(t`Swap`)}
-                                            </NavLink>
+                                            </NavLink> */}
                                             {chainId && [ChainId.MATIC].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
