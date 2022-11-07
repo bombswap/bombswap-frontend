@@ -1,23 +1,19 @@
 {
-  "short_name": "PegHub Swap",
-  "name": "PegHub Swap",
+  "name": "BOMB Swap",
+  "short_name": "BOMB Swap",
   "icons": [
     {
-      "src": "./images/logo-192x192.png",
+      "src": "/android-chrome-192x192.png?v=2",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     },
     {
-      "src": "./images/logo-512x512.png",
+      "src": "/android-chrome-512x512.png?v=2",
       "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "type": "image/png"
     }
   ],
-  "orientation": "portrait",
-  "display": "standalone",
-  "theme_color": "#ff007a",
-  "background_color": "#fff",
-  "start_url": "/"
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
 }

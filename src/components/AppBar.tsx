@@ -1,7 +1,7 @@
 import { ChainId, Currency } from '@pegswap/sdk'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import Logo from '../assets/images/logo.png'
+import Logo from '../assets/images/bomb-small.png'
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
 import { useETHBalances } from '../state/wallet/hooks'
 import { ReactComponent as Burger } from '../assets/images/burger.svg'
@@ -23,9 +23,7 @@ function AppBar(): JSX.Element {
     const { account, chainId, library } = useActiveWeb3React()
     const { pathname } = useLocation()
 
-    const [navClassList, setNavClassList] = useState(
-        'w-screen bg-transparent z-10'
-    )
+    const [navClassList, setNavClassList] = useState('w-screen bg-transparent z-10')
 
     const userEthBalance = useETHBalances(account ? [account] : [])?.[account ?? '']
 
@@ -46,34 +44,80 @@ function AppBar(): JSX.Element {
                             <div className="flex items-center justify-between h-16">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
-                                        <img src={Logo} alt="Sushi" className="h-10 w-auto" />
+                                        <img src={Logo} alt="BOMB" className="h-10 w-auto" />
                                     </div>
                                     <div className="hidden sm:block sm:ml-4">
                                         <div className="flex space-x-2">
                                             <NavLink id={`swap-nav-link`} to={'/'}>
                                                 {i18n._(t`Home`)}
                                             </NavLink>
-                                            <div className={'navDropdownMenu'} style={{ "display": "inline", "position": "relative" }}>
-                                                <a className={'navDropdownMenuRoot navLink text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap'} href={undefined}>Protocols</a>
+                                            <div
+                                                className={'navDropdownMenu'}
+                                                style={{ display: 'inline', position: 'relative' }}
+                                            >
+                                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid  */}
+                                                <a
+                                                    className={
+                                                        'navDropdownMenuRoot navLink text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap'
+                                                    }
+                                                    href={undefined}
+                                                >
+                                                    Protocols
+                                                </a>
                                                 <div className={'navDropdownMenuContainer'}>
                                                     <ul className={'navDropdownMenuWrapper'}>
                                                         <li className={'navDropdownMenuItem'}>
-                                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://app.bitbomb.io/'} target="_blank" rel="noreferrer">
+                                                            <a
+                                                                id={`swap-nav-link`}
+                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                href={'https://app.bomb.money/'}
+                                                                target="_blank"
+                                                                rel="noreferrer"
+                                                            >
+                                                                {i18n._(t`BOMB.money`)}
+                                                            </a>
+                                                        </li>
+                                                        <li className={'navDropdownMenuItem'}>
+                                                            <a
+                                                                id={`swap-nav-link`}
+                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                href={'https://app.bitbomb.io/'}
+                                                                target="_blank"
+                                                                rel="noreferrer"
+                                                            >
                                                                 {i18n._(t`bitBOMB`)}
                                                             </a>
                                                         </li>
                                                         <li className={'navDropdownMenuItem'}>
-                                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.czpegs.com/'} target="_blank" rel="noreferrer">
+                                                            <a
+                                                                id={`swap-nav-link`}
+                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                href={'https://www.czpegs.com/'}
+                                                                target="_blank"
+                                                                rel="noreferrer"
+                                                            >
                                                                 {i18n._(t`czPegs`)}
                                                             </a>
                                                         </li>
                                                         <li className={'navDropdownMenuItem'}>
-                                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.snowpegs.com/'} target="_blank" rel="noreferrer">
+                                                            <a
+                                                                id={`swap-nav-link`}
+                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                href={'https://www.snowpegs.com/'}
+                                                                target="_blank"
+                                                                rel="noreferrer"
+                                                            >
                                                                 {i18n._(t`SnowPegs`)}
                                                             </a>
                                                         </li>
                                                         <li className={'navDropdownMenuItem'}>
-                                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.polypegs.com/'} target="_blank" rel="noreferrer">
+                                                            <a
+                                                                id={`swap-nav-link`}
+                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                href={'https://www.polypegs.com/'}
+                                                                target="_blank"
+                                                                rel="noreferrer"
+                                                            >
                                                                 {i18n._(t`PolyPegs`)}
                                                             </a>
                                                         </li>
@@ -83,10 +127,60 @@ function AppBar(): JSX.Element {
                                             <NavLink id={`swap-nav-link`} to={'/swap'}>
                                                 {i18n._(t`Swap`)}
                                             </NavLink>
-                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://vaults.peghub.com/'} target="_blank" rel="noreferrer">
-                                                {i18n._(t`Vaults`)}
-                                            </a>
-                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://docs.peghub.com/'} target="_blank" rel="noreferrer">
+                                            {chainId && [ChainId.MATIC].includes(chainId) && (
+                                                <a
+                                                    id={`swap-nav-link`}
+                                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                    href={'https://vaults.peghub.com/#/polygon'}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    {i18n._(t`Vaults`)}
+                                                </a>
+                                            )}
+                                            {chainId && [ChainId.AVALANCHE].includes(chainId) && (
+                                                <a
+                                                    id={`swap-nav-link`}
+                                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                    href={'https://vaults.peghub.com/#/avax'}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    {i18n._(t`Vaults`)}
+                                                </a>
+                                            )}
+                                            {chainId && [ChainId.BSC].includes(chainId) && (
+                                                <a
+                                                    id={`swap-nav-link`}
+                                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                    href={'https://vaults.peghub.com/#/bsc'}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    {i18n._(t`Vaults`)}
+                                                </a>
+                                            )}
+                                            {chainId &&
+                                                chainId !== ChainId.BSC &&
+                                                chainId !== ChainId.MATIC &&
+                                                chainId !== ChainId.AVALANCHE && (
+                                                    <a
+                                                        id={`swap-nav-link`}
+                                                        className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                        href={'https://vaults.peghub.com/'}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                    >
+                                                        {i18n._(t`Vaults`)}
+                                                    </a>
+                                                )}
+                                            <a
+                                                id={`swap-nav-link`}
+                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                href={'https://docs.peghub.com/'}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
                                                 {i18n._(t`Docs`)}
                                             </a>
                                             {/* {chainId && [ChainId.MAINNET, ChainId.MATIC].includes(chainId) && (
@@ -202,13 +296,81 @@ function AppBar(): JSX.Element {
                                                     </QuestionHelper>
                                                 </>
                                             )} */}
+                                        {/* {chainId &&
+                                            [ChainId.BSC].includes(chainId) &&
+                                            library &&
+                                            library.provider.isMetaMask && (
+                                                <>
+                                                    <QuestionHelper
+                                                        text={i18n._(t`Add BOMB to your Metamask wallet`)}
+                                                    >
+                                                        <div
+                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
+                                                            onClick={() => {
+                                                                let address: string | undefined
+                                                                switch (chainId) {
+                                                                    case ChainId.BSC:
+                                                                        address =
+                                                                            '0x522348779DCb2911539e76A1042aA922F9C47Ee3'
+                                                                        break
+                                                                }
+                                                                const params: any = {
+                                                                    type: 'ERC20',
+                                                                    options: {
+                                                                        address: address,
+                                                                        symbol: 'BOMB',
+                                                                        decimals: 18,
+                                                                        image:
+                                                                            'https://swap.peghub.com/images/tokens/0x522348779DCb2911539e76A1042aA922F9C47Ee3.png'
+                                                                    }
+                                                                }
 
+                                                                if (
+                                                                    library &&
+                                                                    library.provider.isMetaMask &&
+                                                                    library.provider.request
+                                                                ) {
+                                                                    library.provider
+                                                                        .request({
+                                                                            method: 'wallet_watchAsset',
+                                                                            params
+                                                                        })
+                                                                        .then(success => {
+                                                                            if (success) {
+                                                                                console.log(
+                                                                                    'Successfully added BOMB to MetaMask'
+                                                                                )
+                                                                            } else {
+                                                                                throw new Error('Something went wrong.')
+                                                                            }
+                                                                        })
+                                                                        .catch(console.error)
+                                                                }
+                                                            }}
+                                                        >
+                                                            <img
+                                                                src={`${process.env.PUBLIC_URL}/images/square-bomb.png`}
+                                                                alt="Switch Network"
+                                                                style={{
+                                                                    minWidth: 36,
+                                                                    minHeight: 36,
+                                                                    maxWidth: 36,
+                                                                    maxHeight: 36
+                                                                }}
+                                                                className="rounded-md object-contain"
+                                                            />
+                                                        </div>
+                                                    </QuestionHelper>
+                                                </>
+                                            )} */}
                                         {chainId &&
                                             [ChainId.BSC].includes(chainId) &&
                                             library &&
                                             library.provider.isMetaMask && (
                                                 <>
-                                                    <QuestionHelper text={i18n._(t`Add PegHub to your Metamask wallet`)}>
+                                                    <QuestionHelper
+                                                        text={i18n._(t`Add PegHub to your Metamask wallet`)}
+                                                    >
                                                         <div
                                                             className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
                                                             onClick={() => {
@@ -268,7 +430,7 @@ function AppBar(): JSX.Element {
                                                     </QuestionHelper>
                                                 </>
                                             )}
-                                        {account && chainId && (
+                                        {/* {account && chainId && (
                                             <div className="hidden sm:inline-block">
                                                 <a
                                                     className="flex items-center rounded bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto"
@@ -281,7 +443,7 @@ function AppBar(): JSX.Element {
                                                     </div>
                                                 </a>
                                             </div>
-                                        )}
+                                        )} */}
                                         {library && library.provider.isMetaMask && (
                                             <div className="hidden sm:inline-block">
                                                 <Web3Network />
@@ -301,16 +463,10 @@ function AppBar(): JSX.Element {
                                         </div>
                                         <LanguageSwitch />
 
-                                        {
-                                            chainId && [
-                                                ChainId.GÖRLI,
-                                                ChainId.KOVAN,
-                                                ChainId.RINKEBY,
-                                                ChainId.ROPSTEN
-                                            ].includes(chainId) && (
-                                                <Web3Faucet />
-                                            )
-                                        }
+                                        {chainId &&
+                                            [ChainId.GÖRLI, ChainId.KOVAN, ChainId.RINKEBY, ChainId.ROPSTEN].includes(
+                                                chainId
+                                            ) && <Web3Faucet />}
 
                                         {/*<MoreMenu />*/}
                                     </div>
@@ -360,19 +516,43 @@ function AppBar(): JSX.Element {
                                 <NavLink id={`swap-nav-link`} to={'/'}>
                                     {i18n._(t`Home`)}
                                 </NavLink>
-                                <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://app.bitbomb.io/'} target="_blank" rel="noreferrer">
+                                <a
+                                    id={`swap-nav-link`}
+                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    href={'https://app.bitbomb.io/'}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     {i18n._(t`bitBOMB`)}
                                 </a>
-                                <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.czpegs.com/'} target="_blank" rel="noreferrer">
+                                <a
+                                    id={`swap-nav-link`}
+                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    href={'https://www.czpegs.com/'}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     {i18n._(t`czPegs`)}
                                 </a>
                                 <NavLink id={`swap-nav-link`} to={'/swap'}>
                                     {i18n._(t`Swap`)}
                                 </NavLink>
-                                <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://vaults.peghub.com/'} target="_blank" rel="noreferrer">
+                                <a
+                                    id={`swap-nav-link`}
+                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    href={'https://vaults.peghub.com/'}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     {i18n._(t`Vaults`)}
                                 </a>
-                                <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://docs.peghub.com/'} target="_blank" rel="noreferrer">
+                                <a
+                                    id={`swap-nav-link`}
+                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    href={'https://docs.peghub.com/'}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
                                     {i18n._(t`Docs`)}
                                 </a>
 

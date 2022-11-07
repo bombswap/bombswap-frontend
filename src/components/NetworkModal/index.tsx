@@ -64,7 +64,7 @@ const PARAMS: {
         },
         rpcUrls: [
             //'https://matic-mainnet.chainstacklabs.com/'
-            'https://polygon-rpc.com',
+            'https://polygon-rpc.com'
         ],
         blockExplorerUrls: ['https://polygonscan.com']
     },
@@ -133,7 +133,7 @@ const PARAMS: {
         },
         rpcUrls: ['https://rpc.bomb.app'],
         blockExplorerUrls: ['https://www.bombscan.com']
-    },
+    }
 }
 
 export default function NetworkModal(): JSX.Element | null {
@@ -147,7 +147,7 @@ export default function NetworkModal(): JSX.Element | null {
         <Modal isOpen={networkModalOpen} onDismiss={toggleNetworkModal}>
             <ModalHeader onClose={toggleNetworkModal} title="Select a Network" />
             <div className="text-lg text-primary mb-6">
-                You are currently browsing <span className="font-bold text-pink">PegHub</span>
+                You are currently using <span className="font-bold text-pink">BOMB Swap</span>
                 <br /> on the <span className="font-bold text-blue">{NETWORK_LABEL[chainId]}</span> network
             </div>
 
@@ -161,7 +161,7 @@ export default function NetworkModal(): JSX.Element | null {
                     // ChainId.XDAI,
                     // ChainId.HARMONY,
                     ChainId.AVALANCHE,
-                    ChainId.MATIC,
+                    ChainId.MATIC
                     // ChainId.OKEX
                 ].map((key: ChainId, i: number) => {
                     if (chainId === key) {

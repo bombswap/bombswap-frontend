@@ -87,7 +87,7 @@ export const walletconnect = new WalletConnectConnector({
 export const lattice = new LatticeConnector({
     chainId: 1,
     url: RPC[ChainId.MAINNET],
-    appName: 'PegHub'
+    appName: 'BOMB'
 })
 
 // mainnet only
