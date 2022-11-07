@@ -53,15 +53,33 @@ function AppBar(): JSX.Element {
                                             <NavLink id={`swap-nav-link`} to={'/'}>
                                                 {i18n._(t`Home`)}
                                             </NavLink>
-                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://app.bitbomb.io/'} target="_blank" rel="noreferrer">
-                                                {i18n._(t`bitBOMB`)}
-                                            </a>
-                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.czpegs.com/'} target="_blank" rel="noreferrer">
-                                                {i18n._(t`czPegs`)}
-                                            </a>
-                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.snowpegs.com/'} target="_blank" rel="noreferrer">
-                                                {i18n._(t`SnowPegs`)}
-                                            </a>
+                                            <div className={'navDropdownMenu'} style={{ "display": "inline", "position": "relative" }}>
+                                                <a className={'navDropdownMenuRoot navLink text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap'} href={undefined}>Protocols</a>
+                                                <div className={'navDropdownMenuContainer'}>
+                                                    <ul className={'navDropdownMenuWrapper'}>
+                                                        <li className={'navDropdownMenuItem'}>
+                                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://app.bitbomb.io/'} target="_blank" rel="noreferrer">
+                                                                {i18n._(t`bitBOMB`)}
+                                                            </a>
+                                                        </li>
+                                                        <li className={'navDropdownMenuItem'}>
+                                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.czpegs.com/'} target="_blank" rel="noreferrer">
+                                                                {i18n._(t`czPegs`)}
+                                                            </a>
+                                                        </li>
+                                                        <li className={'navDropdownMenuItem'}>
+                                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.snowpegs.com/'} target="_blank" rel="noreferrer">
+                                                                {i18n._(t`SnowPegs`)}
+                                                            </a>
+                                                        </li>
+                                                        <li className={'navDropdownMenuItem'}>
+                                                            <a id={`swap-nav-link`} className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap" href={'https://www.polypegs.com/'} target="_blank" rel="noreferrer">
+                                                                {i18n._(t`PolyPegs`)}
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                             <NavLink id={`swap-nav-link`} to={'/swap'}>
                                                 {i18n._(t`Swap`)}
                                             </NavLink>
