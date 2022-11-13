@@ -40,7 +40,7 @@ const StyledNativeCurrencyLogo = styled.img<{ size: string }>`
     border-radius: 10px;
 `
 
-const StyledLogo = styled(Logo) <{ size: string }>`
+const StyledLogo = styled(Logo)<{ size: string }>`
     width: ${({ size }) => size};
     height: ${({ size }) => size};
     // border-radius: ${({ size }) => size};
@@ -67,7 +67,8 @@ const logo: { readonly [chainId in ChainId]?: string } = {
     [ChainId.HARMONY_TESTNET]: HarmonyLogo,
     [ChainId.OKEX]: OKExLogo,
     [ChainId.OKEX_TESTNET]: OKExLogo,
-    [ChainId.BOMB]: BombLogo
+    [ChainId.BOMB]: BombLogo,
+    [ChainId.BOMB_TESTNET]: BombLogo
 }
 
 export default function CurrencyLogo({
