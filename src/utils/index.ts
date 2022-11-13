@@ -252,6 +252,15 @@ const builders = {
                 return `${prefix}/${type}/${data}`
         }
     },
+    bomb_testnet: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
+        const prefix = 'https://explorer.bombchain-testnet.ankr.com'
+        switch (type) {
+            case 'transaction':
+                return `${prefix}/tx/${data}`
+            default:
+                return `${prefix}/${type}/${data}`
+        }
+    },
     xdai: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
         const prefix = `https://blockscout.com/poa/xdai`
         switch (type) {
@@ -470,6 +479,10 @@ const chains: ChainObject = {
     [ChainId.BOMB]: {
         chainName: '',
         builder: builders.bomb
+    },
+    [ChainId.BOMB_TESTNET]: {
+        chainName: '',
+        builder: builders.bomb_testnet
     }
 }
 
@@ -543,22 +556,17 @@ export function getRouterContract(chainId: number, library: Web3Provider, accoun
 }
 
 export function getCzRouterContract(chainId: number, library: Web3Provider, account?: string): Contract {
-    let czRouterAddress;
+    let czRouterAddress
     if (chainId === 56) {
         czRouterAddress = '0x1D594c2c711c2b4e1a581C466f83e32B210079c5'
     } else if (chainId === 43114) {
         czRouterAddress = '0x70e041173c61e0fF131E3E5FFDFb2ABb2354e049'
     } else {
-        czRouterAddress = getRouterAddress(chainId);
+        czRouterAddress = getRouterAddress(chainId)
         // throw "(2) czRouterContract is not available for chain " + chainId
     }
 
-    return getContract(
-        czRouterAddress,
-        IUniswapV2Router02ABI,
-        library,
-        account
-    )
+    return getContract(czRouterAddress, IUniswapV2Router02ABI, library, account)
 }
 
 export function escapeRegExp(string: string): string {

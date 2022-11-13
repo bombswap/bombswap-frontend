@@ -90,7 +90,7 @@ export const BENTOBOX_ADDRESS: {
     [ChainId.OKEX]: '',
     [ChainId.OKEX_TESTNET]: '',
     [ChainId.BOMB]: '',
-
+    [ChainId.BOMB_TESTNET]: ''
 }
 
 export const KASHI_ADDRESS: {
@@ -119,7 +119,7 @@ export const KASHI_ADDRESS: {
     [ChainId.OKEX]: '',
     [ChainId.OKEX_TESTNET]: '',
     [ChainId.BOMB]: '',
-
+    [ChainId.BOMB_TESTNET]: ''
 }
 
 // export const KASHI_ADDRESS = '0x2cBA6Ab6574646Badc84F0544d05059e57a5dc42'
@@ -150,7 +150,7 @@ export const SUSHISWAP_SWAPPER_ADDRESS: {
     [ChainId.OKEX]: '',
     [ChainId.OKEX_TESTNET]: '',
     [ChainId.BOMB]: '',
-
+    [ChainId.BOMB_TESTNET]: ''
 }
 
 export const SUSHISWAP_MULTISWAPPER_ADDRESS: {
@@ -179,7 +179,7 @@ export const SUSHISWAP_MULTISWAPPER_ADDRESS: {
     [ChainId.OKEX]: '',
     [ChainId.OKEX_TESTNET]: '',
     [ChainId.BOMB]: '',
-
+    [ChainId.BOMB_TESTNET]: ''
 }
 
 export const SUSHISWAP_MULTI_EXACT_SWAPPER_ADDRESS = {
@@ -206,7 +206,7 @@ export const SUSHISWAP_MULTI_EXACT_SWAPPER_ADDRESS = {
     [ChainId.OKEX]: '',
     [ChainId.OKEX_TESTNET]: '',
     [ChainId.BOMB]: '',
-
+    [ChainId.BOMB_TESTNET]: ''
 }
 
 export const PEGGED_ORACLE_ADDRESS = '0x6cbfbB38498Df0E1e7A4506593cDB02db9001564'
@@ -241,6 +241,7 @@ export const BORING_HELPER_ADDRESS = {
     [ChainId.OKEX]: '',
     [ChainId.OKEX_TESTNET]: '',
     [ChainId.BOMB]: '',
+    [ChainId.BOMB_TESTNET]: ''
 }
 
 // export const BORING_HELPER_ADDRESS = '0x11Ca5375AdAfd6205E41131A4409f182677996E6'

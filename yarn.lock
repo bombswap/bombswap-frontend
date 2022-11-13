@@ -2721,10 +2721,10 @@
   resolved "https://registry.yarnpkg.com/@pegswap/default-token-list/-/default-token-list-1.0.9.tgz#b15ced919a9357bd66a914240d781adb1b8c5c3f"
   integrity sha512-VpUD4rOruGABBQ1ebwdimv+JVrOzHAJhUIq1Dy8J6e3UQEWZvyS9rkce7JmXsl+TjbP/ZO/RSpEmtHrr6aWXIg==
 
-"@pegswap/sdk@2.0.4":
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@pegswap/sdk/-/sdk-2.0.4.tgz#c92ad03b8d8f93e48f00e54c85a28d47d5f89f58"
-  integrity sha512-Ag+qz8oqb2FsNElcTmoQ+AvGVhhj2PRXsSO/a6OK3Twmjibqv9lmRaHiV9PDF1+HZkura50ufdqUcHsDRZPNsw==
+"@pegswap/sdk@2.0.5":
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/@pegswap/sdk/-/sdk-2.0.5.tgz#1fe1df8df3c0ddc608c77bb710c859d7aa9dfaf8"
+  integrity sha512-LEaTo8GV2ukgUT/tCluljoJCqOIz4jLvduvH1vZEAsEQYcguMyUZGfCaS7o3Q/nQt+exAVlgFRt5gZqnac6Q1Q==
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"

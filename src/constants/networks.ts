@@ -40,7 +40,8 @@ export const NETWORK_ICON = {
     [ChainId.HARMONY_TESTNET]: Harmony,
     [ChainId.OKEX]: OKEx,
     [ChainId.OKEX_TESTNET]: OKEx,
-    [ChainId.BOMB]: Bomb
+    [ChainId.BOMB]: Bomb,
+    [ChainId.BOMB_TESTNET]: Bomb
 }
 
 export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
@@ -65,5 +66,6 @@ export const NETWORK_LABEL: { [chainId in ChainId]?: string } = {
     [ChainId.HARMONY_TESTNET]: 'Harmony Testnet',
     [ChainId.OKEX]: 'OKExChain',
     [ChainId.OKEX_TESTNET]: 'OKExChain',
-    [ChainId.BOMB]: 'BOMB Chain'
+    [ChainId.BOMB]: 'BOMB Chain',
+    [ChainId.BOMB_TESTNET]: 'BOMB Testnet'
 }

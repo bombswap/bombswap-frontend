@@ -45,7 +45,7 @@ const PARAMS: {
     },
     [ChainId.BSC]: {
         chainId: '0x38',
-        chainName: 'Binance Smart Chain',
+        chainName: 'Binance Smart Chain Mainnet',
         nativeCurrency: {
             name: 'Binance Coin',
             symbol: 'BNB',
@@ -133,6 +133,17 @@ const PARAMS: {
         },
         rpcUrls: ['https://rpc.bomb.app'],
         blockExplorerUrls: ['https://www.bombscan.com']
+    },
+    [ChainId.BOMB_TESTNET]: {
+        chainId: '0x95F',
+        chainName: 'BOMB Testnet',
+        nativeCurrency: {
+            name: 'BOMB Token',
+            symbol: 'BOMB',
+            decimals: 18
+        },
+        rpcUrls: ['https://bombchain-testnet.ankr.com/bas_full_rpc_1'],
+        blockExplorerUrls: ['https://explorer.bombchain-testnet.ankr.com/']
     }
 }
 
@@ -161,7 +172,8 @@ export default function NetworkModal(): JSX.Element | null {
                     // ChainId.XDAI,
                     // ChainId.HARMONY,
                     ChainId.AVALANCHE,
-                    ChainId.MATIC
+                    ChainId.MATIC,
+                    ChainId.BOMB_TESTNET
                     // ChainId.OKEX
                 ].map((key: ChainId, i: number) => {
                     if (chainId === key) {

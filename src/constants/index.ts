@@ -95,7 +95,8 @@ const WRAPPED_NATIVE_ONLY: ChainTokenList = {
     [ChainId.HARMONY_TESTNET]: [WETH[ChainId.HARMONY_TESTNET]],
     [ChainId.OKEX]: [WETH[ChainId.OKEX]],
     [ChainId.OKEX_TESTNET]: [WETH[ChainId.OKEX_TESTNET]],
-    [ChainId.BOMB]: [WETH[ChainId.BOMB]]
+    [ChainId.BOMB]: [WETH[ChainId.BOMB]],
+    [ChainId.BOMB_TESTNET]: [WETH[ChainId.BOMB_TESTNET]]
 }
 
 // Default Ethereum chain tokens
@@ -162,6 +163,8 @@ export const AVALANCHE: { [key: string]: Token } = {
     USDCE: new Token(ChainId.AVALANCHE, '0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664', 6, 'USDC.e', 'USD Coin'),
     USDC: new Token(ChainId.AVALANCHE, '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', 6, 'USDC', 'USD Coin')
 }
+
+export const BOMB_TESTNET: { [key: string]: Token } = {}
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
