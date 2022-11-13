@@ -464,9 +464,13 @@ function AppBar(): JSX.Element {
                                         <LanguageSwitch />
 
                                         {chainId &&
-                                            [ChainId.GÖRLI, ChainId.KOVAN, ChainId.RINKEBY, ChainId.ROPSTEN].includes(
-                                                chainId
-                                            ) && <Web3Faucet />}
+                                            [
+                                                ChainId.GÖRLI,
+                                                ChainId.KOVAN,
+                                                ChainId.RINKEBY,
+                                                ChainId.ROPSTEN,
+                                                ChainId.BOMB_TESTNET
+                                            ].includes(chainId) && <Web3Faucet />}
 
                                         {/*<MoreMenu />*/}
                                     </div>
