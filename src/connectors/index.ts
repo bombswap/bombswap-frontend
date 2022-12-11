@@ -33,7 +33,7 @@ const RPC = {
     [ChainId.HARMONY_TESTNET]: 'https://explorer.pops.one',
     [ChainId.OKEX]: 'https://exchainrpc.okex.org',
     [ChainId.OKEX_TESTNET]: 'https://exchaintestrpc.okex.org',
-    [ChainId.BOMB]: 'https://rpc.bomb.app',
+    [ChainId.BOMB]: 'https://bombchain-mainnet.ankr.com/bomb_mainnet_full_rpc_1',
     [ChainId.BOMB_TESTNET]: 'https://bombchain-testnet.ankr.com/bas_full_rpc_1'
 }
 
@@ -70,7 +70,7 @@ export const injected = new InjectedConnector({
         1666700000, // harmony testnet
         66, // okex testnet
         65, // okex testnet
-        23254,
+        2300,
         2399
     ]
 })
@@ -107,7 +107,7 @@ export const portis = new PortisConnector({
 // mainnet only
 export const walletlink = new WalletLinkConnector({
     url: RPC[ChainId.MAINNET],
-    appName: 'PegHub',
+    appName: 'BOMB',
     appLogoUrl: 'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/PHUB.png'
 })
 

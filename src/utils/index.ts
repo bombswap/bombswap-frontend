@@ -244,7 +244,7 @@ const builders = {
         }
     },
     bomb: (chainName: string, data: string, type: 'transaction' | 'token' | 'address' | 'block') => {
-        const prefix = 'https://bombscan.com'
+        const prefix = 'https://explorer.bombchain-mainnet.ankr.com'
         switch (type) {
             case 'transaction':
                 return `${prefix}/tx/${data}`

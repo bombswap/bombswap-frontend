@@ -124,15 +124,15 @@ const PARAMS: {
         blockExplorerUrls: ['https://www.oklink.com/okexchain']
     },
     [ChainId.BOMB]: {
-        chainId: '0x5AD6',
-        chainName: 'BOMB',
+        chainId: '0x8FC',
+        chainName: 'BOMB Mainnet',
         nativeCurrency: {
-            name: 'BOMB Token',
+            name: 'BOMB Money',
             symbol: 'BOMB',
             decimals: 18
         },
-        rpcUrls: ['https://rpc.bomb.app'],
-        blockExplorerUrls: ['https://www.bombscan.com']
+        rpcUrls: ['https://bombchain-mainnet.ankr.com/bomb_mainnet_full_rpc_1'],
+        blockExplorerUrls: ['https://explorer.bombchain-mainnet.ankr.com/']
     },
     [ChainId.BOMB_TESTNET]: {
         chainId: '0x95F',
@@ -166,6 +166,7 @@ export default function NetworkModal(): JSX.Element | null {
                 {[
                     // ChainId.MAINNET,
                     // ChainId.FANTOM,
+                    ChainId.BOMB,
                     ChainId.BSC,
 
                     // ChainId.HECO,

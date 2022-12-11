@@ -2716,15 +2716,15 @@
   resolved "https://registry.yarnpkg.com/@peghub/core/-/core-1.0.0.tgz#4e4282d264be40b5c24ed4cfc809c3acacfe66f9"
   integrity sha512-iHuOJg1CBWokpsEYg6HYWyDvTb2xyLSkv9kS1qGnXHzo45lehssXetfrZDy8vt16fiTZDheQ33hgyTJO2aCEQw==
 
-"@pegswap/default-token-list@^1.0.12":
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/@pegswap/default-token-list/-/default-token-list-1.0.13.tgz#e3abd8102df855ac1f17d19cfd3274b3ecfb4880"
-  integrity sha512-0atnNwjsFOC08a1iDNeDz1YreuZ4hJKmJT6dMkC/V0r9V99vr3XFLcOt2z0yK5p+L5C3xHx/wd5NSIdWmn+8/w==
+"@pegswap/default-token-list@^1.0.14":
+  version "1.0.14"
+  resolved "https://registry.yarnpkg.com/@pegswap/default-token-list/-/default-token-list-1.0.14.tgz#efd1a8040ced331c7db0e67e9598aaa76a70fd5f"
+  integrity sha512-OegUSY9Lk26pN7SeKZ/XvjpyyASjuMPJmSWAc1I5rh5iGysjEACgKfuMgyh3gN0rcpXmEb+fhSB9W7ZB9eKEhw==
 
-"@pegswap/sdk@2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@pegswap/sdk/-/sdk-2.0.5.tgz#1fe1df8df3c0ddc608c77bb710c859d7aa9dfaf8"
-  integrity sha512-LEaTo8GV2ukgUT/tCluljoJCqOIz4jLvduvH1vZEAsEQYcguMyUZGfCaS7o3Q/nQt+exAVlgFRt5gZqnac6Q1Q==
+"@pegswap/sdk@2.0.7":
+  version "2.0.7"
+  resolved "https://registry.yarnpkg.com/@pegswap/sdk/-/sdk-2.0.7.tgz#f4d14389c1e8707b007f144fa05c5b5cb63ddd56"
+  integrity sha512-PCPuIURkE79ivOsMZhmeTV0xrvTsiSaK6xNH2KzflGzt9bDWqbDtpIqQazt4myug299t5leB1azp17iBxKXbGQ==
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"
