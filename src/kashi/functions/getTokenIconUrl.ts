@@ -165,6 +165,10 @@ const TOKEN_ICONS: { [chainId in ChainId]?: any } = {
         [String('0x16939ef78684453bfDFb47825F8a5F714f12623a').toLowerCase()]: 'XTZ-square',
         [String('0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82').toLowerCase()]: 'CAKE-square'
     },
+    [ChainId.BOMB]: {
+        [String('0xaC029BF2871b3f810AAbF836Adc4F89369027971').toLowerCase()]: 'bombswap',
+        [String('0x87460B9F21763aee800b94362062a06dA1B5f6Ee').toLowerCase()]: 'bomb'
+    },
     [ChainId.MATIC]: {
         [String('0xD6DF932A45C0f255f85145f286eA0b292B21C90B').toLowerCase()]: 'AAVE-square',
         [String('0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063').toLowerCase()]: 'DAI-square',

@@ -2716,10 +2716,10 @@
   resolved "https://registry.yarnpkg.com/@peghub/core/-/core-1.0.0.tgz#4e4282d264be40b5c24ed4cfc809c3acacfe66f9"
   integrity sha512-iHuOJg1CBWokpsEYg6HYWyDvTb2xyLSkv9kS1qGnXHzo45lehssXetfrZDy8vt16fiTZDheQ33hgyTJO2aCEQw==
 
-"@pegswap/default-token-list@^1.0.14":
-  version "1.0.14"
-  resolved "https://registry.yarnpkg.com/@pegswap/default-token-list/-/default-token-list-1.0.14.tgz#efd1a8040ced331c7db0e67e9598aaa76a70fd5f"
-  integrity sha512-OegUSY9Lk26pN7SeKZ/XvjpyyASjuMPJmSWAc1I5rh5iGysjEACgKfuMgyh3gN0rcpXmEb+fhSB9W7ZB9eKEhw==
+"@pegswap/default-token-list@^1.0.15":
+  version "1.0.15"
+  resolved "https://registry.yarnpkg.com/@pegswap/default-token-list/-/default-token-list-1.0.15.tgz#53d7d767c87d1d775fd0beb8de57dacdf775fe69"
+  integrity sha512-mvPHXK8AvC6gTWQ0E2PN2TcerqpQj9xxMyCzDUGE/Srl3f53S327mtqYvfDdkvrZyinFl7bJMalp6r5TrKUCuA==
 
 "@pegswap/sdk@2.0.7":
   version "2.0.7"

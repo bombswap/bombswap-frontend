@@ -116,8 +116,14 @@ import ZEC from '../../assets/kashi/tokens/zec-square.jpg'
 import COIN from '../../assets/kashi/tokens/coin-square.jpg'
 import FRX from '../../assets/kashi/tokens/frx-square.jpg'
 import WOOFY from '../../assets/kashi/tokens/woofy-square.jpg'
+import BOMB from '../../assets/images/bomb.png'
+import BOMBSWAP from '../../assets/images/bombswap.jpg'
 
 const TOKEN_ICONS: { [chainId in ChainId]?: any } = {
+    [ChainId.BOMB]: {
+        [String('0xaC029BF2871b3f810AAbF836Adc4F89369027971').toLowerCase()]: BOMBSWAP,
+        [String('0x87460B9F21763aee800b94362062a06dA1B5f6Ee').toLowerCase()]: BOMB
+    },
     [ChainId.MAINNET]: {
         [String('0x111111111117dC0aa78b770fA6A738034120C302').toLowerCase()]: INCH,
         [String('0x7Fc66500c84A76Ad7e9c93437bFc5Ac33E2DDaE9').toLowerCase()]: AAVE,

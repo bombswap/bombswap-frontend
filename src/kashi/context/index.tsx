@@ -28,22 +28,22 @@ interface Reducer {
 
 interface State {
     info:
-    | {
-        ethBalance: BigNumber
-        sushiBalance: BigNumber
-        sushiBarBalance: BigNumber
-        xsushiBalance: BigNumber
-        xsushiSupply: BigNumber
-        sushiBarAllowance: BigNumber
-        factories: {}[]
-        ethRate: BigNumber
-        sushiRate: BigNumber
-        btcRate: BigNumber
-        pendingSushi: BigNumber
-        blockTimeStamp: BigNumber
-        masterContractApproved: boolean[]
-    }
-    | undefined
+        | {
+              ethBalance: BigNumber
+              sushiBalance: BigNumber
+              sushiBarBalance: BigNumber
+              xsushiBalance: BigNumber
+              xsushiSupply: BigNumber
+              sushiBarAllowance: BigNumber
+              factories: {}[]
+              ethRate: BigNumber
+              sushiRate: BigNumber
+              btcRate: BigNumber
+              pendingSushi: BigNumber
+              blockTimeStamp: BigNumber
+              masterContractApproved: boolean[]
+          }
+        | undefined
     pairs: any[]
 }
 
@@ -166,11 +166,11 @@ export function KashiProvider({ children }: { children: JSX.Element }) {
     const tokens = useAllTokens()
 
     const updatePairs = useCallback(
-        async function () {
+        async function() {
             if (
                 !account ||
                 !chainId ||
-                ![ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(chainId)
+                ![ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC, ChainId.BOMB].includes(chainId)
             ) {
                 return
             }

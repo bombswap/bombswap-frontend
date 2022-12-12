@@ -201,14 +201,18 @@ function AppBar(): JSX.Element {
                                                         {i18n._(t`Lend`)}
                                                     </NavLink>
                                                 )} */}
+
+                                            {/* BENTOBOX */}
+
                                             {/* {chainId &&
-                                                [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(
+                                                [ChainId.BOMB, ChainId.BOMB_TESTNET].includes(
                                                     chainId
                                                 ) && (
                                                     <NavLink id={`bento-nav-link`} to={'/bento'}>
                                                         {i18n._(t`BentoBox`)}
                                                     </NavLink>
                                                 )} */}
+
                                             {/* {chainId === ChainId.MAINNET && (
                                                 <NavLink id={`vesting-nav-link`} to={'/vesting'}>
                                                     {i18n._(t`Vesting`)}

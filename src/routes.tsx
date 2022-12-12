@@ -47,21 +47,21 @@ function Routes(): JSX.Element {
         <Switch>
             <PublicRoute exact path="/connect" component={Connect} />
             {/* BentoApps */}
-            {/* <Route exact strict path="/bento" component={Bento} />
-            <WalletRoute exact strict path="/bento/balances" component={BentoBalances} /> */}
+            <Route exact strict path="/bento" component={Bento} />
+            <WalletRoute exact strict path="/bento/balances" component={BentoBalances} />
 
             {/* Kashi */}
-            {/* <Route
+            <Route
                 exact
                 strict
                 path="/bento/kashi"
                 render={props => <Redirect to="/bento/kashi/borrow" {...props} />}
-            /> */}
-            {/* <WalletRoute exact strict path="/bento/kashi/lend" component={LendMarkets} />
+            />
+            <WalletRoute exact strict path="/bento/kashi/lend" component={LendMarkets} />
             <WalletRoute exact strict path="/bento/kashi/borrow" component={BorrowMarkets} />
             <WalletRoute exact strict path="/bento/kashi/create" component={CreateMarkets} />
             <WalletRoute exact strict path="/bento/kashi/lend/:pairAddress" component={LendPair} />
-            <WalletRoute exact strict path="/bento/kashi/borrow/:pairAddress" component={BorrowPair} /> */}
+            <WalletRoute exact strict path="/bento/kashi/borrow/:pairAddress" component={BorrowPair} />
             {/* 
             {chainId === ChainId.MAINNET && (
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />

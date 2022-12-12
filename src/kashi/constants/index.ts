@@ -89,7 +89,7 @@ export const BENTOBOX_ADDRESS: {
     [ChainId.HARMONY_TESTNET]: '',
     [ChainId.OKEX]: '',
     [ChainId.OKEX_TESTNET]: '',
-    [ChainId.BOMB]: '',
+    [ChainId.BOMB]: '0x16189dC039d6099F55841C8Bd047BEF6a5B03eCE',
     [ChainId.BOMB_TESTNET]: ''
 }
 
@@ -240,7 +240,7 @@ export const BORING_HELPER_ADDRESS = {
     [ChainId.HARMONY_TESTNET]: '',
     [ChainId.OKEX]: '',
     [ChainId.OKEX_TESTNET]: '',
-    [ChainId.BOMB]: '',
+    [ChainId.BOMB]: '0x3a59aa6BA8F112270d77C92009cD35572C0Bf12C',
     [ChainId.BOMB_TESTNET]: ''
 }
 
@@ -262,7 +262,8 @@ export const USD_CURRENCY: { [chainId in ChainId]?: Currency } = {
     [ChainId.HECO_TESTNET]: { address: '', decimals: 6 },
     [ChainId.MATIC]: { address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F', decimals: 6 },
     [ChainId.MATIC_TESTNET]: { address: '', decimals: 6 },
-    [ChainId.XDAI]: { address: '', decimals: 6 }
+    [ChainId.XDAI]: { address: '', decimals: 6 },
+    [ChainId.BOMB]: { address: '0xca2de0ad1a82F78d42284774411F336f2550E7F5', decimals: 18 }
 }
 
 export function getCurrency(chainId: ChainId | void): Currency {
