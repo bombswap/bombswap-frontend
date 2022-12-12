@@ -164,6 +164,11 @@ export const AVALANCHE: { [key: string]: Token } = {
     USDC: new Token(ChainId.AVALANCHE, '0xB97EF9Ef8734C71904D8002F8b6Bc66Dd9c48a6E', 6, 'USDC', 'USD Coin')
 }
 
+export const BOMB: { [key: string]: Token } = {
+    BOMBSWAP: new Token(ChainId.BOMB, '0xaC029BF2871b3f810AAbF836Adc4F89369027971', 18, 'BOMBSWAP', 'BOMB Swap Token'),
+    USDB: new Token(ChainId.BOMB, '0xca2de0ad1a82F78d42284774411F336f2550E7F5', 18, 'USDB', 'BOMB USD')
+}
+
 export const BOMB_TESTNET: { [key: string]: Token } = {}
 
 // used to construct intermediary pairs for trading
@@ -173,7 +178,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
     [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BUSD, BSC.BOMB, BSC.USDC, BSC.BTCB],
-    [ChainId.BOMB]: [...WRAPPED_NATIVE_ONLY[ChainId.BOMB]],
+    [ChainId.BOMB]: [...WRAPPED_NATIVE_ONLY[ChainId.BOMB], BSC.BOMBSWAP, BSC.USDB],
     [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDC, AVALANCHE.USDCE]
 }
 
@@ -250,6 +255,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
     [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BOMB, BSC.BTCB, BSC.USD],
+    [ChainId.BOMB]: [...WRAPPED_NATIVE_ONLY[ChainId.BOMB], BOMB.USDB, BOMB.BOMBSWAP],
     [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDCE, AVALANCHE.USDC]
 }
 
@@ -278,7 +284,8 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
         ],
         [USDC, USDT],
         [DAI, USDT]
-    ]
+    ],
+    [ChainId.BOMB]: [[BOMB.BOMBSWAP, WETH[ChainId.BOMB]]]
 }
 
 export interface WalletInfo {
