@@ -18,7 +18,7 @@ const mockData = {
 export default function XSushi() {
     const { account, chainId } = useActiveWeb3React()
 
-    const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
+    const sushiBalance = useTokenBalance(SUSHI[ChainId.BOMB]?.address ?? '')
     const xSushiBalance = useTokenBalance(XSUSHI?.address ?? '')
 
     return (

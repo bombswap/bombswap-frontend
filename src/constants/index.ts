@@ -44,6 +44,13 @@ export const SUSHI: ChainTokenMap = {
         'SUSHI',
         'SushiToken'
     ),
+    [ChainId.BOMB]: new Token(
+        ChainId.BOMB,
+        '0xaC029BF2871b3f810AAbF836Adc4F89369027971',
+        18,
+        'BOMBSWAP',
+        'BOMB Swap Token'
+    ),
     [ChainId.GÖRLI]: new Token(ChainId.GÖRLI, '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F', 18, 'SUSHI', 'SushiToken'),
     [ChainId.KOVAN]: new Token(ChainId.KOVAN, '0x0769fd68dFb93167989C6f7254cd0D766Fb2841F', 18, 'SUSHI', 'SushiToken'),
     [ChainId.FANTOM]: new Token(ChainId.FANTOM, '0xae75A438b2E0cB8Bb01Ec1E1e376De11D44477CC', 18, 'SUSHI', 'SushiToken')
@@ -219,7 +226,13 @@ export const PWING = new Token(
     'Poly Ontology Wing Token'
 )
 
-export const XSUSHI = new Token(ChainId.MAINNET, '0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272', 18, 'xSUSHI', 'SushiBar')
+export const XSUSHI = new Token(
+    ChainId.BOMB,
+    '0x4b6e421e1753Cc25c0f3719f16C5d2388172171c',
+    18,
+    'XBOMBSWAP',
+    'Staked BOMBSWAP'
+)
 export const LIFT = new Token(ChainId.MAINNET, '0xf9209d900f7ad1DC45376a2caA61c78f6dEA53B6', 18, 'LIFT', 'LiftKitchen')
 export const LFBTC = new Token(
     ChainId.MAINNET,

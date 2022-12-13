@@ -13,7 +13,7 @@ import TransactionFailedModal from './TransactionFailedModal'
 import { Button, Dots } from '../../components'
 import { t } from '@lingui/macro'
 
-import sushiData from '@sushiswap/sushi-data'
+//import sushiData from '@sushiswap/sushi-data'
 import { useLingui } from '@lingui/react'
 
 const INPUT_CHAR_LIMIT = 18
@@ -62,8 +62,8 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
     const [exchangeRate, setExchangeRate] = useState<any>()
     useEffect(() => {
         const fetchData = async () => {
-            const results = await Promise.all([sushiData.bar.info()])
-            setExchangeRate(results[0].ratio)
+            // const results = await Promise.all([sushiData.bar.info()])
+            setExchangeRate(1)
         }
         fetchData()
     }, [])
@@ -139,10 +139,10 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
 
     const [approvalState, approve] = useApproveCallback(
         new TokenAmount(
-            new Token(1, '0x6B3595068778DD592e39A122f4f5a5cF09C90fE2', 18, 'SUSHI', ''),
+            new Token(2300, '0xaC029BF2871b3f810AAbF836Adc4F89369027971', 18, 'BOMBSWAP', ''),
             parsedInput.value.toString()
         ),
-        BAR_ADDRESS[1]
+        BAR_ADDRESS[2300]
     )
 
     console.log('approvalState:', approvalState, parsedInput.value.toString())
@@ -188,21 +188,24 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                 <StyledNumericalInput
                     value={input}
                     onUserInput={handleInput}
-                    className={`w-full h-14 px-3 md:px-5 mt-5 rounded bg-dark-800 text-caption2 md:text-lg font-bold text-dark-800${inputError ? ' pl-9 md:pl-12' : ''
-                        }`}
+                    className={`w-full h-14 px-3 md:px-5 mt-5 rounded bg-dark-800 text-caption2 md:text-lg font-bold text-dark-800${
+                        inputError ? ' pl-9 md:pl-12' : ''
+                    }`}
                     placeholder=" "
                 />
                 {/* input overlay: */}
                 <div className="relative h-0 bottom-14 w-full pointer-events-none">
                     <div
-                        className={`flex justify-between items-center h-14 rounded px-3 md:px-5 ${inputError ? ' border border-red' : ''
-                            }`}
+                        className={`flex justify-between items-center h-14 rounded px-3 md:px-5 ${
+                            inputError ? ' border border-red' : ''
+                        }`}
                     >
                         <div className="flex">
                             {inputError && <img className="w-4 md:w-5 mr-2" src={ErrorTriangle} alt="error" />}
                             <p
-                                className={`text-caption2 md:text-lg font-bold ${input ? 'text-high-emphesis' : 'text-secondary'
-                                    }`}
+                                className={`text-caption2 md:text-lg font-bold ${
+                                    input ? 'text-high-emphesis' : 'text-secondary'
+                                }`}
                             >
                                 {`${input ? input : '0'} ${activeTab === 0 ? '' : 'x'}SUSHI`}
                             </p>
@@ -229,7 +232,7 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                     </div>
                 </div>
                 {(approvalState === ApprovalState.NOT_APPROVED || approvalState === ApprovalState.PENDING) &&
-                    activeTab === 0 ? (
+                activeTab === 0 ? (
                     <Button
                         className={`${buttonStyle} text-high-emphesis bg-cyan-blue hover:bg-opacity-90`}
                         disabled={approvalState === ApprovalState.PENDING}
@@ -247,22 +250,22 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                             buttonDisabled
                                 ? buttonStyleDisabled
                                 : !walletConnected
-                                    ? buttonStyleConnectWallet
-                                    : insufficientFunds
-                                        ? buttonStyleInsufficientFunds
-                                        : buttonStyleEnabled
+                                ? buttonStyleConnectWallet
+                                : insufficientFunds
+                                ? buttonStyleInsufficientFunds
+                                : buttonStyleEnabled
                         }
                         onClick={handleClickButton}
                     >
                         {!walletConnected
                             ? i18n._(t`Connect Wallet`)
                             : !input
-                                ? i18n._(t`Enter Amount`)
-                                : insufficientFunds
-                                    ? i18n._(t`Insufficient Balance`)
-                                    : activeTab === 0
-                                        ? i18n._(t`Confirm Staking`)
-                                        : i18n._(t`Confirm Withdrawal`)}
+                            ? i18n._(t`Enter Amount`)
+                            : insufficientFunds
+                            ? i18n._(t`Insufficient Balance`)
+                            : activeTab === 0
+                            ? i18n._(t`Confirm Staking`)
+                            : i18n._(t`Confirm Withdrawal`)}
                     </button>
                 )}
             </div>
