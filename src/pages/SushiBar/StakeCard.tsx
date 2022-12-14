@@ -160,7 +160,7 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                         }}
                     >
                         <div className={activeTab === 0 ? activeTabStyle : inactiveTabStyle}>
-                            <p>{i18n._(t`Stake SUSHI`)}</p>
+                            <p>{i18n._(t`Stake BOMBSWAP`)}</p>
                         </div>
                     </div>
                     <div
@@ -178,10 +178,10 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
 
                 <div className="flex justify-between items-center w-full mt-6">
                     <p className="text-large md:text-h5 font-bold text-high-emphesis">
-                        {activeTab === 0 ? i18n._(t`Stake SUSHI`) : i18n._(t`Unstake`)}
+                        {activeTab === 0 ? i18n._(t`Stake BOMBSWAP`) : i18n._(t`Unstake`)}
                     </p>
                     <div className="border-gradient-r-pink-red-light-brown-dark-pink-red border-transparent border-solid border rounded-3xl px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-caption md:font-normal">
-                        {`1 xSUSHI = ${xSushiPerSushi.toFixed(4)} SUSHI`}
+                        {`1 XBOMBSWAP = ${xSushiPerSushi.toFixed(4)} BOMBSWAP`}
                     </div>
                 </div>
 

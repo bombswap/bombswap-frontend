@@ -24,7 +24,7 @@ export default function XSushi() {
     return (
         <>
             <Helmet>
-                <title>xSUSHI | BOMB</title>
+                <title>XBombSwap | BOMB</title>
             </Helmet>
             <div className="flex flex-col w-full min-h-fitContent">
                 <div className="flex mb-6 justify-center">
