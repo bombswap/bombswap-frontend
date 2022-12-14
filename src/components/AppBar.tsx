@@ -239,26 +239,32 @@ function AppBar(): JSX.Element {
 
                                 <div className="flex flex-row items-center justify-center w-full lg:w-auto p-4 fixed left-0 bottom-0 bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                                     <div className="flex items-center justify-between sm:justify-end space-x-2 w-full">
-                                        {/* {chainId &&
-                                            [ChainId.MAINNET].includes(chainId) &&
+                                        {chainId &&
+                                            [ChainId.BOMB].includes(chainId) &&
                                             library &&
                                             library.provider.isMetaMask && (
                                                 <>
                                                     <QuestionHelper
-                                                        text={i18n._(t`Add xSushi to your Metamask wallet`)}
+                                                        text={i18n._(t`Add BOMBSWAP to your Metamask wallet`)}
                                                     >
                                                         <div
                                                             className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
                                                             onClick={() => {
+                                                                let address: string | undefined
+                                                                switch (chainId) {
+                                                                    case ChainId.BOMB:
+                                                                        address =
+                                                                            '0xaC029BF2871b3f810AAbF836Adc4F89369027971'
+                                                                        break
+                                                                }
                                                                 const params: any = {
                                                                     type: 'ERC20',
                                                                     options: {
-                                                                        address:
-                                                                            '0x8798249c2e607446efb7ad49ec89dd1865ff4272',
-                                                                        symbol: 'XSUSHI',
+                                                                        address: address,
+                                                                        symbol: 'BOMBSWAP',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/sushiswap/assets/master/blockchains/ethereum/assets/0x8798249c2E607446EfB7Ad49eC89dD1865Ff4272/logo.png'
+                                                                            'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/bombswap.jpeg'
                                                                     }
                                                                 }
 
@@ -275,7 +281,7 @@ function AppBar(): JSX.Element {
                                                                         .then(success => {
                                                                             if (success) {
                                                                                 console.log(
-                                                                                    'Successfully added XSUSHI to MetaMask'
+                                                                                    'Successfully added BOMBSWAP to MetaMask'
                                                                                 )
                                                                             } else {
                                                                                 throw new Error('Something went wrong.')
@@ -286,7 +292,7 @@ function AppBar(): JSX.Element {
                                                             }}
                                                         >
                                                             <img
-                                                                src={`${process.env.PUBLIC_URL}/images/tokens/xsushi-square.jpg`}
+                                                                src={`${process.env.PUBLIC_URL}/images/bombswap.jpeg`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
@@ -299,7 +305,74 @@ function AppBar(): JSX.Element {
                                                         </div>
                                                     </QuestionHelper>
                                                 </>
-                                            )} */}
+                                            )}
+
+                                        {chainId &&
+                                            [ChainId.BSC].includes(chainId) &&
+                                            library &&
+                                            library.provider.isMetaMask && (
+                                                <>
+                                                    <QuestionHelper text={i18n._(t`Add BOMB to your Metamask wallet`)}>
+                                                        <div
+                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
+                                                            onClick={() => {
+                                                                let address: string | undefined
+                                                                switch (chainId) {
+                                                                    case ChainId.BSC:
+                                                                        address =
+                                                                            '0x522348779DCb2911539e76A1042aA922F9C47Ee3'
+                                                                        break
+                                                                }
+                                                                const params: any = {
+                                                                    type: 'ERC20',
+                                                                    options: {
+                                                                        address: address,
+                                                                        symbol: 'BOMB',
+                                                                        decimals: 18,
+                                                                        image:
+                                                                            'https://swap.peghub.com/images/tokens/0x522348779DCb2911539e76A1042aA922F9C47Ee3.png'
+                                                                    }
+                                                                }
+
+                                                                if (
+                                                                    library &&
+                                                                    library.provider.isMetaMask &&
+                                                                    library.provider.request
+                                                                ) {
+                                                                    library.provider
+                                                                        .request({
+                                                                            method: 'wallet_watchAsset',
+                                                                            params
+                                                                        })
+                                                                        .then(success => {
+                                                                            if (success) {
+                                                                                console.log(
+                                                                                    'Successfully added BOMB to MetaMask'
+                                                                                )
+                                                                            } else {
+                                                                                throw new Error('Something went wrong.')
+                                                                            }
+                                                                        })
+                                                                        .catch(console.error)
+                                                                }
+                                                            }}
+                                                        >
+                                                            <img
+                                                                src={`${process.env.PUBLIC_URL}/images/square-bomb.png`}
+                                                                alt="Switch Network"
+                                                                style={{
+                                                                    minWidth: 36,
+                                                                    minHeight: 36,
+                                                                    maxWidth: 36,
+                                                                    maxHeight: 36
+                                                                }}
+                                                                className="rounded-md object-contain"
+                                                            />
+                                                        </div>
+                                                    </QuestionHelper>
+                                                </>
+                                            )}
+
                                         {/* {chainId &&
                                             [ChainId.BSC].includes(chainId) &&
                                             library &&
