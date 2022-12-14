@@ -225,6 +225,7 @@
   "Something went wrong during signing of the approval. This is expected for hardware wallets, such as Trezor and Ledger. Click again and the fallback method will be used": "Ceva nu a funcționat în timpul semnării aprobării. Acest lucru este de așteptat pentru portofelele hardware, cum ar fi Trezor și Ledger. Faceți clic din nou și va fi utilizată metoda de rezervă",
   "Stack Yields with SAAVE": "Stivați randamentele cu SAAVE",
   "Stake": "Miza",
+  "Stake BOMBSWAP": "",
   "Stake SUSHI": "Miza SUSHI",
   "Stake SUSHI for xSUSHI": "Miza SUSHI pentru xSUSHI",
   "Stake into xSUSHI add collateral as axSUSHI on Aave all in\none click": "Miza în xSUSHI adăugați garanții ca axSUSHI pe Aave toate în \n un singur clic",

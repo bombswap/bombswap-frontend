@@ -183,7 +183,7 @@ function AppBar(): JSX.Element {
                                             >
                                                 {i18n._(t`Docs`)}
                                             </a>
-                                            {chainId === ChainId.BOMB && (
+                                            {/* {chainId === ChainId.BOMB && (
                                                 <NavLink id={`yield-nav-link`} to={'/yield'}>
                                                     {i18n._(t`Yield`)}
                                                 </NavLink>
@@ -192,7 +192,7 @@ function AppBar(): JSX.Element {
                                                 <NavLink id={`sushibar-nav-link`} to={'/sushibar'}>
                                                     {i18n._(t`SushiBar`)}
                                                 </NavLink>
-                                            )}
+                                            )} */}
                                             {/* {chainId &&
                                                 [ChainId.MAINNET, ChainId.KOVAN, ChainId.BSC, ChainId.MATIC].includes(
                                                     chainId

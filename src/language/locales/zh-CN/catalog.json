@@ -225,6 +225,7 @@
   "Something went wrong during signing of the approval. This is expected for hardware wallets, such as Trezor and Ledger. Click again and the fallback method will be used": "在签署批准时出现错误。可能是硬件钱包例如Trezor和Ledger。再次点击，将使用倒退的办法。",
   "Stack Yields with SAAVE": "使用SAAVE叠加收益",
   "Stake": "质押",
+  "Stake BOMBSWAP": "",
   "Stake SUSHI": "质押SUSHI",
   "Stake SUSHI for xSUSHI": "将SUSHI质押成xSUSHI",
   "Stake into xSUSHI add collateral as axSUSHI on Aave all in\none click": "放入xSUSHI进行抵押，将抵押品作为axSUSHI添加到\n一键中",

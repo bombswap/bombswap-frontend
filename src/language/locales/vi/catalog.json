@@ -225,6 +225,7 @@
   "Something went wrong during signing of the approval. This is expected for hardware wallets, such as Trezor and Ledger. Click again and the fallback method will be used": "Đã xảy ra sự cố khi ký phê duyệt. Điều này được mong đợi đối với các ví phần cứng, chẳng hạn như Trezor và Ledger. Nhấp lại và phương pháp dự phòng sẽ được sử dụng",
   "Stack Yields with SAAVE": "Lợi nhuận xếp chồng với SAAVE",
   "Stake": "Cổ phần",
+  "Stake BOMBSWAP": "",
   "Stake SUSHI": "Cổ phần SUSHI",
   "Stake SUSHI for xSUSHI": "Cổ phần SUSHI cho xSUSHI",
   "Stake into xSUSHI add collateral as axSUSHI on Aave all in\none click": "Đặt cọc vào xSUSHI thêm tài sản thế chấp là axSUSHI trên Aave all in \n một cú nhấp chuột",
