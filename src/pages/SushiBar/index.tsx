@@ -18,13 +18,13 @@ const mockData = {
 export default function XSushi() {
     const { account, chainId } = useActiveWeb3React()
 
-    const sushiBalance = useTokenBalance(SUSHI[ChainId.MAINNET]?.address ?? '')
+    const sushiBalance = useTokenBalance(SUSHI[ChainId.BOMB]?.address ?? '')
     const xSushiBalance = useTokenBalance(XSUSHI?.address ?? '')
 
     return (
         <>
             <Helmet>
-                <title>xSUSHI | BOMB</title>
+                <title>XBombSwap | BOMB</title>
             </Helmet>
             <div className="flex flex-col w-full min-h-fitContent">
                 <div className="flex mb-6 justify-center">

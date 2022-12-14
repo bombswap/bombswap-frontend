@@ -225,6 +225,7 @@
   "Something went wrong during signing of the approval. This is expected for hardware wallets, such as Trezor and Ledger. Click again and the fallback method will be used": "허가에 서명하는 동안 문제가 발생했습니다. 이는 Trezor 및 Ledger와 같은 하드웨어 지갑에서 발생된 것으로 예상됩니다. 다시 클릭하면 대체 방법이 사용됩니다.",
   "Stack Yields with SAAVE": "SAAVE로 스택 수율",
   "Stake": "말뚝",
+  "Stake BOMBSWAP": "",
   "Stake SUSHI": "SUSHI 스테이킹",
   "Stake SUSHI for xSUSHI": "xSUSHI에 대한 지분 지분",
   "Stake into xSUSHI add collateral as axSUSHI on Aave all in\none click": "원클릭으로 xSUSHI에 지분을 추가하고 Aave all에 axSUSHI로 담보를 추가합니다.",

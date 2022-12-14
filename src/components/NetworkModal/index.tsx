@@ -131,8 +131,8 @@ const PARAMS: {
             symbol: 'BOMB',
             decimals: 18
         },
-        rpcUrls: ['https://bombchain-mainnet.ankr.com/bomb_mainnet_full_rpc_1'],
-        blockExplorerUrls: ['https://explorer.bombchain-mainnet.ankr.com/']
+        rpcUrls: ['https://rpc.bombchain.com'],
+        blockExplorerUrls: ['https://bombscan.com']
     },
     [ChainId.BOMB_TESTNET]: {
         chainId: '0x95F',

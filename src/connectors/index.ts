@@ -33,7 +33,7 @@ const RPC = {
     [ChainId.HARMONY_TESTNET]: 'https://explorer.pops.one',
     [ChainId.OKEX]: 'https://exchainrpc.okex.org',
     [ChainId.OKEX_TESTNET]: 'https://exchaintestrpc.okex.org',
-    [ChainId.BOMB]: 'https://bombchain-mainnet.ankr.com/bomb_mainnet_full_rpc_1',
+    [ChainId.BOMB]: 'https://rpc.bombchain.com',
     [ChainId.BOMB_TESTNET]: 'https://bombchain-testnet.ankr.com/bas_full_rpc_1'
 }
 
@@ -78,7 +78,7 @@ export const injected = new InjectedConnector({
 // mainnet only
 export const walletconnect = new WalletConnectConnector({
     rpc: {
-        [ChainId.BSC]: RPC[ChainId.BSC]
+        [ChainId.BOMB]: RPC[ChainId.BOMB]
     },
     bridge: 'https://bridge.walletconnect.org',
     qrcode: true,

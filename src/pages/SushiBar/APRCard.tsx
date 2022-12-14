@@ -1,25 +1,25 @@
 import React, { useEffect, useState } from 'react'
-import sushiData from '@sushiswap/sushi-data'
+//import sushiData from '@sushiswap/sushi-data'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
 
 export default function APRCard() {
     const { i18n } = useLingui()
-    const [Apr, setApr] = useState<any>()
-    useEffect(() => {
-        const fetchData = async () => {
-            const results = await Promise.all([
-                sushiData.bar.info(),
-                sushiData.exchange.dayData(),
-                sushiData.sushi.priceUSD()
-            ])
-            const APR =
-                (((results[1][1].volumeUSD * 0.05) / results[0].totalSupply) * 365) / (results[0].ratio * results[2])
+    // const [Apr, setApr] = useState<any>()
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const results = await Promise.all([
+    //             sushiData.bar.info(),
+    //             sushiData.exchange.dayData(),
+    //             sushiData.sushi.priceUSD()
+    //         ])
+    //         const APR =
+    //             (((results[1][1].volumeUSD * 0.05) / results[0].totalSupply) * 365) / (results[0].ratio * results[2])
 
-            setApr(APR)
-        }
-        fetchData()
-    }, [])
+    //         setApr(APR)
+    //     }
+    //     fetchData()
+    // }, [])
     return (
         <div className="flex w-full justify-between items-center max-w-xl h-24 p-4 md:pl-5 md:pr-7 rounded bg-light-yellow bg-opacity-40">
             <div className="flex flex-col">
@@ -45,7 +45,7 @@ export default function APRCard() {
             </div>
             <div className="flex flex-col">
                 <p className="text-right text-high-emphesis font-bold text-lg md:text-h4 mb-1">
-                    {`${Apr ? Apr.toFixed(2) + '%' : i18n._(t`Loading...`)}`}
+                    {/* {`${Apr ? Apr.toFixed(2) + '%' : i18n._(t`Loading...`)}`} */}
                 </p>
                 <p className="text-right text-primary w-32 md:w-64 text-caption2 md:text-base">
                     {i18n._(t`Yesterday's APR`)}

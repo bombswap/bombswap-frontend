@@ -62,16 +62,16 @@ function Routes(): JSX.Element {
             <WalletRoute exact strict path="/bento/kashi/create" component={CreateMarkets} />
             <WalletRoute exact strict path="/bento/kashi/lend/:pairAddress" component={LendPair} />
             <WalletRoute exact strict path="/bento/kashi/borrow/:pairAddress" component={BorrowPair} />
-            {/* 
-            {chainId === ChainId.MAINNET && (
+
+            {chainId === ChainId.BOMB && (
                 <Route exact strict path="/claim" component={OpenClaimAddressModalAndRedirectToSwap} />
-            )} */}
-            {/* {chainId === ChainId.MAINNET && <Route exact strict path="/yield" component={MasterChefV1} />}
-            {chainId === ChainId.MAINNET && (
+            )}
+            {chainId === ChainId.BOMB && <Route exact strict path="/yield" component={MasterChefV1} />}
+            {chainId === ChainId.BOMB && (
                 <Route exact strict path="/yield/debug/:address" component={MasterChefV1Debug} />
-            )} */}
-            {/* {chainId === ChainId.MATIC && <Route exact strict path="/yield" component={MiniChefV2} />}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/vesting" component={Vesting} />} */}
+            )}
+            {/* {chainId === ChainId.MATIC && <Route exact strict path="/yield" component={MiniChefV2} />}*/}
+            {chainId === ChainId.MAINNET && <Route exact strict path="/vesting" component={Vesting} />}
 
             {/* Migrate */}
             {/* {(chainId === ChainId.MAINNET || chainId === ChainId.BSC || chainId === ChainId.MATIC) && (
@@ -79,12 +79,12 @@ function Routes(): JSX.Element {
             )} */}
 
             {/* SushiBar Staking */}
-            {/* {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar" component={SushiBar} />}
-            {chainId === ChainId.MAINNET && (
+            {chainId === ChainId.BOMB && <Route exact strict path="/sushibar" component={SushiBar} />}
+            {chainId === ChainId.BOMB && (
                 <Route exact strict path="/sushibar/transactions" component={SushiBarTransactions} />
-            )} */}
-            {/* {chainId === ChainId.MAINNET && <Route exact strict path="/sushibar/tips" component={SushiBarTips} />}
-            {chainId === ChainId.MAINNET && <Route exact strict path="/stake" component={SushiBar} />} */}
+            )}
+            {chainId === ChainId.BOMB && <Route exact strict path="/sushibar/tips" component={SushiBarTips} />}
+            {chainId === ChainId.BOMB && <Route exact strict path="/stake" component={SushiBar} />}
             {/* Tools */}
             {/* {chainId === ChainId.MAINNET && <Route exact strict path="/tools" component={Tools} />}
             {chainId === ChainId.MAINNET && <Route exact strict path="/saave" component={Saave} />} */}

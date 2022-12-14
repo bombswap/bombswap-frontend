@@ -225,6 +225,7 @@
   "Something went wrong during signing of the approval. This is expected for hardware wallets, such as Trezor and Ledger. Click again and the fallback method will be used": "Bei der Unterzeichnung der Genehmigung ist ein Fehler aufgetreten. Dies wird für Hardware-Portemonnaies wie Trezor und Ledger erwartet. Klicken Sie erneut und die Fallback-Methode wird verwendet",
   "Stack Yields with SAAVE": "Stapelerträge mit SAAVE",
   "Stake": "Anteil",
+  "Stake BOMBSWAP": "",
   "Stake SUSHI": "Pfahl SUSHI",
   "Stake SUSHI for xSUSHI": "SUSHI für xSUSHI einsetzen",
   "Stake into xSUSHI add collateral as axSUSHI on Aave all in\none click": "Stake in xSUSHI hinzufügen Sicherheiten als axSUSHI auf Aave alle in \n einem Klick",
