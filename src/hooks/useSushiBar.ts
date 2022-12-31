@@ -13,7 +13,7 @@ const useSushiBar = () => {
     const addTransaction = useTransactionAdder()
     const sushiContract = useSushiContract(true) // withSigner
     const barContract = useSushiBarContract(true) // withSigner
-
+    const [exchangeRate, setExchangeRate] = useState('1.0')
     const [allowance, setAllowance] = useState('0')
 
     const fetchAllowance = useCallback(async () => {
@@ -29,13 +29,27 @@ const useSushiBar = () => {
         }
     }, [account, barContract, sushiContract])
 
+    const fetchExchange = useCallback(async () => {
+        try {
+            const exchangeRate = await barContract?.getExchangeRate()
+            const formatted = Fraction.from(BigNumber.from(exchangeRate), BigNumber.from(10).pow(18)).toString()
+            setExchangeRate(formatted)
+        } catch (error) {
+            setExchangeRate('1')
+            throw error
+        }
+    }, [barContract])
+
     useEffect(() => {
         if (account && barContract && sushiContract) {
             fetchAllowance()
         }
+        if (barContract) {
+            fetchExchange()
+        }
         const refreshInterval = setInterval(fetchAllowance, 10000)
         return () => clearInterval(refreshInterval)
-    }, [account, barContract, fetchAllowance, sushiContract])
+    }, [account, barContract, fetchAllowance, sushiContract, fetchExchange])
 
     const approve = useCallback(async () => {
         try {
@@ -77,7 +91,7 @@ const useSushiBar = () => {
         [addTransaction, barContract]
     )
 
-    return { allowance, approve, enter, leave }
+    return { allowance, approve, enter, leave, exchangeRate }
 }
 
 export default useSushiBar

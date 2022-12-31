@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { ReactComponent as DropDown } from '../../assets/images/dropdown.svg'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
+import { useSushiBarContract } from 'hooks/useContract'
 import useTheme from '../../hooks/useTheme'
 import { useCurrencyBalance } from '../../state/wallet/hooks'
 import CurrencyLogo from '../CurrencyLogo'
@@ -64,7 +65,7 @@ const Aligner = styled.span`
     justify-content: space-between;
 `
 
-const StyledDropDown = styled(DropDown) <{ selected: boolean }>`
+const StyledDropDown = styled(DropDown)<{ selected: boolean }>`
     margin: 0 0.25rem 0 0.5rem;
     height: 35%;
 
@@ -160,13 +161,13 @@ export default function CurrencyInputPanel({
     const valueUSDC = formattedNum(Number(value) * Number(currencyUSDC))
 
     return (
-        <div id={id} className="rounded bg-dark-800 p-5">
+        <div id={id} className="p-5 rounded bg-dark-800">
             <div
-                className="flex flex-col space-y-3 sm:space-y-0 sm:flex-row justify-between"
-            // hideInput={hideInput}
-            // cornerRadiusBottomNone={cornerRadiusBottomNone}
-            // cornerRadiusTopNone={cornerRadiusTopNone}
-            // containerBackground={containerBackground}
+                className="flex flex-col justify-between space-y-3 sm:space-y-0 sm:flex-row"
+                // hideInput={hideInput}
+                // cornerRadiusBottomNone={cornerRadiusBottomNone}
+                // cornerRadiusTopNone={cornerRadiusTopNone}
+                // containerBackground={containerBackground}
             >
                 {/* {!hideInput && (
                     <LabelRow>
@@ -192,8 +193,8 @@ export default function CurrencyInputPanel({
                 )} */}
                 <div
                     className="w-full sm:w-2/5"
-                // style={hideInput ? { padding: '0', borderRadius: '8px' } : {}}
-                // selected={disableCurrencySelect}
+                    // style={hideInput ? { padding: '0', borderRadius: '8px' } : {}}
+                    // selected={disableCurrencySelect}
                 >
                     <CurrencySelect
                         selected={!!currency}
@@ -217,7 +218,7 @@ export default function CurrencyInputPanel({
                                     <CurrencyLogo currency={currency} size={'54px'} />
                                 </div>
                             ) : (
-                                <div className="bg-dark-700 rounded" style={{ maxWidth: 54, maxHeight: 54 }}>
+                                <div className="rounded bg-dark-700" style={{ maxWidth: 54, maxHeight: 54 }}>
                                     <div style={{ width: 54, height: 54 }}>
                                         <Lottie animationData={selectCoinAnimation} autoplay loop />
                                     </div>
@@ -230,7 +231,7 @@ export default function CurrencyInputPanel({
                             ) : (
                                 <div className="flex flex-1 flex-col items-start justify-center w-full text-left mx-3.5 overflow-x-hidden">
                                     {label && (
-                                        <div className="text-xs text-secondary font-medium whitespace-nowrap">
+                                        <div className="text-xs font-medium text-secondary whitespace-nowrap">
                                             {label}
                                         </div>
                                     )}
@@ -239,19 +240,19 @@ export default function CurrencyInputPanel({
                                             className="token-symbol-container"
                                             active={Boolean(currency && currency.symbol)}
                                         > */}
-                                        <div className="text-lg md:text-2xl font-bold whitespace-nowrap">
+                                        <div className="text-lg font-bold md:text-2xl whitespace-nowrap">
                                             {(currency && currency.symbol && currency.symbol.length > 20
                                                 ? currency.symbol.slice(0, 4) +
-                                                '...' +
-                                                currency.symbol.slice(
-                                                    currency.symbol.length - 5,
-                                                    currency.symbol.length
-                                                )
+                                                  '...' +
+                                                  currency.symbol.slice(
+                                                      currency.symbol.length - 5,
+                                                      currency.symbol.length
+                                                  )
                                                 : currency?.getSymbol(chainId)) || (
-                                                    <div className="bg-transparent hover:bg-primary border border-low-emphesis rounded-full px-2 py-1 text-secondary text-xs font-medium mt-1 whitespace-nowrap ">
-                                                        {i18n._(t`Select a token`)}
-                                                    </div>
-                                                )}
+                                                <div className="px-2 py-1 mt-1 text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap ">
+                                                    {i18n._(t`Select a token`)}
+                                                </div>
+                                            )}
                                         </div>
                                         {/* </StyledTokenName> */}
                                         {!disableCurrencySelect && currency && <StyledDropDown selected={!!currency} />}
@@ -275,14 +276,14 @@ export default function CurrencyInputPanel({
                         </>
                     )} */}
                 </div>
-                <div className="flex items-center rounded bg-dark-900 space-x-3 p-3 w-full sm:w-3/5">
+                <div className="flex items-center w-full p-3 space-x-3 rounded bg-dark-900 sm:w-3/5">
                     {!hideInput && (
                         <>
                             {account && currency && showMaxButton && label !== 'To' && (
                                 <Button
                                     onClick={onMax}
                                     size="small"
-                                    className="bg-transparent hover:bg-primary border border-low-emphesis rounded-full text-secondary text-xs font-medium whitespace-nowrap"
+                                    className="text-xs font-medium bg-transparent border rounded-full hover:bg-primary border-low-emphesis text-secondary whitespace-nowrap"
                                 >
                                     {i18n._(t`Max`)}
                                 </Button>
@@ -298,15 +299,18 @@ export default function CurrencyInputPanel({
                                 <div className="flex flex-col">
                                     <div
                                         onClick={onMax}
-                                        className="font-medium cursor-pointer text-xs text-low-emphesis"
+                                        className="text-xs font-medium cursor-pointer text-low-emphesis"
                                     >
                                         {!hideBalance && !!currency && selectedCurrencyBalance
                                             ? (customBalanceText ?? 'Balance: ') +
-                                            selectedCurrencyBalance?.toSignificant(6)
+                                              selectedCurrencyBalance?.toSignificant(6)
                                             : ' -'}
                                     </div>
-                                    {chainId === ChainId.BSC && (
-                                        <div className="font-medium text-xs text-secondary align-right">≈ {valueUSDC} BUSD</div>
+
+                                    {chainId && (chainId === ChainId.BSC || chainId === ChainId.BOMB) && (
+                                        <div className="text-xs font-medium text-secondary align-right">
+                                            ≈ {valueUSDC} USD
+                                        </div>
                                     )}
                                 </div>
                             )}

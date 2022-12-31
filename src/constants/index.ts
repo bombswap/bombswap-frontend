@@ -177,7 +177,7 @@ export const BOMB: { [key: string]: Token } = {
     USDC: new Token(ChainId.BOMB, '0x0889cE27aDE6231a9820E34bA6E68fc0142b8d18', 18, 'USDC', 'USDC'),
     WBTC: new Token(ChainId.BOMB, '0x140F62aCCC69cb24eABdC0E00b7caaC577cA5b24', 18, 'BTC', 'BTC'),
     ETH: new Token(ChainId.BOMB, '0x128E2b86F42BDB3B646D9B9666B8F8E9cdcEC495', 18, 'ETH', 'ETH'),
-    BNB: new Token(ChainId.BOMB, '0xfa74d6d13575751c2eb3d4960cd2a164303893d2', 18, 'BNB', 'BNB'),
+    BNB: new Token(ChainId.BOMB, '0xfA74D6D13575751C2eb3d4960CD2A164303893d2', 18, 'BNB', 'BNB'),
     USDT: new Token(ChainId.BOMB, '0xAde84DAC4E7DcE63e676131c96626f6923211429', 18, 'USDT', 'USDT'),
     BUSD: new Token(ChainId.BOMB, '0x1356Cff3ffDDF918F13A549861b4Fe936Ff895D4', 18, 'BUSD', 'BUSD')
 }

@@ -36,7 +36,7 @@ function AppBar(): JSX.Element {
     }, [pathname])
 
     return (
-        <header className="flex flex-row flex-nowrap justify-between w-screen">
+        <header className="flex flex-row justify-between w-screen flex-nowrap">
             <Disclosure as="nav" className={navClassList}>
                 {({ open }) => (
                     <>
@@ -44,7 +44,7 @@ function AppBar(): JSX.Element {
                             <div className="flex items-center justify-between h-16">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
-                                        <img src={Logo} alt="BOMB" className="h-10 w-auto" />
+                                        <img src={Logo} alt="BOMB" className="w-auto h-10" />
                                     </div>
                                     <div className="hidden sm:block sm:ml-4">
                                         <div className="flex space-x-2">
@@ -69,7 +69,7 @@ function AppBar(): JSX.Element {
                                                         <li className={'navDropdownMenuItem'}>
                                                             <a
                                                                 id={`swap-nav-link`}
-                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                                 href={'https://app.bomb.money/'}
                                                                 target="_blank"
                                                                 rel="noreferrer"
@@ -80,7 +80,7 @@ function AppBar(): JSX.Element {
                                                         <li className={'navDropdownMenuItem'}>
                                                             <a
                                                                 id={`swap-nav-link`}
-                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                                 href={'https://app.bitbomb.io/'}
                                                                 target="_blank"
                                                                 rel="noreferrer"
@@ -91,7 +91,7 @@ function AppBar(): JSX.Element {
                                                         <li className={'navDropdownMenuItem'}>
                                                             <a
                                                                 id={`swap-nav-link`}
-                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                                 href={'https://www.czpegs.com/'}
                                                                 target="_blank"
                                                                 rel="noreferrer"
@@ -102,7 +102,7 @@ function AppBar(): JSX.Element {
                                                         <li className={'navDropdownMenuItem'}>
                                                             <a
                                                                 id={`swap-nav-link`}
-                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                                 href={'https://www.snowpegs.com/'}
                                                                 target="_blank"
                                                                 rel="noreferrer"
@@ -113,7 +113,7 @@ function AppBar(): JSX.Element {
                                                         <li className={'navDropdownMenuItem'}>
                                                             <a
                                                                 id={`swap-nav-link`}
-                                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                                 href={'https://www.polypegs.com/'}
                                                                 target="_blank"
                                                                 rel="noreferrer"
@@ -130,7 +130,7 @@ function AppBar(): JSX.Element {
                                             {chainId && [ChainId.MATIC].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
-                                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                     href={'https://vaults.peghub.com/#/polygon'}
                                                     target="_blank"
                                                     rel="noreferrer"
@@ -141,7 +141,7 @@ function AppBar(): JSX.Element {
                                             {chainId && [ChainId.AVALANCHE].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
-                                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                     href={'https://vaults.peghub.com/#/avax'}
                                                     target="_blank"
                                                     rel="noreferrer"
@@ -152,7 +152,7 @@ function AppBar(): JSX.Element {
                                             {chainId && [ChainId.BSC].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
-                                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                     href={'https://vaults.peghub.com/#/bsc'}
                                                     target="_blank"
                                                     rel="noreferrer"
@@ -166,7 +166,7 @@ function AppBar(): JSX.Element {
                                                 chainId !== ChainId.AVALANCHE && (
                                                     <a
                                                         id={`swap-nav-link`}
-                                                        className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                         href={'https://vaults.peghub.com/'}
                                                         target="_blank"
                                                         rel="noreferrer"
@@ -176,19 +176,19 @@ function AppBar(): JSX.Element {
                                                 )}
                                             <a
                                                 id={`swap-nav-link`}
-                                                className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                                 href={'https://docs.peghub.com/'}
                                                 target="_blank"
                                                 rel="noreferrer"
                                             >
                                                 {i18n._(t`Docs`)}
                                             </a>
-                                            {/* {chainId === ChainId.BOMB && (
-                                                <NavLink id={`yield-nav-link`} to={'/yield'}>
-                                                    {i18n._(t`Yield`)}
+                                            {chainId === ChainId.BOMB && (
+                                                <NavLink id={`yield-nav-link`} to={'/stake'}>
+                                                    {i18n._(t`Stake`)}
                                                 </NavLink>
                                             )}
-                                            {chainId === ChainId.BOMB && (
+                                            {/*   {chainId === ChainId.BOMB && (
                                                 <NavLink id={`sushibar-nav-link`} to={'/sushibar'}>
                                                     {i18n._(t`SushiBar`)}
                                                 </NavLink>
@@ -237,8 +237,8 @@ function AppBar(): JSX.Element {
                                     </div>
                                 </div>
 
-                                <div className="flex flex-row items-center justify-center w-full lg:w-auto p-4 fixed left-0 bottom-0 bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
-                                    <div className="flex items-center justify-between sm:justify-end space-x-2 w-full">
+                                <div className="fixed bottom-0 left-0 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
+                                    <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
                                         {chainId &&
                                             [ChainId.BOMB].includes(chainId) &&
                                             library &&
@@ -248,7 +248,7 @@ function AppBar(): JSX.Element {
                                                         text={i18n._(t`Add BOMBSWAP to your Metamask wallet`)}
                                                     >
                                                         <div
-                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
+                                                            className="hidden rounded-md cursor-pointer sm:inline-block bg-dark-900 hover:bg-dark-800"
                                                             onClick={() => {
                                                                 let address: string | undefined
                                                                 switch (chainId) {
@@ -300,7 +300,7 @@ function AppBar(): JSX.Element {
                                                                     maxWidth: 36,
                                                                     maxHeight: 36
                                                                 }}
-                                                                className="rounded-md object-contain"
+                                                                className="object-contain rounded-md"
                                                             />
                                                         </div>
                                                     </QuestionHelper>
@@ -314,7 +314,7 @@ function AppBar(): JSX.Element {
                                                 <>
                                                     <QuestionHelper text={i18n._(t`Add BOMB to your Metamask wallet`)}>
                                                         <div
-                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
+                                                            className="hidden rounded-md cursor-pointer sm:inline-block bg-dark-900 hover:bg-dark-800"
                                                             onClick={() => {
                                                                 let address: string | undefined
                                                                 switch (chainId) {
@@ -366,7 +366,7 @@ function AppBar(): JSX.Element {
                                                                     maxWidth: 36,
                                                                     maxHeight: 36
                                                                 }}
-                                                                className="rounded-md object-contain"
+                                                                className="object-contain rounded-md"
                                                             />
                                                         </div>
                                                     </QuestionHelper>
@@ -382,7 +382,7 @@ function AppBar(): JSX.Element {
                                                         text={i18n._(t`Add BOMB to your Metamask wallet`)}
                                                     >
                                                         <div
-                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
+                                                            className="hidden rounded-md cursor-pointer sm:inline-block bg-dark-900 hover:bg-dark-800"
                                                             onClick={() => {
                                                                 let address: string | undefined
                                                                 switch (chainId) {
@@ -434,7 +434,7 @@ function AppBar(): JSX.Element {
                                                                     maxWidth: 36,
                                                                     maxHeight: 36
                                                                 }}
-                                                                className="rounded-md object-contain"
+                                                                className="object-contain rounded-md"
                                                             />
                                                         </div>
                                                     </QuestionHelper>
@@ -449,7 +449,7 @@ function AppBar(): JSX.Element {
                                                         text={i18n._(t`Add PegHub to your Metamask wallet`)}
                                                     >
                                                         <div
-                                                            className="hidden sm:inline-block rounded-md bg-dark-900 hover:bg-dark-800 cursor-pointer"
+                                                            className="hidden rounded-md cursor-pointer sm:inline-block bg-dark-900 hover:bg-dark-800"
                                                             onClick={() => {
                                                                 let address: string | undefined
                                                                 switch (chainId) {
@@ -501,7 +501,7 @@ function AppBar(): JSX.Element {
                                                                     maxWidth: 36,
                                                                     maxHeight: 36
                                                                 }}
-                                                                className="rounded-md object-contain"
+                                                                className="object-contain rounded-md"
                                                             />
                                                         </div>
                                                     </QuestionHelper>
@@ -515,7 +515,7 @@ function AppBar(): JSX.Element {
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                 >
-                                                    <div className="grid grid-flow-col auto-cols-max items-center rounded-lg bg-dark-1000 text-sm text-secondary py-2 px-3 pointer-events-auto">
+                                                    <div className="grid items-center grid-flow-col px-3 py-2 text-sm rounded-lg pointer-events-auto auto-cols-max bg-dark-1000 text-secondary">
                                                         <div className="text-primary">{i18n._(t`Bridge`)}</div>
                                                     </div>
                                                 </a>
@@ -530,7 +530,7 @@ function AppBar(): JSX.Element {
                                         <div className="w-auto flex items-center rounded bg-dark-900 hover:bg-dark-800 p-0.5 whitespace-nowrap text-sm font-bold cursor-pointer select-none pointer-events-auto">
                                             {account && chainId && userEthBalance && (
                                                 <>
-                                                    <div className="py-2 px-3 text-primary text-bold">
+                                                    <div className="px-3 py-2 text-primary text-bold">
                                                         {userEthBalance?.toSignificant(4)}{' '}
                                                         {Currency.getNativeCurrencySymbol(chainId)}
                                                     </div>
@@ -552,14 +552,14 @@ function AppBar(): JSX.Element {
                                         {/*<MoreMenu />*/}
                                     </div>
                                 </div>
-                                <div className="-mr-2 flex sm:hidden">
+                                <div className="flex -mr-2 sm:hidden">
                                     {/* Mobile menu button */}
                                     <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-primary hover:text-high-emphesis focus:outline-none">
                                         <span className="sr-only">{i18n._(t`Open main menu`)}</span>
                                         {open ? (
-                                            <X title="Close" className="block h-6 w-6" aria-hidden="true" />
+                                            <X title="Close" className="block w-6 h-6" aria-hidden="true" />
                                         ) : (
-                                            <Burger title="Burger" className="block h-6 w-6" aria-hidden="true" />
+                                            <Burger title="Burger" className="block w-6 h-6" aria-hidden="true" />
                                         )}
                                     </Disclosure.Button>
                                 </div>
@@ -589,7 +589,7 @@ function AppBar(): JSX.Element {
                                 {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
                                 {/* <a
                                 href="#"
-                                className="bg-gray-1000 text-white block px-3 py-2 rounded-md text-base font-medium"
+                                className="block px-3 py-2 text-base font-medium text-white rounded-md bg-gray-1000"
                             >
                                 Dashboard
                             </a> */}
@@ -599,7 +599,7 @@ function AppBar(): JSX.Element {
                                 </NavLink>
                                 <a
                                     id={`swap-nav-link`}
-                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                     href={'https://app.bitbomb.io/'}
                                     target="_blank"
                                     rel="noreferrer"
@@ -608,7 +608,7 @@ function AppBar(): JSX.Element {
                                 </a>
                                 <a
                                     id={`swap-nav-link`}
-                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                     href={'https://www.czpegs.com/'}
                                     target="_blank"
                                     rel="noreferrer"
@@ -620,7 +620,7 @@ function AppBar(): JSX.Element {
                                 </NavLink>
                                 <a
                                     id={`swap-nav-link`}
-                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                     href={'https://vaults.peghub.com/'}
                                     target="_blank"
                                     rel="noreferrer"
@@ -629,7 +629,7 @@ function AppBar(): JSX.Element {
                                 </a>
                                 <a
                                     id={`swap-nav-link`}
-                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                     href={'https://docs.peghub.com/'}
                                     target="_blank"
                                     rel="noreferrer"
