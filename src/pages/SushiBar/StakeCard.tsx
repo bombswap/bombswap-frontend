@@ -57,16 +57,18 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
     const { i18n } = useLingui()
     const { account } = useActiveWeb3React()
 
-    const { allowance, enter, leave } = useSushiBar()
+    const { allowance, enter, leave, exchangeRate } = useSushiBar()
 
-    const [exchangeRate, setExchangeRate] = useState<any>()
-    useEffect(() => {
-        const fetchData = async () => {
-            // const results = await Promise.all([sushiData.bar.info()])
-            setExchangeRate(1)
-        }
-        fetchData()
-    }, [])
+    // const [exchangeRate, setExchangeRate] = useState<any>()
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         const results =
+    //             useSushiBar.exchangeRate
+
+    //         setExchangeRate(results)
+    //     }
+    //     fetchData()
+    // }, [])
 
     const xSushiPerSushi = parseFloat(exchangeRate)
 
@@ -150,8 +152,8 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
     return (
         <>
             <TransactionFailedModal isOpen={modalOpen} onDismiss={() => setModalOpen(false)} />
-            <div className="bg-dark-900 shadow-swap-blue-glow w-full max-w-xl pt-2 pb-6 md:pb-9 px-3 md:pt-4 md:px-8 rounded">
-                <div className="flex w-full h-14 bg-dark-800 rounded">
+            <div className="w-full max-w-xl px-3 pt-2 pb-6 rounded bg-dark-900 shadow-swap-blue-glow md:pb-9 md:pt-4 md:px-8">
+                <div className="flex w-full rounded h-14 bg-dark-800">
                     <div
                         className="h-full w-6/12 p-0.5"
                         onClick={() => {
@@ -176,8 +178,8 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                     </div>
                 </div>
 
-                <div className="flex justify-between items-center w-full mt-6">
-                    <p className="text-large md:text-h5 font-bold text-high-emphesis">
+                <div className="flex items-center justify-between w-full mt-6">
+                    <p className="font-bold text-large md:text-h5 text-high-emphesis">
                         {activeTab === 0 ? i18n._(t`Stake BOMBSWAP`) : i18n._(t`Unstake`)}
                     </p>
                     <div className="border-gradient-r-pink-red-light-brown-dark-pink-red border-transparent border-solid border rounded-3xl px-4 md:px-3.5 py-1.5 md:py-0.5 text-high-emphesis text-xs font-medium md:text-caption md:font-normal">
@@ -194,26 +196,26 @@ export default function StakeCard({ sushiBalance, xSushiBalance }: StakeCardProp
                     placeholder=" "
                 />
                 {/* input overlay: */}
-                <div className="relative h-0 bottom-14 w-full pointer-events-none">
+                <div className="relative w-full h-0 pointer-events-none bottom-14">
                     <div
                         className={`flex justify-between items-center h-14 rounded px-3 md:px-5 ${
                             inputError ? ' border border-red' : ''
                         }`}
                     >
                         <div className="flex">
-                            {inputError && <img className="w-4 md:w-5 mr-2" src={ErrorTriangle} alt="error" />}
+                            {inputError && <img className="w-4 mr-2 md:w-5" src={ErrorTriangle} alt="error" />}
                             <p
                                 className={`text-caption2 md:text-lg font-bold ${
                                     input ? 'text-high-emphesis' : 'text-secondary'
                                 }`}
                             >
-                                {`${input ? input : '0'} ${activeTab === 0 ? '' : 'x'}SUSHI`}
+                                {`${input ? input : '0'} ${activeTab === 0 ? '' : 'x'}BOMBSWAP`}
                             </p>
                         </div>
                         <div className="flex items-center text-secondary text-caption2 md:text-caption">
                             <div className={input ? 'hidden md:flex md:items-center' : 'flex items-center'}>
                                 <p>{i18n._(t`Balance`)}:&nbsp;</p>
-                                <p className="text-caption font-bold">{formattedBalance}</p>
+                                <p className="font-bold text-caption">{formattedBalance}</p>
                             </div>
                             <button
                                 className={`

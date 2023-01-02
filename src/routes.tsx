@@ -79,11 +79,11 @@ function Routes(): JSX.Element {
             )} */}
 
             {/* SushiBar Staking */}
-            {chainId === ChainId.BOMB && <Route exact strict path="/sushibar" component={SushiBar} />}
+            {/* {chainId === ChainId.BOMB && <Route exact strict path="/sushibar" component={SushiBar} />}
             {chainId === ChainId.BOMB && (
                 <Route exact strict path="/sushibar/transactions" component={SushiBarTransactions} />
             )}
-            {chainId === ChainId.BOMB && <Route exact strict path="/sushibar/tips" component={SushiBarTips} />}
+            {chainId === ChainId.BOMB && <Route exact strict path="/sushibar/tips" component={SushiBarTips} />} */}
             {chainId === ChainId.BOMB && <Route exact strict path="/stake" component={SushiBar} />}
             {/* Tools */}
             {/* {chainId === ChainId.MAINNET && <Route exact strict path="/tools" component={Tools} />}

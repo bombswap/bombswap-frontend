@@ -77,7 +77,7 @@ export const BENTOBOX_ADDRESS: {
     [ChainId.MATIC]: '0x0319000133d3AdA02600f0875d2cf03D442C3367',
     [ChainId.MATIC_TESTNET]: '',
     [ChainId.XDAI]: '',
-    [ChainId.BSC]: '0xF5BCE5077908a1b7370B9ae04AdC565EBd643966',
+    [ChainId.BSC]: '0x86eaf7e36FDe07A2e05f15C08e215e77234a0510',
     [ChainId.BSC_TESTNET]: '',
     [ChainId.ARBITRUM]: '',
     [ChainId.MOONBASE]: '',
@@ -228,7 +228,7 @@ export const BORING_HELPER_ADDRESS = {
     [ChainId.MATIC]: '0xA77a7fD5a16237B85E0FAd02C51f459D18AE93Cd',
     [ChainId.MATIC_TESTNET]: '',
     [ChainId.XDAI]: '',
-    [ChainId.BSC]: '0x11Ca5375AdAfd6205E41131A4409f182677996E6',
+    [ChainId.BSC]: '0x641D6027B83592900F0137FB0662eC2442884590',
     [ChainId.BSC_TESTNET]: '',
     [ChainId.ARBITRUM]: '',
     [ChainId.MOONBASE]: '',
@@ -240,7 +240,7 @@ export const BORING_HELPER_ADDRESS = {
     [ChainId.HARMONY_TESTNET]: '',
     [ChainId.OKEX]: '',
     [ChainId.OKEX_TESTNET]: '',
-    [ChainId.BOMB]: '0x3a59aa6BA8F112270d77C92009cD35572C0Bf12C',
+    [ChainId.BOMB]: '0x224d2F70c195c3E2a5272E8DAc23595ca3B628f2',
     [ChainId.BOMB_TESTNET]: ''
 }
 
@@ -263,7 +263,7 @@ export const USD_CURRENCY: { [chainId in ChainId]?: Currency } = {
     [ChainId.MATIC]: { address: '0xc2132D05D31c914a87C6611C10748AEb04B58e8F', decimals: 6 },
     [ChainId.MATIC_TESTNET]: { address: '', decimals: 6 },
     [ChainId.XDAI]: { address: '', decimals: 6 },
-    [ChainId.BOMB]: { address: '0xca2de0ad1a82F78d42284774411F336f2550E7F5', decimals: 18 }
+    [ChainId.BOMB]: { address: '0x0889cE27aDE6231a9820E34bA6E68fc0142b8d18', decimals: 18 }
 }
 
 export function getCurrency(chainId: ChainId | void): Currency {

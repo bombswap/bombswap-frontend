@@ -27,14 +27,14 @@ export default function XSushi() {
                 <title>XBombSwap | BOMB</title>
             </Helmet>
             <div className="flex flex-col w-full min-h-fitContent">
-                <div className="flex mb-6 justify-center">
+                <div className="flex justify-center mb-6">
                     <InfoCard />
-                    <div className="hidden md:flex justify-center align-center w-72 ml-6">
-                        <img src={XSushiSign} alt={'xsushi sign'} />
+                    <div className="justify-center hidden ml-6 md:flex align-center w-72">
+                        {/* <img src={XSushiSign} alt={'xsushi sign'} /> */}
                     </div>
                 </div>
                 <div className="flex justify-center">
-                    <div className="flex flex-col max-w-xl w-full">
+                    <div className="flex flex-col w-full max-w-xl">
                         <div className="mb-4">
                             <APRCard />
                         </div>
@@ -42,7 +42,7 @@ export default function XSushi() {
                             <StakeCard sushiBalance={sushiBalance} xSushiBalance={xSushiBalance} />
                         </div>
                     </div>
-                    <div className="hidden md:block w-72 ml-6">
+                    <div className="hidden ml-6 md:block w-72">
                         <BalanceCard
                             sushiEarnings={mockData.sushiEarnings}
                             xSushiBalance={xSushiBalance}
@@ -52,7 +52,7 @@ export default function XSushi() {
                     </div>
                 </div>
                 <div className="flex justify-center w-full">
-                    <div className="md:hidden flex justify-center w-full max-w-xl mt-6 mb-20">
+                    <div className="flex justify-center w-full max-w-xl mt-6 mb-20 md:hidden">
                         <BalanceCard
                             sushiEarnings={mockData.sushiEarnings}
                             xSushiBalance={xSushiBalance}
