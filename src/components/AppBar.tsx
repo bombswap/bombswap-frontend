@@ -599,7 +599,16 @@ function AppBar(): JSX.Element {
                                 </NavLink>
                                 <a
                                     id={`swap-nav-link`}
-                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    href={'https://app.bomb.money/'}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {i18n._(t`BOMB.money`)}
+                                </a>
+                                <a
+                                    id={`swap-nav-link`}
+                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
                                     href={'https://app.bitbomb.io/'}
                                     target="_blank"
                                     rel="noreferrer"
@@ -615,9 +624,24 @@ function AppBar(): JSX.Element {
                                 >
                                     {i18n._(t`czPegs`)}
                                 </a>
-                                <NavLink id={`swap-nav-link`} to={'/swap'}>
-                                    {i18n._(t`Swap`)}
-                                </NavLink>
+                                <a
+                                    id={`swap-nav-link`}
+                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    href={'https://www.snowpegs.com/'}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {i18n._(t`SnowPegs`)}
+                                </a>
+                                <a
+                                    id={`swap-nav-link`}
+                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    href={'https://www.polypegs.com/'}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {i18n._(t`PolyPegs`)}
+                                </a>
                                 <a
                                     id={`swap-nav-link`}
                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
