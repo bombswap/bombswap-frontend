@@ -1365,6 +1365,11 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bombmoney/default-token-list@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@bombmoney/default-token-list/-/default-token-list-3.0.3.tgz#ee353e6ebcae6f87e2db470ad4220f6f4b9dedd3"
+  integrity sha512-FheHeAz2xXjFoFhF461PYYVr2rEbgaf7e7NuLsaLSv3P9aI0kz9Y/rOk572YOlALHOMUeAIck4bgfKMwQKY8Qg==
+
 "@chaitanyapotti/random-id@^1.0.3":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@chaitanyapotti/random-id/-/random-id-1.0.3.tgz#f52f647cfe9f79fc7723ea2b01b0ad3889204002"
@@ -2715,11 +2720,6 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@peghub/core/-/core-1.0.0.tgz#4e4282d264be40b5c24ed4cfc809c3acacfe66f9"
   integrity sha512-iHuOJg1CBWokpsEYg6HYWyDvTb2xyLSkv9kS1qGnXHzo45lehssXetfrZDy8vt16fiTZDheQ33hgyTJO2aCEQw==
-
-"@pegswap/default-token-list@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@pegswap/default-token-list/-/default-token-list-3.0.1.tgz#564108b9135438555ac29b9f5b21b37227e64a5d"
-  integrity sha512-UQ4XjI6DuKYiw/qMz735Mf1O6SQBTMOtCOyTGj0u+bWz9AuU6iPZGDBfTHHnd/JtqHOoMYTZPjI5ZyojhCtCNQ==
 
 "@pegswap/sdk@2.1.0":
   version "2.1.0"
