@@ -1,7 +1,7 @@
 import { ChainId, Currency } from '@pegswap/sdk'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import Logo from '../assets/images/bomb-small.png'
+import Logo from '../assets/images/bombswap.png'
 import { useActiveWeb3React } from '../hooks/useActiveWeb3React'
 import { useETHBalances } from '../state/wallet/hooks'
 import { ReactComponent as Burger } from '../assets/images/burger.svg'
@@ -138,6 +138,17 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Vaults`)}
                                                 </a>
                                             )}
+                                            {chainId && [ChainId.BOMB].includes(chainId) && (
+                                                <a
+                                                    id={`swap-nav-link`}
+                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                    href={'https://vaults.peghub.com/#/bomb'}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    {i18n._(t`Vaults`)}
+                                                </a>
+                                            )}
                                             {chainId && [ChainId.AVALANCHE].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
@@ -163,6 +174,7 @@ function AppBar(): JSX.Element {
                                             {chainId &&
                                                 chainId !== ChainId.BSC &&
                                                 chainId !== ChainId.MATIC &&
+                                                chainId !== ChainId.BOMB &&
                                                 chainId !== ChainId.AVALANCHE && (
                                                     <a
                                                         id={`swap-nav-link`}
@@ -174,16 +186,29 @@ function AppBar(): JSX.Element {
                                                         {i18n._(t`Vaults`)}
                                                     </a>
                                                 )}
-                                            <a
-                                                id={`swap-nav-link`}
-                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                                href={'https://docs.peghub.com/'}
-                                                target="_blank"
-                                                rel="noreferrer"
-                                            >
-                                                {i18n._(t`Docs`)}
-                                            </a>
-                                            {chainId === ChainId.BOMB && (
+                                            {chainId && chainId !== ChainId.BOMB && (
+                                                <a
+                                                    id={`swap-nav-link`}
+                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                    href={'https://docs.peghub.com/'}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    {i18n._(t`Docs`)}
+                                                </a>
+                                            )}
+                                            {chainId && [ChainId.BOMB].includes(chainId) && (
+                                                <a
+                                                    id={`swap-nav-link`}
+                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                    href={'https://docs.bombswap.xyz/'}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    {i18n._(t`Docs`)}
+                                                </a>
+                                            )}
+                                            {chainId && chainId === ChainId.BOMB && (
                                                 <NavLink id={`yield-nav-link`} to={'/stake'}>
                                                     {i18n._(t`Stake`)}
                                                 </NavLink>
@@ -264,7 +289,7 @@ function AppBar(): JSX.Element {
                                                                         symbol: 'BOMBSWAP',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/bombswap.jpeg'
+                                                                            'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/bombswap.png'
                                                                     }
                                                                 }
 
@@ -599,7 +624,7 @@ function AppBar(): JSX.Element {
                                 </NavLink>
                                 <a
                                     id={`swap-nav-link`}
-                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                     href={'https://app.bomb.money/'}
                                     target="_blank"
                                     rel="noreferrer"
@@ -608,7 +633,7 @@ function AppBar(): JSX.Element {
                                 </a>
                                 <a
                                     id={`swap-nav-link`}
-                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                     href={'https://app.bitbomb.io/'}
                                     target="_blank"
                                     rel="noreferrer"
@@ -626,7 +651,7 @@ function AppBar(): JSX.Element {
                                 </a>
                                 <a
                                     id={`swap-nav-link`}
-                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                     href={'https://www.snowpegs.com/'}
                                     target="_blank"
                                     rel="noreferrer"
@@ -635,7 +660,7 @@ function AppBar(): JSX.Element {
                                 </a>
                                 <a
                                     id={`swap-nav-link`}
-                                    className="text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap"
+                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                     href={'https://www.polypegs.com/'}
                                     target="_blank"
                                     rel="noreferrer"
