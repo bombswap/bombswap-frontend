@@ -1,4 +1,4 @@
-import { Pair } from '@pegswap/sdk'
+import { Pair } from '@bombswap/sdk'
 import { darken } from 'polished'
 import React from 'react'
 import styled from 'styled-components'

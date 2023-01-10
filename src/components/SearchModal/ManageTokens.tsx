@@ -1,4 +1,4 @@
-import { Token } from '@pegswap/sdk'
+import { Token } from '@bombswap/sdk'
 import Card from 'components/Card'
 import Column from 'components/Column'
 import CurrencyLogo from 'components/CurrencyLogo'

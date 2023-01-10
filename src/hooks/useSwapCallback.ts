@@ -1,6 +1,6 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import { Contract } from '@ethersproject/contracts'
-import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from '@pegswap/sdk'
+import { JSBI, Percent, Router, SwapParameters, Trade, TradeType } from '@bombswap/sdk'
 import { useMemo } from 'react'
 import { BIPS_BASE, INITIAL_ALLOWED_SLIPPAGE } from '../constants'
 import { useTransactionAdder } from '../state/transactions/hooks'
@@ -207,10 +207,11 @@ export function useSwapCallback(
                         const withRecipient =
                             recipient === account
                                 ? base
-                                : `${base} to ${recipientAddressOrName && isAddress(recipientAddressOrName)
-                                    ? shortenAddress(recipientAddressOrName)
-                                    : recipientAddressOrName
-                                }`
+                                : `${base} to ${
+                                      recipientAddressOrName && isAddress(recipientAddressOrName)
+                                          ? shortenAddress(recipientAddressOrName)
+                                          : recipientAddressOrName
+                                  }`
 
                         addTransaction(response, {
                             summary: withRecipient

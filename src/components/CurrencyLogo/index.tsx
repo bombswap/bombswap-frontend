@@ -1,4 +1,4 @@
-import { ChainId, Currency, ETHER, Token } from '@pegswap/sdk'
+import { ChainId, Currency, ETHER, Token } from '@bombswap/sdk'
 import React, { useMemo } from 'react'
 
 import AvalancheLogo from '../../assets/images/avalanche-logo.png'

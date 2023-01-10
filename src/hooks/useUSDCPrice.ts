@@ -1,4 +1,4 @@
-import { ChainId, Currency, JSBI, Price, WETH, currencyEquals } from '@pegswap/sdk'
+import { ChainId, Currency, JSBI, Price, WETH, currencyEquals } from '@bombswap/sdk'
 import { useMemo } from 'react'
 import { USDC, BSC } from '../constants'
 import { PairState, usePairs } from '../data/Reserves'
@@ -24,7 +24,12 @@ export default function useUSDCPrice(currency?: Currency): Price | undefined {
         ],
         [chainId, currency, wrapped]
     )
-    const [[ethPairState, ethPair], [usdcPairState, usdcPair], [usdcEthPairState, usdcEthPair], [btcbPairState, btcbPair]] = usePairs(tokenPairs)
+    const [
+        [ethPairState, ethPair],
+        [usdcPairState, usdcPair],
+        [usdcEthPairState, usdcEthPair],
+        [btcbPairState, btcbPair]
+    ] = usePairs(tokenPairs)
 
     return useMemo(() => {
         if (!currency || !wrapped || !chainId) {
@@ -48,7 +53,6 @@ export default function useUSDCPrice(currency?: Currency): Price | undefined {
             }
         }
 
-
         // handle usdc
         if (wrapped.equals(BSC.USD)) {
             return new Price(BSC.USD, BSC.USD, '1', '1')
@@ -65,7 +69,6 @@ export default function useUSDCPrice(currency?: Currency): Price | undefined {
         //     btcbPairETHAmount && usdcEthPair
         //         ? usdcEthPair.priceOf(BSC.BTCB).quote(btcbPairETHAmount).raw
         //         : JSBI.BigInt(0)
-
 
         // all other tokens
         // first try the usdc pair

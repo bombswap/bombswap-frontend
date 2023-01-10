@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { JSBI, Pair, Percent, TokenAmount } from '@pegswap/sdk'
+import { JSBI, Pair, Percent, TokenAmount } from '@bombswap/sdk'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { unwrappedToken } from 'utils/wrappedCurrency'
 import { useTokenBalance } from '../../state/wallet/hooks'
@@ -47,14 +47,14 @@ export default function Position({ pair, showUnwrapped = false, stakedBalance }:
 
     const [token0Deposited, token1Deposited] =
         !!pair &&
-            !!totalPoolTokens &&
-            !!userPoolBalance &&
-            // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
-            JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
+        !!totalPoolTokens &&
+        !!userPoolBalance &&
+        // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
+        JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
             ? [
-                pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
-                pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false)
-            ]
+                  pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
+                  pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false)
+              ]
             : [undefined, undefined]
 
     return (
@@ -144,8 +144,8 @@ export default function Position({ pair, showUnwrapped = false, stakedBalance }:
                         <Text fontSize={16} fontWeight={500}>
                             {poolTokenPercentage
                                 ? (poolTokenPercentage.toFixed(2) === '0.00'
-                                    ? '<0.01'
-                                    : poolTokenPercentage.toFixed(2)) + '%'
+                                      ? '<0.01'
+                                      : poolTokenPercentage.toFixed(2)) + '%'
                                 : '-'}
                         </Text>
                     </FixedHeightRow>

@@ -1,4 +1,4 @@
-import { Trade } from '@pegswap/sdk'
+import { Trade } from '@bombswap/sdk'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import React, { Fragment, memo, useContext } from 'react'
 import { ChevronRight } from 'react-feather'

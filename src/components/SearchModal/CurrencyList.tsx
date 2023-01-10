@@ -1,4 +1,4 @@
-import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from '@pegswap/sdk'
+import { Currency, CurrencyAmount, currencyEquals, ETHER, Token } from '@bombswap/sdk'
 import { LightGreyCard } from 'components/CardLegacy'
 import QuestionHelper from 'components/QuestionHelper'
 import useTheme from 'hooks/useTheme'

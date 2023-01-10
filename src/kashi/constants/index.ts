@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { ChainId } from '@pegswap/sdk'
+import { ChainId } from '@bombswap/sdk'
 import { ethers } from 'ethers'
 
 // Functions that need accrue to be called

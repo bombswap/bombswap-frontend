@@ -1,4 +1,4 @@
-import { JSBI, Pair, Percent, TokenAmount } from '@pegswap/sdk'
+import { JSBI, Pair, Percent, TokenAmount } from '@bombswap/sdk'
 import { darken, transparentize } from 'polished'
 import React, { useState } from 'react'
 import { ChevronDown, ChevronUp } from 'react-feather'
@@ -33,12 +33,12 @@ export const HoverCard = styled(Card)`
         border: 1px solid ${({ theme }) => darken(0.06, theme.bg2)};
     }
 `
-const StyledPositionCard = styled(LightCard) <{ bgColor: any }>`
+const StyledPositionCard = styled(LightCard)<{ bgColor: any }>`
   /* border: 1px solid ${({ theme }) => theme.text4}; */
   border: none
   background: ${({ theme }) => transparentize(0.6, theme.bg1)};
   /* background: ${({ theme, bgColor }) =>
-        `radial-gradient(91.85% 100% at 1.84% 0%, ${transparentize(0.8, bgColor)} 0%, ${theme.bg3} 100%) `}; */
+      `radial-gradient(91.85% 100% at 1.84% 0%, ${transparentize(0.8, bgColor)} 0%, ${theme.bg3} 100%) `}; */
   position: relative;
   overflow: hidden;
 `
@@ -69,14 +69,14 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
 
     const [token0Deposited, token1Deposited] =
         !!pair &&
-            !!totalPoolTokens &&
-            !!userPoolBalance &&
-            // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
-            JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
+        !!totalPoolTokens &&
+        !!userPoolBalance &&
+        // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
+        JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
             ? [
-                pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
-                pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false)
-            ]
+                  pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
+                  pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false)
+              ]
             : [undefined, undefined]
 
     return (
@@ -142,14 +142,14 @@ export default function FullPositionCard({ pair, border, stakedBalance }: Positi
 
     const [token0Deposited, token1Deposited] =
         !!pair &&
-            !!totalPoolTokens &&
-            !!userPoolBalance &&
-            // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
-            JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
+        !!totalPoolTokens &&
+        !!userPoolBalance &&
+        // this condition is a short-circuit in the case where useTokenBalance updates sooner than useTotalSupply
+        JSBI.greaterThanOrEqual(totalPoolTokens.raw, userPoolBalance.raw)
             ? [
-                pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
-                pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false)
-            ]
+                  pair.getLiquidityValue(pair.token0, totalPoolTokens, userPoolBalance, false),
+                  pair.getLiquidityValue(pair.token1, totalPoolTokens, userPoolBalance, false)
+              ]
             : [undefined, undefined]
 
     const backgroundColor = useColor(pair?.token0)
@@ -253,8 +253,8 @@ export default function FullPositionCard({ pair, border, stakedBalance }: Positi
                             <Text fontSize={16} fontWeight={500}>
                                 {poolTokenPercentage
                                     ? (poolTokenPercentage.toFixed(2) === '0.00'
-                                        ? '<0.01'
-                                        : poolTokenPercentage.toFixed(2)) + '%'
+                                          ? '<0.01'
+                                          : poolTokenPercentage.toFixed(2)) + '%'
                                     : '-'}
                             </Text>
                         </FixedHeightRow>

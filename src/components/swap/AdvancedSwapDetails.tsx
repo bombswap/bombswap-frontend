@@ -1,4 +1,4 @@
-import { Trade, TradeType, TokenAmount, ChainId } from '@pegswap/sdk'
+import { Trade, TradeType, TokenAmount, ChainId } from '@bombswap/sdk'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import React, { useContext, useEffect, useState } from 'react'
 import { ThemeContext } from 'styled-components'
@@ -14,8 +14,8 @@ import { ExternalLink } from '../Link'
 import { ANALYTICS_URL } from '../../constants'
 import { t } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { useCzTokenContract } from "../../hooks/useContract";
-import { Contract } from "@ethersproject/contracts";
+import { useCzTokenContract } from '../../hooks/useContract'
+import { Contract } from '@ethersproject/contracts'
 
 function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippage: number }) {
     const { i18n } = useLingui()
@@ -28,7 +28,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
     const [tax, setTax] = useState<number>(0)
     const inputTokenERC20 = useCzTokenContract(
         trade && trade.inputAmount instanceof TokenAmount ? trade.inputAmount.token.address : '',
-        false,
+        false
     )
     useEffect(() => {
         fetchTax(trade, inputTokenERC20)
@@ -94,11 +94,11 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
                         <div className="text-sm font-bold text-high-emphesis">
                             {isExactIn
                                 ? `${slippageAdjustedAmounts[Field.OUTPUT]?.toSignificant(
-                                    4
-                                )} ${trade.outputAmount.currency.getSymbol(chainId)}` ?? '-'
+                                      4
+                                  )} ${trade.outputAmount.currency.getSymbol(chainId)}` ?? '-'
                                 : `${slippageAdjustedAmounts[Field.INPUT]?.toSignificant(
-                                    4
-                                )} ${trade.inputAmount.currency.getSymbol(chainId)}` ?? '-'}
+                                      4
+                                  )} ${trade.inputAmount.currency.getSymbol(chainId)}` ?? '-'}
                         </div>
                     </RowFixed>
                 </RowBetween>

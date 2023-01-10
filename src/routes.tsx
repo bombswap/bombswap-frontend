@@ -1,4 +1,4 @@
-import { ChainId } from '@pegswap/sdk'
+import { ChainId } from '@bombswap/sdk'
 import React from 'react'
 import { Redirect, Route, RouteComponentProps, useLocation, Switch } from 'react-router-dom'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'

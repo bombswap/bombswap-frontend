@@ -1,4 +1,4 @@
-import { Currency, Pair, ChainId } from '@pegswap/sdk'
+import { Currency, Pair, ChainId } from '@bombswap/sdk'
 import { darken } from 'polished'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'

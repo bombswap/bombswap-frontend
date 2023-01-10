@@ -3,7 +3,7 @@ import { TransactionReviewView, WarningsView } from 'kashi/components'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
 import { BigNumber } from '@ethersproject/bignumber'
 import { minimum, e10, maximum, ZERO } from 'kashi/functions/math'
-import { WETH } from '@pegswap/sdk'
+import { WETH } from '@bombswap/sdk'
 import { KashiContext } from 'kashi/context'
 import { KashiCooker, TransactionReview, Warning, Warnings } from 'kashi/entities'
 import { toAmount, toShare } from 'kashi/functions/bentobox'
@@ -50,8 +50,8 @@ export default function Repay({ pair }: RepayProps) {
     const balance = useBentoRepay
         ? toAmount(pair.asset, pair.asset.bentoBalance)
         : assetNative
-            ? info?.ethBalance
-            : pair.asset.balance
+        ? info?.ethBalance
+        : pair.asset.balance
 
     const displayUpdateOracle = pair.currentExchangeRate.gt(0) ? updateOracle : true
 
@@ -85,8 +85,8 @@ export default function Repay({ pair }: RepayProps) {
 
     const maxAmountIn = swap
         ? computeSlippageAdjustedAmounts(foundTrade, allowedSlippage)
-        [Field.INPUT]?.toFixed(pair.collateral.decimals)
-            .toBigNumber(pair.collateral.decimals) || ZERO
+              [Field.INPUT]?.toFixed(pair.collateral.decimals)
+              .toBigNumber(pair.collateral.decimals) || ZERO
         : ZERO
 
     //const nextUserCollateralValue = pair.userCollateralAmount.value.add(collateralValue.toBigNumber(pair.collateral.decimals)).add(extraCollateral)
@@ -135,7 +135,8 @@ export default function Repay({ pair }: RepayProps) {
             "You can't repay more than you owe. To fully repay, please click the 'max' button.",
             new Warning(
                 balance?.lt(displayRepayValue.toBigNumber(pair.asset.decimals)),
-                `Please make sure your ${useBentoRepay ? 'BentoBox' : 'wallet'
+                `Please make sure your ${
+                    useBentoRepay ? 'BentoBox' : 'wallet'
                 } balance is sufficient to repay and then try again.`,
                 true
             )
@@ -272,8 +273,8 @@ export default function Repay({ pair }: RepayProps) {
             ) {
                 const share =
                     pinRemoveMax &&
-                        (nextUserBorrowAmount.isZero() ||
-                            (pinRepayMax && pair.userBorrowPart.gt(0) && balance.gte(pair.currentUserBorrowAmount.value)))
+                    (nextUserBorrowAmount.isZero() ||
+                        (pinRepayMax && pair.userBorrowPart.gt(0) && balance.gte(pair.currentUserBorrowAmount.value)))
                         ? pair.userCollateralShare
                         : toShare(pair.collateral, displayRemoveValue.toBigNumber(pair.collateral.decimals))
 

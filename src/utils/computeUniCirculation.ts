@@ -1,4 +1,4 @@
-import { JSBI, Token, TokenAmount } from '@pegswap/sdk'
+import { JSBI, Token, TokenAmount } from '@bombswap/sdk'
 import { BigNumber } from 'ethers'
 import { STAKING_GENESIS } from '../state/stake/hooks'
 

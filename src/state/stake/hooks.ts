@@ -1,4 +1,4 @@
-import { ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount, WETH } from '@pegswap/sdk'
+import { ChainId, CurrencyAmount, JSBI, Pair, Token, TokenAmount, WETH } from '@bombswap/sdk'
 import useCurrentBlockTimestamp from 'hooks/useCurrentBlockTimestamp'
 import { useMemo } from 'react'
 import { DAI, SUSHI, USDC, USDT, WBTC } from '../../constants'
@@ -79,13 +79,13 @@ export function useStakingInfo(pairToFilterBy?: Pair | null): StakingInfo[] {
         () =>
             chainId
                 ? STAKING_REWARDS_INFO[chainId]?.filter(stakingRewardInfo =>
-                    pairToFilterBy === undefined
-                        ? true
-                        : pairToFilterBy === null
-                            ? false
-                            : pairToFilterBy.involvesToken(stakingRewardInfo.tokens[0]) &&
+                      pairToFilterBy === undefined
+                          ? true
+                          : pairToFilterBy === null
+                          ? false
+                          : pairToFilterBy.involvesToken(stakingRewardInfo.tokens[0]) &&
                             pairToFilterBy.involvesToken(stakingRewardInfo.tokens[1])
-                ) ?? []
+                  ) ?? []
                 : [],
         [chainId, pairToFilterBy]
     )

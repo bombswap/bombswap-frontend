@@ -1,4 +1,4 @@
-import { Token } from '@pegswap/sdk'
+import { Token } from '@bombswap/sdk'
 import { ButtonPrimary } from 'components/ButtonLegacy'
 import { AutoColumn } from 'components/Column'
 import CurrencyLogo from 'components/CurrencyLogo'

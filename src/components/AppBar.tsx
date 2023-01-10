@@ -1,4 +1,4 @@
-import { ChainId, Currency } from '@pegswap/sdk'
+import { ChainId, Currency } from '@bombswap/sdk'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import Logo from '../assets/images/bombswap.png'

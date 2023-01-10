@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber'
-import { Token, WETH } from '@pegswap/sdk'
+import { Token, WETH } from '@bombswap/sdk'
 import { Input as NumericalInput } from '../../../components/NumericalInput'
 import { Fraction } from '../../../entities'
 import { useActiveWeb3React } from '../../../hooks/useActiveWeb3React'
@@ -217,12 +217,14 @@ export default function InputGroup({
                                 color="default"
                                 onClick={() =>
                                     history.push(
-                                        `/add/${chainId && WETH[chainId].address === isAddress(token0Address)
-                                            ? 'ETH'
-                                            : token0Address
-                                        }/${chainId && WETH[chainId].address === isAddress(token1Address)
-                                            ? 'ETH'
-                                            : token1Address
+                                        `/add/${
+                                            chainId && WETH[chainId].address === isAddress(token0Address)
+                                                ? 'ETH'
+                                                : token0Address
+                                        }/${
+                                            chainId && WETH[chainId].address === isAddress(token1Address)
+                                                ? 'ETH'
+                                                : token1Address
                                         }`
                                     )
                                 }

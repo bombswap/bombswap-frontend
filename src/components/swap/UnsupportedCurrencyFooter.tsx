@@ -1,4 +1,4 @@
-import { Currency, Token } from '@pegswap/sdk'
+import { Currency, Token } from '@bombswap/sdk'
 import { ButtonEmpty } from 'components/ButtonLegacy'
 import Card, { OutlineCard } from 'components/CardLegacy'
 import { AutoColumn } from 'components/Column'
@@ -51,8 +51,8 @@ export default function UnsupportedCurrencyFooter({
     const tokens =
         chainId && currencies
             ? currencies.map(currency => {
-                return wrappedCurrency(currency, chainId)
-            })
+                  return wrappedCurrency(currency, chainId)
+              })
             : []
 
     const unsupportedTokens: { [address: string]: Token } = useUnsupportedTokens()

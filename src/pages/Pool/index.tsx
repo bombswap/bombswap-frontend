@@ -1,4 +1,4 @@
-import { ChainId, JSBI, Pair } from '@pegswap/sdk'
+import { ChainId, JSBI, Pair } from '@bombswap/sdk'
 import { transparentize } from 'polished'
 import React, { useContext, useMemo } from 'react'
 import { Link, useHistory } from 'react-router-dom'

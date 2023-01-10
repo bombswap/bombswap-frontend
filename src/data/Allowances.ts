@@ -1,4 +1,4 @@
-import { Token, TokenAmount } from '@pegswap/sdk'
+import { Token, TokenAmount } from '@bombswap/sdk'
 import { useMemo } from 'react'
 import { useTokenContract } from '../hooks/useContract'
 import { useSingleCallResult } from '../state/multicall/hooks'

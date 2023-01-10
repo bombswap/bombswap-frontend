@@ -1,4 +1,4 @@
-import { Token, TokenAmount, WETH } from '@pegswap/sdk'
+import { Token, TokenAmount, WETH } from '@bombswap/sdk'
 import { ApprovalState, useApproveCallback } from 'hooks/useApproveCallback'
 import { BENTOBOX_ADDRESS } from 'kashi'
 import { Button } from 'components'

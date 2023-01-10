@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import { Button } from 'components'
 import { useActiveWeb3React } from 'hooks/useActiveWeb3React'
-import { WETH } from '@pegswap/sdk'
+import { WETH } from '@bombswap/sdk'
 import { e10, ZERO } from 'kashi/functions/math'
 import { Direction, TransactionReview } from 'kashi/entities/TransactionReview'
 import TransactionReviewView from 'kashi/components/TransactionReview'
@@ -32,7 +32,8 @@ export default function LendDepositAction({ pair }: any): JSX.Element {
 
     const warnings = new Warnings().add(
         balance?.lt(value.toBigNumber(pair.asset.decimals)),
-        `Please make sure your ${useBento ? 'BentoBox' : 'wallet'
+        `Please make sure your ${
+            useBento ? 'BentoBox' : 'wallet'
         } balance is sufficient to deposit and then try again.`,
         true
     )

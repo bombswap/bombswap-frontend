@@ -1365,10 +1365,23 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bombmoney/default-token-list@^3.0.4":
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/@bombmoney/default-token-list/-/default-token-list-3.0.4.tgz#73c47cb7895a2c1f6ce5cebec61147578273cb59"
-  integrity sha512-3PnqFh73gm7Sb/6HirI7Q6MBn6j7jCOBMV137zY92OSgabj5X3z4THfOH1KAc/EzFht7obDYzQJmS+Lp4O90vQ==
+"@bombswap/default-token-list@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@bombswap/default-token-list/-/default-token-list-4.0.0.tgz#1293867e3351da2ec97e08b6d849e8bab5d2752a"
+  integrity sha512-ptap8eYUR9vfiU+LxE9+qImTo/nwGtFXHcGuXi9I1kCPfVwGr4NS3SUPjfxhG4LAawq3S1f/ooKEJEu2MnYEkg==
+
+"@bombswap/sdk@1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@bombswap/sdk/-/sdk-1.0.0.tgz#30923a6cc7321578f46fa92a33e488e29de5347d"
+  integrity sha512-YGO3fsmKN47YzFntzGdFrBNmHOMJR/9EBRkwZB07mPamihKVwCw2We0yL8OTZfrXC/vgjmSYLzgatxGGe73Mbw==
+  dependencies:
+    "@uniswap/v2-core" "^1.0.0"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.1"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
 
 "@chaitanyapotti/random-id@^1.0.3":
   version "1.0.3"
@@ -2720,19 +2733,6 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@peghub/core/-/core-1.0.0.tgz#4e4282d264be40b5c24ed4cfc809c3acacfe66f9"
   integrity sha512-iHuOJg1CBWokpsEYg6HYWyDvTb2xyLSkv9kS1qGnXHzo45lehssXetfrZDy8vt16fiTZDheQ33hgyTJO2aCEQw==
-
-"@pegswap/sdk@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@pegswap/sdk/-/sdk-2.1.0.tgz#9b3f20cf0fb76f63f2fb37d2cf756c9e59a0e1c2"
-  integrity sha512-G23tpHR7yehlIOMFN9eahTVDZ2zD5MgmFXD1eotbDC7/8L6HycD3fVdQVKm9YMhe9ejdloNNjgJOA+7rt6hVjw==
-  dependencies:
-    "@uniswap/v2-core" "^1.0.0"
-    big.js "^5.2.2"
-    decimal.js-light "^2.5.0"
-    jsbi "^3.1.1"
-    tiny-invariant "^1.1.0"
-    tiny-warning "^1.0.3"
-    toformat "^2.0.0"
 
 "@pmmmwh/react-refresh-webpack-plugin@0.4.3":
   version "0.4.3"

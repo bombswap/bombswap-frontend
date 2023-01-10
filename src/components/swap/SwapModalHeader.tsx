@@ -1,4 +1,4 @@
-import { TokenAmount, Trade, TradeType } from '@pegswap/sdk'
+import { TokenAmount, Trade, TradeType } from '@bombswap/sdk'
 import React, { useContext, useEffect, useMemo, useState } from 'react'
 import { AlertTriangle, ArrowDown } from 'react-feather'
 import { Text } from 'rebass'
@@ -15,8 +15,8 @@ import { RowBetween, RowFixed } from '../Row'
 import { SwapShowAcceptChanges, TruncatedText } from './styleds'
 import { t, Trans } from '@lingui/macro'
 import { useLingui } from '@lingui/react'
-import { useCzTokenContract } from "../../hooks/useContract";
-import { Contract } from "@ethersproject/contracts";
+import { useCzTokenContract } from '../../hooks/useContract'
+import { Contract } from '@ethersproject/contracts'
 
 export default function SwapModalHeader({
     trade,
@@ -42,11 +42,10 @@ export default function SwapModalHeader({
 
     const theme = useContext(ThemeContext)
 
-
     const [tax, setTax] = useState<number>(0)
     const inputTokenERC20 = useCzTokenContract(
         trade && trade.inputAmount instanceof TokenAmount ? trade.inputAmount.token.address : '',
-        false,
+        false
     )
     useEffect(() => {
         fetchTax(trade, inputTokenERC20)
@@ -121,8 +120,8 @@ export default function SwapModalHeader({
                             priceImpactSeverity > 2
                                 ? theme.red1
                                 : showAcceptChanges && trade.tradeType === TradeType.EXACT_INPUT
-                                    ? theme.primary1
-                                    : ''
+                                ? theme.primary1
+                                : ''
                         }
                     >
                         {trade.outputAmount.toSignificant(6)}
