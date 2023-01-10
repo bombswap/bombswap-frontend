@@ -175,7 +175,7 @@ export const BOMB: { [key: string]: Token } = {
     BOMBSWAP: new Token(ChainId.BOMB, '0xaC029BF2871b3f810AAbF836Adc4F89369027971', 18, 'BOMBSWAP', 'BOMBSWAP Token'),
     XBOMBSWAP: new Token(
         ChainId.BOMB,
-        '0xaC029BF2871b3f810AAbF836Adc4F89369027971',
+        '0x4b6e421e1753Cc25c0f3719f16C5d2388172171c',
         18,
         'XBOMBSWAP',
         'Staked BOMBSWAP'
@@ -198,7 +198,15 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
     [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BUSD, BSC.BOMB, BSC.USDC, BSC.BTCB],
-    [ChainId.BOMB]: [...WRAPPED_NATIVE_ONLY[ChainId.BOMB], BOMB.WBTC, BOMB.USDC, BOMB.USDT, BOMB.BUSD, BOMB.BNB],
+    [ChainId.BOMB]: [
+        ...WRAPPED_NATIVE_ONLY[ChainId.BOMB],
+        BOMB.WBTC,
+        BOMB.USDC,
+        BOMB.USDT,
+        BOMB.BUSD,
+        BOMB.BNB,
+        BOMB.BOMBSWAP
+    ],
     [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDC, AVALANCHE.USDCE]
 }
 
@@ -271,6 +279,9 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
         [BSC.BITATOM.address]: [BSC.ATOM, BSC.WETH],
         [BSC.BITDOT.address]: [BSC.DOT, BSC.WETH],
         [BSC.BITADA.address]: [BSC.ADA, BSC.WETH]
+    },
+    [ChainId.BOMB]: {
+        [BOMB.XBOMBSWAP.address]: [BOMB.BOMBSWAP]
     }
 }
 
@@ -281,7 +292,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
     [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.BOMB, BSC.BTCB, BSC.USD],
-    [ChainId.BOMB]: [...WRAPPED_NATIVE_ONLY[ChainId.BOMB], BOMB.USDC, BOMB.BUSD, BOMB.USDT, BOMB.WBTC, BOMB.WETH],
+    [ChainId.BOMB]: [...WRAPPED_NATIVE_ONLY[ChainId.BOMB], BOMB.USDC, BOMB.BUSD, BOMB.USDT, BOMB.WBTC, BOMB.BOMBSWAP],
     [ChainId.AVALANCHE]: [...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE], AVALANCHE.USDCE, AVALANCHE.USDC]
 }
 
@@ -292,7 +303,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
     [ChainId.MATIC]: [...WRAPPED_NATIVE_ONLY[ChainId.MATIC], MATIC.USDC, MATIC.WBTC, MATIC.DAI, MATIC.WETH, MATIC.USDT],
     [ChainId.FANTOM]: [...WRAPPED_NATIVE_ONLY[ChainId.FANTOM], FANTOM.DAI, FANTOM.USDC, FANTOM.WBTC, FANTOM.WETH],
     [ChainId.BSC]: [...WRAPPED_NATIVE_ONLY[ChainId.BSC], BSC.USD, BSC.USDC, BSC.USDT, BSC.BTCB, BSC.BOMB, BSC.ETH],
-    [ChainId.BOMB]: [...WRAPPED_NATIVE_ONLY[ChainId.BOMB], BOMB.BUSD, BOMB.USDC, BOMB.USDT, BOMB.WBTC, BOMB.WETH],
+    [ChainId.BOMB]: [...WRAPPED_NATIVE_ONLY[ChainId.BOMB], BOMB.BUSD, BOMB.USDC, BOMB.USDT, BOMB.WBTC, BOMB.BOMBSWAP],
     [ChainId.AVALANCHE]: [
         ...WRAPPED_NATIVE_ONLY[ChainId.AVALANCHE],
         AVALANCHE.USDC,
@@ -312,7 +323,10 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
         [USDC, USDT],
         [DAI, USDT]
     ],
-    [ChainId.BOMB]: [[BOMB.BOMBSWAP, WETH[ChainId.BOMB]]]
+    [ChainId.BOMB]: [
+        [BOMB.BOMBSWAP, WETH[ChainId.BOMB]],
+        [BOMB.BOMBSWAP, BOMB.XBOMBSWAP]
+    ]
 }
 
 export interface WalletInfo {
@@ -458,9 +472,9 @@ export const BASE_SWAPPER: { [chainId in ChainId]?: string } = {
 // export const BORING_HELPER_ADDRESS = '0x11Ca5375AdAfd6205E41131A4409f182677996E6'
 
 export const ANALYTICS_URL: { [chainId in ChainId]?: string } = {
-    [ChainId.MAINNET]: 'https://analytics.sushi.com',
-    [ChainId.MATIC]: 'https://analytics-polygon.sushi.com',
-    [ChainId.FANTOM]: 'https://analytics-ftm.sushi.com',
-    [ChainId.BSC]: 'https://analytics-bsc.sushi.com',
-    [ChainId.XDAI]: 'https://analytics-xdai.sushi.com'
+    [ChainId.MAINNET]: '',
+    [ChainId.MATIC]: '',
+    [ChainId.FANTOM]: '',
+    [ChainId.BSC]: '',
+    [ChainId.XDAI]: ''
 }
