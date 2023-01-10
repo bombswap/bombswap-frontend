@@ -1365,10 +1365,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bombmoney/default-token-list@^3.0.3":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@bombmoney/default-token-list/-/default-token-list-3.0.3.tgz#ee353e6ebcae6f87e2db470ad4220f6f4b9dedd3"
-  integrity sha512-FheHeAz2xXjFoFhF461PYYVr2rEbgaf7e7NuLsaLSv3P9aI0kz9Y/rOk572YOlALHOMUeAIck4bgfKMwQKY8Qg==
+"@bombmoney/default-token-list@^3.0.4":
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/@bombmoney/default-token-list/-/default-token-list-3.0.4.tgz#73c47cb7895a2c1f6ce5cebec61147578273cb59"
+  integrity sha512-3PnqFh73gm7Sb/6HirI7Q6MBn6j7jCOBMV137zY92OSgabj5X3z4THfOH1KAc/EzFht7obDYzQJmS+Lp4O90vQ==
 
 "@chaitanyapotti/random-id@^1.0.3":
   version "1.0.3"
