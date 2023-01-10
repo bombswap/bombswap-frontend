@@ -622,6 +622,9 @@ function AppBar(): JSX.Element {
                                 <NavLink id={`swap-nav-link`} to={'/'}>
                                     {i18n._(t`Home`)}
                                 </NavLink>
+                                <NavLink id={`swap-nav-link`} to={'/stake'}>
+                                    {i18n._(t`Stake`)}
+                                </NavLink>
                                 <a
                                     id={`swap-nav-link`}
                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
