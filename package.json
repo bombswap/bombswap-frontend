@@ -1,7 +1,7 @@
 {
-    "name": "@bombmoney/crosschain-swap",
-    "description": "Crosschain Swap",
-    "homepage": "https://swap.peghub.com",
+    "name": "@bombswap/bombswap-frontend",
+    "description": "BOMBSWAP Frontend",
+    "homepage": "https://www.bombswap.xyz",
     "private": true,
     "lint-staged": {
         "*.{js,jsx,ts,tsx}": [
