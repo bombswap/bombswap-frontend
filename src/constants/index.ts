@@ -172,7 +172,14 @@ export const AVALANCHE: { [key: string]: Token } = {
 }
 
 export const BOMB: { [key: string]: Token } = {
-    BOMBSWAP: new Token(ChainId.BOMB, '0xaC029BF2871b3f810AAbF836Adc4F89369027971', 18, 'BOMBSWAP', 'BOMB Swap Token'),
+    BOMBSWAP: new Token(ChainId.BOMB, '0xaC029BF2871b3f810AAbF836Adc4F89369027971', 18, 'BOMBSWAP', 'BOMBSWAP Token'),
+    XBOMBSWAP: new Token(
+        ChainId.BOMB,
+        '0xaC029BF2871b3f810AAbF836Adc4F89369027971',
+        18,
+        'XBOMBSWAP',
+        'Staked BOMBSWAP'
+    ),
     USDB: new Token(ChainId.BOMB, '0xca2de0ad1a82F78d42284774411F336f2550E7F5', 18, 'USDB', 'BOMB USD'),
     USDC: new Token(ChainId.BOMB, '0x0889cE27aDE6231a9820E34bA6E68fc0142b8d18', 18, 'USDC', 'USDC'),
     WBTC: new Token(ChainId.BOMB, '0x140F62aCCC69cb24eABdC0E00b7caaC577cA5b24', 18, 'BTC', 'BTC'),
