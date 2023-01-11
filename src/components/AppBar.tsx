@@ -51,79 +51,82 @@ function AppBar(): JSX.Element {
                                             <NavLink id={`swap-nav-link`} to={'/'}>
                                                 {i18n._(t`Home`)}
                                             </NavLink>
-                                            <div
-                                                className={'navDropdownMenu'}
-                                                style={{ display: 'inline', position: 'relative' }}
-                                            >
-                                                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid  */}
-                                                <a
-                                                    className={
-                                                        'navDropdownMenuRoot navLink text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap'
-                                                    }
-                                                    href={undefined}
+                                            {chainId && ![ChainId.BOMB].includes(chainId) && (
+                                                <div
+                                                    className={'navDropdownMenu'}
+                                                    style={{ display: 'inline', position: 'relative' }}
                                                 >
-                                                    Protocols
-                                                </a>
-                                                <div className={'navDropdownMenuContainer'}>
-                                                    <ul className={'navDropdownMenuWrapper'}>
-                                                        <li className={'navDropdownMenuItem'}>
-                                                            <a
-                                                                id={`swap-nav-link`}
-                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                                                href={'https://app.bomb.money/'}
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                            >
-                                                                {i18n._(t`BOMB.money`)}
-                                                            </a>
-                                                        </li>
-                                                        <li className={'navDropdownMenuItem'}>
-                                                            <a
-                                                                id={`swap-nav-link`}
-                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                                                href={'https://app.bitbomb.io/'}
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                            >
-                                                                {i18n._(t`bitBOMB`)}
-                                                            </a>
-                                                        </li>
-                                                        <li className={'navDropdownMenuItem'}>
-                                                            <a
-                                                                id={`swap-nav-link`}
-                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                                                href={'https://www.czpegs.com/'}
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                            >
-                                                                {i18n._(t`czPegs`)}
-                                                            </a>
-                                                        </li>
-                                                        <li className={'navDropdownMenuItem'}>
-                                                            <a
-                                                                id={`swap-nav-link`}
-                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                                                href={'https://www.snowpegs.com/'}
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                            >
-                                                                {i18n._(t`SnowPegs`)}
-                                                            </a>
-                                                        </li>
-                                                        <li className={'navDropdownMenuItem'}>
-                                                            <a
-                                                                id={`swap-nav-link`}
-                                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                                                href={'https://www.polypegs.com/'}
-                                                                target="_blank"
-                                                                rel="noreferrer"
-                                                            >
-                                                                {i18n._(t`PolyPegs`)}
-                                                            </a>
-                                                        </li>
-                                                    </ul>
+                                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid  */}
+                                                    <a
+                                                        className={
+                                                            'navDropdownMenuRoot navLink text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap'
+                                                        }
+                                                        href={undefined}
+                                                    >
+                                                        Protocols
+                                                    </a>
+                                                    <div className={'navDropdownMenuContainer'}>
+                                                        <ul className={'navDropdownMenuWrapper'}>
+                                                            <li className={'navDropdownMenuItem'}>
+                                                                <a
+                                                                    id={`swap-nav-link`}
+                                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                                    href={'https://app.bomb.money/'}
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    {i18n._(t`BOMB.money`)}
+                                                                </a>
+                                                            </li>
+                                                            <li className={'navDropdownMenuItem'}>
+                                                                <a
+                                                                    id={`swap-nav-link`}
+                                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                                    href={'https://app.bitbomb.io/'}
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    {i18n._(t`bitBOMB`)}
+                                                                </a>
+                                                            </li>
+                                                            <li className={'navDropdownMenuItem'}>
+                                                                <a
+                                                                    id={`swap-nav-link`}
+                                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                                    href={'https://www.czpegs.com/'}
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    {i18n._(t`czPegs`)}
+                                                                </a>
+                                                            </li>
+                                                            <li className={'navDropdownMenuItem'}>
+                                                                <a
+                                                                    id={`swap-nav-link`}
+                                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                                    href={'https://www.snowpegs.com/'}
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    {i18n._(t`SnowPegs`)}
+                                                                </a>
+                                                            </li>
+                                                            <li className={'navDropdownMenuItem'}>
+                                                                <a
+                                                                    id={`swap-nav-link`}
+                                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                                    href={'https://www.polypegs.com/'}
+                                                                    target="_blank"
+                                                                    rel="noreferrer"
+                                                                >
+                                                                    {i18n._(t`PolyPegs`)}
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            )}
+
                                             {/* <NavLink id={`swap-nav-link`} to={'/swap'}>
                                                 {i18n._(t`Swap`)}
                                             </NavLink> */}

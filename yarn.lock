@@ -1365,10 +1365,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bombswap/default-token-list@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@bombswap/default-token-list/-/default-token-list-4.0.0.tgz#1293867e3351da2ec97e08b6d849e8bab5d2752a"
-  integrity sha512-ptap8eYUR9vfiU+LxE9+qImTo/nwGtFXHcGuXi9I1kCPfVwGr4NS3SUPjfxhG4LAawq3S1f/ooKEJEu2MnYEkg==
+"@bombswap/default-token-list@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@bombswap/default-token-list/-/default-token-list-4.0.1.tgz#2597dd66cd6863c43f5a27689166bfa193ef43ea"
+  integrity sha512-BHkUmaBOZy6ga3G8Xpe0zsxVCxe/jN7GP+E/TO+1U1ZJMqa4J56T+Iq4FZr9EpzidyAcHvsZSr3gvHZrlnVlag==
 
 "@bombswap/sdk@1.0.0":
   version "1.0.0"
