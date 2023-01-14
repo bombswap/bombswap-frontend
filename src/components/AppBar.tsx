@@ -342,7 +342,7 @@ function AppBar(): JSX.Element {
                                                             />
                                                         </div>
                                                     </QuestionHelper>
-                                                    <span className="ml-3 text-primary">${bombswapUsdPrice}</span>
+                                                    <span className="ml-3 text-primary mt-1 font-bold">${bombswapUsdPrice}</span>
                                                 </>
                                             )}
 
