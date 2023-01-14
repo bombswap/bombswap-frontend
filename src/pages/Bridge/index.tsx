@@ -177,24 +177,24 @@ export default function Bridge() {
         );
     }
 
-    if (!availableNetworks || availableNetworks.length <= 0 || !depositAddress) {
-        return (
-            <div className="bg-dark-900 shadow-swap-blue-glow w-full max-w-2xl rounded text-center">
-                <Wrapper id="swap-page">
-                    <div className="inline-block">
-                        <Loader />
-                    </div>
-                </Wrapper>
-            </div>
-        );
-    }
-
     if (!availableNetworks.includes(String(chainId))) {
         return (
             <div className="bg-dark-900 shadow-swap-blue-glow w-full max-w-2xl rounded text-center">
                 <Wrapper id="swap-page">
                     <div className="inline-block">
                         This chain is not currently supported for bridging to BOMBChain.
+                    </div>
+                </Wrapper>
+            </div>
+        );
+    }
+
+    if (!availableNetworks || availableNetworks.length <= 0 || !depositAddress) {
+        return (
+            <div className="bg-dark-900 shadow-swap-blue-glow w-full max-w-2xl rounded text-center">
+                <Wrapper id="swap-page">
+                    <div className="inline-block">
+                        <Loader />
                     </div>
                 </Wrapper>
             </div>
