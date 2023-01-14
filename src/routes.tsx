@@ -40,6 +40,7 @@ import MasterChefV1Debug from './pages/Yield/masterchefv1/debug'
 import MiniChefV2 from './pages/Yield/minichefv2'
 import Positions from './pages/Positions'
 import Transactions from './pages/Transactions'
+import Bridge from "./pages/Bridge";
 
 function Routes(): JSX.Element {
     const { chainId } = useActiveWeb3React()
@@ -99,6 +100,7 @@ function Routes(): JSX.Element {
             <Route exact strict path="/pool" component={Pool} />
             <Route exact strict path="/transactions" component={Transactions} />
             <Route exact strict path="/create" component={RedirectToAddLiquidity} />
+            <Route exact path="/bridge" component={Bridge} />
             <Route exact path="/add" component={AddLiquidity} />
             <Route exact path="/add/:currencyIdA" component={RedirectOldAddLiquidityPathStructure} />
             <Route exact path="/add/:currencyIdA/:currencyIdB" component={RedirectDuplicateTokenIds} />

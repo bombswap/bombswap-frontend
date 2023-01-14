@@ -1,4 +1,4 @@
-import { Currency, Pair, ChainId } from '@bombswap/sdk'
+import { Currency, Pair, ChainId, Token } from '@bombswap/sdk'
 import { darken } from 'polished'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
@@ -125,6 +125,7 @@ interface CurrencyInputPanelProps {
     cornerRadiusBottomNone?: boolean
     cornerRadiusTopNone?: boolean
     containerBackground?: string
+    onlySpecificTokens?: Token[]|null
 }
 
 export default function CurrencyInputPanel({
@@ -145,7 +146,8 @@ export default function CurrencyInputPanel({
     customBalanceText,
     cornerRadiusBottomNone,
     cornerRadiusTopNone,
-    containerBackground
+    containerBackground,
+    onlySpecificTokens = null
 }: CurrencyInputPanelProps) {
     const { i18n } = useLingui()
     const [modalOpen, setModalOpen] = useState(false)
@@ -326,6 +328,7 @@ export default function CurrencyInputPanel({
                     selectedCurrency={currency}
                     otherSelectedCurrency={otherCurrency}
                     showCommonBases={showCommonBases}
+                    onlySpecificTokens={onlySpecificTokens}
                 />
             )}
         </div>

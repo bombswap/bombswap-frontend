@@ -41,6 +41,7 @@ interface CurrencySearchProps {
     showManageView: () => void
     showImportView: () => void
     setImportToken: (token: Token) => void
+    onlySpecificTokens?: Token[]|null
 }
 
 export function CurrencySearch({
@@ -52,7 +53,8 @@ export function CurrencySearch({
     isOpen,
     showManageView,
     showImportView,
-    setImportToken
+    setImportToken,
+    onlySpecificTokens = null
 }: CurrencySearchProps) {
     const { i18n } = useLingui()
 
@@ -84,6 +86,9 @@ export function CurrencySearch({
     }, [isAddressSearch])
 
     const showETH: boolean = useMemo(() => {
+        if (onlySpecificTokens && onlySpecificTokens.length > 0) {
+            return false;
+        }
         const s = debouncedQuery.toLowerCase().trim()
         return s === '' || s === 'e' || s === 'et' || s === 'eth'
     }, [debouncedQuery])
@@ -91,7 +96,7 @@ export function CurrencySearch({
     const tokenComparator = useTokenComparator(invertSearchOrder)
 
     const filteredTokens: Token[] = useMemo(() => {
-        return filterTokens(Object.values(allTokens), debouncedQuery)
+        return filterTokens(onlySpecificTokens && onlySpecificTokens.length > 0 ? onlySpecificTokens : Object.values(allTokens), debouncedQuery)
     }, [allTokens, debouncedQuery])
 
     const sortedTokens: Token[] = useMemo(() => {
@@ -153,19 +158,21 @@ export function CurrencySearch({
     return (
         <ContentWrapper>
             <ModalHeader onClose={onDismiss} title="Select a token" />
-            <div className="mt-3 mb-8">
-                <input
-                    type="text"
-                    id="token-search-input"
-                    placeholder={i18n._(t`Search name or paste address`)}
-                    autoComplete="off"
-                    value={searchQuery}
-                    ref={inputRef as RefObject<HTMLInputElement>}
-                    onChange={handleInput}
-                    onKeyDown={handleEnter}
-                    className="w-full bg-dark-800 border-transparent border-solid border-1 rounded placeholder-secondary focus:placeholder-primary  font-bold text-caption px-6 py-3.5"
-                />
-            </div>
+            {(!onlySpecificTokens || onlySpecificTokens.length <= 0) && (
+                <div className="mt-3 mb-8">
+                    <input
+                        type="text"
+                        id="token-search-input"
+                        placeholder={i18n._(t`Search name or paste address`)}
+                        autoComplete="off"
+                        value={searchQuery}
+                        ref={inputRef as RefObject<HTMLInputElement>}
+                        onChange={handleInput}
+                        onKeyDown={handleEnter}
+                        className="w-full bg-dark-800 border-transparent border-solid border-1 rounded placeholder-secondary focus:placeholder-primary  font-bold text-caption px-6 py-3.5"
+                    />
+                </div>
+            )}
             {showCommonBases && (
                 <div className="mb-4">
                     <CommonBases
@@ -212,18 +219,20 @@ export function CurrencySearch({
                     </TYPE.main>
                 </Column>
             )}
-            <div className="mt-3">
-                <Row justify="center">
-                    <ButtonText onClick={showManageView} color={theme.blue1} className="list-token-manage-button">
-                        <RowFixed>
-                            <IconWrapper size="16px" marginRight="6px">
-                                <Edit />
-                            </IconWrapper>
-                            <TYPE.main color={theme.blue1}>{i18n._(t`Manage`)}</TYPE.main>
-                        </RowFixed>
-                    </ButtonText>
-                </Row>
-            </div>
+            {(!onlySpecificTokens || onlySpecificTokens.length <= 0) && (
+                <div className="mt-3">
+                    <Row justify="center">
+                        <ButtonText onClick={showManageView} color={theme.blue1} className="list-token-manage-button">
+                            <RowFixed>
+                                <IconWrapper size="16px" marginRight="6px">
+                                    <Edit />
+                                </IconWrapper>
+                                <TYPE.main color={theme.blue1}>{i18n._(t`Manage`)}</TYPE.main>
+                            </RowFixed>
+                        </ButtonText>
+                    </Row>
+                </div>
+            )};
         </ContentWrapper>
     )
 }
