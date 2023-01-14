@@ -43,7 +43,7 @@ function AppBar(): JSX.Element {
         fetch('https://api.bomb.farm/prices').then(res => res.json()).then(data => {
             setBombswapUsdPrice(data.BOMBSWAP.toFixed(2));
         });
-    }, []);
+    }, [account]);
 
     return (
         <header className="flex flex-row justify-between w-screen flex-nowrap">
