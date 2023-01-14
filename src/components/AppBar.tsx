@@ -35,6 +35,16 @@ function AppBar(): JSX.Element {
         }
     }, [pathname])
 
+    const [bombswapUsdPrice, setBombswapUsdPrice] = useState("");
+    useEffect(() => {
+        if (!account) {
+            return;
+        }
+        fetch('https://api.bomb.farm/prices').then(res => res.json()).then(data => {
+            setBombswapUsdPrice(data.BOMBSWAP.toFixed(2));
+        });
+    }, []);
+
     return (
         <header className="flex flex-row justify-between w-screen flex-nowrap">
             <Disclosure as="nav" className={navClassList}>
@@ -332,6 +342,7 @@ function AppBar(): JSX.Element {
                                                             />
                                                         </div>
                                                     </QuestionHelper>
+                                                    <span className="ml-3 text-primary">${bombswapUsdPrice}</span>
                                                 </>
                                             )}
 
