@@ -232,7 +232,7 @@ export function CurrencySearch({
                         </ButtonText>
                     </Row>
                 </div>
-            )};
+            )}
         </ContentWrapper>
     )
 }
