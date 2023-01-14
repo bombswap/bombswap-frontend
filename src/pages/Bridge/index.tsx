@@ -24,6 +24,9 @@ import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
 import { isAddress } from "../../utils";
+import { useTokenContract } from "../../hooks/useContract";
+import { WrappedTokenInfo } from "../../state/lists/hooks";
+import { useTransactionAdder } from '../../state/transactions/hooks';
 
 
 export default function Bridge() {
@@ -90,19 +93,23 @@ export default function Bridge() {
 
     const allTokens = useAllTokens();
     const [availableNetworks, setAvailableNetworks] = useState<string[]>([]);
+    const [availableNetworkObjects, setAvailableNetworkObjects] = useState<any>({});
     const [availableTokens, setAvailableTokens] = useState<Token[]>([]);
     useEffect(() => {
-        if (!account || !chainId || !allTokens) {
+        if (!account || !chainId) {
             return;
         }
         fetch('https://api.bombchain.com/deposit_assets').then(res => res.json()).then(data => {
             const networks: any = [];
+            const networkObjects: any = {};
             for (const asset in data.depositAssets) {
                 if (!networks.includes(String(data.depositAssets[asset].blockchain.chainId))) {
                     networks.push(String(data.depositAssets[asset].blockchain.chainId));
+                    networkObjects[String(data.depositAssets[asset].blockchain.chainId)] = data.depositAssets[asset].blockchain;
                 }
             }
             setAvailableNetworks(networks);
+            setAvailableNetworkObjects(networkObjects);
 
             const tokens: Token[] = [];
             for (const asset in data.depositAssets) {
@@ -115,7 +122,31 @@ export default function Bridge() {
             }
             setAvailableTokens(tokens);
         });
-    }, [allTokens, chainId, account]);
+    }, [chainId, account]);
+
+    const inputCurrency = currencies[Field.INPUT] as WrappedTokenInfo;
+    const inputAmount = parsedAmounts[Field.INPUT] as CurrencyAmount;
+    const tokenAddress = inputCurrency && inputCurrency.address ? inputCurrency.address : undefined;
+    const addTransaction = useTransactionAdder();
+    const contract = useTokenContract(tokenAddress);
+    const handleBridge = async () => {
+        if (!contract || !inputAmount) {
+            alert('Contract is null');
+            return;
+        }
+
+        if (!availableNetworkObjects[String(chainId)].slug) {
+            alert('Blockchain ' + chainId + ' slug not found');
+            return;
+        }
+
+        fetch('https://api.bombchain.com/address/' + availableNetworkObjects[String(chainId)].slug + '/' + account).then(res => res.json()).then(async data => {
+            const txReceipt = await contract.transfer(data.depositAddress.address, `0x${inputAmount.raw.toString(16)}`);
+            addTransaction(txReceipt, {
+                summary: `Bridge ${inputAmount.toSignificant(6)} ${inputCurrency.symbol} to BOMBChain`
+            })
+        });
+    };
 
     if (!account) {
         return (
@@ -189,6 +220,12 @@ export default function Bridge() {
                                     {i18n._(t`Select a token and enter an amount`)}
                                 </Text>
                             </ButtonError>
+                        ) : inputAmount && maxAmountInput && inputAmount.greaterThan(maxAmountInput) ? (
+                            <ButtonError disabled={true}>
+                                <Text fontSize={16} fontWeight={500}>
+                                    {i18n._(t`Amount exceeds your available balance`)}
+                                </Text>
+                            </ButtonError>
                         ) : showApproveFlow ? (
                             <RowBetween>
                                 <ButtonConfirmed
@@ -220,7 +257,7 @@ export default function Bridge() {
                                 </ButtonError>
                             </RowBetween>
                         ) : (
-                            <ButtonPrimary onClick={() => {alert('Bridge');}}>
+                            <ButtonPrimary onClick={() => {handleBridge()}}>
                                 {i18n._(t`Bridge`)}
                             </ButtonPrimary>
                         )}
