@@ -35,15 +35,17 @@ function AppBar(): JSX.Element {
         }
     }, [pathname])
 
-    const [bombswapUsdPrice, setBombswapUsdPrice] = useState("");
+    const [bombswapUsdPrice, setBombswapUsdPrice] = useState('')
     useEffect(() => {
         if (!account) {
-            return;
+            return
         }
-        fetch('https://api.bomb.farm/prices').then(res => res.json()).then(data => {
-            setBombswapUsdPrice(data.BOMBSWAP.toFixed(2));
-        });
-    }, [account]);
+        fetch('https://api.bomb.farm/prices')
+            .then(res => res.json())
+            .then(data => {
+                setBombswapUsdPrice(data.BOMBSWAP.toFixed(2))
+            })
+    }, [account])
 
     return (
         <header className="flex flex-row justify-between w-screen flex-nowrap">
@@ -226,6 +228,11 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Stake`)}
                                                 </NavLink>
                                             )}
+                                            {chainId && chainId === ChainId.BSC && (
+                                                <NavLink id={`swap-nav-link`} to={'/bridge'}>
+                                                    {i18n._(t`Bridge to BOMBCHAIN`)}
+                                                </NavLink>
+                                            )}
                                             {/*   {chainId === ChainId.BOMB && (
                                                 <NavLink id={`sushibar-nav-link`} to={'/sushibar'}>
                                                     {i18n._(t`SushiBar`)}
@@ -342,7 +349,9 @@ function AppBar(): JSX.Element {
                                                             />
                                                         </div>
                                                     </QuestionHelper>
-                                                    <span className="ml-3 text-primary mt-1 font-bold">${bombswapUsdPrice}</span>
+                                                    <span className="mt-1 ml-3 font-bold text-primary">
+                                                        ${bombswapUsdPrice}
+                                                    </span>
                                                 </>
                                             )}
 
