@@ -378,7 +378,7 @@ function AppBar(): JSX.Element {
                                                                         symbol: 'BOMB',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://swap.peghub.com/images/tokens/0x522348779DCb2911539e76A1042aA922F9C47Ee3.png'
+                                                                            'https://www.bombswap.xyz/images/tokens/0x522348779DCb2911539e76A1042aA922F9C47Ee3.png'
                                                                     }
                                                                 }
 
@@ -446,7 +446,7 @@ function AppBar(): JSX.Element {
                                                                         symbol: 'BOMB',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://swap.peghub.com/images/tokens/0x522348779DCb2911539e76A1042aA922F9C47Ee3.png'
+                                                                            'https://www.bombswap.xyz/images/tokens/0x522348779DCb2911539e76A1042aA922F9C47Ee3.png'
                                                                     }
                                                                 }
 
@@ -513,7 +513,7 @@ function AppBar(): JSX.Element {
                                                                         symbol: 'PHUB',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://swap.peghub.com/images/tokens/0x95A6772a2272b9822D4b3DfeEaedF732F1D28DB8.png'
+                                                                            'https://www.bombswap.xyz/images/tokens/0x95A6772a2272b9822D4b3DfeEaedF732F1D28DB8.png'
                                                                     }
                                                                 }
 

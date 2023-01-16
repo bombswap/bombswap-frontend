@@ -106,9 +106,9 @@ export const portis = new PortisConnector({
 
 // mainnet only
 export const walletlink = new WalletLinkConnector({
-    url: RPC[ChainId.MAINNET],
+    url: RPC[ChainId.BOMB],
     appName: 'BOMB',
-    appLogoUrl: 'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/PHUB.png'
+    appLogoUrl: 'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/bombswap.png'
 })
 
 // mainnet only
