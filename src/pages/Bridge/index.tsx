@@ -208,7 +208,9 @@ export default function Bridge() {
                 />
             </Helmet>
 
-            <div className="mb-10 text-2xl ">Bridge assets to BOMB Chain</div>
+            <div className="mb-5 text-2xl font-bold ">Bridge assets to BOMB Chain</div>
+
+            <div className="mb-5 w-1/2 text-center">Please note that while there are great farming options for BTCB and BUSD on BOMB Chain, bridging these assets back to BNB Chain is not yet possible, but will be enabled shortly! Please follow our socials for updates.</div>
 
             <div className="w-full max-w-2xl rounded bg-dark-900 shadow-swap-blue-glow">
                 <Wrapper id="swap-page">
