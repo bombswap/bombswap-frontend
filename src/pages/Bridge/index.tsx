@@ -208,7 +208,7 @@ export default function Bridge() {
                 />
             </Helmet>
 
-            <div className="mb-10 text-lg">Bridge assets to BOMB Chain</div>
+            <div className="mb-10 text-2xl ">Bridge assets to BOMB Chain</div>
 
             <div className="w-full max-w-2xl rounded bg-dark-900 shadow-swap-blue-glow">
                 <Wrapper id="swap-page">
@@ -318,13 +318,14 @@ export default function Bridge() {
             </div>
 
             <div className="mt-10 text-lg text-center">
-                Bridge BOMB, USDC, or USDT, at the{' '}
-                <a
-                    style={{ textDecoration: 'underline' }}
-                    href="https://chainscanner.xyz/ankr/appchains/bridge/?network=bomb-mainnet"
-                >
-                    ANKR Bridge!
-                </a>
+                <ButtonPrimary>
+                    <a
+                        // style={{ textDecoration: 'underline' }}
+                        href="https://chainscanner.xyz/ankr/appchains/bridge/?network=bomb-mainnet"
+                    >
+                        Bridge BOMB, USDC, or USDT, at the ANKR Bridge!
+                    </a>
+                </ButtonPrimary>
             </div>
         </>
     )
