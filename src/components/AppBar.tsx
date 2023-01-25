@@ -223,6 +223,17 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Docs`)}
                                                 </a>
                                             )}
+                                            {chainId && [ChainId.BOMB].includes(chainId) && (
+                                                <a
+                                                    id={`swap-nav-link`}
+                                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                    href={'https://info.bombswap.xyz'}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                >
+                                                    {i18n._(t`Stats`)}
+                                                </a>
+                                            )}
                                             {chainId && chainId === ChainId.BOMB && (
                                                 <NavLink id={`yield-nav-link`} to={'/stake'}>
                                                     {i18n._(t`Stake`)}
