@@ -6,7 +6,7 @@ import { CurrencyAmount, Token } from '@bombswap/sdk'
 import Column, { AutoColumn } from '../../components/Column'
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { useAllTokens } from '../../hooks/Tokens'
-import { useDerivedSwapInfo, useSwapActionHandlers } from '../../state/swap/hooks'
+import { useDerivedSwapInfo, useSwapActionHandlers, useSwapState } from '../../state/swap/hooks'
 import { useWalletModalToggle } from '../../state/application/hooks'
 
 import CurrencyInputPanel from '../../components/CurrencyInputPanel'
@@ -35,6 +35,7 @@ export default function Bridge() {
     // toggle wallet when disconnected
     const toggleWalletModal = useWalletModalToggle()
 
+    const { typedValue } = useSwapState()
     const { currencyBalances, parsedAmount, currencies, inputError: swapInputError } = useDerivedSwapInfo()
 
     const parsedAmounts = {
@@ -52,7 +53,7 @@ export default function Bridge() {
     )
 
     const formattedAmounts = {
-        [Field.INPUT]: parsedAmounts[Field.INPUT]?.toExact() ?? ''
+        [Field.INPUT]: typedValue ?? ''
     }
     const [approval, setApproval] = useState<number>(ApprovalState.APPROVED)
 
@@ -92,6 +93,7 @@ export default function Bridge() {
     const [availableNetworks, setAvailableNetworks] = useState<string[]>([])
     const [availableNetworkObjects, setAvailableNetworkObjects] = useState<any>({})
     const [availableTokens, setAvailableTokens] = useState<Token[]>([])
+    const [availableAnkrTokens, setAvailableAnkrTokens] = useState<Token[]>([])
     const [depositAddress, setDepositAddress] = useState<string>('')
     useEffect(() => {
         if (!account || !chainId) {
@@ -122,6 +124,26 @@ export default function Bridge() {
                     }
                 }
                 setAvailableTokens(tokens)
+
+                const ankrTokens: Token[] = []
+                // if (String(chainId) === '56') {
+                //     let address = isAddress('0x522348779DCb2911539e76A1042aA922F9C47Ee3');
+                //     if (address && !ankrTokens.includes(allTokens[address])) {
+                //         ankrTokens.push(allTokens[address])
+                //     }
+                //
+                //     address = isAddress('0x55d398326f99059fF775485246999027B3197955');
+                //     if (address && !ankrTokens.includes(allTokens[address])) {
+                //         ankrTokens.push(allTokens[address])
+                //     }
+                //
+                //     address = isAddress('0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d');
+                //     if (address && !ankrTokens.includes(allTokens[address])) {
+                //         ankrTokens.push(allTokens[address])
+                //     }
+                // }
+
+                setAvailableAnkrTokens(ankrTokens);
             })
     }, [chainId, account])
 
@@ -152,15 +174,27 @@ export default function Bridge() {
             return
         }
 
-        if (!depositAddress) {
-            alert('Deposit address is not available')
-            return
-        }
+        if (availableTokens.includes(inputCurrency)) {
+            if (!depositAddress) {
+                alert('Deposit address is not available')
+                return
+            }
 
-        const txReceipt = await contract.transfer(depositAddress, `0x${inputAmount.raw.toString(16)}`)
-        addTransaction(txReceipt, {
-            summary: `Bridge ${inputAmount.toSignificant(6)} ${inputCurrency.symbol} to BOMBChain`
-        })
+            const txReceipt = await contract.transfer(depositAddress, `0x${inputAmount.raw.toString(16)}`)
+            addTransaction(txReceipt, {
+                summary: `Bridge ${inputAmount.toSignificant(6)} ${inputCurrency.symbol} to BOMBChain`
+            })
+        } else if (availableAnkrTokens.includes(inputCurrency)) {
+            // const spender = 0x64bb12c65ba956c5f0a2f3b58027314e93915aa9;
+
+            // deposit transaction
+            // bsc: https://bscscan.com/tx/0x5c941b99b959eaf49cb24a90bc880e5738d39ec037a4432f54994a2a8f5c3d67
+            // withdraw transaction (claim)
+            // bomb: 0xe408e9812bc28a2488ad1e4a8ce6c2265ccabad23c91f58225351d4ec3c55dad
+            alert('ankr');
+        } else {
+            alert('Token is not available for bridging')
+        }
     }
 
     if (!account) {
@@ -219,11 +253,11 @@ export default function Bridge() {
                             label={i18n._(t`Bridge:`)}
                             value={formattedAmounts[Field.INPUT]}
                             showMaxButton={!atMaxAmountInput}
-                            currency={currencies[Field.INPUT]}
+                            currency={[...availableTokens, ...availableAnkrTokens].includes(inputCurrency) ? currencies[Field.INPUT] : undefined}
                             onUserInput={handleTypeInput}
                             onMax={handleMaxInput}
                             onCurrencySelect={handleInputSelect}
-                            onlySpecificTokens={availableTokens}
+                            onlySpecificTokens={[...availableTokens, ...availableAnkrTokens]}
                             id="swap-currency-input"
                         />
                     </AutoColumn>
