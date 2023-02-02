@@ -239,6 +239,11 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Stake`)}
                                                 </NavLink>
                                             )}
+                                            {chainId && chainId === ChainId.BOMB && (
+                                                <NavLink id={`swap-nav-link`} to={'/bridge'}>
+                                                    {i18n._(t`Bridge to BSC`)}
+                                                </NavLink>
+                                            )}
                                             {chainId && chainId === ChainId.BSC && (
                                                 <NavLink id={`swap-nav-link`} to={'/bridge'}>
                                                     {i18n._(t`Bridge to BOMBCHAIN`)}
