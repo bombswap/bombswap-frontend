@@ -36,6 +36,7 @@ import ENS_PUBLIC_RESOLVER_ABI from '../constants/abis/ens-public-resolver.json'
 import ENS_ABI from '../constants/abis/ens-registrar.json'
 import { ERC20_BYTES32_ABI } from '../constants/abis/erc20'
 import ERC20_ABI from '../constants/abis/erc20.json'
+import BOMBCHAIN_BRIDGE_ABI from '../constants/abis/bombchain_bridge.json'
 import PEGHUB_TOKEN_ABI from '../constants/abis/peghub_token.json'
 import { MIGRATOR_ABI, MIGRATOR_ADDRESS } from '../constants/abis/migrator'
 import WETH_ABI from '../constants/abis/weth.json'
@@ -92,6 +93,10 @@ export function useV1ExchangeContract(address?: string, withSignerIfPossible?: b
 
 export function useTokenContract(tokenAddress?: string, withSignerIfPossible?: boolean): Contract | null {
     return useContract(tokenAddress, ERC20_ABI, withSignerIfPossible)
+}
+
+export function useBombchainBridgeContract(bridgeAddress?: string, withSignerIfPossible?: boolean): Contract | null {
+    return useContract(bridgeAddress, BOMBCHAIN_BRIDGE_ABI, withSignerIfPossible)
 }
 
 export function useWETHContract(withSignerIfPossible?: boolean): Contract | null {
