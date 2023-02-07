@@ -53,6 +53,7 @@
   "Bridge": "",
   "Bridge Assets": "Activos puente",
   "Bridge to BOMBCHAIN": "",
+  "Bridge to BSC": "",
   "Bridge:": "",
   "By adding liquidity you'll earn 0.25% of all trades on this pair proportional to your share\nof the pool. Fees are added to the pool, accrue in real time and can be claimed by withdrawing\nyour liquidity.": "Al agregar liquidez, ganará el 0.25% de todas las operaciones en este par proporcional a su parte \n del grupo. Las tarifas se agregan al grupo, se acumulan en tiempo real y se pueden reclamar retirando \n su liquidez.",
   "Bypasses confirmation modals and allows high slippage trades. Use at your own risk.": "Omite los modales de confirmación y permite operaciones de alto deslizamiento. Úselo bajo su propio riesgo.",
