@@ -127,6 +127,7 @@ export const BSC: { [key: string]: Token } = {
     ETH: new Token(ChainId.BSC, '0x2170Ed0880ac9A755fd29B2688956BD959F933F8', 18, 'ETH', 'Ethereum'),
     EMP: new Token(ChainId.BSC, '0x3b248CEfA87F836a4e6f6d6c9b42991b88Dc1d58', 18, 'EMP', 'EMP'),
     CZEMP: new Token(ChainId.BSC, '0xa700Ec63f9D3D9A03981CF7F8Eb805c444EDBC21', 18, 'CZEMP', 'CZEMP'),
+    CZETH: new Token(ChainId.BSC, '0xbaBC232Ad871f36A6487C2dC117CbB4f2970EaA0', 18, 'CZETH', 'CZETH'),
     BITBTC: new Token(ChainId.BSC, '0x39739A969ff667C91a81252b3DDDFAe31aaE4Aeb', 18, 'BITBTC', 'BITBTC'),
     BOMB: new Token(ChainId.BSC, '0x522348779DCb2911539e76A1042aA922F9C47Ee3', 18, 'BOMB', 'BOMB'),
     WETH: new Token(ChainId.BSC, '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c', 18, 'WBNB', 'Wrapped BNB'),
@@ -275,6 +276,7 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
     [ChainId.BSC]: {
         [BSC.CZBOMB.address]: [BSC.BOMB, BSC.BTCB, BSC.BITBTC, BSC.WETH, BSC.BUSD],
         [BSC.CZEMP.address]: [BSC.EMP, BSC.ETH, BSC.WETH, BSC.BUSD],
+        [BSC.CZETH.address]: [BSC.ETH, BSC.WETH],
         [BSC.BBOND.address]: [BSC.BOMB, BSC.BTCB, BSC.WETH, BSC.BUSD],
         [BSC.BITATOM.address]: [BSC.ATOM, BSC.WETH],
         [BSC.BITDOT.address]: [BSC.DOT, BSC.WETH],
