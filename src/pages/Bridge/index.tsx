@@ -418,7 +418,7 @@ export default function Bridge() {
                 <ButtonPrimary>
                     <a
                         // style={{ textDecoration: 'underline' }}
-                        href="https://chainscanner.xyz/ankr/appchains/bridge/?network=bomb-mainnet"
+                        href="https://chainscanner.xyz/ankr/appchains/bomb/bridge/"
                     >
                         Bridge BOMB, USDT, USDC and PHUB at the ANKR Bridge!
                     </a>
