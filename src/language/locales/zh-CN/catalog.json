@@ -340,6 +340,7 @@
   "loading...": "载入中...",
   "minutes": "分钟",
   "per month": "每月",
+  "xBOMBSWAP": "",
   "xSUSHI Balance": "xSUSHI余额",
   "xSUSHI automatically earn fees (0.05% of all swaps, including multichain swaps) proportional\nto your share of the SushiBar.": "xSUSHI自动收取手续费（按比例收取每笔交易的0.05%）。",
   "{0} Deposited": "{0}存入的",

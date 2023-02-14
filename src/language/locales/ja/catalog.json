@@ -340,6 +340,7 @@
   "loading...": "読み込み中...",
   "minutes": "分",
   "per month": "月額",
+  "xBOMBSWAP": "",
   "xSUSHI Balance": "xSUSHIバランス",
   "xSUSHI automatically earn fees (0.05% of all swaps, including multichain swaps) proportional\nto your share of the SushiBar.": "xSUSHIは、SushiBarのシェアに\n料金（マルチチェーンスワップを含むすべてのスワップの0.05％）を自動的に獲得します。",
   "{0} Deposited": "{0}預け入れ",
