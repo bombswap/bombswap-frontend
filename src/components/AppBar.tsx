@@ -223,7 +223,7 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Docs`)}
                                                 </a>
                                             )}
-                                            {chainId && [ChainId.BOMB].includes(chainId) && (
+                                            {/* {chainId && [ChainId.BOMB].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
                                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
@@ -233,10 +233,10 @@ function AppBar(): JSX.Element {
                                                 >
                                                     {i18n._(t`Stats`)}
                                                 </a>
-                                            )}
+                                            )} */}
                                             {chainId && chainId === ChainId.BOMB && (
                                                 <NavLink id={`yield-nav-link`} to={'/stake'}>
-                                                    {i18n._(t`Stake`)}
+                                                    {i18n._(t`xBOMBSWAP`)}
                                                 </NavLink>
                                             )}
                                             {chainId && chainId === ChainId.BOMB && (
@@ -279,21 +279,14 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Vesting`)}
                                                 </NavLink>
                                             )} */}
-                                            {/* {chainId &&
-                                                [
-                                                    ChainId.MAINNET,
-                                                    ChainId.BSC,
-                                                    ChainId.XDAI,
-                                                    ChainId.FANTOM,
-                                                    ChainId.MATIC
-                                                ].includes(chainId) && (
-                                                    <ExternalLink
-                                                        id={`analytics-nav-link`}
-                                                        href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}
-                                                    >
-                                                        {i18n._(t`Analytics`)}
-                                                    </ExternalLink>
-                                                )} */}
+                                            {chainId && [ChainId.BOMB].includes(chainId) && (
+                                                <ExternalLink
+                                                    id={`analytics-nav-link`}
+                                                    href={ANALYTICS_URL[chainId] || 'https://info.bombswap.xyz'}
+                                                >
+                                                    {i18n._(t`Analytics`)}
+                                                </ExternalLink>
+                                            )}
                                         </div>
                                     </div>
                                 </div>

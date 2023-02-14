@@ -17,7 +17,7 @@ import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useStakingInfo } from '../../state/stake/hooks'
 import { toV2LiquidityToken, useTrackedTokenPairs } from '../../state/user/hooks'
 import { useTokenBalancesWithLoadingIndicator } from '../../state/wallet/hooks'
-import { StyledInternalLink, TYPE } from '../../theme'
+import { StyledInternalLink, TYPE, ExternalLink } from '../../theme'
 import Alert from '../../components/Alert'
 import { Helmet } from 'react-helmet'
 import ExchangeHeader from '../../components/ExchangeHeader'
@@ -157,7 +157,7 @@ export default function Pool() {
             <Helmet>
                 <title>{i18n._(t`Pool`)} | BOMB</title>
             </Helmet>
-            <div className="bg-dark-900 w-full max-w-2xl rounded shadow-liquidity-purple-glow">
+            <div className="w-full max-w-2xl rounded bg-dark-900 shadow-liquidity-purple-glow">
                 <ExchangeHeader />
                 <div id="pool-page" className="p-4">
                     <SwapPoolTabs active={'pool'} />
@@ -174,8 +174,8 @@ export default function Pool() {
                         }
                         type="information"
                     />
-                    <div className="flex justify-between items-center my-4">
-                        <div className="text-xl text-high-emphesis font-medium">
+                    <div className="flex items-center justify-between my-4">
+                        <div className="text-xl font-medium text-high-emphesis">
                             {i18n._(t`Your Liquidity Positions`)}
                         </div>
                         <div className="text-sm font-bold">
@@ -202,14 +202,14 @@ export default function Pool() {
                             </EmptyProposals>
                         ) : allV2PairsWithLiquidity?.length > 0 || stakingPairs?.length > 0 ? (
                             <>
-                                {/* <ButtonSecondary>
-                  <RowBetween>
-                    <ExternalLink href={'https://uniswap.info/account/' + account}>
-                      Account analytics and accrued fees
-                    </ExternalLink>
-                    <span> ↗</span>
-                  </RowBetween>
-                </ButtonSecondary> */}
+                                <ButtonSecondary>
+                                    <RowBetween>
+                                        <ExternalLink href={'https://info.bombswap.xyz/account/' + account}>
+                                            Account analytics and accrued fees
+                                        </ExternalLink>
+                                        <span> ↗</span>
+                                    </RowBetween>
+                                </ButtonSecondary>
                                 {v2PairsWithoutStakedAmount.map(v2Pair => (
                                     <FullPositionCard key={v2Pair.liquidityToken.address} pair={v2Pair} />
                                 ))}

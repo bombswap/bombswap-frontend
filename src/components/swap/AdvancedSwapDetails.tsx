@@ -72,7 +72,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
             <AutoColumn style={{ padding: '0 16px' }}>
                 {tax > 0 && (
                     <RowBetween align="center">
-                        <div className="text-secondary text-sm">
+                        <div className="text-sm text-secondary">
                             <span style={{ color: 'red' }}>
                                 This transaction will incur a {tax / 100}% tax. Please set your slippage accordingly.
                             </span>
@@ -81,7 +81,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
                 )}
                 <RowBetween>
                     <RowFixed>
-                        <div className="text-secondary text-sm">
+                        <div className="text-sm text-secondary">
                             {isExactIn ? i18n._(t`Minimum received`) : i18n._(t`Maximum sold`)}
                         </div>
                         <QuestionHelper
@@ -104,7 +104,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
                 </RowBetween>
                 <RowBetween>
                     <RowFixed>
-                        <div className="text-secondary text-sm">{i18n._(t`Price Impact`)}</div>
+                        <div className="text-sm text-secondary">{i18n._(t`Price Impact`)}</div>
                         <QuestionHelper
                             text={i18n._(
                                 t`The difference between the market price and estimated price due to trade size.`
@@ -116,7 +116,7 @@ function TradeSummary({ trade, allowedSlippage }: { trade: Trade; allowedSlippag
 
                 <RowBetween>
                     <RowFixed>
-                        <div className="text-secondary text-sm">{i18n._(t`Liquidity Provider Fee`)}</div>
+                        <div className="text-sm text-secondary">{i18n._(t`Liquidity Provider Fee`)}</div>
                         <QuestionHelper
                             text={i18n._(
                                 t`A portion of each trade (0.25%) goes to liquidity providers as a protocol incentive.`
@@ -155,7 +155,7 @@ export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
                         <>
                             <RowBetween style={{ padding: '0 16px' }}>
                                 <span style={{ display: 'flex', alignItems: 'center' }}>
-                                    <div className="text-secondary text-sm">{i18n._(t`Route`)}</div>
+                                    <div className="text-sm text-secondary">{i18n._(t`Route`)}</div>
                                     <QuestionHelper
                                         text={i18n._(
                                             t`Routing through these tokens resulted in the best price for your trade.`
@@ -167,23 +167,19 @@ export function AdvancedSwapDetails({ trade }: AdvancedSwapDetailsProps) {
                         </>
                     )}
 
-                    {/* {!showRoute &&
-                        chainId &&
-                        [ChainId.MAINNET, ChainId.BSC, ChainId.FANTOM, ChainId.XDAI, ChainId.MATIC].includes(
-                            chainId
-                        ) && (
-                            <div className="flex justify-center pt-3 px-4">
-                                <ExternalLink
-                                    href={`${
-                                        chainId && ANALYTICS_URL[chainId]
-                                            ? ANALYTICS_URL[chainId]
-                                            : 'https://analytics.sushi.com'
-                                    }/pairs/${trade.route.pairs[0].liquidityToken.address}`}
-                                >
-                                    {i18n._(t`View pair analytics`)}
-                                </ExternalLink>
-                            </div>
-                        )} */}
+                    {!showRoute && chainId && [ChainId.BOMB].includes(chainId) && (
+                        <div className="flex justify-center px-4 pt-3">
+                            <ExternalLink
+                                href={`${
+                                    chainId && ANALYTICS_URL[chainId]
+                                        ? ANALYTICS_URL[chainId]
+                                        : 'https://info.bombswap.xyz'
+                                }/pair/${trade.route.pairs[0].liquidityToken.address}`}
+                            >
+                                {i18n._(t`View pair analytics`)}
+                            </ExternalLink>
+                        </div>
+                    )}
                 </>
             )}
         </AutoColumn>
