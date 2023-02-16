@@ -5,6 +5,7 @@ import Loader from "../../components/Loader";
 import { formatBalance } from "../../utils";
 import { ButtonPrimary } from "../../components/ButtonLegacy";
 import { useTransactionAdder } from "../../state/transactions/hooks";
+import { ethers } from "ethers";
 
 export default function VestingInfo({
                                         account,
@@ -12,6 +13,22 @@ export default function VestingInfo({
                                     }: { account: string, bombLockingClaimContract: any }) {
     const addTransaction = useTransactionAdder()
     const [userStats, setUserStats] = useState<any>(null)
+    const [beefyPrices, setBeefyPrices] = useState<any>(null)
+
+    useEffect(() => {
+        const updateBeefyPrices = async () => {
+            fetch('https://api.bomb.farm/lps').then((res: any) => res.json()).then((res: any) => {
+                setBeefyPrices(res)
+            });
+        };
+
+        const interval = setInterval(updateBeefyPrices, 60000);
+        updateBeefyPrices()
+
+        return () => {
+            clearInterval(interval)
+        }
+    }, []);
 
     useEffect(() => {
         setUserStats(null)
@@ -78,7 +95,7 @@ export default function VestingInfo({
                     </div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Current LPs:</div>
-                        <div>{formatBalance(userStats[5], 18, 4)}</div>
+                        <div>{formatBalance(userStats[5], 18, 4)} (${(Number(ethers.utils.formatUnits(userStats[5], 18)) * beefyPrices['bombswap-phub-bomb']).toFixed(2)})</div>
                     </div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Claimable:</div>
@@ -97,7 +114,7 @@ export default function VestingInfo({
                     </div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Current LPs:</div>
-                        <div>{formatBalance(userStats[10], 18, 4)}</div>
+                        <div>{formatBalance(userStats[10], 18, 4)} (${(Number(ethers.utils.formatUnits(userStats[5], 18)) * beefyPrices['bombswap-bitshare-bomb']).toFixed(2)})</div>
                     </div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Claimable:</div>
@@ -116,7 +133,7 @@ export default function VestingInfo({
                     </div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Current LPs:</div>
-                        <div>{formatBalance(userStats[15], 18, 4)}</div>
+                        <div>{formatBalance(userStats[15], 18, 4)} (${(Number(ethers.utils.formatUnits(userStats[5], 18)) * beefyPrices['bombswap-czshare-bomb']).toFixed(2)})</div>
                     </div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Claimable:</div>
@@ -135,7 +152,7 @@ export default function VestingInfo({
                     </div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Current LPs:</div>
-                        <div>{formatBalance(userStats[20], 18, 4)}</div>
+                        <div>{formatBalance(userStats[20], 18, 4)} (${(Number(ethers.utils.formatUnits(userStats[5], 18)) * beefyPrices['bombswap-bombswap-bomb']).toFixed(2)})</div>
                     </div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Claimable:</div>
