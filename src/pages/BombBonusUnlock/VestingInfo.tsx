@@ -63,13 +63,13 @@ export default function VestingInfo({
 
             <div className="mb-5 text-2xl font-bold ">BOMB Bonus unlock</div>
 
-            <div className="mb-5 w-1/2 text-center">
+            <div className="mb-5 lg:w-1/2 text-center">
                 <div className="mb-5">
                     You have selected Option 2. Information about your vested and claimable amounts will appear below:
                 </div>
             </div>
 
-            <div className="lg:grid lg:grid-cols-4 lg:gap-x-5">
+            <div className="lg:grid lg:grid-cols-4 lg:gap-x-5 w-full lg:w-1/2">
                 <div className="bg-dark-900 shadow-swap-blue-glow text-center rounded p-2 mb-5">
                     <div className="border-b border-b-gray-500 pb-1 mb-1">BOMB/PHUB</div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
