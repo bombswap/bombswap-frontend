@@ -136,9 +136,7 @@ export default function BombBonusUnlock() {
                     points on this option. Firstly, this option benefits the BOMB ecosystem as a whole as it helps BOMB
                     asset prices rise as a function of how the LPs work. Secondly, with more and more people selecting
                     option 2, it’s very likely that the price of the assets in these vaults will continue to rise.
-                    Finally, zapping all of this BOMB into these specific LPs does not lower the price of BOMB (Aaron
-                    goes into detail about how this works in our latest Twitter Spaces if you’re wondering how that
-                    works).
+                    Finally, zapping all of this BOMB into these specific LPs does not lower the price of BOMB.
                 </div>
 
                 Option 2 BOMB will be put to work in the following auto vaults:
