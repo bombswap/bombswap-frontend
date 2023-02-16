@@ -70,7 +70,7 @@ export default function VestingInfo({
             </div>
 
             <div className="lg:grid lg:grid-cols-4 lg:gap-x-5">
-                <div className="bg-dark-900 shadow-swap-blue-glow text-center rounded p-2">
+                <div className="bg-dark-900 shadow-swap-blue-glow text-center rounded p-2 mb-5">
                     <div className="border-b border-b-gray-500 pb-1 mb-1">BOMB/PHUB</div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Initial LPs:</div>
@@ -89,7 +89,7 @@ export default function VestingInfo({
                         <div>{formatBalance(userStats[7], 18, 4)}</div>
                     </div>
                 </div>
-                <div className="bg-dark-900 shadow-swap-blue-glow text-center rounded p-2">
+                <div className="bg-dark-900 shadow-swap-blue-glow text-center rounded p-2 mb-5">
                     <div className="border-b border-b-gray-500 pb-1 mb-1">BOMB/bitSHARE</div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Initial LPs:</div>
@@ -108,7 +108,7 @@ export default function VestingInfo({
                         <div>{formatBalance(userStats[12], 18, 4)}</div>
                     </div>
                 </div>
-                <div className="bg-dark-900 shadow-swap-blue-glow text-center rounded p-2">
+                <div className="bg-dark-900 shadow-swap-blue-glow text-center rounded p-2 mb-5">
                     <div className="border-b border-b-gray-500 pb-1 mb-1">BOMB/CZshare</div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Initial LPs:</div>
@@ -127,7 +127,7 @@ export default function VestingInfo({
                         <div>{formatBalance(userStats[17], 18, 4)}</div>
                     </div>
                 </div>
-                <div className="bg-dark-900 shadow-swap-blue-glow text-center rounded p-2">
+                <div className="bg-dark-900 shadow-swap-blue-glow text-center rounded p-2 mb-5">
                     <div className="border-b border-b-gray-500 pb-1 mb-1">BOMB/BOMBSWAP</div>
                     <div className="border-b border-b-gray-500 pb-1 mb-1">
                         <div>Initial LPs:</div>
@@ -148,7 +148,7 @@ export default function VestingInfo({
                 </div>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-5 mb-5">
                 <ButtonPrimary onClick={() => {
                     (async () => {
                         if (!bombLockingClaimContract) return
