@@ -42,7 +42,7 @@ export default function BombBonusUnlock() {
         const updateUserInfo = async () => {
             bombLockingClaimContract.userByAddress(account).then((res: any) => {
                 setUserInfo((prevUserInfo: any) => {
-                    if (!res || res[4]) {
+                    if (!res || !res[4]) {
                         return prevUserInfo
                     }
 
