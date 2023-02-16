@@ -415,12 +415,15 @@ export default function Bridge() {
                 </div>
             )}
             <div className="mt-10 text-lg text-center">
+            Bridge BOMB, USDT, USDC, CZshare, bitSHARE and PHUB at the ANKR Bridge!
+            </div>
+            <div className="mt-3 text-lg text-center">
                 <ButtonPrimary>
                     <a
                         // style={{ textDecoration: 'underline' }}
                         href="https://chainscanner.xyz/ankr/appchains/bomb/bridge/"
                     >
-                        Bridge BOMB, USDT, USDC and PHUB at the ANKR Bridge!
+                        Visit the ANKR Bridge!
                     </a>
                 </ButtonPrimary>
             </div>
