@@ -1,0 +1,973 @@
+[
+  {
+    "type": "constructor",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "bytes32",
+        "name": "",
+        "internalType": "bytes32"
+      }
+    ],
+    "name": "DEFAULT_ADMIN_ROLE",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "bytes32",
+        "name": "",
+        "internalType": "bytes32"
+      }
+    ],
+    "name": "OPERATOR_ROLE",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "contract IWBOMB"
+      }
+    ],
+    "name": "WBOMB",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "addUsers",
+    "inputs": [
+      {
+        "type": "address[]",
+        "name": "_user",
+        "internalType": "address[]"
+      },
+      {
+        "type": "uint256[]",
+        "name": "_initialBomb",
+        "internalType": "uint256[]"
+      },
+      {
+        "type": "uint256[]",
+        "name": "_totalBomb",
+        "internalType": "uint256[]"
+      },
+      {
+        "type": "uint256[]",
+        "name": "_lastDepositTimestamp",
+        "internalType": "uint256[]"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "contract IERC20"
+      }
+    ],
+    "name": "bombswap",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "bombswapTotal",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "eligible",
+        "internalType": "bool"
+      }
+    ],
+    "name": "claimAvailable",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_user",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "claimTime",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_user",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "payable",
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "name": "depositBomb",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "name": "depositBombSwap",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_from",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "getBalance",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "bytes32",
+        "name": "",
+        "internalType": "bytes32"
+      }
+    ],
+    "name": "getRoleAdmin",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "internalType": "bytes32"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "name": "getRoleMember",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "internalType": "bytes32"
+      },
+      {
+        "type": "uint256",
+        "name": "index",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "getRoleMemberCount",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "internalType": "bytes32"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "governanceRecoverNative",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_to",
+        "internalType": "address payable"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "governanceRecoverToken",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_token",
+        "internalType": "contract IERC20Upgradeable"
+      },
+      {
+        "type": "address",
+        "name": "_to",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "grantRole",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "internalType": "bytes32"
+      },
+      {
+        "type": "address",
+        "name": "account",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "name": "hasRole",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "internalType": "bytes32"
+      },
+      {
+        "type": "address",
+        "name": "account",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "initialize",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_admin",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "pause",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "name": "paused",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "releaseTokens",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_user",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "renounceRole",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "internalType": "bytes32"
+      },
+      {
+        "type": "address",
+        "name": "account",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "resetUsers",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "revokeRole",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "internalType": "bytes32"
+      },
+      {
+        "type": "address",
+        "name": "account",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "selectOption",
+    "inputs": [
+      {
+        "type": "uint8",
+        "name": "option",
+        "internalType": "uint8"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "setVaults",
+    "inputs": [
+      {
+        "type": "address[]",
+        "name": "_vault",
+        "internalType": "address[]"
+      },
+      {
+        "type": "uint256[]",
+        "name": "_allocationShare",
+        "internalType": "uint256[]"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "start",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "name": "started",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "name": "supportsInterface",
+    "inputs": [
+      {
+        "type": "bytes4",
+        "name": "interfaceId",
+        "internalType": "bytes4"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "totalBombClaimed",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "totalBombDeposited",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "totalClaimableBomb",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "totalInitialBomb",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "totalUsers",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "unpause",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "nonpayable",
+    "outputs": [],
+    "name": "updateUser",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_userId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "_newAddress",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "tuple",
+        "name": "user_",
+        "internalType": "struct BombLockingClaim.User",
+        "components": [
+          {
+            "type": "address"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "address"
+          }
+        ]
+      }
+    ],
+    "name": "userByAddress",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_user",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "tuple",
+        "name": "userstats_",
+        "internalType": "struct BombLockingClaim.UserStats",
+        "components": [
+          {
+            "type": "address"
+          },
+          {
+            "type": "bool"
+          },
+          {
+            "type": "bool"
+          },
+          {
+            "type": "address"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "address"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "address"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "address"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          },
+          {
+            "type": "uint256"
+          }
+        ]
+      }
+    ],
+    "name": "userStats",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_user",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "address",
+        "name": "user",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "lastDepositTimestamp",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "initialBombDeposit",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "claimableBomb",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "bombClaimed",
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "vestingContract",
+        "internalType": "address"
+      }
+    ],
+    "name": "users",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "usersId",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "vaultAllocationTotal",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "vaultId",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "contract IBeefyZap"
+      }
+    ],
+    "name": "vaultZapper",
+    "inputs": []
+  },
+  {
+    "type": "function",
+    "stateMutability": "view",
+    "outputs": [
+      {
+        "type": "address",
+        "name": "vault",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "allocationShare",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "bombAllocated",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "vaultTokensTotal",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "startingPricePerFullShare",
+        "internalType": "uint256"
+      }
+    ],
+    "name": "vaults",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ]
+  },
+  {
+    "type": "event",
+    "name": "BombDeposit",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "user",
+        "indexed": true
+      },
+      {
+        "type": "uint256",
+        "name": "amount",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Initialized",
+    "inputs": [
+      {
+        "type": "uint8",
+        "name": "version",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Paused",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "account",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RoleAdminChanged",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "indexed": true
+      },
+      {
+        "type": "bytes32",
+        "name": "previousAdminRole",
+        "indexed": true
+      },
+      {
+        "type": "bytes32",
+        "name": "newAdminRole",
+        "indexed": true
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RoleGranted",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "indexed": true
+      },
+      {
+        "type": "address",
+        "name": "account",
+        "indexed": true
+      },
+      {
+        "type": "address",
+        "name": "sender",
+        "indexed": true
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RoleRevoked",
+    "inputs": [
+      {
+        "type": "bytes32",
+        "name": "role",
+        "indexed": true
+      },
+      {
+        "type": "address",
+        "name": "account",
+        "indexed": true
+      },
+      {
+        "type": "address",
+        "name": "sender",
+        "indexed": true
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Unpaused",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "account",
+        "indexed": false
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "receive"
+  },
+  {
+    "type": "fallback"
+  }
+]

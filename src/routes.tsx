@@ -41,6 +41,7 @@ import MiniChefV2 from './pages/Yield/minichefv2'
 import Positions from './pages/Positions'
 import Transactions from './pages/Transactions'
 import Bridge from "./pages/Bridge";
+import BombBonusUnlock from "./pages/BombBonusUnlock";
 
 function Routes(): JSX.Element {
     const { chainId } = useActiveWeb3React()
@@ -101,6 +102,7 @@ function Routes(): JSX.Element {
             <Route exact strict path="/transactions" component={Transactions} />
             <Route exact strict path="/create" component={RedirectToAddLiquidity} />
             <Route exact path="/bridge" component={Bridge} />
+            <Route exact path="/bomb/bonus/unlock" component={BombBonusUnlock} />
             <Route exact path="/add" component={AddLiquidity} />
             <Route exact path="/add/:currencyIdA" component={RedirectOldAddLiquidityPathStructure} />
             <Route exact path="/add/:currencyIdA/:currencyIdB" component={RedirectDuplicateTokenIds} />
