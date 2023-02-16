@@ -17,6 +17,7 @@ import QuestionHelper from './QuestionHelper'
 import { t } from '@lingui/macro'
 import LanguageSwitch from './LanguageSwitch'
 import { useLingui } from '@lingui/react'
+import { isEligibleForBombUnlockBonus } from "../pages/BombBonusUnlock/utils";
 
 function AppBar(): JSX.Element {
     const { i18n } = useLingui()
@@ -249,6 +250,11 @@ function AppBar(): JSX.Element {
                                             {chainId && chainId === ChainId.BSC && (
                                                 <NavLink id={`swap-nav-link`} to={'/bridge'}>
                                                     {i18n._(t`Bridge to BOMBCHAIN`)}
+                                                </NavLink>
+                                            )}
+                                            {account && isEligibleForBombUnlockBonus(account) && (
+                                                <NavLink id={`swap-nav-link`} to={'/bomb/bonus/unlock'}>
+                                                    {i18n._(t`BOMB Bonus unlock`)}
                                                 </NavLink>
                                             )}
                                             {/*   {chainId === ChainId.BOMB && (
