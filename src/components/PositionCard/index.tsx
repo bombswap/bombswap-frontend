@@ -10,10 +10,10 @@ import { useTotalSupply } from '../../data/TotalSupply'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useColor } from '../../hooks/useColor'
 import { useTokenBalance } from '../../state/wallet/hooks'
-import { TYPE } from '../../theme'
+import { TYPE, ExternalLink } from '../../theme'
 import { currencyId } from '../../utils/currencyId'
 import { unwrappedToken } from '../../utils/wrappedCurrency'
-import { ButtonEmpty, ButtonPrimary, ButtonPrimaryNormal } from '../ButtonLegacy'
+import { ButtonEmpty, ButtonPrimary, ButtonSecondary, ButtonPrimaryNormal } from '../ButtonLegacy'
 import Card, { GreyCard, LightCard } from '../CardLegacy'
 import { AutoColumn } from '../Column'
 import CurrencyLogo from '../CurrencyLogo'
@@ -82,30 +82,30 @@ export function MinimalPositionCard({ pair, showUnwrapped = false, border }: Pos
     return (
         <>
             {userPoolBalance && JSBI.greaterThan(userPoolBalance.raw, JSBI.BigInt(0)) ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-purple rounded p-4 bg-opacity-20 w-full mt-4 whitespace-nowrap">
+                <div className="grid w-full grid-cols-1 gap-4 p-4 mt-4 rounded md:grid-cols-2 bg-purple bg-opacity-20 whitespace-nowrap">
                     <div className="flex justify-between">
                         <div className="text-high-emphesis">{i18n._(t`Your Pool Tokens`)}</div>
-                        <div className="text-primary font-bold">
+                        <div className="font-bold text-primary">
                             {userPoolBalance ? userPoolBalance.toSignificant(4) : '-'}
                         </div>
                     </div>
                     <div className="flex justify-between">
                         <div className="text-high-emphesis">{i18n._(t`Pooled ${currency0.getSymbol(chainId)}`)}</div>
-                        <div className="text-primary font-bold">{token0Deposited?.toSignificant(6)}</div>
+                        <div className="font-bold text-primary">{token0Deposited?.toSignificant(6)}</div>
                     </div>
                     <div className="flex justify-between">
                         <div className="text-high-emphesis">{i18n._(t`Your Pool Share`)}</div>
-                        <div className="text-primary font-bold">
+                        <div className="font-bold text-primary">
                             {poolTokenPercentage ? poolTokenPercentage.toFixed(6) + '%' : '-'}
                         </div>
                     </div>
                     <div className="flex justify-between">
                         <div className="text-high-emphesis">{i18n._(t`Pooled ${currency1.getSymbol(chainId)}`)}</div>
-                        <div className="text-primary font-bold">{token1Deposited?.toSignificant(6)}</div>
+                        <div className="font-bold text-primary">{token1Deposited?.toSignificant(6)}</div>
                     </div>
                 </div>
             ) : (
-                <div className="bg-purple rounded p-4 bg-opacity-20 w-full mt-4">
+                <div className="w-full p-4 mt-4 rounded bg-purple bg-opacity-20">
                     <p>
                         <span role="img" aria-label="wizard-icon">
                             ⭐️
@@ -260,13 +260,13 @@ export default function FullPositionCard({ pair, border, stakedBalance }: Positi
                         </FixedHeightRow>
 
                         {/* <ButtonSecondary padding="8px" borderRadius="8px">
-              <ExternalLink
-                style={{ width: '100%', textAlign: 'center' }}
-                href={`https://uniswap.info/account/${account}`}
-              >
-                View accrued fees and analytics<span style={{ fontSize: '11px' }}>↗</span>
-              </ExternalLink>
-            </ButtonSecondary> */}
+                            <ExternalLink
+                                style={{ width: '100%', textAlign: 'center' }}
+                                href={`https://info.bombswap.xyz/account/${account}`}
+                            >
+                                View accrued fees and analytics<span style={{ fontSize: '11px' }}>↗</span>
+                            </ExternalLink>
+                        </ButtonSecondary> */}
                         {userDefaultPoolBalance && JSBI.greaterThan(userDefaultPoolBalance.raw, BIG_INT_ZERO) && (
                             <RowBetween marginTop="10px">
                                 <ButtonPrimaryNormal

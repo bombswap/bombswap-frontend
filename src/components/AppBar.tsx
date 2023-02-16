@@ -212,7 +212,9 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Docs`)}
                                                 </a>
                                             )}
-                                            {chainId && [ChainId.BOMB].includes(chainId) && (
+
+                                            {/* MOVED THIS TO THE SIDEMENU */}
+                                            {/* {chainId && [ChainId.BOMB].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
                                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
@@ -222,8 +224,8 @@ function AppBar(): JSX.Element {
                                                 >
                                                     {i18n._(t`Docs`)}
                                                 </a>
-                                            )}
-                                            {chainId && [ChainId.BOMB].includes(chainId) && (
+                                            )} */}
+                                            {/* {chainId && [ChainId.BOMB].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
                                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
@@ -233,10 +235,15 @@ function AppBar(): JSX.Element {
                                                 >
                                                     {i18n._(t`Stats`)}
                                                 </a>
-                                            )}
+                                            )} */}
                                             {chainId && chainId === ChainId.BOMB && (
                                                 <NavLink id={`yield-nav-link`} to={'/stake'}>
-                                                    {i18n._(t`Stake`)}
+                                                    {i18n._(t`xBOMBSWAP`)}
+                                                </NavLink>
+                                            )}
+                                            {chainId && chainId === ChainId.BOMB && (
+                                                <NavLink id={`swap-nav-link`} to={'/bridge'}>
+                                                    {i18n._(t`Bridge to BSC`)}
                                                 </NavLink>
                                             )}
                                             {chainId && chainId === ChainId.BSC && (
@@ -274,21 +281,14 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Vesting`)}
                                                 </NavLink>
                                             )} */}
-                                            {/* {chainId &&
-                                                [
-                                                    ChainId.MAINNET,
-                                                    ChainId.BSC,
-                                                    ChainId.XDAI,
-                                                    ChainId.FANTOM,
-                                                    ChainId.MATIC
-                                                ].includes(chainId) && (
-                                                    <ExternalLink
-                                                        id={`analytics-nav-link`}
-                                                        href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}
-                                                    >
-                                                        {i18n._(t`Analytics`)}
-                                                    </ExternalLink>
-                                                )} */}
+                                            {chainId && [ChainId.BOMB].includes(chainId) && (
+                                                <ExternalLink
+                                                    id={`analytics-nav-link`}
+                                                    href={ANALYTICS_URL[chainId] || 'https://info.bombswap.xyz'}
+                                                >
+                                                    {i18n._(t`Analytics`)}
+                                                </ExternalLink>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
@@ -599,16 +599,16 @@ function AppBar(): JSX.Element {
                                         </div>
                                         <LanguageSwitch />
 
-                                        {chainId &&
+                                        {/* {chainId &&
                                             [
                                                 ChainId.GÖRLI,
                                                 ChainId.KOVAN,
                                                 ChainId.RINKEBY,
                                                 ChainId.ROPSTEN,
                                                 ChainId.BOMB_TESTNET
-                                            ].includes(chainId) && <Web3Faucet />}
+                                            ].includes(chainId) && <Web3Faucet />} */}
 
-                                        {/*<MoreMenu />*/}
+                                        <MoreMenu />
                                     </div>
                                 </div>
                                 <div className="flex -mr-2 sm:hidden">
@@ -707,7 +707,7 @@ function AppBar(): JSX.Element {
                                 <a
                                     id={`swap-nav-link`}
                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                    href={'https://vaults.peghub.com/'}
+                                    href={'https://bomb.farm/'}
                                     target="_blank"
                                     rel="noreferrer"
                                 >
@@ -767,21 +767,14 @@ function AppBar(): JSX.Element {
                                 {/*        {i18n._(t`Vesting`)}*/}
                                 {/*    </NavLink>*/}
                                 {/*)}*/}
-                                {/*{chainId &&*/}
-                                {/*    [*/}
-                                {/*        ChainId.MAINNET,*/}
-                                {/*        ChainId.BSC,*/}
-                                {/*        ChainId.XDAI,*/}
-                                {/*        ChainId.FANTOM,*/}
-                                {/*        ChainId.MATIC*/}
-                                {/*    ].includes(chainId) && (*/}
-                                {/*        <ExternalLink*/}
-                                {/*            id={`analytics-nav-link`}*/}
-                                {/*            href={ANALYTICS_URL[chainId] || 'https://analytics.sushi.com'}*/}
-                                {/*        >*/}
-                                {/*            {i18n._(t`Analytics`)}*/}
-                                {/*        </ExternalLink>*/}
-                                {/*    )}*/}
+                                {chainId && [ChainId.BOMB].includes(chainId) && (
+                                    <ExternalLink
+                                        id={`analytics-nav-link`}
+                                        href={ANALYTICS_URL[chainId] || 'https://info.bombswap.xyz'}
+                                    >
+                                        {i18n._(t`Analytics`)}
+                                    </ExternalLink>
+                                )}
                             </div>
                         </Disclosure.Panel>
                     </>
