@@ -35,9 +35,17 @@ export default function BombBonusUnlock() {
             return
         }
 
+        if (String(chainId) !== "2300") {
+            return
+        }
+
         const updateUserInfo = async () => {
             bombLockingClaimContract.userByAddress(account).then((res: any) => {
                 setUserInfo((prevUserInfo: any) => {
+                    if (!res || res[4]) {
+                        return prevUserInfo
+                    }
+
                     if (prevUserInfo && prevUserInfo[4].toString() === res[4].toString()) {
                         return prevUserInfo
                     }
@@ -54,7 +62,7 @@ export default function BombBonusUnlock() {
         return () => {
             clearInterval(interval)
         }
-    }, [account]);
+    }, [account, chainId]);
 
     // toggle wallet when disconnected
     const toggleWalletModal = useWalletModalToggle()
