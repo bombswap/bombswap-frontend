@@ -13,6 +13,7 @@ import { isAddress } from '../../utils'
 import { useBombchainBridgeContract, useContract, useTokenContract } from '../../hooks/useContract'
 import Bomb_Locking_Claim_ABI from "../../constants/abis/BombLockingClaim.json";
 import OptionChooser from "./OptionChooser";
+import VestingInfo from "./VestingInfo";
 
 export default function BombBonusUnlock() {
     const { i18n } = useLingui()
@@ -106,9 +107,7 @@ export default function BombBonusUnlock() {
     // They have already selected an option
     if (userInfo[4].gt(0)) {
         if (userInfo[5] !== "0x0000000000000000000000000000000000000000") {
-            return (
-                <div>You have selected Option 2. Information about your vesting schedule claimable amounts will appear in this page.</div>
-            )
+            return <VestingInfo account={account} bombLockingClaimContract={bombLockingClaimContract} />
         }
     }
 
