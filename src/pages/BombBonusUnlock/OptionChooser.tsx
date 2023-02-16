@@ -38,7 +38,7 @@ export default function OptionChooser({ userInfo, bombLockingClaimContract }: { 
                 <Wrapper id="swap-page">
                     <div className="inline-block">
                         Your BOMB deposit is not yet ready to be unlocked. You must wait
-                        until {depositReadyTimestamp.format('MMM Do YYYY')} to select your option.
+                        until {depositReadyTimestamp.format('MMM Do YYYY HH:mm')} to select your option.
                     </div>
                 </Wrapper>
             </div>
