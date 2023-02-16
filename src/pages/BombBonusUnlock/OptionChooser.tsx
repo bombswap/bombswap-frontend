@@ -3,6 +3,7 @@ import { ButtonPrimary } from "../../components/ButtonLegacy";
 import React from "react";
 import moment from "moment/moment";
 import { useTransactionAdder } from "../../state/transactions/hooks";
+import { formatBalance } from "../../utils";
 
 
 export default function OptionChooser({ userInfo, bombLockingClaimContract }: { userInfo: any, bombLockingClaimContract: any }) {
@@ -46,6 +47,16 @@ export default function OptionChooser({ userInfo, bombLockingClaimContract }: { 
 
     return (
         <>
+            <div className="mt-3 bg-dark-900 shadow-swap-blue-glow text-center rounded p-3">
+                <div className="border-b border-b-gray-500 pb-1 mb-1">
+                    <div>Initial BOMB Locked:</div>
+                    <div>{formatBalance(userInfo[2], 18, 4)}</div>
+                </div>
+                <div>
+                    <div>Claimable BOMB:</div>
+                    <div>{formatBalance(userInfo[3], 18, 4)}</div>
+                </div>
+            </div>
             <div className="mt-3 text-lg">
                 Choose option:
             </div>
