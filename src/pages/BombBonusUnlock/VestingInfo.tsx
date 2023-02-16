@@ -54,7 +54,7 @@ export default function VestingInfo({
         }
     }, [account]);
 
-    if (!userStats) {
+    if (!userStats || !beefyPrices) {
         return (
             <div className="w-full max-w-2xl text-center rounded bg-dark-900 shadow-swap-blue-glow">
                 <Wrapper id="swap-page">
