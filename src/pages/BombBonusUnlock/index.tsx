@@ -123,7 +123,7 @@ export default function BombBonusUnlock() {
 
             <div className="mb-5 text-2xl font-bold ">BOMB Bonus unlock</div>
 
-            <div className="mb-5 w-1/2 text-left">
+            <div className="mb-5 lg:w-1/2 text-left">
                 <div className="mb-5">Option 1) Receive all of your initially deposited BOMB immediately upon unlock and
                     forfeit your bonus BOMB tokens. You will still receive BOMBSWAP tokens as a reward for your
                     participation in the lock bonus!
