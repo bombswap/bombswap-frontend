@@ -662,72 +662,139 @@ function AppBar(): JSX.Element {
                                 <NavLink id={`swap-nav-link`} to={'/'}>
                                     {i18n._(t`Home`)}
                                 </NavLink>
-                                <NavLink id={`swap-nav-link`} to={'/stake'}>
-                                    {i18n._(t`Stake`)}
-                                </NavLink>
-                                <a
-                                    id={`swap-nav-link`}
-                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                    href={'https://app.bomb.money/'}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    {i18n._(t`BOMB.money`)}
-                                </a>
-                                <a
-                                    id={`swap-nav-link`}
-                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                    href={'https://app.bitbomb.io/'}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    {i18n._(t`bitBOMB`)}
-                                </a>
-                                <a
-                                    id={`swap-nav-link`}
-                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                    href={'https://www.czpegs.com/'}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    {i18n._(t`czPegs`)}
-                                </a>
-                                <a
-                                    id={`swap-nav-link`}
-                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                    href={'https://www.snowpegs.com/'}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    {i18n._(t`SnowPegs`)}
-                                </a>
-                                <a
-                                    id={`swap-nav-link`}
-                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                    href={'https://www.polypegs.com/'}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    {i18n._(t`PolyPegs`)}
-                                </a>
-                                <a
-                                    id={`swap-nav-link`}
-                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                    href={'https://bomb.farm/'}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    {i18n._(t`Vaults`)}
-                                </a>
-                                <a
-                                    id={`swap-nav-link`}
-                                    className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                    href={'https://docs.peghub.com/'}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    {i18n._(t`Docs`)}
-                                </a>
+                                {chainId && chainId !== ChainId.BOMB && (
+                                    <div>
+                                        <a className="p-2">Protocols</a>
+                                
+                                        <a
+                                            id={`swap-nav-link`}
+                                            className="m-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            href={'https://app.bomb.money/'}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {i18n._(t`BOMB.money`)}
+                                        </a>
+                                    
+                                        <a
+                                            id={`swap-nav-link`}
+                                            className="m-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            href={'https://app.bitbomb.io/'}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {i18n._(t`bitBOMB`)}
+                                        </a>
+                                        
+                                        <a
+                                            id={`swap-nav-link`}
+                                            className="m-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            href={'https://www.czpegs.com/'}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {i18n._(t`czPegs`)}
+                                        </a>
+                                        <a
+                                            id={`swap-nav-link`}
+                                            className="m-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            href={'https://www.snowpegs.com/'}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {i18n._(t`SnowPegs`)}
+                                        </a>
+                                        <a
+                                            id={`swap-nav-link`}
+                                            className="ml-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            href={'https://www.polypegs.com/'}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                        >
+                                            {i18n._(t`PolyPegs`)}
+                                        </a>
+                                    </div>
+                                )}
+
+
+                                {chainId && [ChainId.MATIC].includes(chainId) && (
+                                        <a
+                                        id={`swap-nav-link`}
+                                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                        href={'https://vaults.peghub.com/#/polygon'}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        {i18n._(t`Vaults`)}
+                                    </a>
+                                )}
+                                {chainId && [ChainId.BOMB].includes(chainId) && (
+                                    <a
+                                        id={`swap-nav-link`}
+                                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                        href={'https://vaults.peghub.com/#/bomb'}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        {i18n._(t`Vaults`)}
+                                    </a>
+                                )}
+                                {chainId && [ChainId.AVALANCHE].includes(chainId) && (
+                                    <a
+                                        id={`swap-nav-link`}
+                                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                        href={'https://vaults.peghub.com/#/avax'}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        {i18n._(t`Vaults`)}
+                                    </a>
+                                )}
+                                {chainId && [ChainId.BSC].includes(chainId) && (
+                                    <a
+                                        id={`swap-nav-link`}
+                                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                        href={'https://vaults.peghub.com/#/bsc'}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        {i18n._(t`Vaults`)}
+                                    </a>
+                                )}
+
+                                {chainId && chainId === ChainId.BOMB && (
+                                    <NavLink id={`yield-nav-link`} to={'/stake'}>
+                                        {i18n._(t`xBOMBSWAP`)}
+                                    </NavLink>
+                                )}
+                                {chainId && chainId !== ChainId.BOMB && (
+                                    <a
+                                        id={`swap-nav-link`}
+                                        className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                        href={'https://docs.peghub.com/'}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        {i18n._(t`Docs`)}
+                                    </a>
+                                )}
+                                {chainId && chainId === ChainId.BOMB && (
+                                    <NavLink id={`swap-nav-link`} to={'/bridge'}>
+                                        {i18n._(t`Bridge to BSC`)}
+                                    </NavLink>
+                                )}
+                                {chainId && chainId === ChainId.BSC && (
+                                    <NavLink id={`swap-nav-link`} to={'/bridge'}>
+                                        {i18n._(t`Bridge to BOMBCHAIN`)}
+                                    </NavLink>
+                                )}
+                                {account && isEligibleForBombUnlockBonus(account) && (
+                                    <NavLink id={`swap-nav-link`} to={'/bomb/bonus/unlock'}>
+                                        {i18n._(t`BOMB Bonus unlock`)}
+                                    </NavLink>
+                                )}
+                                
+
 
                                 {/*<NavLink id={`swap-nav-link`} to={'/swap'}>*/}
                                 {/*    {i18n._(t`Swap`)}*/}
