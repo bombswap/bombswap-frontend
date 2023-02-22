@@ -30,7 +30,9 @@ if (!!window.ethereum) {
     window.ethereum.autoRefreshOnNetworkChange = false
 }
 
-const GOOGLE_ANALYTICS_ID: string | undefined = process.env.REACT_APP_GOOGLE_ANALYTICS_ID
+//const GOOGLE_ANALYTICS_ID: string | undefined = process.env.REACT_APP_GOOGLE_ANALYTICS_ID
+// RENAME ENV VARIABLE ON PURPOSE TO NOT INITIALIZE THIS WAY
+const GOOGLE_ANALYTICS_ID: string | undefined = process.env.REACT_APP_GOOGLE_ANALYTICS_ID_WRONG
 if (typeof GOOGLE_ANALYTICS_ID === 'string') {
     ReactGA.initialize(GOOGLE_ANALYTICS_ID)
     ReactGA.set({
@@ -74,9 +76,9 @@ ReactDOM.render(
                             <ThemeProvider>
                                 <ThemedGlobalStyle />
                                 {/* <KashiProvider> */}
-                                    <Router>
-                                        <App />
-                                    </Router>
+                                <Router>
+                                    <App />
+                                </Router>
                                 {/* </KashiProvider> */}
                             </ThemeProvider>
                         </LanguageProvider>
