@@ -32,7 +32,7 @@ if (!!window.ethereum) {
 
 //const GOOGLE_ANALYTICS_ID: string | undefined = process.env.REACT_APP_GOOGLE_ANALYTICS_ID
 // RENAME ENV VARIABLE ON PURPOSE TO NOT INITIALIZE THIS WAY
-const GOOGLE_ANALYTICS_ID: string | undefined = process.env.REACT_APP_GOOGLE_ANALYTICS_ID_WRONG
+const GOOGLE_ANALYTICS_ID: string | undefined = process.env.REACT_APP_GOOGLE_ANALYTICS_ID
 if (typeof GOOGLE_ANALYTICS_ID === 'string') {
     ReactGA.initialize(GOOGLE_ANALYTICS_ID)
     ReactGA.set({
