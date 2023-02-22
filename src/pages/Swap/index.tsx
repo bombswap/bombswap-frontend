@@ -309,7 +309,7 @@ export default function Swap() {
                 <title>{i18n._(t`Swap`)} | BOMB</title>
                 <meta
                     name="description"
-                    content="PegSwap allows for swapping of ERC20 compatible tokens across multiple networks"
+                    content="BOMBSWAP is the primary decentralized exchange on BOMB Chain. Additional chains are supported to give optimal trading paths!"
                 />
             </Helmet>
             <TokenWarningModal
@@ -318,7 +318,7 @@ export default function Swap() {
                 onConfirm={handleConfirmTokenWarning}
             />
             <SwapPoolTabs active={'swap'} />
-            <div className="bg-dark-900 shadow-swap-blue-glow w-full max-w-2xl rounded">
+            <div className="w-full max-w-2xl rounded bg-dark-900 shadow-swap-blue-glow">
                 <SwapHeader input={currencies[Field.INPUT]} output={currencies[Field.OUTPUT]} />
                 <Wrapper id="swap-page">
                     <ConfirmSwapModal
@@ -335,17 +335,17 @@ export default function Swap() {
                         onDismiss={handleConfirmDismiss}
                     />
                     {chainId && chainId === ChainId.MATIC_TESTNET && (
-                        <div className="hidden md:block pb-4 space-y-2">
+                        <div className="hidden pb-4 space-y-2 md:block">
                             <DarkCard>
-                                <div className="flex justify-between items-center">
+                                <div className="flex items-center justify-between">
                                     <div>
                                         <div className="text-white">New Yield Farms! WOOFY, GRT, FRAX, FXS </div>
-                                        <div className="text-purple text-sm">Add liquidity and stake now</div>
+                                        <div className="text-sm text-purple">Add liquidity and stake now</div>
                                     </div>
                                     <div className=""></div>
                                     <Link
                                         to="/yield"
-                                        className="inline-flex items-center rounded-sm px-3 py-2 border-2 border-purple text-purple"
+                                        className="inline-flex items-center px-3 py-2 border-2 rounded-sm border-purple text-purple"
                                     >
                                         Visit Yield
                                     </Link>
@@ -353,7 +353,7 @@ export default function Swap() {
                                         href="https://ayokiroll.medium.com/cf7e932f3a8"
                                         target="_blank"
                                         rel="noreferrer noopener"
-                                        className="inline-flex items-center rounded-sm px-3 py-2 border-2 border-purple text-purple"
+                                        className="inline-flex items-center px-3 py-2 border-2 rounded-sm border-purple text-purple"
                                     >
                                         Read Tutorial
                                     </a>
@@ -383,14 +383,14 @@ export default function Swap() {
                                 style={{ padding: '0 1rem' }}
                             >
                                 <button
-                                    className="bg-dark-900 rounded-full p-3px -mt-6 -mb-6 z-10"
+                                    className="z-10 -mt-6 -mb-6 rounded-full bg-dark-900 p-3px"
                                     onClick={() => {
                                         setApprovalSubmitted(false) // reset 2 step UI for approvals
                                         onSwitchTokens()
                                     }}
                                 >
                                     <div
-                                        className="bg-dark-800 hover:bg-dark-700 rounded-full p-3"
+                                        className="p-3 rounded-full bg-dark-800 hover:bg-dark-700"
                                         onMouseEnter={() => setAnimateSwapArrows(true)}
                                         onMouseLeave={() => setAnimateSwapArrows(false)}
                                     >
@@ -400,7 +400,7 @@ export default function Swap() {
                                             loop={false}
                                             style={{ width: 32, height: 32 }}
 
-                                            // className="text-secondary fill-current"
+                                            // className="fill-current text-secondary"
                                         />
                                     </div>
                                 </button>
@@ -610,17 +610,17 @@ export default function Swap() {
                     </BottomGrouping>
                     {/*{!trade && chainId && chainId === ChainId.MAINNET && (*/}
                     {/*    <div*/}
-                    {/*        className="hidden sm:block w-full cursor-pointer pt-4"*/}
+                    {/*        className="hidden w-full pt-4 cursor-pointer sm:block"*/}
                     {/*        onClick={() => toggleNetworkModal()}*/}
                     {/*    >*/}
                     {/*        <DarkCard>*/}
-                    {/*            <div className="flex justify-between items-center overflow-hidden">*/}
-                    {/*                <img src={PolygonLogo} className="w-24 h-24 absolute top-2" alt="" />*/}
+                    {/*            <div className="flex items-center justify-between overflow-hidden">*/}
+                    {/*                <img src={PolygonLogo} className="absolute w-24 h-24 top-2" alt="" />*/}
                     {/*                <div className="pl-32">*/}
                     {/*                    <div className="text-high-emphesis">*/}
                     {/*                        {i18n._(t`Check out Sushi on Polygon (Matic)`)}*/}
                     {/*                    </div>*/}
-                    {/*                    <div className="text-high-emphesis text-sm">*/}
+                    {/*                    <div className="text-sm text-high-emphesis">*/}
                     {/*                        {i18n._(t`Click here to switch to Polygon using Metamask`)}*/}
                     {/*                    </div>*/}
                     {/*                </div>*/}
@@ -632,7 +632,7 @@ export default function Swap() {
                         href={
                             'https://app.sushi.com/swap?inputCurrency=0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48&outputCurrency=0xe9f84de264e91529af07fa2c746e934397810334'
                         }
-                        className="hidden sm:block w-full cursor-pointer mt-4 py-1 rounded"
+                        className="hidden w-full py-1 mt-4 rounded cursor-pointer sm:block"
                         style={{
                             backgroundImage: `url(${SakeBanner})`,
                             backgroundPosition: 'center',
@@ -640,7 +640,7 @@ export default function Swap() {
                             backgroundRepeat: 'no-repeat'
                         }}
                     >
-                        <div className="justify-between flex pl-5 pr-8 items-center gap-6">
+                        <div className="flex items-center justify-between gap-6 pl-5 pr-8">
                             <div style={{ maxWidth: 134 }}>
                                 <img src={SakeLogo} style={{ maxWidth: '100%' }} />
                             </div>
@@ -648,7 +648,7 @@ export default function Swap() {
                                 <img src={SakeBottle} style={{ maxWidth: '100%' }} />
                             </div>
                             <div
-                                className="text-black font-normal flex flex-col space-y-2"
+                                className="flex flex-col space-y-2 font-normal text-black"
                                 style={{ lineHeight: 1.3, maxWidth: 250 }}
                             >
                                 <div className="font-semibold">
@@ -659,8 +659,8 @@ export default function Swap() {
                                 </div>
                             </div>
                         </div> */}
-                    {/* <div className="justify-between flex pl-5 pr-8 items-center gap-6">
-                            <span className="text-high-emphesis font-normal" style={{ lineHeight: 1.3, maxWidth: 250 }}>
+                    {/* <div className="flex items-center justify-between gap-6 pl-5 pr-8">
+                            <span className="font-normal text-high-emphesis" style={{ lineHeight: 1.3, maxWidth: 250 }}>
                                 <Trans>
                                     Pour a hot bowl of MISO, the new <span className="font-bold">token launchpad</span>{' '}
                                     from SUSHI

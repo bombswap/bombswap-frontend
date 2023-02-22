@@ -36,17 +36,17 @@ export default function Yield(): JSX.Element {
         <>
             <Helmet>
                 <title>{i18n._(t`Yield`)} | BOMB</title>
-                <meta name="description" content="Farm SUSHI by staking LP (Liquidity Provider) tokens" />
+                <meta name="description" content="Farm BOMBSWAP by staking LP (Liquidity Provider) tokens" />
             </Helmet>
             <div className="container max-w-2xl mx-auto">
                 <Card
                     className="h-full bg-dark-900"
                     header={
-                        <CardHeader className="flex justify-between items-center bg-dark-800">
-                            <div className="flex w-full justify-between">
-                                <div className="hidden md:flex items-center">
+                        <CardHeader className="flex items-center justify-between bg-dark-800">
+                            <div className="flex justify-between w-full">
+                                <div className="items-center hidden md:flex">
                                     {/* <BackButton defaultRoute="/pool" /> */}
-                                    <div className="text-lg mr-2 whitespace-nowrap">{i18n._(t`Yield Instruments`)}</div>
+                                    <div className="mr-2 text-lg whitespace-nowrap">{i18n._(t`Yield Instruments`)}</div>
                                 </div>
                                 <Search search={search} term={term} />
                             </div>
@@ -57,7 +57,7 @@ export default function Yield(): JSX.Element {
                     {userFarms && userFarms.length > 0 && (
                         <>
                             <div className="pb-4">
-                                <div className="grid grid-cols-3 pb-4 px-4 text-sm  text-secondary">
+                                <div className="grid grid-cols-3 px-4 pb-4 text-sm text-secondary">
                                     <div className="flex items-center">
                                         <div>{i18n._(t`Your Yields`)}</div>
                                     </div>
@@ -77,7 +77,7 @@ export default function Yield(): JSX.Element {
                         </>
                     )}
                     {/* All Farms */}
-                    <div className="grid grid-cols-3 pb-4 px-4 text-sm  text-secondary">
+                    <div className="grid grid-cols-3 px-4 pb-4 text-sm text-secondary">
                         <div
                             className="flex items-center cursor-pointer hover:text-secondary"
                             onClick={() => requestSort('symbol')}
@@ -88,7 +88,7 @@ export default function Yield(): JSX.Element {
                                 ((sortConfig.direction === 'ascending' && <ChevronUp size={12} />) ||
                                     (sortConfig.direction === 'descending' && <ChevronDown size={12} />))}
                         </div>
-                        <div className="hover:text-secondary cursor-pointer" onClick={() => requestSort('tvl')}>
+                        <div className="cursor-pointer hover:text-secondary" onClick={() => requestSort('tvl')}>
                             <div className="flex items-center justify-end">
                                 <div>{i18n._(t`TVL`)}</div>
                                 {sortConfig &&
@@ -97,7 +97,7 @@ export default function Yield(): JSX.Element {
                                         (sortConfig.direction === 'descending' && <ChevronDown size={12} />))}
                             </div>
                         </div>
-                        <div className="hover:text-secondary cursor-pointer" onClick={() => requestSort('roiPerYear')}>
+                        <div className="cursor-pointer hover:text-secondary" onClick={() => requestSort('roiPerYear')}>
                             <div className="flex items-center justify-end">
                                 <div>{i18n._(t`APR`)}</div>
                                 {sortConfig &&
@@ -115,9 +115,9 @@ export default function Yield(): JSX.Element {
                         ) : (
                             <>
                                 {term ? (
-                                    <div className="w-full text-center py-6">{i18n._(t`No Results`)}</div>
+                                    <div className="w-full py-6 text-center">{i18n._(t`No Results`)}</div>
                                 ) : (
-                                    <div className="w-full text-center py-6">
+                                    <div className="w-full py-6 text-center">
                                         <Dots>{i18n._(t`Fetching Instruments`)}</Dots>
                                     </div>
                                 )}
@@ -137,7 +137,7 @@ const TokenBalance = ({ farm }: any) => {
             {farm.type === 'SLP' && (
                 <Paper className="bg-dark-800">
                     <div
-                        className="grid grid-cols-3 py-4 px-4 cursor-pointer select-none rounded text-sm"
+                        className="grid grid-cols-3 px-4 py-4 text-sm rounded cursor-pointer select-none"
                         onClick={() => setExpand(!expand)}
                     >
                         <div className="flex items-center">
@@ -153,16 +153,16 @@ const TokenBalance = ({ farm }: any) => {
                                 {farm && farm.liquidityPair.token0.symbol + '-' + farm.liquidityPair.token1.symbol}
                             </div>
                         </div>
-                        <div className="flex justify-end items-center">
+                        <div className="flex items-center justify-end">
                             <div>
                                 <div className="text-right">{formattedNum(farm.tvl, true)} </div>
-                                <div className="text-secondary text-right">
+                                <div className="text-right text-secondary">
                                     {formattedNum(farm.slpBalance / 1e18, false)} SLP
                                 </div>
                             </div>
                         </div>
-                        <div className="flex justify-end items-center">
-                            <div className="text-right font-semibold text-xl">
+                        <div className="flex items-center justify-end">
+                            <div className="text-xl font-semibold text-right">
                                 {farm.roiPerYear > 10000 ? '10000%+' : formattedPercent(farm.roiPerYear * 100)}
                             </div>
                         </div>
@@ -182,7 +182,7 @@ const TokenBalance = ({ farm }: any) => {
             {farm.type === 'KMP' && (
                 <Paper className="bg-dark-800">
                     <div
-                        className="grid grid-cols-3 py-4 px-4 cursor-pointer select-none rounded text-sm"
+                        className="grid grid-cols-3 px-4 py-4 text-sm rounded cursor-pointer select-none"
                         onClick={() => setExpand(!expand)}
                     >
                         <div className="flex items-center">
@@ -197,16 +197,16 @@ const TokenBalance = ({ farm }: any) => {
                             </div>
                             <div className="hidden sm:block">{farm && farm.symbol}</div>
                         </div>
-                        <div className="flex justify-end items-center">
+                        <div className="flex items-center justify-end">
                             <div>
                                 <div className="text-right">{formattedNum(farm.tvl, true)} </div>
-                                <div className="text-secondary text-right">
+                                <div className="text-right text-secondary">
                                     {formattedNum(farm.totalAssetStaked, false)} KMP
                                 </div>
                             </div>
                         </div>
-                        <div className="flex justify-end items-center">
-                            <div className="text-right font-semibold text-xl">
+                        <div className="flex items-center justify-end">
+                            <div className="text-xl font-semibold text-right">
                                 {farm.roiPerYear > 10000 ? '10000%+' : formattedPercent(farm.roiPerYear * 100)}
                             </div>
                         </div>
@@ -236,7 +236,7 @@ const UserBalance = ({ farm }: any) => {
             {farm.type === 'SLP' && (
                 <Paper className="bg-dark-800">
                     <div
-                        className="grid grid-cols-3 py-4 px-4 cursor-pointer select-none rounded text-sm"
+                        className="grid grid-cols-3 px-4 py-4 text-sm rounded cursor-pointer select-none"
                         onClick={() => setExpand(!expand)}
                     >
                         <div className="flex items-center">
@@ -252,18 +252,18 @@ const UserBalance = ({ farm }: any) => {
                                 {farm && farm.liquidityPair.token0.symbol + '-' + farm.liquidityPair.token1.symbol}
                             </div>
                         </div>
-                        <div className="flex justify-end items-center">
+                        <div className="flex items-center justify-end">
                             <div>
                                 <div className="text-right">{formattedNum(farm.depositedUSD, true)} </div>
-                                <div className="text-secondary text-right">
+                                <div className="text-right text-secondary">
                                     {formattedNum(farm.depositedLP, false)} SLP
                                 </div>
                             </div>
                         </div>
-                        <div className="flex justify-end items-center">
+                        <div className="flex items-center justify-end">
                             <div>
                                 <div className="text-right">{formattedNum(farm.pendingSushi)} </div>
-                                <div className="text-secondary text-right">SUSHI</div>
+                                <div className="text-right text-secondary">SUSHI</div>
                             </div>
                         </div>
                     </div>
@@ -282,7 +282,7 @@ const UserBalance = ({ farm }: any) => {
             {farm.type === 'KMP' && (
                 <Paper className="bg-dark-800">
                     <div
-                        className="grid grid-cols-3 py-4 px-4 cursor-pointer select-none rounded text-sm"
+                        className="grid grid-cols-3 px-4 py-4 text-sm rounded cursor-pointer select-none"
                         onClick={() => setExpand(!expand)}
                     >
                         <div className="flex items-center">
@@ -297,18 +297,18 @@ const UserBalance = ({ farm }: any) => {
                             </div>
                             <div className="hidden sm:block">{farm && farm.symbol}</div>
                         </div>
-                        <div className="flex justify-end items-center">
+                        <div className="flex items-center justify-end">
                             <div>
                                 <div className="text-right">{formattedNum(farm.depositedUSD, true)} </div>
-                                <div className="text-secondary text-right">
+                                <div className="text-right text-secondary">
                                     {formattedNum(farm.depositedLP, false)} KMP
                                 </div>
                             </div>
                         </div>
-                        <div className="flex justify-end items-center">
+                        <div className="flex items-center justify-end">
                             <div>
                                 <div className="text-right">{formattedNum(farm.pendingSushi)} </div>
-                                <div className="text-secondary text-right">SUSHI</div>
+                                <div className="text-right text-secondary">SUSHI</div>
                             </div>
                         </div>
                     </div>
