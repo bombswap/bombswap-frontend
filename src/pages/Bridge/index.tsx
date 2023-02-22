@@ -288,7 +288,7 @@ export default function Bridge() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Bridge`)} | BOMB</title>
+                <title>{i18n._(t`Bridge`)} | BOMBSWAP DEX</title>
                 <meta
                     name="description"
                     content="BOMBSwap allows for bridging of ERC20 compatible tokens to BOMBChain"
@@ -415,7 +415,7 @@ export default function Bridge() {
                 </div>
             )}
             <div className="mt-10 text-lg text-center">
-            Bridge BOMB, USDT, USDC, CZshare, bitSHARE and PHUB at the ANKR Bridge!
+                Bridge BOMB, USDT, USDC, CZshare, bitSHARE and PHUB at the ANKR Bridge!
             </div>
             <div className="mt-3 text-lg text-center">
                 <ButtonPrimary>

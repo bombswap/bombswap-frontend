@@ -311,7 +311,7 @@ const MigrateV2 = () => {
     return (
         <>
             <Helmet>
-                <title>Migrate LP tokens | BOMB</title>
+                <title>Migrate LP tokens | BOMBSWAP DEX</title>
                 <meta name="description" content="Migrate LP tokens to Sushi LP tokens" />
             </Helmet>
 

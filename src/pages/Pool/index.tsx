@@ -155,7 +155,7 @@ export default function Pool() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Pool`)} | BOMB</title>
+                <title>{i18n._(t`Pool`)} | BOMBSWAP DEX</title>
             </Helmet>
             <div className="w-full max-w-2xl rounded bg-dark-900 shadow-liquidity-purple-glow">
                 <ExchangeHeader />

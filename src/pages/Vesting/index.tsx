@@ -155,7 +155,7 @@ export default function ClaimModal() {
         <>
             {' '}
             <Helmet>
-                <title>{i18n._(t`Vesting`)} | BOMB</title>
+                <title>{i18n._(t`Vesting`)} | BOMBSWAP DEX</title>
             </Helmet>
             <PageWrapper>
                 <>

@@ -306,7 +306,7 @@ export default function Swap() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Swap`)} | BOMB</title>
+                <title>{i18n._(t`Swap`)} | BOMBSWAP DEX</title>
                 <meta
                     name="description"
                     content="BOMBSWAP is the primary decentralized exchange on BOMB Chain. Additional chains are supported to give optimal trading paths!"

@@ -9,7 +9,7 @@ export default function TradeLayout() {
     return (
         <>
             <Helmet>
-                <title>{i18n._(t`Trade`)} | BOMB</title>
+                <title>{i18n._(t`Trade`)} | BOMBSWAP DEX</title>
                 <meta
                     name="description"
                     content={i18n._(t`Sushi allows for swapping of ERC20 compatible tokens across multiple networks`)}
