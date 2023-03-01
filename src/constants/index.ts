@@ -369,7 +369,7 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
         href: null,
         color: '#4196FC',
         mobile: true
-    }
+    },
     // LATTICE: {
     //     connector: lattice,
     //     name: 'Lattice',
@@ -414,15 +414,15 @@ export const SUPPORTED_WALLETS: { [key: string]: WalletInfo } = {
     //     color: '#4A6C9B',
     //     mobile: true
     // },
-    // Torus: {
-    //     connector: torus,
-    //     name: 'Torus',
-    //     iconName: 'torusIcon.png',
-    //     description: 'Login using Torus hosted wallet',
-    //     href: null,
-    //     color: '#315CF5',
-    //     mobile: true
-    // }
+    Torus: {
+        connector: torus,
+        name: 'Torus',
+        iconName: 'torusIcon.png',
+        description: 'Login using Torus hosted wallet',
+        href: null,
+        color: '#315CF5',
+        mobile: true
+    }
 }
 
 export const NetworkContextName = 'NETWORK'

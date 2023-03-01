@@ -113,7 +113,7 @@ export const walletlink = new WalletLinkConnector({
 
 // mainnet only
 export const torus = new TorusConnector({
-    chainId: 1
+    chainId: 2300
 })
 
 // export const bsc = new BscConnector({ supportedChainIds: [56] })

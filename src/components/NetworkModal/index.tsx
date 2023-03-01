@@ -125,9 +125,9 @@ const PARAMS: {
     },
     [ChainId.BOMB]: {
         chainId: '0x8FC',
-        chainName: 'BOMB Mainnet',
+        chainName: 'BOMB Chain',
         nativeCurrency: {
-            name: 'BOMB Money',
+            name: 'BOMB',
             symbol: 'BOMB',
             decimals: 18
         },
@@ -157,7 +157,7 @@ export default function NetworkModal(): JSX.Element | null {
     return (
         <Modal isOpen={networkModalOpen} onDismiss={toggleNetworkModal}>
             <ModalHeader onClose={toggleNetworkModal} title="Select a Network" />
-            <div className="text-lg text-primary mb-6">
+            <div className="mb-6 text-lg text-primary">
                 You are currently using <span className="font-bold text-pink">BOMB Swap</span>
                 <br /> on the <span className="font-bold text-blue">{NETWORK_LABEL[chainId]}</span> network
             </div>
@@ -179,14 +179,14 @@ export default function NetworkModal(): JSX.Element | null {
                 ].map((key: ChainId, i: number) => {
                     if (chainId === key) {
                         return (
-                            <button key={i} className="bg-dark-800 w-full rounded p-px">
-                                <div className="flex items-center h-full w-full bg-dark-800 rounded p-3">
+                            <button key={i} className="w-full p-px rounded bg-dark-800">
+                                <div className="flex items-center w-full h-full p-3 rounded bg-dark-800">
                                     <img
                                         src={NETWORK_ICON[key]}
                                         alt="Switch Network"
-                                        className="rounded-md mr-3 w-8 h-8"
+                                        className="w-8 h-8 mr-3 rounded-md"
                                     />
-                                    <div className="text-primary font-bold">{NETWORK_LABEL[key]}</div>
+                                    <div className="font-bold text-primary">{NETWORK_LABEL[key]}</div>
                                 </div>
                             </button>
                         )
@@ -199,10 +199,10 @@ export default function NetworkModal(): JSX.Element | null {
                                 const params = PARAMS[key]
                                 library?.send('wallet_addEthereumChain', [params, account])
                             }}
-                            className="flex items-center bg-dark-1000 hover:bg-dark-700 w-full rounded p-3 cursor-pointer"
+                            className="flex items-center w-full p-3 rounded cursor-pointer bg-dark-1000 hover:bg-dark-700"
                         >
-                            <img src={NETWORK_ICON[key]} alt="Switch Network" className="rounded-md mr-2 w-8 h-8" />
-                            <div className="text-primary font-bold">{NETWORK_LABEL[key]}</div>
+                            <img src={NETWORK_ICON[key]} alt="Switch Network" className="w-8 h-8 mr-2 rounded-md" />
+                            <div className="font-bold text-primary">{NETWORK_LABEL[key]}</div>
                         </button>
                     )
                 })}
