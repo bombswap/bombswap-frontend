@@ -351,5 +351,6 @@
   "xSUSHI automatically earn fees (0.05% of all swaps, including multichain swaps) proportional\nto your share of the SushiBar.": "xSUSHI는 여러분의 SushiBar 지분에 따라 수수료 (멀티 체인 스왑을 포함한 모든 스왑의 0.05 %)를 자동으로받습니다.",
   "{0} Deposited": "{0} 입금",
   "{0} Strategy": "{0} 전략",
-  "{0} per {1}": "{0} 당 {1}"
+  "{0} per {1}": "{0} 당 {1}",
+  "{0}/{1} LP Burned": ""
 }
