@@ -10480,7 +10480,7 @@ graph-results-pager@jjgonecrypto/graph-results-pager#types:
 
 "graph-results-pager@https://github.com/jjgonecrypto/graph-results-pager":
   version "1.0.3"
-  resolved "https://github.com/jjgonecrypto/graph-results-pager#9b230f05b8d79aeedc9e167ac5a1fea33e04d51f"
+  resolved "https://github.com/jjgonecrypto/graph-results-pager#8e083f7777f0caa67984e9a8ed1c2926ae1b82b6"
   dependencies:
     node-fetch "2.6.1"
 
