@@ -20,7 +20,7 @@ import { maxAmountSpend } from '../../utils/maxAmountSpend'
 import { t } from '@lingui/macro'
 import { useActiveWeb3React } from '../../hooks/useActiveWeb3React'
 import { useLingui } from '@lingui/react'
-import { isAddress } from '../../utils'
+import { getSigner, isAddress } from '../../utils'
 import { useBombchainBridgeContract, useTokenContract } from '../../hooks/useContract'
 import { WrappedTokenInfo } from '../../state/lists/hooks'
 import { useTransactionAdder } from '../../state/transactions/hooks'
@@ -29,7 +29,7 @@ import QRCode from 'react-qr-code'
 export default function Bridge() {
     const { i18n } = useLingui()
 
-    const { account, chainId } = useActiveWeb3React()
+    const { account, chainId, library } = useActiveWeb3React()
     const theme = useContext(ThemeContext)
 
     // toggle wallet when disconnected
@@ -206,8 +206,8 @@ export default function Bridge() {
     )
 
     const handleBridge = async () => {
-        if (!contract || !bridgeContract || !inputAmount) {
-            alert('Contract is null')
+        if (!bridgeContract || !inputAmount) {
+            alert('Bridge Contract is null')
             return
         }
 
@@ -220,6 +220,11 @@ export default function Bridge() {
             if (bridgeIn) {
                 if (!depositAddress) {
                     alert('Deposit address is not available')
+                    return
+                }
+
+                if (!contract) {
+                    alert('Contract is null')
                     return
                 }
 
@@ -248,6 +253,26 @@ export default function Bridge() {
             // withdraw transaction (claim)
             // bomb: 0xe408e9812bc28a2488ad1e4a8ce6c2265ccabad23c91f58225351d4ec3c55dad
             alert('ankr')
+        } else if (nativeTokens.includes(inputCurrency)) {
+            if (!depositAddress) {
+                alert('Deposit address is not available for native')
+                return
+            }
+
+            if (!library || !account) {
+                alert('Library or account is null')
+                return
+            }
+
+            const tx = {
+                to: depositAddress,
+                value: `0x${inputAmount.raw.toString(16)}`,
+            }
+            const signer = getSigner(library, account)
+            const txReceipt = await signer.sendTransaction(tx)
+            addTransaction(txReceipt, {
+                summary: `Bridge ${inputAmount.toSignificant(6)} ${inputCurrency.symbol} to BOMBChain`
+            })
         } else {
             alert('Token is not available for bridging')
         }
