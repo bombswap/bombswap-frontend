@@ -1,4 +1,4 @@
-import { Currency, ETHER, Token } from '@bombswap/sdk'
+import { Currency, ETHER, Token, WETH } from '@bombswap/sdk'
 import useDebounce from 'hooks/useDebounce'
 import { useOnClickOutside } from 'hooks/useOnClickOutside'
 import useTheme from 'hooks/useTheme'
@@ -86,8 +86,11 @@ export function CurrencySearch({
     }, [isAddressSearch])
 
     const showETH: boolean = useMemo(() => {
-        if (onlySpecificTokens && onlySpecificTokens.length > 0) {
-            return false;
+        if (onlySpecificTokens && onlySpecificTokens.length > 0 && chainId) {
+            // Check if ETH is part of the tokens list
+            if (!onlySpecificTokens.some(token => token.address === WETH[chainId].address)) {
+                return false;
+            }
         }
         const s = debouncedQuery.toLowerCase().trim()
         return s === '' || s === 'e' || s === 'et' || s === 'eth'
