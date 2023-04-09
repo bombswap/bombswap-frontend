@@ -2,7 +2,7 @@ import { ApprovalState, useApproveCallback } from '../../hooks/useApproveCallbac
 import { BottomGrouping, Wrapper } from '../../components/swap/styleds'
 import { AutoRow, RowBetween } from '../../components/Row'
 import { ButtonConfirmed, ButtonError, ButtonLight, ButtonPrimary } from '../../components/ButtonLegacy'
-import { CurrencyAmount, Token, TokenAmount } from '@bombswap/sdk'
+import { Currency, CurrencyAmount, Token, TokenAmount, WETH } from '@bombswap/sdk'
 import Column, { AutoColumn } from '../../components/Column'
 import React, { useCallback, useContext, useEffect, useState } from 'react'
 import { useAllTokens } from '../../hooks/Tokens'
@@ -73,6 +73,7 @@ export default function Bridge() {
     const [availableNetworkObjects, setAvailableNetworkObjects] = useState<any>({})
     const [availableTokens, setAvailableTokens] = useState<Token[]>([])
     const [availableAnkrTokens, setAvailableAnkrTokens] = useState<Token[]>([])
+    const [nativeTokens, setNativeTokens] = useState<Currency[]>([])
     const [depositAddress, setDepositAddress] = useState<string>('')
 
     useEffect(() => {
@@ -139,6 +140,12 @@ export default function Bridge() {
                 // }
 
                 setAvailableAnkrTokens(ankrTokens)
+
+                if ([...tokens, ...ankrTokens].some(token => token.address === WETH[chainId].address)) {
+                    setNativeTokens([Currency.getNativeCurrency(1)]);
+                } else {
+                    setNativeTokens([]);
+                }
             })
     }, [chainId, account])
 
@@ -310,7 +317,7 @@ export default function Bridge() {
                             value={formattedAmounts[Field.INPUT]}
                             showMaxButton={!atMaxAmountInput}
                             currency={
-                                [...availableTokens, ...availableAnkrTokens].includes(inputCurrency)
+                                [...availableTokens, ...availableAnkrTokens, ...nativeTokens].includes(inputCurrency)
                                     ? currencies[Field.INPUT]
                                     : undefined
                             }
