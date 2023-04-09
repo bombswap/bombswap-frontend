@@ -247,7 +247,7 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Bridge to BSC`)}
                                                 </NavLink>
                                             )}
-                                            {chainId && chainId === ChainId.BSC && (
+                                            {chainId && (chainId === ChainId.BSC || chainId === ChainId.MATIC || chainId === ChainId.AVALANCHE) && (
                                                 <NavLink id={`swap-nav-link`} to={'/bridge'}>
                                                     {i18n._(t`Bridge to BOMBCHAIN`)}
                                                 </NavLink>
