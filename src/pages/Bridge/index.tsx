@@ -56,7 +56,7 @@ export default function Bridge() {
     }
 
     const bombChainId = 2300
-    const destinationChainId = 56
+    const [destinationChainId, setDestinationChainId] = useState<number>(56);
     const bridgeContractAddress = '0x2a06800f3F935024d327D6C632Ca000f00B9CFEd'
     const bridgeIn = String(chainId) !== String(bombChainId)
     const bridgeOut = String(chainId) === String(bombChainId)
@@ -73,9 +73,29 @@ export default function Bridge() {
     const [availableNetworkObjects, setAvailableNetworkObjects] = useState<any>({})
     const [availableTokens, setAvailableTokens] = useState<Token[]>([])
     const [availableAnkrTokens, setAvailableAnkrTokens] = useState<Token[]>([])
+    const [availableDestinationChainIds, setAvailableDestinationChainIds] = useState<string[]>([])
     const [nativeTokens, setNativeTokens] = useState<Currency[]>([])
     const [depositAddress, setDepositAddress] = useState<string>('')
 
+    useEffect(() => {
+        fetch('https://api.bombchain.com/deposit_assets')
+            .then(res => res.json())
+            .then(data => {
+                const destinationChainIds: string[] = [];
+                for (const asset in data.depositAssets) {
+                    if (String(chainId) !== String(bombChainId)) {
+                        continue;
+                    }
+
+                    const address = isAddress(data.depositAssets[asset].bombchainAssetContract)
+                    if (address && !destinationChainIds.includes(data.depositAssets[asset].blockchain.chainId) && allTokens[address]) {
+                        destinationChainIds.push(data.depositAssets[asset].blockchain.chainId)
+                    }
+                }
+
+                setAvailableDestinationChainIds(destinationChainIds)
+            });
+    }, []);
     useEffect(() => {
         if (!account || !chainId) {
             return
@@ -114,7 +134,7 @@ export default function Bridge() {
                         String(data.depositAssets[asset].blockchain.chainId) === String(destinationChainId)
                     ) {
                         const address = isAddress(data.depositAssets[asset].bombchainAssetContract)
-                        if (address && !tokens.includes(allTokens[address])) {
+                        if (address && !tokens.includes(allTokens[address]) && allTokens[address]) {
                             tokens.push(allTokens[address])
                         }
                     }
@@ -147,7 +167,7 @@ export default function Bridge() {
                     setNativeTokens([]);
                 }
             })
-    }, [chainId, account])
+    }, [chainId, destinationChainId, account])
 
     useEffect(() => {
         if (String(chainId) === String(bombChainId)) {
@@ -304,6 +324,10 @@ export default function Bridge() {
     if (
         !availableNetworks ||
         availableNetworks.length <= 0 ||
+        !availableNetworkObjects ||
+        Object.values(availableNetworkObjects).length <= 0 ||
+        !availableDestinationChainIds ||
+        availableDestinationChainIds.length <= 0 ||
         (String(chainId) !== String(bombChainId) && !depositAddress)
     ) {
         return (
@@ -336,6 +360,22 @@ export default function Bridge() {
 
             <div className="w-full max-w-2xl rounded bg-dark-900 shadow-swap-blue-glow">
                 <Wrapper id="swap-page">
+                    {String(chainId) === String(bombChainId) && (
+                        <div className="flex items-center p-5 rounded bg-dark-800 mb-3">
+                            <div className="w-full sm:w-2/5 text-sm font-medium text-secondary whitespace-nowrap">Chooice a destination chain:</div>
+                            <select className="rounded bg-dark-900 grow w-full sm:w-3/5" value={destinationChainId} onChange={(e) => {
+                                if (e && e.target && e.target.value) {
+                                    setDestinationChainId(parseInt(e.target.value))
+                                }
+                            }}>
+                                {availableDestinationChainIds.map((chainId) => availableNetworkObjects[chainId] && (
+                                    <option className="bg-dark-800" key={chainId} value={chainId}>
+                                        {availableNetworkObjects[chainId].name}
+                                    </option>
+                                ))}
+                            </select>
+                        </div>
+                    )}
                     <AutoColumn gap={'md'}>
                         <CurrencyInputPanel
                             label={i18n._(t`Bridge:`)}
