@@ -119,8 +119,10 @@ export const STETH = new Token(ChainId.MAINNET, '0xDFe66B14D37C77F4E9b180cEb433d
 export const BSC: { [key: string]: Token } = {
     DAI: new Token(ChainId.BSC, '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3', 18, 'DAI', 'Dai Stablecoin'),
     USD: new Token(ChainId.BSC, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD'),
+    B2SHARE: new Token(ChainId.BSC, '0x0DF73831C00B157bB0FeD3c06eB475F201B64a78', 18, 'B2SHARE', 'B2SHARE'),
     BUSD: new Token(ChainId.BSC, '0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56', 18, 'BUSD', 'Binance USD'),
     USDC: new Token(ChainId.BSC, '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d', 18, 'USDC', 'USD Coin'),
+    BUSM: new Token(ChainId.BSC, '0x6216B17f696B14701E17BCB24Ec14430261Be94A', 18, 'BUSM', 'BUSM.money'),
     USDT: new Token(ChainId.BSC, '0x55d398326f99059fF775485246999027B3197955', 18, 'USDT', 'Tether USD'),
     BTCB: new Token(ChainId.BSC, '0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', 18, 'BTCB', 'Bitcoin'),
     CZBOMB: new Token(ChainId.BSC, '0x737BC70D07aA6B7f4Ba6d12B45E8CDDBa2446B77', 18, 'CZBOMB', 'CZBOMB'),
@@ -274,12 +276,14 @@ export const CUSTOM_BASES: { [chainId in ChainId]?: { [tokenAddress: string]: To
         [AVALANCHE.SNOWLINK.address]: [AVALANCHE.LINK, AVALANCHE.WETH]
     },
     [ChainId.BSC]: {
-        [BSC.CZBOMB.address]: [BSC.BOMB, BSC.BTCB, BSC.BITBTC, BSC.WETH, BSC.BUSD],
+        [BSC.CZBOMB.address]: [BSC.BOMB, BSC.BTCB, BSC.BITBTC],
+        [BSC.BITBTC.address]: [BSC.BOMB, BSC.BTCB, BSC.CZBOMB],
         [BSC.CZEMP.address]: [BSC.EMP, BSC.ETH, BSC.WETH, BSC.BUSD],
-        [BSC.CZETH.address]: [BSC.ETH, BSC.WETH],
+        [BSC.CZETH.address]: [BSC.ETH, BSC.WETH, BSC.BUSD],
         [BSC.BBOND.address]: [BSC.BOMB, BSC.BTCB, BSC.WETH, BSC.BUSD],
         [BSC.BITATOM.address]: [BSC.ATOM, BSC.WETH],
         [BSC.BITDOT.address]: [BSC.DOT, BSC.WETH],
+        [BSC.BUSM.address]: [BSC.BOMB, BSC.BUSD, BSC.WETH],
         [BSC.BITADA.address]: [BSC.ADA, BSC.WETH]
     },
     [ChainId.BOMB]: {

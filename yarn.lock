@@ -1365,10 +1365,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bombswap/default-token-list@^4.0.10":
-  version "4.0.10"
-  resolved "https://registry.yarnpkg.com/@bombswap/default-token-list/-/default-token-list-4.0.10.tgz#bee712a3df02f5744d09e5f4512653e4ebbf2a21"
-  integrity sha512-g1dWf+UPfMSHDnXN8insYLnyDZowPqJF0A3XkORFhY5K+T8xREKYjKgWT0moKpBxn6bFnhKi0wi4s4jNoTJz3w==
+"@bombswap/default-token-list@^4.0.12":
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/@bombswap/default-token-list/-/default-token-list-4.0.12.tgz#6d001c95dac3a60a5f82df057670201c4da94270"
+  integrity sha512-YPuNjbNcIz98tHgN+3LJIZyUNSmAFPQvlfDSV0I8iMg/5HTmxA8f1l1HQluakZsM1hnhqIjyExzL6b8ELhvUqQ==
 
 "@bombswap/sdk@1.0.0":
   version "1.0.0"
@@ -3015,7 +3015,7 @@
     commander "6.1.0"
     csv-stringify "5.3.3"
     date-fns "^2.17.0"
-    graph-results-pager "https://github.com/jjgonecrypto/graph-results-pager"
+    graph-results-pager "https://github.com/LufyCZ/graph-results-pager"
     graphql "14.5.8"
     graphql-request "^3.4.0"
     isomorphic-ws "^4.0.1"
@@ -10472,15 +10472,15 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.6.tgz#ff040b2b0853b23c3d31027523706f1885d76bee"
   integrity sha512-nTnJ528pbqxYanhpDYsi4Rd8MAeaBA67+RZ10CM1m3bTAVFEDcd5AuA4a6W5YkGZ1iNXHzZz8T6TBKLeBuNriQ==
 
-graph-results-pager@jjgonecrypto/graph-results-pager#types:
+"graph-results-pager@https://github.com/LufyCZ/graph-results-pager":
   version "1.0.3"
-  resolved "https://codeload.github.com/jjgonecrypto/graph-results-pager/tar.gz/d8667ea547e338b09026acef3e5b25da3e7208b7"
+  resolved "https://github.com/LufyCZ/graph-results-pager#31dd744aa9c1e1ad4e8138f63450781768ed542d"
   dependencies:
     node-fetch "2.6.1"
 
-"graph-results-pager@https://github.com/jjgonecrypto/graph-results-pager":
+graph-results-pager@jjgonecrypto/graph-results-pager#types:
   version "1.0.3"
-  resolved "https://github.com/jjgonecrypto/graph-results-pager#8e083f7777f0caa67984e9a8ed1c2926ae1b82b6"
+  resolved "https://codeload.github.com/jjgonecrypto/graph-results-pager/tar.gz/d8667ea547e338b09026acef3e5b25da3e7208b7"
   dependencies:
     node-fetch "2.6.1"
 
