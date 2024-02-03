@@ -38,7 +38,7 @@ const RPC = {
 }
 
 export const network = new NetworkConnector({
-    defaultChainId: 2300,
+    defaultChainId: 56,
     urls: RPC
 })
 
@@ -78,7 +78,7 @@ export const injected = new InjectedConnector({
 // mainnet only
 export const walletconnect = new WalletConnectConnector({
     rpc: {
-        [ChainId.BOMB]: RPC[ChainId.BOMB]
+        [ChainId.BSC]: RPC[ChainId.BSC]
     },
     bridge: 'https://bridge.walletconnect.org',
     qrcode: true,

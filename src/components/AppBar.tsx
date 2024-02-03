@@ -17,7 +17,7 @@ import QuestionHelper from './QuestionHelper'
 import { t } from '@lingui/macro'
 import LanguageSwitch from './LanguageSwitch'
 import { useLingui } from '@lingui/react'
-import { isEligibleForBombUnlockBonus } from "../pages/BombBonusUnlock/utils";
+import { isEligibleForBombUnlockBonus } from '../pages/BombBonusUnlock/utils'
 
 function AppBar(): JSX.Element {
     const { i18n } = useLingui()
@@ -44,7 +44,7 @@ function AppBar(): JSX.Element {
         fetch('https://api.bomb.farm/prices')
             .then(res => res.json())
             .then(data => {
-                setBombswapUsdPrice(data.BOMBSWAP.toFixed(2))
+                setBombswapUsdPrice(data.BOMB.toFixed(4))
             })
     }, [account])
 
@@ -64,12 +64,11 @@ function AppBar(): JSX.Element {
                                             <NavLink id={`swap-nav-link`} to={'/'}>
                                                 {i18n._(t`Home`)}
                                             </NavLink>
-                                            {chainId && ![ChainId.BOMB].includes(chainId) && (
+                                            {/* {chainId && ![ChainId.BOMB].includes(chainId) && (
                                                 <div
                                                     className={'navDropdownMenu'}
                                                     style={{ display: 'inline', position: 'relative' }}
                                                 >
-                                                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid  */}
                                                     <a
                                                         className={
                                                             'navDropdownMenuRoot navLink text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis p-2 md:p-3 whitespace-nowrap'
@@ -138,12 +137,12 @@ function AppBar(): JSX.Element {
                                                         </ul>
                                                     </div>
                                                 </div>
-                                            )}
+                                            )} */}
 
                                             {/* <NavLink id={`swap-nav-link`} to={'/swap'}>
                                                 {i18n._(t`Swap`)}
                                             </NavLink> */}
-                                            {chainId && [ChainId.MATIC].includes(chainId) && (
+                                            {/* {chainId && [ChainId.MATIC].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
                                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
@@ -153,8 +152,8 @@ function AppBar(): JSX.Element {
                                                 >
                                                     {i18n._(t`Vaults`)}
                                                 </a>
-                                            )}
-                                            {chainId && [ChainId.BOMB].includes(chainId) && (
+                                            )} */}
+                                            {/* {chainId && [ChainId.BOMB].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
                                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
@@ -164,8 +163,8 @@ function AppBar(): JSX.Element {
                                                 >
                                                     {i18n._(t`Vaults`)}
                                                 </a>
-                                            )}
-                                            {chainId && [ChainId.AVALANCHE].includes(chainId) && (
+                                            )} */}
+                                            {/* {chainId && [ChainId.AVALANCHE].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
                                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
@@ -175,19 +174,30 @@ function AppBar(): JSX.Element {
                                                 >
                                                     {i18n._(t`Vaults`)}
                                                 </a>
-                                            )}
+                                            )} */}
+
+                                            <a
+                                                id={`swap-nav-link`}
+                                                className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                                href={'https://app.bomb.money/'}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                            >
+                                                {i18n._(t`BOMB.money`)}
+                                            </a>
+
                                             {chainId && [ChainId.BSC].includes(chainId) && (
                                                 <a
                                                     id={`swap-nav-link`}
                                                     className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
-                                                    href={'https://vaults.peghub.com/#/bsc'}
+                                                    href={'https://bomb.farm/#/bsc'}
                                                     target="_blank"
                                                     rel="noreferrer"
                                                 >
                                                     {i18n._(t`Vaults`)}
                                                 </a>
                                             )}
-                                            {chainId &&
+                                            {/* {chainId &&
                                                 chainId !== ChainId.BSC &&
                                                 chainId !== ChainId.MATIC &&
                                                 chainId !== ChainId.BOMB &&
@@ -212,7 +222,7 @@ function AppBar(): JSX.Element {
                                                 >
                                                     {i18n._(t`Docs`)}
                                                 </a>
-                                            )}
+                                            )} */}
 
                                             {/* MOVED THIS TO THE SIDEMENU */}
                                             {/* {chainId && [ChainId.BOMB].includes(chainId) && (
@@ -237,7 +247,7 @@ function AppBar(): JSX.Element {
                                                     {i18n._(t`Stats`)}
                                                 </a>
                                             )} */}
-                                            {chainId && chainId === ChainId.BOMB && (
+                                            {/* {chainId && chainId === ChainId.BOMB && (
                                                 <NavLink id={`yield-nav-link`} to={'/stake'}>
                                                     {i18n._(t`xBOMBSWAP`)}
                                                 </NavLink>
@@ -246,17 +256,20 @@ function AppBar(): JSX.Element {
                                                 <NavLink id={`swap-nav-link`} to={'/bridge'}>
                                                     {i18n._(t`Bridge to BSC`)}
                                                 </NavLink>
-                                            )}
-                                            {chainId && (chainId === ChainId.BSC || chainId === ChainId.MATIC || chainId === ChainId.AVALANCHE) && (
-                                                <NavLink id={`swap-nav-link`} to={'/bridge'}>
-                                                    {i18n._(t`Bridge to BOMBCHAIN`)}
-                                                </NavLink>
-                                            )}
+                                            )} */}
+                                            {/* {chainId &&
+                                                (chainId === ChainId.BSC ||
+                                                    chainId === ChainId.MATIC ||
+                                                    chainId === ChainId.AVALANCHE) && (
+                                                    <NavLink id={`swap-nav-link`} to={'/bridge'}>
+                                                        {i18n._(t`Bridge to BOMBCHAIN`)}
+                                                    </NavLink>
+                                                )}
                                             {account && isEligibleForBombUnlockBonus(account) && (
                                                 <NavLink id={`swap-nav-link`} to={'/bomb/bonus/unlock'}>
                                                     {i18n._(t`BOMB Bonus unlock`)}
                                                 </NavLink>
-                                            )}
+                                            )} */}
                                             {/*   {chainId === ChainId.BOMB && (
                                                 <NavLink id={`sushibar-nav-link`} to={'/sushibar'}>
                                                     {i18n._(t`SushiBar`)}
@@ -302,77 +315,6 @@ function AppBar(): JSX.Element {
                                 <div className="fixed bottom-0 left-0 flex flex-row items-center justify-center w-full p-4 lg:w-auto bg-dark-1000 lg:relative lg:p-0 lg:bg-transparent">
                                     <div className="flex items-center justify-between w-full space-x-2 sm:justify-end">
                                         {chainId &&
-                                            [ChainId.BOMB].includes(chainId) &&
-                                            library &&
-                                            library.provider.isMetaMask && (
-                                                <>
-                                                    <QuestionHelper
-                                                        text={i18n._(t`Add BOMBSWAP to your Metamask wallet`)}
-                                                    >
-                                                        <div
-                                                            className="hidden rounded-md cursor-pointer sm:inline-block bg-dark-900 hover:bg-dark-800"
-                                                            onClick={() => {
-                                                                let address: string | undefined
-                                                                switch (chainId) {
-                                                                    case ChainId.BOMB:
-                                                                        address =
-                                                                            '0xaC029BF2871b3f810AAbF836Adc4F89369027971'
-                                                                        break
-                                                                }
-                                                                const params: any = {
-                                                                    type: 'ERC20',
-                                                                    options: {
-                                                                        address: address,
-                                                                        symbol: 'BOMBSWAP',
-                                                                        decimals: 18,
-                                                                        image:
-                                                                            'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/bombswap.png'
-                                                                    }
-                                                                }
-
-                                                                if (
-                                                                    library &&
-                                                                    library.provider.isMetaMask &&
-                                                                    library.provider.request
-                                                                ) {
-                                                                    library.provider
-                                                                        .request({
-                                                                            method: 'wallet_watchAsset',
-                                                                            params
-                                                                        })
-                                                                        .then(success => {
-                                                                            if (success) {
-                                                                                console.log(
-                                                                                    'Successfully added BOMBSWAP to MetaMask'
-                                                                                )
-                                                                            } else {
-                                                                                throw new Error('Something went wrong.')
-                                                                            }
-                                                                        })
-                                                                        .catch(console.error)
-                                                                }
-                                                            }}
-                                                        >
-                                                            <img
-                                                                src={`${process.env.PUBLIC_URL}/images/bombswap.jpeg`}
-                                                                alt="Switch Network"
-                                                                style={{
-                                                                    minWidth: 36,
-                                                                    minHeight: 36,
-                                                                    maxWidth: 36,
-                                                                    maxHeight: 36
-                                                                }}
-                                                                className="object-contain rounded-md"
-                                                            />
-                                                        </div>
-                                                    </QuestionHelper>
-                                                    <span className="mt-1 ml-3 font-bold text-primary">
-                                                        ${bombswapUsdPrice}
-                                                    </span>
-                                                </>
-                                            )}
-
-                                        {chainId &&
                                             [ChainId.BSC].includes(chainId) &&
                                             library &&
                                             library.provider.isMetaMask && (
@@ -395,7 +337,7 @@ function AppBar(): JSX.Element {
                                                                         symbol: 'BOMB',
                                                                         decimals: 18,
                                                                         image:
-                                                                            'https://www.bombswap.xyz/images/tokens/0x522348779DCb2911539e76A1042aA922F9C47Ee3.png'
+                                                                            'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/bomb-256.png'
                                                                     }
                                                                 }
 
@@ -424,6 +366,77 @@ function AppBar(): JSX.Element {
                                                         >
                                                             <img
                                                                 src={`${process.env.PUBLIC_URL}/images/square-bomb.png`}
+                                                                alt="Switch Network"
+                                                                style={{
+                                                                    minWidth: 36,
+                                                                    minHeight: 36,
+                                                                    maxWidth: 36,
+                                                                    maxHeight: 36
+                                                                }}
+                                                                className="object-contain rounded-md"
+                                                            />
+                                                        </div>
+                                                    </QuestionHelper>
+                                                    <span className="mt-1 ml-3 font-bold text-primary">
+                                                        ${bombswapUsdPrice}
+                                                    </span>
+                                                </>
+                                            )}
+
+                                        {chainId &&
+                                            [ChainId.BSC].includes(chainId) &&
+                                            library &&
+                                            library.provider.isMetaMask && (
+                                                <>
+                                                    <QuestionHelper
+                                                        text={i18n._(t`Add B2SHARE to your Metamask wallet`)}
+                                                    >
+                                                        <div
+                                                            className="hidden rounded-md cursor-pointer sm:inline-block bg-dark-900 hover:bg-dark-800"
+                                                            onClick={() => {
+                                                                let address: string | undefined
+                                                                switch (chainId) {
+                                                                    case ChainId.BSC:
+                                                                        address =
+                                                                            '0x0DF73831C00B157bB0FeD3c06eB475F201B64a78'
+                                                                        break
+                                                                }
+                                                                const params: any = {
+                                                                    type: 'ERC20',
+                                                                    options: {
+                                                                        address: address,
+                                                                        symbol: 'B2SHARE',
+                                                                        decimals: 18,
+                                                                        image:
+                                                                            'https://raw.githubusercontent.com/bombmoney/bomb-assets/master/b2share-256.png'
+                                                                    }
+                                                                }
+
+                                                                if (
+                                                                    library &&
+                                                                    library.provider.isMetaMask &&
+                                                                    library.provider.request
+                                                                ) {
+                                                                    library.provider
+                                                                        .request({
+                                                                            method: 'wallet_watchAsset',
+                                                                            params
+                                                                        })
+                                                                        .then(success => {
+                                                                            if (success) {
+                                                                                console.log(
+                                                                                    'Successfully added BOMB to MetaMask'
+                                                                                )
+                                                                            } else {
+                                                                                throw new Error('Something went wrong.')
+                                                                            }
+                                                                        })
+                                                                        .catch(console.error)
+                                                                }
+                                                            }}
+                                                        >
+                                                            <img
+                                                                src={`${process.env.PUBLIC_URL}/images/square-b2share.png`}
                                                                 alt="Switch Network"
                                                                 style={{
                                                                     minWidth: 36,
@@ -665,30 +678,30 @@ function AppBar(): JSX.Element {
                                 {chainId && chainId !== ChainId.BOMB && (
                                     <div>
                                         <a className="p-2">Protocols</a>
-                                
+
                                         <a
                                             id={`swap-nav-link`}
-                                            className="m-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            className="block m-4 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                             href={'https://app.bomb.money/'}
                                             target="_blank"
                                             rel="noreferrer"
                                         >
                                             {i18n._(t`BOMB.money`)}
                                         </a>
-                                    
+
                                         <a
                                             id={`swap-nav-link`}
-                                            className="m-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            className="block m-4 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                             href={'https://app.bitbomb.io/'}
                                             target="_blank"
                                             rel="noreferrer"
                                         >
                                             {i18n._(t`bitBOMB`)}
                                         </a>
-                                        
+
                                         <a
                                             id={`swap-nav-link`}
-                                            className="m-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            className="block m-4 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                             href={'https://www.czpegs.com/'}
                                             target="_blank"
                                             rel="noreferrer"
@@ -697,7 +710,7 @@ function AppBar(): JSX.Element {
                                         </a>
                                         <a
                                             id={`swap-nav-link`}
-                                            className="m-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            className="block m-4 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                             href={'https://www.snowpegs.com/'}
                                             target="_blank"
                                             rel="noreferrer"
@@ -706,7 +719,7 @@ function AppBar(): JSX.Element {
                                         </a>
                                         <a
                                             id={`swap-nav-link`}
-                                            className="ml-4 block text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
+                                            className="block ml-4 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                             href={'https://www.polypegs.com/'}
                                             target="_blank"
                                             rel="noreferrer"
@@ -716,9 +729,8 @@ function AppBar(): JSX.Element {
                                     </div>
                                 )}
 
-
                                 {chainId && [ChainId.MATIC].includes(chainId) && (
-                                        <a
+                                    <a
                                         id={`swap-nav-link`}
                                         className="p-2 text-baseline text-primary hover:text-high-emphesis focus:text-high-emphesis md:p-3 whitespace-nowrap"
                                         href={'https://vaults.peghub.com/#/polygon'}
@@ -793,8 +805,6 @@ function AppBar(): JSX.Element {
                                         {i18n._(t`BOMB Bonus unlock`)}
                                     </NavLink>
                                 )}
-                                
-
 
                                 {/*<NavLink id={`swap-nav-link`} to={'/swap'}>*/}
                                 {/*    {i18n._(t`Swap`)}*/}
